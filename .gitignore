@@ -1,0 +1,4 @@
+# Ignore all logfiles and tempfiles.
+config.ru
+/public
+.DS_Store

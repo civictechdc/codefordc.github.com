@@ -44,65 +44,36 @@
           </div>
         </div>
      
+    </div>
 
-     <div class="col-lg-6">
-          <div class="col-lg-3">
-            <h3><img src="images/press/icons/atlantic-cities.gif" width="100px"/></h3>
-          </div>
-          <div class="col-lg-9">
-            <h3>Project Name  
-            </h3>
-            Contact: Justin Grimes (@justgrimes)</br>
-            A project that does something involving DC and hopes to serve the city through doing so.
-            Needs: Developers, UX/Design
-            <a href="http://github.com/mattbailey0/codefordc-2.0/">Project Page</a>
-          </div>
-        </div>
-     
 
-        <div class="col-lg-6">
-          <div class="col-lg-3">
-            <h3><img src="images/press/icons/atlantic-cities.gif" width="100px"/></h3>
-          </div>
-          <div class="col-lg-9">
-            <h3>Project Name  
-            </h3>
-            Contact: Justin Grimes (@justgrimes)</br>
-            A project that does something involving DC and hopes to serve the city through doing so.
-            Needs: Developers, UX/Design
-            <a href="http://github.com/mattbailey0/codefordc-2.0/">Project Page</a>
-          </div>
-        </div>
-     
-
-        <div class="col-lg-6">
-          <div class="col-lg-3">
-            <h3><img src="images/press/icons/atlantic-cities.gif" width="100px"/></h3>
-          </div>
-          <div class="col-lg-9">
-            <h3>Project Name  
-            </h3>
-            Contact: Justin Grimes (@justgrimes)</br>
-            A project that does something involving DC and hopes to serve the city through doing so.
-            Needs: Developers, UX/Design
-            <a href="http://github.com/mattbailey0/codefordc-2.0/">Project Page</a>
-          </div>
-        </div>
-     
-      </div>
     <div class="col-lg-1"></div>
-
+	<div id="csv"></div>
 
 
   </div><!-- /.container -->
 
     <script src="assets/js/jquery.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="assets/js/jquery.csv-0.71.min.js"></script>
         <script type="text/javascript">
       $(document).ready(function(){
           var str="test";
-          $("#navbar-wrapper").load("_navbar.html");
+          	$("#navbar-wrapper").load("_navbar.html");
+          	$.get('https://docs.google.com/spreadsheet/pub?key=0AvcRuGkEq26jdEx5V0lUX0tEOXAyeVJQUVhDYjN0dEE&output=csv',function(data){
+					var content = $.csv.toArrays(data);
+					var html = '';
+					for(var row in content){
+							html += '<div class="col-lg-6"><div class="col-lg-3"><h3><img src="images/press/icons/atlantic-cities.gif" width="100px"/></h3></div><div class="col-lg-9"><h3>' + content[row][0] + '</h3>Contact:' + content[row][2] +'</br>' + content[row][1] + '<br/> Needs: '+ content[row][3] + '<br/><a href="'+ content[row][6] +'">Project Page</a></div></div>';
+					}
+					$("#csv").html(html);
+					
+					
 
+			
+			
+				}
+			);
       });
     </script>
   </body>

@@ -60,7 +60,7 @@
       $(document).ready(function(){
           var str="test";
           	$("#navbar-wrapper").load("_navbar.html");
-          	$.get('https://docs.google.com/spreadsheet/pub?key=0AvcRuGkEq26jdEx5V0lUX0tEOXAyeVJQUVhDYjN0dEE&output=csv',function(data){
+          	$.get('https://docs.google.com/spreadsheet/pub?key=0AmPkMT5S2NcVdHFIYms5RDl6Tnc0ZmNBaVlGQWJoS1E&output=csv',function(data){
 					var content = $.csv.toArrays(data);
 					var html = '';
 					for(var row in content){

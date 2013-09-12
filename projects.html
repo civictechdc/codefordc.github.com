@@ -27,7 +27,7 @@
           <p class="lead">Code for DC is a collaborative environment in which people from many disciplines are encouraged to tackle issues they see facing the community.</p>
         </div>
 
-       
+ <!--      
         <div class="col-lg-6">
           <div class="col-lg-3">
             <h3><img src="images/press/icons/atlantic-cities.gif" width="100px"/></h3>
@@ -43,12 +43,11 @@
             <a href="http://github.com/mattbailey0/codefordc-2.0/">Project Page</a>
           </div>
         </div>
-     
-    </div>
-
+-->     
+		<div id="csv"></div>
 
     <div class="col-lg-1"></div>
-	<div id="csv"></div>
+
 
 
   </div><!-- /.container -->
@@ -56,24 +55,27 @@
     <script src="assets/js/jquery.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
 	<script src="assets/js/jquery.csv-0.71.min.js"></script>
-        <script type="text/javascript">
-      $(document).ready(function(){
-          var str="test";
+    <script type="text/javascript">
+		$(document).ready(function(){
+			var str="test";
           	$("#navbar-wrapper").load("_navbar.html");
-          	$.get('https://docs.google.com/spreadsheet/pub?key=0AmPkMT5S2NcVdHFIYms5RDl6Tnc0ZmNBaVlGQWJoS1E&output=csv',function(data){
-					var content = $.csv.toArrays(data);
-					var html = '';
-					for(var row in content){
-							html += '<div class="col-lg-6"><div class="col-lg-3"><h3><img src="images/press/icons/atlantic-cities.gif" width="100px"/></h3></div><div class="col-lg-9"><h3>' + content[row][0] + '</h3>Contact:' + content[row][2] +'</br>' + content[row][1] + '<br/> Needs: '+ content[row][3] + '<br/><a href="'+ content[row][6] +'">Project Page</a></div></div>';
+			$.get('https://docs.google.com/spreadsheet/pub?key=0AmPkMT5S2NcVdHFIYms5RDl6Tnc0ZmNBaVlGQWJoS1E&output=csv', function(data){
+				var content = $.csv.toArrays(data);
+				var html = '';
+				var even = false
+				for(var row in content){
+					if(even == false){
+						html += '<div class="col-lg-12">';
 					}
-					$("#csv").html(html);
-					
-					
-
-			
-			
+					html += '<div class="col-lg-6"><div class="col-lg-3"><h3><img src="images/press/icons/atlantic-cities.gif" width="100px"/></h3></div><div class="col-lg-9"><h3>' + content[row][0] + '</h3>Contact:' + content[row][2] +'</br>' + content[row][1] + '<br/> Needs: '+ content[row][3] + '<br/><a href="'+ content[row][6] +'">Project Page</a></div></div>';
+					if(even == true){
+						html += '</div>';
+					}
+					even = !even;
 				}
-			);
+				$("#csv").html(html);
+			}
+		);
       });
     </script>
   </body>

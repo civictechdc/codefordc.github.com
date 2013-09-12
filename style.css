@@ -5,3 +5,10 @@ body {
   padding: 40px 15px;
   text-align: center;
 }
+.hero {
+	background: url('/images/bohemian-caverns.jpg');
+	background-size: cover;
+	min-height: 300px;
+	color: white;
+	font-size:150px;
+}

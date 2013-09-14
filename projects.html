@@ -21,30 +21,14 @@
 
     <div class="container">
       <div class="col-lg-1"></div>
-      <div class="col-lg-10 starter-template">
-        <div class="col-lg-12">
+      <div class="col-lg-10 ">
+        <div class="col-lg-12 starter-template">
           <h1>Projects</h1>
-          <p class="lead">Code for DC is a collaborative environment in which people from many disciplines are encouraged to tackle issues they see facing the community.</p>
+          <p class="lead">Code for DC is a collaborative environment in which people with many different skillsets tackle issues they see facing the community. Our projects are always looking for help.  Browse below and you're bound to find a project that needs you!</p>
         </div>
 
- <!--      
-        <div class="col-lg-6">
-          <div class="col-lg-3">
-            <h3><img src="images/press/icons/atlantic-cities.gif" width="100px"/></h3>
-          </div>
-          <div class="col-lg-9">
-            <h3>Project Name  
-            </h3>
-            Contact: Justin Grimes (@justgrimes)
-            <br/>
-            A project that does something involving DC and hopes to serve the city through doing so.
-            <br/>
-            Needs: Developers, UX/Design
-            <a href="http://github.com/mattbailey0/codefordc-2.0/">Project Page</a>
-          </div>
-        </div>
--->     
-		<div id="csv"></div>
+
+		<div id="project-list"></div>
 
     <div class="col-lg-1"></div>
 
@@ -57,23 +41,47 @@
 	<script src="assets/js/jquery.csv-0.71.min.js"></script>
     <script type="text/javascript">
 		$(document).ready(function(){
-			var str="test";
           	$("#navbar-wrapper").load("_navbar.html");
 			$.get('https://docs.google.com/spreadsheet/pub?key=0AmPkMT5S2NcVdHFIYms5RDl6Tnc0ZmNBaVlGQWJoS1E&output=csv', function(data){
 				var content = $.csv.toArrays(data);
+				content.splice(0,1); //get rid of column headers
 				var html = '';
-				var even = false
+				var pname = '';
+				var pcontact = '';
+				var pdesc = '';
+				var pneeds = '';
+				var plink = '';
+				var pstatus = '';
 				for(var row in content){
-					if(even == false){
-						html += '<div class="col-lg-12">';
+					if(content[row][5] != "inactive"){
+						pname = content[row][0];
+						if(pname == ""){
+								pname = "Unnamed project"
+						}
+					
+						pcontact = content[row][2];
+						if(pcontact == ""){
+							pcontact = "Matt Bailey - mbailey@codeforamerica.org" 
+						}
+					
+					
+						pdesc = content[row][1];
+						pneeds = content[row][3];
+						plink = content[row][6];
+						pstatus = content[row][5];
+					
+						html += '<div class="col-lg-2"></div><div class="col-lg-12"><div class="col-lg-2"><h3><img src="images/launch.png" width="100px"/></h3></div><div class="col-lg-10">';
+					
+						html += '<h3>' + pname + '</h3>';
+						//html += 'Project Status:' + pstatus + '<br/>';
+						if(pdesc != ""){html += pdesc + '<br/>';}
+						html += 'Contact:' + pcontact +'</br>';
+						if(pneeds != ""){html += 'Needs: '+ pneeds + '<br/>';}
+						if(plink != ""){html += '<a href="'+ plink +' target="_blank"">Project Page</a>';}
+						html +='</div></div><div class="col-lg-2"></div><div class="col-lg-12"><hr/></div>';
 					}
-					html += '<div class="col-lg-6"><div class="col-lg-3"><h3><img src="images/press/icons/atlantic-cities.gif" width="100px"/></h3></div><div class="col-lg-9"><h3>' + content[row][0] + '</h3>Contact:' + content[row][2] +'</br>' + content[row][1] + '<br/> Needs: '+ content[row][3] + '<br/><a href="'+ content[row][6] +'">Project Page</a></div></div>';
-					if(even == true){
-						html += '</div>';
-					}
-					even = !even;
 				}
-				$("#csv").html(html);
+				$("#project-list").html(html);
 			}
 		);
       });

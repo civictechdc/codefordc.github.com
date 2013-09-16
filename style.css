@@ -9,6 +9,7 @@ body {
 	background: url('images/bohemian-caverns.jpg');
 	background-size: cover;
 	min-height: 300px;
+	min-width: 400px;
 	color: white;
 	font-size:150px;
 }

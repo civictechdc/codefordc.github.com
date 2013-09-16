@@ -97,9 +97,9 @@
 						plink = content[row][6];
 						pstatus = content[row][5];
 					
-						html += '<div class="col-lg-2"></div><div class="col-lg-12"><div class="col-lg-2"><h3><img src="images/launch.png" width="100px"/></h3></div><div class="col-lg-10">';
+						html += '<div class="col-lg-2 project-item"></div><div class="col-lg-12"><div class="col-lg-2 project-icon"><img src="images/launch.png" width="100px"/></div>';
 					
-						html += '<h3>' + pname + '</h3>';
+						html += '<div class="col-lg-10">	<h3>' + pname + '</h3>';
 						//html += 'Project Status:' + pstatus + '<br/>';
 						if(pdesc != ""){html += pdesc + '<br/>';}
 						html += 'Contact:' + pcontact +'</br>';

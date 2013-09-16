@@ -18,3 +18,7 @@ body {
 	margin-top:0;
 	margin-bottom:5px;
 }
+
+.navbar-brand {
+	padding:10px;
+}

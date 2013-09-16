@@ -13,21 +13,35 @@
 		<link href="style.css" rel="stylesheet">
 	</head>
 	<body>
-		<div id="navbar-wrapper"></div>
+		<div id="navbar-wrapper">
+			<div class="navbar navbar-inverse navbar-fixed-top">
+		      <div class="container">
+		        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+		          <span class="icon-bar"></span>
+		          <span class="icon-bar"></span>
+		          <span class="icon-bar"></span>
+		        </button>
+		        <a class="navbar-brand" href="index.html"><img src="images/c4dc-logo-white-30x58.png"/></a>
+		        <div class="nav-collapse collapse">
+		          <ul class="nav navbar-nav">
+		            <li class="active"><a href="index.html">Get Involved</a></li>
+		            <li><a href="projects.html">Projects</a></li>
+		            <li><a href="press.html">Press</a></li>
+		          </ul>
+		        </div><!--/.nav-collapse -->
+		      </div>
+		    </div>
+		    
+		</div>
     	<div class="col-lg-12 hero">Code for DC</div>
 <div class="container">
 			
 			<div class="col-lg-1"></div>
 			<div class="col-lg-10 starter-template">
 				<div class="col-lg-12">
-					<div class="col-lg-6">
-					<img src="images/logo_386px.png" />
-				</div>
-		        	<div class="col-lg-6">
-						<h1>Join Us!</h1>
-		        		<p class="lead">Code for DC is the DC chapter of the <a href="http://brigade.codeforamerica.org" target="_blank">Code for America Brigade</a>. We are a group of volunteer civic hackers working together to solve local issues and help people engage with the city.
-						</p>
-					</div>
+					<h1>Join Us!</h1>
+		        	<p class="lead">Code for DC is the DC chapter of the <a href="http://brigade.codeforamerica.org" target="_blank">Code for America Brigade</a>. We are a group of volunteer civic hackers working together to solve local issues and help people engage with the city.
+					</p>
 				</div>
 				<div class="col-lg-12"><hr/></div>
 				<div class="col-lg-12">
@@ -73,13 +87,15 @@
 
     <script src="assets/js/jquery.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    <script type="text/javascript">
-      $(document).ready(function(){
-          var str="test";
-          $("#navbar-wrapper").load("_navbar.html");
+	  ga('create', 'UA-44079248-1', 'codefordc.org');
+	  ga('send', 'pageview');
 
-      });
-    </script>
+	</script>
   </body>
 </html>

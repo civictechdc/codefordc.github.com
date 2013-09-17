@@ -33,3 +33,9 @@ body {
 .press-icon {
 	margin-bottom:10px;
 }
+
+h1.h0 {
+	font-size:59px;
+	font-weight:bold;	
+	margin-top:10px;
+}

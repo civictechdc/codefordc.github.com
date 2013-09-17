@@ -10,8 +10,16 @@ body {
 	background-size: cover;
 	min-height: 300px;
 	min-width: 400px;
-	color: white;
+	padding:0;
+}
+
+.hero-text{
+	text-align:center;
 	font-size:150px;
+	font-weight:bold;
+	color: white;
+	background-color: rgba(0,0,0,.5);
+	margin-top:25px;
 }
 
 #project-list h3,

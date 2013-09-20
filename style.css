@@ -5,6 +5,15 @@ body {
   padding: 40px 15px;
   text-align: center;
 }
+
+
+.black {
+	background:black;
+	color:white;
+}
+
+
+
 .hero {
 	background: url('images/bohemian-caverns.jpg');
 	background-size: cover;
@@ -46,4 +55,47 @@ h1.h0 {
 	font-size:59px;
 	font-weight:bold;	
 	margin-top:10px;
+}
+
+
+.stuff-weve-made-stripe {
+	margin-top:60px;
+}
+
+.stuff-weve-made-stripe h2 {
+	margin-bottom:20px	;
+	margin-top:5px;
+	padding-top:5px;
+	padding-bottom:5px;
+}
+
+
+.project-stripe-odd,
+.project-stripe-even {
+	margin-top:20px;
+}
+
+
+.project-stripe-img {
+	background-color:black;
+	padding:2px;
+	margin-bottom:20px;
+}
+
+.project-stripe-img img{
+	width:100%;
+	
+}
+.project-stripe-txt {
+		background-color:white;
+		margin-bottom:40px;
+}
+
+.project-stripe-txt h2 {
+	margin-top:0;
+}
+
+
+hr.footer-divider {
+	border-top: 2px solid #ccc;
 }

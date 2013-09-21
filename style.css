@@ -99,3 +99,8 @@ h1.h0 {
 hr.footer-divider {
 	border-top: 2px solid #ccc;
 }
+
+.project-image,
+.project-text {
+	margin-bottom:40px;
+}

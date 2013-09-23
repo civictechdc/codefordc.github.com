@@ -42,9 +42,33 @@
 		<div class="col-lg-10 starter-template">
         	<div class="col-lg-12">
 				<h1>Press</h1>
-        		<p class="lead">Read below for coverage of Code for DC, our events, and our projects.</p><p class="lead">For press inquiries, please contact Matt Bailey (<a href="https://twitter.com/mattbailey0">@mattbailey0</a>, <a href="mailto:mbailey@codeforamerica.org">mbailey@codeforamerica.org</a>) or Justin Grimes (<a href="https://twitter.com/justgrimes">@justgrimes</a>, <a href="mailto:jgrimes@codeforamerica.org">jgrimes@codeforamerica.org</a>).  You're also welcome at our <a href="http://www.meetup.com/code-for-dc" target="_blank">next meetup!</a></p>
+        		<p class="lead">Read below for coverage of Code for DC, our events, and our projects.<br/><br/>	For press inquiries, please contact:<br/>Matt Bailey (<a href="https://twitter.com/mattbailey0">@mattbailey0</a>, <a href="mailto:mbailey@codeforamerica.org">mbailey@codeforamerica.org</a>)<br/>Justin Grimes (<a href="https://twitter.com/justgrimes">@justgrimes</a>, <a href="mailto:jgrimes@codeforamerica.org">jgrimes@codeforamerica.org</a>)</p>
       		</div>
-			<div id="press-list"></div>
+      		<div class="col-lg-12"><hr/></div>
+			<div class="col-lg-12">
+				<h3>Announcements</h3>
+				<p class="lead">The latest from Code for DC and its partners.</p>
+				<!--<div class="col-lg-12 press-release-row even">
+					<div class="col-lg-2 press-release-row-icon">
+						<img src="images/logo_100px.png"/>
+					</div>
+					<div class="col-lg-10 press-release-row-text">
+						<b>September 23, 2013.</b> Open Schools (http://edu.codefordc.org/) is a web application developed by Code for DC, to will make comparing school demographic and performance data simpler, empowering parents to make better choices.<br/><a href="https://docs.google.com/document/d/17f6_RUSiBy0aGRow-_44JaJdb21DbcZegYqGWpKeHLc/" target="_blank">Read the press release &raquo;</a>
+					</div>
+				</div>-->
+	
+
+				<div class="col-lg-12 press-release-row odd">
+					<div class="col-lg-2 press-release-row-icon">
+						<img src="images/cfa_logo.png"/>
+					</div>
+					<div class="col-lg-10 press-release-row-text">
+						<b>September 17, 2013.</b> In 2012, Code for America launched the Brigade program, enacting 16 local chapters. Today we’re excited to announce the addition of 15 new Brigades supported by 28 new Captains, including in Washington DC.<br/><a href="http://www.codeforamerica.org/2013/09/17/brigade-captains/" target="_blank">Read the article &raquo;</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-12"><hr/></div>
+			<div class="col-lg-12" id="press-list"></div>
 		</div>
 		<div class="col-lg-1"></div>
    	
@@ -72,7 +96,7 @@
 			$.get('https://docs.google.com/spreadsheet/pub?key=0AmPkMT5S2NcVdEhfd1JFaTRsemo2RWR6NUdOOS1mdlE&output=csv', function(data){
 				var content = $.csv.toArrays(data);
 				content.splice(0,1); //get rid of column headers
-				var html = '';
+				var html = '<div class="col-lg-12"><h3>Past Coverage</h3><p class="lead">Sightings of Code for DC in the press and elsewhere online.</p></div>';
 				var ptitle = '';
 				var ppub = '';
 				var plink = '';
@@ -84,13 +108,13 @@
 					ppub = content[row][2];
 					ptitle = content[row][3];
 					picon = content[row][4];
-					html += '<div class="col-lg-2" ></div><div class="col-lg-8"><div class="col-lg-4 press-icon">';
-			        if(picon!=''){html+='<img src="'+ picon +'" width="158px"/>';}
-			        html += '</div><div class="col-lg-8">';
+					html += '<div class="col-lg-4 press-item-wrapper"><div class="col-lg-12 press-item"><div class="col-lg-12 press-icon">';
+			        if(picon!=''){html+='<img src="'+ picon +'"/>';}
+			        html += '</div><div class="col-lg-12 press-text">';
 			        
-					html +='<h3><a href="' + plink + '">' + ptitle + '</a></h3>';
-			        html += ppub + ', ' + pdate;
-					html += '</div></div><div class="col-lg-2"></div><div class="col-lg-12"><hr/></div>';	
+					html +='<h4><a href="' + plink + '">' + ptitle + '</a></h4>';
+			        html += ppub + '<br/>' + pdate;
+					html += '</div></div></div>';	
 				}
 				$("#press-list").html(html);
 			}

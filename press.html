@@ -42,20 +42,20 @@
 		<div class="col-lg-10 starter-template">
         	<div class="col-lg-12">
 				<h1>Press</h1>
-        		<p class="lead">Read below for coverage of Code for DC, our events, and our projects.<br/>For press inquiries, please contact:<br/><br/>Matt Bailey (<a href="https://twitter.com/mattbailey0">@mattbailey0</a>, <a href="mailto:mbailey@codeforamerica.org">mbailey@codeforamerica.org</a>)<br/>Justin Grimes (<a href="https://twitter.com/justgrimes">@justgrimes</a>, <a href="mailto:jgrimes@codeforamerica.org">jgrimes@codeforamerica.org</a>)</p>
+        		<p class="lead">Read below for coverage of Code for DC, our events, and our projects.<br/><br/>	For press inquiries, please contact:<br/>Matt Bailey (<a href="https://twitter.com/mattbailey0">@mattbailey0</a>, <a href="mailto:mbailey@codeforamerica.org">mbailey@codeforamerica.org</a>)<br/>Justin Grimes (<a href="https://twitter.com/justgrimes">@justgrimes</a>, <a href="mailto:jgrimes@codeforamerica.org">jgrimes@codeforamerica.org</a>)</p>
       		</div>
       		<div class="col-lg-12"><hr/></div>
 			<div class="col-lg-12">
 				<h3>Announcements</h3>
 				<p class="lead">The latest from Code for DC and its partners.</p>
-				<div class="col-lg-12 press-release-row even">
+				<!--<div class="col-lg-12 press-release-row even">
 					<div class="col-lg-2 press-release-row-icon">
 						<img src="images/logo_100px.png"/>
 					</div>
 					<div class="col-lg-10 press-release-row-text">
 						<b>September 23, 2013.</b> Open Schools (http://edu.codefordc.org/) is a web application developed by Code for DC, to will make comparing school demographic and performance data simpler, empowering parents to make better choices.<br/><a href="https://docs.google.com/document/d/17f6_RUSiBy0aGRow-_44JaJdb21DbcZegYqGWpKeHLc/" target="_blank">Read the press release &raquo;</a>
 					</div>
-				</div>
+				</div>-->
 	
 
 				<div class="col-lg-12 press-release-row odd">
@@ -113,7 +113,7 @@
 			        html += '</div><div class="col-lg-12 press-text">';
 			        
 					html +='<h4><a href="' + plink + '">' + ptitle + '</a></h4>';
-			        html += ppub + ', ' + pdate;
+			        html += ppub + '<br/>' + pdate;
 					html += '</div></div></div>';	
 				}
 				$("#press-list").html(html);

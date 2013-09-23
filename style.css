@@ -1,3 +1,7 @@
+/***************************/
+/*  general/sitewide */
+/***************************/
+
 body {
   padding-top: 50px;
 }
@@ -11,6 +15,27 @@ body {
 	background:black;
 	color:white;
 }
+
+h1.h0 {
+	font-size:59px;
+	font-weight:bold;	
+	margin-top:10px;
+}
+
+.navbar-brand {
+	padding:10px;
+}
+
+
+hr.footer-divider {
+	border-top: 2px solid #ccc;
+}
+
+
+
+/***************************/
+/*  index */
+/***************************/
 
 
 
@@ -31,32 +56,6 @@ body {
 	margin-top:25px;
 }
 
-#project-list h3,
-#press-list h3 { 
-	margin-top:0;
-	margin-bottom:5px;
-}
-
-.navbar-brand {
-	padding:10px;
-}
-
-#project-list,
-#press-list {
-	text-align:center;
-}
-
-.project-icon,
-.press-icon {
-	margin-bottom:10px;
-}
-
-h1.h0 {
-	font-size:59px;
-	font-weight:bold;	
-	margin-top:10px;
-}
-
 
 .stuff-weve-made-stripe {
 	margin-top:60px;
@@ -69,12 +68,10 @@ h1.h0 {
 	padding-bottom:5px;
 }
 
-
 .project-stripe-odd,
 .project-stripe-even {
 	margin-top:20px;
 }
-
 
 .project-stripe-img {
 	background-color:black;
@@ -96,11 +93,88 @@ h1.h0 {
 }
 
 
-hr.footer-divider {
-	border-top: 2px solid #ccc;
-}
+/***************************/
+/*  project page */
+/***************************/
+
 
 .project-image,
 .project-text {
 	margin-bottom:40px;
 }
+
+
+
+#project-list h3,
+#press-list h3 { 
+	margin-top:0;
+	margin-bottom:5px;
+}
+
+
+#project-list,
+#press-list {
+	text-align:center;
+}
+
+.project-icon
+{
+	margin-bottom:10px;
+}
+
+/***************************/
+/*  press page */
+/***************************/
+
+.press-item-wrapper {
+
+}
+
+.press-item {
+	background-color: #eee;
+	/*border: 2px solid black;*/
+	margin:10px 0 20px 0;
+	padding:0;
+}
+
+.press-icon {
+	margin-bottom:10px;
+	padding:20px 0 20px 0;
+	background-color:black;
+
+}
+
+.press-icon img {
+	width:66%;
+	max-width:200px;
+}
+
+.press-text {
+	padding:0 10px 10px 10px;
+}
+
+.press-release-row {
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+.press-release-row.even {
+
+}
+
+.press-release-row.odd {
+	background-color:#eee;
+}
+
+.press-release-row-icon {
+	margin-bottom:10px;
+}
+
+.press-release-row-icon img{
+	width:100px;
+}
+
+.press-release-row-text {
+	text-align:justify;
+}
+

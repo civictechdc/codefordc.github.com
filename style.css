@@ -16,6 +16,15 @@ body {
 	color:white;
 }
 
+.blackish {
+	background:#222;
+	color:white;
+}
+
+.light-grey {
+	background:#eee;
+}
+
 h1.h0 {
 	font-size:59px;
 	font-weight:bold;	
@@ -57,16 +66,42 @@ hr.footer-divider {
 }
 
 
+.heading-stripe {
+	margin-top:5px;
+	padding-left:0;
+	padding-right:0;
+	padding-bottom:10px;
+}
+
+.heading-stripe h2 {
+	padding-top:5px;
+	padding-bottom:5px;
+}
+
+.announcement-icon {
+	float:left;
+	margin-top:15px;
+	margin-left:20px;
+	margin-right:20px;
+	margin-bottom:20px;
+}
+
+.announcement-icon img{
+	width: 154px;
+
+}
+.announcement-content {
+	text-align:justify;
+	margin-top:20px;
+	margin-left:20px;
+	margin-right:20px;
+	margin-bottom:20px;
+}
+
 .stuff-weve-made-stripe {
 	margin-top:60px;
 }
 
-.stuff-weve-made-stripe h2 {
-	margin-bottom:20px	;
-	margin-top:5px;
-	padding-top:5px;
-	padding-bottom:5px;
-}
 
 .project-stripe-odd,
 .project-stripe-even {

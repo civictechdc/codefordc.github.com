@@ -67,7 +67,7 @@
 	</script>
     <script type="text/javascript">
 		$(document).ready(function(){
-			$.get('https://docs.google.com/spreadsheet/pub?key=0AmPkMT5S2NcVdHFIYms5RDl6Tnc0ZmNBaVlGQWJoS1E&output=csv', function(data){
+			$.get('/data/projects.csv', function(data){
 				var content = $.csv.toArrays(data);
 				content.splice(0,1); //get rid of column headers
 				var html = '';

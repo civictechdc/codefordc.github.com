@@ -94,7 +94,7 @@
 	<script src="assets/js/jquery.csv-0.71.min.js"></script>
         <script type="text/javascript">
       $(document).ready(function(){
-			$.get('https://docs.google.com/spreadsheet/pub?key=0AmPkMT5S2NcVdEhfd1JFaTRsemo2RWR6NUdOOS1mdlE&output=csv', function(data){
+			$.get('/data/press.csv', function(data){
 				var content = $.csv.toArrays(data);
 				content.splice(0,1); //get rid of column headers
 				var html = '<div class="col-lg-12"><h3>Past Coverage</h3><p class="lead">Sightings of Code for DC in the press and elsewhere online.</p></div>';

@@ -45,6 +45,7 @@
 
 
 		<div id="project-list"></div>
+		<div id="project-lust"></div>
 
     <div class="col-lg-1"></div>
 
@@ -67,6 +68,7 @@
 	</script>
     <script type="text/javascript">
 		$(document).ready(function(){
+
 			$.get('/data/projects.csv', function(data){
 				var content = $.csv.toArrays(data);
 				content.splice(0,1); //get rid of column headers
@@ -74,6 +76,7 @@
 				var pname = '';
 				var pcontact = '';
 				var pdesc = '';
+				var pgithub = '';
 				var pneeds = '';
 				var plink = '';
 				var pstatus = '';
@@ -82,6 +85,7 @@
 				for(var row in content){
 					pstatus = content[row][7];
 					if(pstatus != "inactive"){
+						projectId = "project" + row;
 						pname = content[row][0];
 						if(pname == ""){
 								pname = "Unnamed project"
@@ -106,7 +110,7 @@
 						}
 						
 						purl_info = content[row][8];
-						purl_code = content[row][9];
+						pgithub = content[row][9];
 						purl_home = content[row][10];
 																	
 						if(!row_switch){
@@ -115,8 +119,9 @@
 
 						html += '<div class="col-lg-2 project-icon"><img src="images/launch.png" width="100px"/></div>';
 					
-						html += '<div class="col-lg-4 project-text">	<h3>' + pname + '</h3>';
-						//html += 'Project Status:' + pstatus + '<br/>';
+						html += '<div class="col-lg-4 project-text" id="' + projectId + '">	<h3>' + pname + '</h3>';
+						html += "<p class='project-content'>"
+
 						if(pdesc != ""){html += pdesc + '<br/>';}
 						html += 'Contact: ' + pcontact;
 						if(ptwitter != ""){
@@ -126,11 +131,20 @@
 						
 						if(pneeds != ""){html += 'Needs: '+ pneeds + '<br/>';}
 						if(purl_info != ""){html += '<a href="'+ purl_info +'" target="_blank">Read more about this project</a><br/>';}
-						if(purl_code != ""){html += '<a href="'+ purl_code +'" target="_blank">Browse the code</a><br/>';}
-						if(purl_home != ""){html += '<a href="'+ purl_home +'" target="_blank">Check out the website</a>';}
 						
 
-						html += '</div>';
+						if(pgithub != ""){
+							html += '<a href="'+ pgithub +'" target="_blank">Browse the code</a><br/>';
+							
+							getGitContent(projectId,pgithub);
+						}
+						
+
+
+						if(purl_home != "" && purl_home.indexOf("www.codefordc.org") == -1 ){html += '<a href="'+ purl_home +'" target="_blank">Check out the website</a>';}
+						
+
+						html += '</p></div>';
 						
 						if(row_switch){
 							html +=	'</div>';
@@ -142,6 +156,24 @@
 			}
 		);
       });
+
+
+
+	function getGitContent(project, url){
+		var projectElement = "#" + project + " .project-content";
+
+		var chunked_url = url.split("/");
+		git_user = chunked_url[3];
+		git_repo = chunked_url[4];
+
+		$.get('https://api.github.com/repos/' + git_user + '/' + git_repo + '/contributors').done(function(data){
+			var val = '';
+			$.each( data, function(index, value	){
+				
+				$(projectElement).before("<img src='" + value.avatar_url + "' class='project-git-human' /> ");
+			});
+		});
+	}
     </script>
   </body>
 </html>

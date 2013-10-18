@@ -127,6 +127,12 @@ hr.footer-divider {
 	margin-top:0;
 }
 
+img.project-git-human {
+	width: 50px;
+	margin-top:5px;
+	margin-bottom: 5px;
+	border: 2px solid black;
+}
 
 /***************************/
 /*  project page */

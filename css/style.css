@@ -49,7 +49,7 @@ hr.footer-divider {
 
 
 .hero {
-	background: url('images/bohemian-caverns.jpg');
+	background: url('/images/bohemian-caverns.jpg');
 	background-size: cover;
 	min-height: 300px;
 	min-width: 400px;

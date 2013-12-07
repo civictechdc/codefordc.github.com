@@ -1,0 +1,23 @@
+---
+layout: default
+title:  "Past Events"
+---
+
+<div class="container">
+<div class="col-lg-1"></div>
+<div class="col-lg-10 starter-template">
+    <div class="col-lg-12">
+		<h1>Past Events</h1>
+    	<p class="lead">Past and upcoming Code for DC events.  Come hang out with us!</p>
+    </div>
+
+	{% for post in site.posts %}
+		{% if post.categories contains 'events' %}
+    		<div class="col-lg-12">
+				<a href="{{ post.url }}">{{ post.title }} - {{post.categories}} - {{post.tags}}</a>
+    		</div>
+ 		{% endif %}
+    {% endfor %}
+</div>
+<div class="col-lg-1"></div>
+</div>

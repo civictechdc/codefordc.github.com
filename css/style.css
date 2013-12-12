@@ -117,9 +117,10 @@ hr.footer-divider {
 	width:100%;
 	
 }
+
 .project-stripe-txt {
-		background-color:white;
-		margin-bottom:40px;
+	background-color:white;
+	margin-bottom:40px;
 }
 
 .project-stripe-txt h2 {
@@ -217,4 +218,89 @@ img.project-git-human {
 .press-release-row-text {
 	text-align:justify;
 }
+
+/***************************/
+/*  blog post */
+/***************************/
+
+.post {
+	text-align: left;
+}
+
+.blog-avatar {
+	float:left;
+	max-width: 150px;
+	margin: 4px 15px 10px 0;
+	background: #000	;
+	padding:0px;
+	border: solid black 0px;
+}
+
+.blog-avatar .blog-avatar-img {
+	width: 150px;
+	border: 4px solid black;
+}
+
+.blog-avatar-content {
+	padding: 5px;
+	text-align: center;
+	color: #CCC;
+	font-size:90%;
+	font-weight:bold;
+}
+
+.post-footer {
+	margin-top: 20px;
+}
+
+.post-footer-previous {
+	float:left;
+}
+
+.post-footer-next {
+	float:right;
+}
+
+.blog-img-wrapper {
+	float:right;
+	padding:10px;
+	border:2px solid black;
+	background:#999;
+	margin: 10px 0 10px 10px;
+}
+
+.blog-img-wrapper img {
+	width: 200px;
+}
+/***************************/
+/*  blog post stub */
+/***************************/
+
+.post.stub h2 {
+	text-align:center;
+}
+
+.post.stub h2 a {
+	color: black;
+}
+
+.post.stub h2 a:hover {
+	text-decoration:none;
+	color: #999;
+}
+
+
+.post.stub .blog-avatar {
+	max-width: 100px;
+}
+
+.post.stub .blog-avatar .blog-avatar-img {
+	border: 4px solid black;
+	width: 100px;
+}
+
+.post.stub .blog-avatar-content {
+	font-weight: normal;
+}
+
 

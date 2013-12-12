@@ -1,0 +1,47 @@
+---
+layout: default
+title:  "The #CodeForDC Blog"
+---
+
+<div class="container">
+<div class="col-lg-1"></div>
+<div class="col-lg-10 starter-template">
+    <div class="col-lg-12">
+		<h1>{{ page.title }}</h1>
+        <p class="lead">Logfiles with bylines.</p>
+    </div>
+
+	{% for post in site.posts %}
+		{% if post.categories contains 'blog' %}
+            <div class="post stub">
+                <div class="col-lg-12">
+                    <hr/>
+                    <h2><a href="{{post.url}}">{{ post.title }}</a></h2>
+                </div>
+                <div class="col-lg-12">
+
+                </div>
+                <div class="col-lg-12">
+                    <div class="blog-avatar">
+                        {% if post.post_gravatar %} 
+                            <img src="http://www.gravatar.com/avatar/{{ post.post_gravatar }}?s=100" class="blog-avatar-img" />
+                        {% elsif post.post_avatar %}
+                            <img src="/images/blog/avatars/{{ post.post_avatar }}" class="blog-avatar-img" />
+                        {% else %}
+                            <img src="/images/blog/avatars/default.png" class="blog-avatar-img" />
+                        {% endif %}
+                        <div class="blog-avatar-content">
+                            {{ post.post_author }}
+                            <br/>
+                            {{ post.date | date_to_string }}
+                        </div>
+                    </div>
+                    {{ post.content | truncatewords: 150 }}
+                      <a href="{{post.url}}">Read More »</a>
+                </div>
+            </div>
+ 		{% endif %}
+    {% endfor %}
+</div>
+<div class="col-lg-1"></div>
+</div>

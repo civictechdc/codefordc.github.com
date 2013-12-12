@@ -1,9 +1,53 @@
 ---
 layout: default
 ---
-<h2>{{ page.title }}</h2>
-<p class="meta">{{ page.date | date_to_string }}</p>
 
-<div class="post">
-{{ content }}
+<div class="col-lg-12">
+	<div class="col-lg-1">
+	</div>
+	<div class="col-lg-10 starter-template">
+		<div class="post">
+			<div class="col-lg-12">
+				<h2>{{ page.title }}</h2>
+				<hr/>
+			</div>
+			<div class="col-lg-12">
+				<div class="blog-avatar">
+					{% if page.post_gravatar %}
+						<img src="http://www.gravatar.com/avatar/{{ page.post_gravatar }}?s=150" class="blog-avatar-img" />
+					{% elsif page.post_avatar %}
+						<img src="/images/blog/avatars/{{ page.post_avatar }}" class="blog-avatar-img" />
+					{% else %}
+						<img src="/images/blog/avatars/default.png" class="blog-avatar-img" />
+					{% endif %}
+					<div class="blog-avatar-content">
+						by {{ page.post_author }}
+						{% if page.post_twitter %}
+							<br/>
+							<a href="http://www.twitter.com/{{ page.post_twitter }}">{{ page.post_twitter }}</a>
+						{% endif %}
+						<br/>
+						{{ page.date | date_to_string }}
+					</div>
+				</div>
+				{{ content }}
+			</div>
+			<div class="col-lg-12 post-footer">
+				<hr/>
+				<div class="post-footer-previous">
+					{% if page.previous.url %}
+						<a href="{{page.previous.url}}">Previous Post</a>
+					{% endif %}
+				</div>
+				<div class="post-footer-next">
+					{% if page.next.url %}
+						<a href="{{page.next.url}}">Next Post</a>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-1">
+	</div>
 </div>
+{% include _footer.html %}

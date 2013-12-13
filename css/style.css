@@ -223,6 +223,19 @@ img.project-git-human {
 /*  blog post */
 /***************************/
 
+.blog-hero {
+	background: url('/images/fiction-parade - posted-bills.jpg');
+	background-size: cover;
+	min-height: 300px;
+	min-width: 400px;
+	padding:0;
+}
+
+.blog-hero .hero-text {
+	font-size:120px;
+	margin-top:55px;
+}
+
 .post {
 	text-align: left;
 }
@@ -275,6 +288,7 @@ img.project-git-human {
 /***************************/
 /*  blog post stub */
 /***************************/
+
 
 .post.stub h2 {
 	text-align:center;

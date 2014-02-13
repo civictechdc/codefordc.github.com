@@ -27,9 +27,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.6587868"
-     inkscape:cx="205.62958"
-     inkscape:cy="154.72585"
+     inkscape:zoom="2.3458788"
+     inkscape:cx="214.10102"
+     inkscape:cy="154.44257"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -46,7 +46,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -55,46 +55,47 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(0,-752.36218)">
-    <text
-       xml:space="preserve"
+    <g
+       transform="scale(0.82168542,1.2170108)"
        style="font-size:241.25592041px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="4.8403587"
-       y="817.47382"
-       id="text2985"
-       sodipodi:linespacing="125%"
-       transform="scale(0.82168542,1.2170108)"><tspan
-         sodipodi:role="line"
-         id="tspan2987"
-         x="4.8403587"
-         y="817.47382"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#399fd3;fill-opacity:1;font-family:Gentium;-inkscape-font-specification:Gentium"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#399fd3;fill-opacity:1;font-family:URW Gothic L;-inkscape-font-specification:URW Gothic L Semi-Bold"
-           id="tspan2989">&lt;   </tspan><tspan
-           style="font-style:normal;font-weight:bold;letter-spacing:-26.60190201px"
-           id="tspan3856">/</tspan><tspan
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;letter-spacing:-26.60190201px;word-spacing:0px;fill:#399fd3;fill-opacity:1;font-family:URW Gothic L;-inkscape-font-specification:URW Gothic L Semi-Bold Oblique"
-           id="tspan3007">&gt;</tspan></tspan></text>
+       id="text2985">
+      <path
+         d="m 139.46116,677.06287 -122.799261,56.16721 0,20.35634 115.462511,54.28258 7.33675,-26.34232 -82.268267,-38.35969 82.268267,-37.87718 0,-26.58357"
+         style="fill:#399fd3;font-family:URW Gothic L;-inkscape-font-specification:URW Gothic L Semi-Bold"
+         id="path3003"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccccccc" />
+      <path
+         d="m 376.5017,850.92923 c -0.78536,0.5497 -1.8063,1.09944 -3.06281,1.64921 -1.25657,0.62823 -2.59164,1.17797 -4.00523,1.64921 -1.41363,0.5497 -2.82723,1.06017 -4.24083,1.53141 -1.33508,0.47116 -2.47382,0.86383 -3.41622,1.178 l -4.35863,-2.94501 82.57832,-219.22719 c 2.12033,-1.33489 4.47634,-2.47363 7.06805,-3.41622 2.59152,-0.94222 5.02606,-1.72755 7.30365,-2.35601 l 4.35862,2.59161 -82.22492,219.34499"
+         style="letter-spacing:-26.60190200999999988px;fill:#399fd3;fill-opacity:1"
+         id="path3005" />
+      <path
+         d="m 449.71285,808.52166 122.79926,-54.28258 0,-21.009 -122.79926,-54.52384 0,26.58357 82.50952,38.35969 -82.50952,37.87718 -7.33675,26.99498"
+         style="letter-spacing:-26.60190201px;word-spacing:0px;fill:#399fd3;font-family:URW Gothic L;-inkscape-font-specification:URW Gothic L Semi-Bold Oblique"
+         id="path3007"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccccccc" />
+    </g>
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:none"
        id="rect4007-2"
        width="33.311749"
-       height="35.357143"
+       height="37.701683"
        x="304.80252"
-       y="949.85815" />
-    <rect
+       y="948.79248" />
+    <path
        style="fill:#cf1b41;fill-opacity:1;stroke:none"
+       d="m 126.18839,951.24725 232.70984,0 -6.0285,32.77539 -232.70984,0 z"
        id="rect3789"
-       width="232.70984"
-       height="32.775391"
-       x="126.18839"
-       y="951.24725" />
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:none"
        id="rect4007"
        width="33.311749"
-       height="35.357143"
+       height="37.701683"
        x="314.89215"
-       y="901.64386" />
+       y="900.36505" />
     <rect
        style="fill:#cf1b41;fill-opacity:1;stroke:none"
        id="rect3789-4"

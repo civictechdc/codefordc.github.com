@@ -15,6 +15,12 @@
 <script>
     //highlights current page in sitewide nav (_navbar.html)
     $(document).ready(function(){
+      $('.navbar-brand img').hover(function() {
+        this.setAttribute('src', "/assets/logo/cfdc_logo_30px.png")
+      }, function() {
+        this.setAttribute('src', "/assets/logo/cfdc_logo_30px_inverse.png")
+      })
+
     	$("#navbar-nav a").each(function() {
         if (this.href == window.location.href || 
             this.href + "index.html" == window.location.href || 

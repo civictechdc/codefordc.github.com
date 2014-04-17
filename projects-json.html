@@ -19,9 +19,7 @@ title: Projects
 <script src="assets/js/jquery.csv-0.71.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
-	$.get('/data/projects.csv', function(data){
-		var content = $.csv.toArrays(data);
-		content.splice(0,1); //get rid of column headers
+	$.getJSON('/civic.json', function(content){
 		var html = '';
 		var pname = '';
 		var pcontact = '';
@@ -33,38 +31,52 @@ $(document).ready(function(){
 		var pstatus = '';
 		var row_switch = false;
 		
-		for(var row in content){
-			pstatus = content[row][7];
-			pdisplay = content[row][15]
-			if(pdisplay != 'No' && pdisplay != 'no' && pstatus != "inactive" && pstatus !="not started"){
-				projectId = "project" + row;
-				pname = content[row][0];
+		$.each(content, function(i, json){
+			//pstatus = content[row][7];
+			//pdisplay = content[row][15]
+			//if(pdisplay != 'No' && pdisplay != 'no' && pstatus != "inactive" && pstatus !="not started"){
+			if(json["c4dc"].display != 'No' && 
+					json["c4dc"].display != 'no'  && 
+					json["status"] != "inactive" &&
+					json["status"] !="not started") {
+				projectId = "project" + i;
+				//pname = content[row][0];
+				pname = json["c4dc"].name;
+				
 				if(pname == ""){
-						pname = "Unnamed project"
+						pname = "Unnamed project";
 				}
 			
-				pdesc = content[row][1];
+				//pdesc = content[row][1];
+				pdesc = json["c4dc"].description;
 
-				pcontact = content[row][2];
+				//pcontact = content[row][2];
+				pcontact = json["c4dc"]["contact name"];
 				if(pcontact == ""){ 
 					pcontact == "Matt Bailey";
 				}
-				ptwitter = content[row][3];
+				//ptwitter = content[row][3];
+				ptwitter = json["c4dc"]["contact twitter"];
 				if(ptwitter == "" && pcontact == "Matt Bailey"){
 					ptwitter == "@mattbailey0";
 				}
 				
-				pemail = content[row][4];
-			
-				pneeds = content[row][5];
+				//pemail = content[row][4];
+				pemail = json["c4dc"]["contact email"];
+
+				//pneeds = content[row][5];
+				pneeds = json["needs"][0];
 				if(pstatus == "not started"){
 					pneeds = "This project hasn't started! Get in touch to kick it off."
 				}
 				
-				purl_info = content[row][8];
-				pgithub = content[row][9];
-				purl_home = content[row][10];
-															
+				//purl_info = content[row][8];
+				//pgithub = content[row][9];
+				//purl_home = content[row][10];
+				purl_info = json["c4dc"]["more info link"];
+				pgithub = json["c4dc"]["github link"];
+				purl_home = json["c4dc"]["website link"];	
+
 				if(!row_switch){
 					html += 	'<div class="col-lg-12">';
 				}
@@ -103,7 +115,7 @@ $(document).ready(function(){
 				}
 				row_switch = !row_switch;
 			}
-		}
+		});
 		$("#project-list").html(html);
 	});
  });

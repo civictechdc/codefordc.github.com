@@ -1,0 +1,1133 @@
+[
+    {
+        "status": "Alpha", 
+        "needs": [
+            "stats; data whiz"
+        ], 
+        "bornAt": "Code for DC", 
+        "c4dc": {
+            "community partner": "", 
+            "name": "3-1-1 Kaggle competition", 
+            "contact twitter": "@justgrimes", 
+            "contact email": "jgrimes@codeforamerica.org", 
+            "notes": "", 
+            "more info link": "http://eaves.ca/2013/09/11/announcing-the-311-data-challenge-soon-to-be-launched-on-kaggle/?utm_content=buffer97e24&utm_source=buffer&utm_medium=twitter&utm_campaign=Buffer", 
+            "gov partner": "", 
+            "github link": "", 
+            "data link": "", 
+            "health": "not started", 
+            "has data?": "", 
+            "contact name": "Justin Grimes", 
+            "display?": "", 
+            "website link": "", 
+            "description": "Upcoming 3-1-1 kaggle competition see open 311 w/ philip"
+        }, 
+        "political entity": "", 
+        "thumnailUrl": "", 
+        "type": "", 
+        "categories": [], 
+        "geography": "Washington, DC"
+    }, 
+    {
+        "status": "Alpha", 
+        "needs": [
+            "coders!"
+        ], 
+        "bornAt": "Code for DC", 
+        "c4dc": {
+            "community partner": "", 
+            "name": "A better Alert DC", 
+            "contact twitter": "", 
+            "contact email": "", 
+            "notes": "", 
+            "more info link": "https://textalert.ema.dc.gov/latest.php", 
+            "gov partner": "", 
+            "github link": "", 
+            "data link": "", 
+            "health": "not started", 
+            "has data?": "", 
+            "contact name": "", 
+            "display?": "Yes", 
+            "website link": "", 
+            "description": "Better interface/frontend for Alert DC system; OR Scrape/archive data for Alert DC"
+        }, 
+        "political entity": "", 
+        "thumnailUrl": "", 
+        "type": "", 
+        "categories": [], 
+        "geography": "Washington, DC"
+    }, 
+    {
+        "status": "Alpha", 
+        "needs": [
+            "Ruby, Salesforce, Passionate People"
+        ], 
+        "bornAt": "Code for DC", 
+        "c4dc": {
+            "community partner": "Bread for City", 
+            "name": "Affordable Housing", 
+            "contact twitter": "@mlouie", 
+            "contact email": "", 
+            "notes": "", 
+            "more info link": "https://hackpad.com/Code-for-DC-District-Housing-KlQ2UbX0Imc", 
+            "gov partner": "", 
+            "github link": "https://github.com/mlouie/dchousing-apps", 
+            "data link": "", 
+            "health": "healthy", 
+            "has data?": "No", 
+            "contact name": "Marcus Louie", 
+            "display?": "", 
+            "website link": "", 
+            "description": "Automate the affordable housing application process in DC by creating a master application form that fills out all applications and paperwork."
+        }, 
+        "political entity": "", 
+        "thumnailUrl": "", 
+        "type": "", 
+        "categories": [], 
+        "geography": "Washington, DC"
+    }, 
+    {
+        "status": "Alpha", 
+        "needs": [
+            ""
+        ], 
+        "bornAt": "Code for DC", 
+        "c4dc": {
+            "community partner": "", 
+            "name": "AirBnB for PMFs", 
+            "contact twitter": "@justgrimes", 
+            "contact email": "jgrimes@codeforamerica.org", 
+            "notes": "", 
+            "more info link": "", 
+            "gov partner": "", 
+            "github link": "", 
+            "data link": "", 
+            "health": "inactive", 
+            "has data?": "", 
+            "contact name": "Justin Grimes", 
+            "display?": "", 
+            "website link": "", 
+            "description": ""
+        }, 
+        "political entity": "", 
+        "thumnailUrl": "", 
+        "type": "", 
+        "categories": [], 
+        "geography": "Washington, DC"
+    }, 
+    {
+        "status": "Alpha", 
+        "needs": [
+            "Help forging partnerships with ANC commissioners"
+        ], 
+        "bornAt": "Code for DC", 
+        "c4dc": {
+            "community partner": "", 
+            "name": "ANC Finder", 
+            "contact twitter": "@stvnrlly", 
+            "contact email": "", 
+            "notes": "", 
+            "more info link": "https://hackpad.com/ANC-Brigade-Hackpad-NZyVLRrN8tX", 
+            "gov partner": "Some ANCs", 
+            "github link": "https://github.com/codefordc/ancbrigade", 
+            "data link": "", 
+            "health": "healthy", 
+            "has data?": "Yes", 
+            "contact name": "Steven Reilly", 
+            "display?": "", 
+            "website link": "http://ancfinder.org/", 
+            "description": "A website to help explain the ANC system and provide information a ANC meetings, agendas, etc."
+        }, 
+        "political entity": "", 
+        "thumnailUrl": "", 
+        "type": "", 
+        "categories": [], 
+        "geography": "Washington, DC"
+    }, 
+    {
+        "status": "Alpha", 
+        "needs": [
+            "Data person, donations to cover costs for document processing"
+        ], 
+        "bornAt": "Code for DC", 
+        "c4dc": {
+            "community partner": "", 
+            "name": "ANC Financial Materials", 
+            "contact twitter": "@mattbailey0", 
+            "contact email": "mbailey@codeforamerica.org", 
+            "notes": "", 
+            "more info link": "", 
+            "gov partner": "", 
+            "github link": "", 
+            "data link": "", 
+            "health": "inactive", 
+            "has data?": "Yes", 
+            "contact name": "Matt Bailey", 
+            "display?": "", 
+            "website link": "", 
+            "description": "Organize and publish ANC financial materials obtained by Luke Rosniak"
+        }, 
+        "political entity": "", 
+        "thumnailUrl": "", 
+        "type": "", 
+        "categories": [], 
+        "geography": "Washington, DC"
+    }, 
+    {
+        "status": "Alpha", 
+        "needs": [
+            ""
+        ], 
+        "bornAt": "Code for DC", 
+        "c4dc": {
+            "community partner": "", 
+            "name": "ANC Transparency Legislation", 
+            "contact twitter": "@TreeMartschink", 
+            "contact email": "", 
+            "notes": "", 
+            "more info link": "", 
+            "gov partner": "", 
+            "github link": "", 
+            "data link": "", 
+            "health": "inactive", 
+            "has data?": "--", 
+            "contact name": "Tree Martschink", 
+            "display?": "", 
+            "website link": "", 
+            "description": "Improve and promote legislation for ANC transparency"
+        }, 
+        "political entity": "", 
+        "thumnailUrl": "", 
+        "type": "", 
+        "categories": [], 
+        "geography": "Washington, DC"
+    }, 
+    {
+        "status": "Alpha", 
+        "needs": [
+            ""
+        ], 
+        "bornAt": "Code for DC", 
+        "c4dc": {
+            "community partner": "", 
+            "name": "Archive the Mayor's Schedule", 
+            "contact twitter": "@planarrowspace", 
+            "contact email": "", 
+            "notes": "", 
+            "more info link": "", 
+            "gov partner": "", 
+            "github link": "https://github.com/ajschumacher/dc_mayor_schedule", 
+            "data link": "", 
+            "health": "healthy", 
+            "has data?": "--", 
+            "contact name": "Aaron Schumacher", 
+            "display?": "", 
+            "website link": "", 
+            "description": "The Mayor's schedule is posted but not archived; this tool collects it nightly"
+        }, 
+        "political entity": "", 
+        "thumnailUrl": "", 
+        "type": "", 
+        "categories": [], 
+        "geography": "Washington, DC"
+    }, 
+    {
+        "status": "Alpha", 
+        "needs": [
+            "Hardware hackers (arduino, raspberry pi, etc)"
+        ], 
+        "bornAt": "Code for DC", 
+        "c4dc": {
+            "community partner": "WABA", 
+            "name": "Bicycle Traffic Counter", 
+            "contact twitter": "@justgrimes", 
+            "contact email": "", 
+            "notes": "", 
+            "more info link": "", 
+            "gov partner": "", 
+            "github link": "", 
+            "data link": "", 
+            "health": "not started", 
+            "has data?": "No", 
+            "contact name": "Justin Grimes", 
+            "display?": "Yes", 
+            "website link": "", 
+            "description": "Build open source traffic counter similar to http://waycount.com/"
+        }, 
+        "political entity": "", 
+        "thumnailUrl": "", 
+        "type": "", 
+        "categories": [], 
+        "geography": "Washington, DC"
+    }, 
+    {
+        "status": "Alpha", 
+        "needs": [
+            "Web developer (D3, JS, HTML, Ruby, Python)"
+        ], 
+        "bornAt": "Code for DC", 
+        "c4dc": {
+            "community partner": "", 
+            "name": "Budget Visualizations", 
+            "contact twitter": "@anpe", 
+            "contact email": "anders.pedersen@okfn.org", 
+            "notes": "", 
+            "more info link": "http://greatergreaterwashington.org/post/17987/visualize-the-dc-budget/", 
+            "gov partner": "", 
+            "github link": "", 
+            "data link": "", 
+            "health": "in progress", 
+            "has data?": "Yes", 
+            "contact name": "Anders Pederson", 
+            "display?": "", 
+            "website link": "", 
+            "description": "Make tree map visualizations of DC budget data using the OpenSpending API and forkable code from other municipal budget treemaps."
+        }, 
+        "political entity": "", 
+        "thumnailUrl": "", 
+        "type": "", 
+        "categories": [], 
+        "geography": "Washington, DC"
+    }, 
+    {
+        "status": "Alpha", 
+        "needs": [
+            ""
+        ], 
+        "bornAt": "Code for DC", 
+        "c4dc": {
+            "community partner": "", 
+            "name": "CaBi Odds (Capital Bikeshare station odds)", 
+            "contact twitter": "@cmgiven", 
+            "contact email": "", 
+            "notes": "", 
+            "more info link": "", 
+            "gov partner": "", 
+            "github link": "https://github.com/cmgiven/bikeshare-odds", 
+            "data link": "", 
+            "health": "healthy", 
+            "has data?": "Yes", 
+            "contact name": "Chris Given", 
+            "display?": "", 
+            "website link": "http://bit.ly/cabiodds", 
+            "description": "Bikeshare Odds will tell you what the chances are that your neighborhood bikeshare station will have a bike at a given time."
+        }, 
+        "political entity": "", 
+        "thumnailUrl": "", 
+        "type": "", 
+        "categories": [], 
+        "geography": "Washington, DC"
+    }, 
+    {
+        "status": "Alpha", 
+        "needs": [
+            "Help with research"
+        ], 
+        "bornAt": "Code for DC", 
+        "c4dc": {
+            "community partner": "", 
+            "name": "Civic Hacking Handbook", 
+            "contact twitter": "@justgrimes", 
+            "contact email": "jgrimes@codeforamerica.org", 
+            "notes": "", 
+            "more info link": "", 
+            "gov partner": "", 
+            "github link": "", 
+            "data link": "", 
+            "health": "inactive", 
+            "has data?": "--", 
+            "contact name": "Justin Grimes", 
+            "display?": "No", 
+            "website link": "", 
+            "description": "Develop and collocate introductory materials for civic hacking"
+        }, 
+        "political entity": "", 
+        "thumnailUrl": "", 
+        "type": "", 
+        "categories": [], 
+        "geography": "Washington, DC"
+    }, 
+    {
+        "status": "Alpha", 
+        "needs": [
+            ""
+        ], 
+        "bornAt": "Code for DC", 
+        "c4dc": {
+            "community partner": "", 
+            "name": "Code for DC Branding, Marketing, Content", 
+            "contact twitter": "@LaurieValora112", 
+            "contact email": "", 
+            "notes": "", 
+            "more info link": "", 
+            "gov partner": "", 
+            "github link": "", 
+            "data link": "", 
+            "health": "healthy", 
+            "has data?": "--", 
+            "contact name": "Laurie Valora", 
+            "display?": "No", 
+            "website link": "", 
+            "description": "Helping Code for DC stay presentable and get the word out."
+        }, 
+        "political entity": "", 
+        "thumnailUrl": "", 
+        "type": "", 
+        "categories": [], 
+        "geography": "Washington, DC"
+    }, 
+    {
+        "status": "Alpha", 
+        "needs": [
+            "Web developer, UI/UX"
+        ], 
+        "bornAt": "Code for DC", 
+        "c4dc": {
+            "community partner": "--", 
+            "name": "Code for DC Website", 
+            "contact twitter": "@mattbailey0", 
+            "contact email": "mbailey@codeforamerica.org", 
+            "notes": "", 
+            "more info link": "", 
+            "gov partner": "--", 
+            "github link": "https://github.com/codefordc/codefordc-2.0", 
+            "data link": "", 
+            "health": "healthy", 
+            "has data?": "--", 
+            "contact name": "Matt Bailey", 
+            "display?": "No", 
+            "website link": "http://www.codefordc.org/", 
+            "description": "This website! We're making constant improvements."
+        }, 
+        "political entity": "", 
+        "thumnailUrl": "", 
+        "type": "", 
+        "categories": [], 
+        "geography": "Washington, DC"
+    }, 
+    {
+        "status": "Alpha", 
+        "needs": [
+            ""
+        ], 
+        "bornAt": "Code for DC", 
+        "c4dc": {
+            "community partner": "", 
+            "name": "Connect DC", 
+            "contact twitter": "@Mr_Squires", 
+            "contact email": "", 
+            "notes": "", 
+            "more info link": "https://hackpad.com/Connect.DC-Technology-User-Profile-OOHS23LxsNL", 
+            "gov partner": "OCTO; Delano Squires", 
+            "github link": "", 
+            "data link": "", 
+            "health": "inactive", 
+            "has data?": "No", 
+            "contact name": "Delano Squires", 
+            "display?": "", 
+            "website link": "", 
+            "description": "Addressing digitial divide and digital inclusion issues in DC; survey/data collection; map existing resources; education/outreach"
+        }, 
+        "political entity": "", 
+        "thumnailUrl": "", 
+        "type": "", 
+        "categories": [], 
+        "geography": "Washington, DC"
+    }, 
+    {
+        "status": "Alpha", 
+        "needs": [
+            "Analyst"
+        ], 
+        "bornAt": "Code for DC", 
+        "c4dc": {
+            "community partner": "", 
+            "name": "DC & Open 311", 
+            "contact twitter": "@justgrimes", 
+            "contact email": "", 
+            "notes": "", 
+            "more info link": "http://dc311.s3-website-us-east-1.amazonaws.com/", 
+            "gov partner": "", 
+            "github link": "", 
+            "data link": "", 
+            "health": "healthy", 
+            "has data?": "Yes", 
+            "contact name": "Justin Grimes", 
+            "display?": "", 
+            "website link": "", 
+            "description": "Evaluate the performance of the various ticketing issues in DC's 311 system"
+        }, 
+        "political entity": "", 
+        "thumnailUrl": "", 
+        "type": "", 
+        "categories": [], 
+        "geography": "Washington, DC"
+    }, 
+    {
+        "status": "Alpha", 
+        "needs": [
+            "Data modelling, ontology/taxonomy folks"
+        ], 
+        "bornAt": "Code for DC", 
+        "c4dc": {
+            "community partner": "Bread/Urban Institute", 
+            "name": "DC Community Resource Data", 
+            "contact twitter": "@greggish", 
+            "contact email": "", 
+            "notes": "", 
+            "more info link": "https://hackpad.com/Open211-Data-Commons-Project-yMfDTnFwo6g", 
+            "gov partner": "HHS", 
+            "github link": "https://github.com/codefordc/open211", 
+            "data link": "", 
+            "health": "healthy", 
+            "has data?": "Yes", 
+            "contact name": "Greg Bloom", 
+            "display?": "", 
+            "website link": "http://communityresourcedata.codefordc.org/", 
+            "description": "Building a reliable & open directory of available human/social services"
+        }, 
+        "political entity": "", 
+        "thumnailUrl": "", 
+        "type": "", 
+        "categories": [], 
+        "geography": "Washington, DC"
+    }, 
+    {
+        "status": "Alpha", 
+        "needs": [
+            "Web developer, legal counsel"
+        ], 
+        "bornAt": "Code for DC", 
+        "c4dc": {
+            "community partner": "", 
+            "name": "DC Legal Code", 
+            "contact twitter": "@tmcw", 
+            "contact email": "", 
+            "notes": "", 
+            "more info link": "", 
+            "gov partner": "DC Council; David Zvenyach", 
+            "github link": "https://github.com/openlawdc/dccode", 
+            "data link": "", 
+            "health": "healthy", 
+            "has data?": "Yes", 
+            "contact name": "Tom MacWright", 
+            "display?": "", 
+            "website link": "http://dccode.org/", 
+            "description": "Code browser for DC legal code; other side projects using DC legal code corpus"
+        }, 
+        "political entity": "", 
+        "thumnailUrl": "", 
+        "type": "", 
+        "categories": [], 
+        "geography": "Washington, DC"
+    }, 
+    {
+        "status": "Alpha", 
+        "needs": [
+            ""
+        ], 
+        "bornAt": "Code for DC", 
+        "c4dc": {
+            "community partner": "", 
+            "name": "DC Metro Metrics", 
+            "contact twitter": "@lmendy7", 
+            "contact email": "", 
+            "notes": "", 
+            "more info link": "", 
+            "gov partner": "", 
+            "github link": "https://github.com/LeeMendelowitz/DCMetroMetrics", 
+            "data link": "", 
+            "health": "healthy", 
+            "has data?": "Yes", 
+            "contact name": "Lee Mendelowitz", 
+            "display?": "", 
+            "website link": "http://www.dcmetrometrics.com/", 
+            "description": "DC Metro Metrics is a project dedicated to collecting and sharing publicly available data related to the DC Metrorail system."
+        }, 
+        "political entity": "", 
+        "thumnailUrl": "", 
+        "type": "", 
+        "categories": [], 
+        "geography": "Washington, DC"
+    }, 
+    {
+        "status": "Alpha", 
+        "needs": [
+            ""
+        ], 
+        "bornAt": "Code for DC", 
+        "c4dc": {
+            "community partner": "", 
+            "name": "DC Transparency and Open Government Comments", 
+            "contact twitter": "@mattbailey0", 
+            "contact email": "mbailey@codeforamerica.org", 
+            "notes": "", 
+            "more info link": "", 
+            "gov partner": "", 
+            "github link": "", 
+            "data link": "", 
+            "health": "healthy", 
+            "has data?": "", 
+            "contact name": "Matt Bailey", 
+            "display?": "No", 
+            "website link": "http://bit.ly/1ormYLQ", 
+            "description": "Creating a detailed, formal feedback to DC Government on its Transparency and Open Government Initiative"
+        }, 
+        "political entity": "", 
+        "thumnailUrl": "", 
+        "type": "", 
+        "categories": [], 
+        "geography": "Washington, DC"
+    }, 
+    {
+        "status": "Alpha", 
+        "needs": [
+            ""
+        ], 
+        "bornAt": "Code for DC", 
+        "c4dc": {
+            "community partner": "", 
+            "name": "DC Playground", 
+            "contact twitter": "", 
+            "contact email": "", 
+            "notes": "", 
+            "more info link": "", 
+            "gov partner": "", 
+            "github link": "", 
+            "data link": "", 
+            "health": "inactive", 
+            "has data?": "No", 
+            "contact name": "", 
+            "display?": "Yes", 
+            "website link": "", 
+            "description": ""
+        }, 
+        "political entity": "", 
+        "thumnailUrl": "", 
+        "type": "", 
+        "categories": [], 
+        "geography": "Washington, DC"
+    }, 
+    {
+        "status": "Alpha", 
+        "needs": [
+            "Access to City Data, FOI advice, mentoring on server side scalability and security."
+        ], 
+        "bornAt": "Code for DC", 
+        "c4dc": {
+            "community partner": "n/a", 
+            "name": "Defibrillator Mapping", 
+            "contact twitter": "@DavidRustSmith", 
+            "contact email": "davidrustsmith@gmail.com", 
+            "notes": "", 
+            "more info link": "http://www.webnotwar.ca/saving-lives-open-data/", 
+            "gov partner": "n/a", 
+            "github link": "n/a", 
+            "data link": "", 
+            "health": "healthy", 
+            "has data?": "No", 
+            "contact name": "David Rust-Smith", 
+            "display?": "", 
+            "website link": "http://ottawasheart.com/", 
+            "description": "Crowdsourced mapping of defibrillators to save lives in cardiac emergencies."
+        }, 
+        "political entity": "", 
+        "thumnailUrl": "", 
+        "type": "", 
+        "categories": [], 
+        "geography": "Washington, DC"
+    }, 
+    {
+        "status": "Alpha", 
+        "needs": [
+            "System admin genius"
+        ], 
+        "bornAt": "Code for DC", 
+        "c4dc": {
+            "community partner": "", 
+            "name": "District Trees (DC OpenTreeMap)", 
+            "contact twitter": "@justgrimes", 
+            "contact email": "jgrimes@codeforamerica.org", 
+            "notes": "", 
+            "more info link": "", 
+            "gov partner": "", 
+            "github link": "", 
+            "data link": "", 
+            "health": "inactive", 
+            "has data?": "Yes", 
+            "contact name": "Justin Grimes", 
+            "display?": "", 
+            "website link": "http://districttrees.org", 
+            "description": "Standing up OpenTreeMap server in DC"
+        }, 
+        "political entity": "", 
+        "thumnailUrl": "", 
+        "type": "", 
+        "categories": [], 
+        "geography": "Washington, DC"
+    }, 
+    {
+        "status": "Alpha", 
+        "needs": [
+            "research, GIS/mapping, subject matter experts, statistical analysis"
+        ], 
+        "bornAt": "Code for DC", 
+        "c4dc": {
+            "community partner": "", 
+            "name": "Emergency Response", 
+            "contact twitter": "@BridgitD", 
+            "contact email": "bridgit.donnelly@gmail.com", 
+            "notes": "", 
+            "more info link": "https://hackpad.com/Emergency-Response-DmrRNw6nxqj", 
+            "gov partner": "DC Council (Wells)", 
+            "github link": "https://github.com/BridgitD/DC-Emergency-Response/", 
+            "data link": "", 
+            "health": "healthy", 
+            "has data?": "No", 
+            "contact name": "Bridgit Donnelly", 
+            "display?": "Yes", 
+            "website link": "", 
+            "description": "Improve emergency response times in the district through analysis and technology"
+        }, 
+        "political entity": "", 
+        "thumnailUrl": "", 
+        "type": "", 
+        "categories": [], 
+        "geography": "Washington, DC"
+    }, 
+    {
+        "status": "Alpha", 
+        "needs": [
+            "UI/UX help; stats, D3"
+        ], 
+        "bornAt": "Code for DC", 
+        "c4dc": {
+            "community partner": "DC Fiscal Policy Institute", 
+            "name": "Financial/Spending Data Analysis", 
+            "contact twitter": "@anpe", 
+            "contact email": "anders.pedersen@okfn.org", 
+            "notes": "", 
+            "more info link": "https://hackpad.com/Hacking-DC-Financial-Data-gBV1yATBHU5", 
+            "gov partner": "DC Council (Grosso); Phil Reeves", 
+            "github link": "https://github.com/codefordc/dcfinancials", 
+            "data link": "", 
+            "health": "in progress", 
+            "has data?": "Yes", 
+            "contact name": "Anders Pederson", 
+            "display?": "", 
+            "website link": "", 
+            "description": "Analysis of the city's financial and spending data, including visualizations"
+        }, 
+        "political entity": "", 
+        "thumnailUrl": "", 
+        "type": "", 
+        "categories": [], 
+        "geography": "Washington, DC"
+    }, 
+    {
+        "status": "Alpha", 
+        "needs": [
+            "people!"
+        ], 
+        "bornAt": "Code for DC", 
+        "c4dc": {
+            "community partner": "", 
+            "name": "FOIA wishlist", 
+            "contact twitter": "@kelshew", 
+            "contact email": "", 
+            "notes": "bit.ly/foiawish", 
+            "more info link": "", 
+            "gov partner": "", 
+            "github link": "", 
+            "data link": "", 
+            "health": "inactive", 
+            "has data?": "--", 
+            "contact name": "Kelli Shewmaker", 
+            "display?": "No", 
+            "website link": "https://docs.google.com/spreadsheet/ccc?key=0Ak6Vi4C1XTAydHd4Q2ZzY0s2OVpRMnUyMDFuY0tiRVE#gid=0", 
+            "description": "A wish list of data from the DC Government to request"
+        }, 
+        "political entity": "", 
+        "thumnailUrl": "", 
+        "type": "", 
+        "categories": [], 
+        "geography": "Washington, DC"
+    }, 
+    {
+        "status": "Alpha", 
+        "needs": [
+            "Wordpress Phenoms and/or Front-End / Graphic Design folks"
+        ], 
+        "bornAt": "Code for DC", 
+        "c4dc": {
+            "community partner": "", 
+            "name": "GrassrootsDC", 
+            "contact twitter": "@juliancbach", 
+            "contact email": "", 
+            "notes": "", 
+            "more info link": "www.sandbox.grassrootsdc.org", 
+            "gov partner": "", 
+            "github link": "", 
+            "data link": "", 
+            "health": "healthy", 
+            "has data?": "", 
+            "contact name": "Julian Bach", 
+            "display?": "", 
+            "website link": "", 
+            "description": "Redesigning website and strategizing and build out a community network via wordpress site to display multimedia art projects"
+        }, 
+        "political entity": "", 
+        "thumnailUrl": "", 
+        "type": "", 
+        "categories": [], 
+        "geography": "Washington, DC"
+    }, 
+    {
+        "status": "Alpha", 
+        "needs": [
+            ""
+        ], 
+        "bornAt": "Code for DC", 
+        "c4dc": {
+            "community partner": "", 
+            "name": "Health Inspection Data", 
+            "contact twitter": "@GrahamIMac", 
+            "contact email": "", 
+            "notes": "", 
+            "more info link": "http://grahamimac.com/inspectionmapper/", 
+            "gov partner": "", 
+            "github link": "", 
+            "data link": "", 
+            "health": "healthy", 
+            "has data?": "Yes", 
+            "contact name": "Graham Macdonald", 
+            "display?": "Yes", 
+            "website link": "", 
+            "description": "Better utilizing DC health inspection information"
+        }, 
+        "political entity": "", 
+        "thumnailUrl": "", 
+        "type": "", 
+        "categories": [], 
+        "geography": "Washington, DC"
+    }, 
+    {
+        "status": "Alpha", 
+        "needs": [
+            ""
+        ], 
+        "bornAt": "Code for DC", 
+        "c4dc": {
+            "community partner": "", 
+            "name": "Homework Helper", 
+            "contact twitter": "", 
+            "contact email": "", 
+            "notes": "", 
+            "more info link": "", 
+            "gov partner": "", 
+            "github link": "", 
+            "data link": "", 
+            "health": "inactive", 
+            "has data?": "--", 
+            "contact name": "", 
+            "display?": "Yes", 
+            "website link": "", 
+            "description": "hackathon project to help"
+        }, 
+        "political entity": "", 
+        "thumnailUrl": "", 
+        "type": "", 
+        "categories": [], 
+        "geography": "Washington, DC"
+    }, 
+    {
+        "status": "Alpha", 
+        "needs": [
+            ""
+        ], 
+        "bornAt": "Code for DC", 
+        "c4dc": {
+            "community partner": "", 
+            "name": "List of Civic Apps in DC", 
+            "contact twitter": "@kelshew", 
+            "contact email": "", 
+            "notes": "", 
+            "more info link": "", 
+            "gov partner": "", 
+            "github link": "", 
+            "data link": "", 
+            "health": "inactive", 
+            "has data?": "--", 
+            "contact name": "Kelli Shewmaker", 
+            "display?": "No", 
+            "website link": "https://docs.google.com/spreadsheet/ccc?key=0Ak6Vi4C1XTAydDBuWmxIYkxvamthWWZHaUNOVmJlN3c#gid=0", 
+            "description": "An inventory of local civic apps"
+        }, 
+        "political entity": "", 
+        "thumnailUrl": "", 
+        "type": "", 
+        "categories": [], 
+        "geography": "Washington, DC"
+    }, 
+    {
+        "status": "Alpha", 
+        "needs": [
+            "Visualization wizard, graphic design"
+        ], 
+        "bornAt": "Code for DC", 
+        "c4dc": {
+            "community partner": "", 
+            "name": "Marriage Made Simple", 
+            "contact twitter": "", 
+            "contact email": "", 
+            "notes": "", 
+            "more info link": "", 
+            "gov partner": "", 
+            "github link": "", 
+            "data link": "", 
+            "health": "inactive", 
+            "has data?": "--", 
+            "contact name": "Sami Thangaraj", 
+            "display?": "Yes", 
+            "website link": "", 
+            "description": "document and diagram current marriage process to demostrate failure and advocate for increase efficency"
+        }, 
+        "political entity": "", 
+        "thumnailUrl": "", 
+        "type": "", 
+        "categories": [], 
+        "geography": "Washington, DC"
+    }, 
+    {
+        "status": "Alpha", 
+        "needs": [
+            ""
+        ], 
+        "bornAt": "Code for DC", 
+        "c4dc": {
+            "community partner": "", 
+            "name": "Mayoral questions", 
+            "contact twitter": "", 
+            "contact email": "", 
+            "notes": "", 
+            "more info link": "https://github.com/codefortulsa/open-data-questionnaire/blob/master/questionnaire.md", 
+            "gov partner": "", 
+            "github link": "", 
+            "data link": "", 
+            "health": "not started", 
+            "has data?": "", 
+            "contact name": "Peter Gehred", 
+            "display?": "Yes", 
+            "website link": "", 
+            "description": "Questions to ask about open gov/open data for 2014 mayoral race; fork and expand"
+        }, 
+        "political entity": "", 
+        "thumnailUrl": "", 
+        "type": "", 
+        "categories": [], 
+        "geography": "Washington, DC"
+    }, 
+    {
+        "status": "Alpha", 
+        "needs": [
+            "Javascript/D3, Leaflet/Mapbox or similar, CORS or similar, data munging/analysis, especially spatial data."
+        ], 
+        "bornAt": "Code for DC", 
+        "c4dc": {
+            "community partner": "", 
+            "name": "Open Schools", 
+            "contact twitter": "@HarlanH", 
+            "contact email": "", 
+            "notes": "", 
+            "more info link": "https://hackpad.com/DC-Education-data-xnqf3Y41Eg3", 
+            "gov partner": "OSSE", 
+            "github link": "https://github.com/HarlanH/code-for-dc-edu", 
+            "data link": "", 
+            "health": "healthy", 
+            "has data?": "Yes", 
+            "contact name": "Harlan Harris", 
+            "display?": "Yes", 
+            "website link": "http://edu.codefordc.org/", 
+            "description": "Maps, visualizations, and analysis of education data designed to empower parents."
+        }, 
+        "political entity": "", 
+        "thumnailUrl": "", 
+        "type": "", 
+        "categories": [], 
+        "geography": "Washington, DC"
+    }, 
+    {
+        "status": "Alpha", 
+        "needs": [
+            "community manager, datasets, content developer"
+        ], 
+        "bornAt": "Code for DC", 
+        "c4dc": {
+            "community partner": "", 
+            "name": "OpenDataDC", 
+            "contact twitter": "@mattbailey0", 
+            "contact email": "mbailey@codeforamerica.org", 
+            "notes": "", 
+            "more info link": "http://opendatadc.org/", 
+            "gov partner": "", 
+            "github link": "", 
+            "data link": "", 
+            "health": "healthy", 
+            "has data?": "--", 
+            "contact name": "Matt Bailey", 
+            "display?": "Yes", 
+            "website link": "", 
+            "description": "A public data catalog by and for the people of DC, designed to complement official catalog maintained by the city."
+        }, 
+        "political entity": "", 
+        "thumnailUrl": "", 
+        "type": "", 
+        "categories": [], 
+        "geography": "Washington, DC"
+    }, 
+    {
+        "status": "Alpha", 
+        "needs": [
+            "stats; data whiz"
+        ], 
+        "bornAt": "Code for DC", 
+        "c4dc": {
+            "community partner": "", 
+            "name": "Restrauant data (yelp + health inspection scores)", 
+            "contact twitter": "", 
+            "contact email": "", 
+            "notes": "", 
+            "more info link": "", 
+            "gov partner": "", 
+            "github link": "", 
+            "data link": "", 
+            "health": "not started", 
+            "has data?": "Yes", 
+            "contact name": "", 
+            "display?": "Yes", 
+            "website link": "", 
+            "description": "http://missionlocal.org/2013/09/data-scientist-your-favorite-restaurants-are-filthy/"
+        }, 
+        "political entity": "", 
+        "thumnailUrl": "", 
+        "type": "", 
+        "categories": [], 
+        "geography": "Washington, DC"
+    }, 
+    {
+        "status": "Alpha", 
+        "needs": [
+            "designers; coders; thinkers"
+        ], 
+        "bornAt": "Code for DC", 
+        "c4dc": {
+            "community partner": "", 
+            "name": "Solve It DC", 
+            "contact twitter": "", 
+            "contact email": "", 
+            "notes": "", 
+            "more info link": "", 
+            "gov partner": "", 
+            "github link": "", 
+            "data link": "", 
+            "health": "not started", 
+            "has data?": "", 
+            "contact name": "Rachel Goldberg/Daniel Dufour", 
+            "display?": "Yes", 
+            "website link": "", 
+            "description": "a forum for D.C. residents to discuss politically polarized issues, particularly gun violence"
+        }, 
+        "political entity": "", 
+        "thumnailUrl": "", 
+        "type": "", 
+        "categories": [], 
+        "geography": "Washington, DC"
+    }, 
+    {
+        "status": "Alpha", 
+        "needs": [
+            ""
+        ], 
+        "bornAt": "Code for DC", 
+        "c4dc": {
+            "community partner": "Casey Trees", 
+            "name": "Visualizing DC Street Trees", 
+            "contact twitter": "@evonfriedland", 
+            "contact email": "", 
+            "notes": "", 
+            "more info link": "https://hackpad.com/Hacking-DC-Street-Tree-WSAPOuMGNdH", 
+            "gov partner": "UFA (maybe?)", 
+            "github link": "https://github.com/evonfriedland/tree-map", 
+            "data link": "", 
+            "health": "healthy", 
+            "has data?": "Yes", 
+            "contact name": "Emanuel Feld", 
+            "display?": "Yes", 
+            "website link": "http://emanuelfeld.shinyapps.io/tree-map/", 
+            "description": "A collection of projects designed to improve mapping of trees in the District, including the use of OpenTreeMap."
+        }, 
+        "political entity": "", 
+        "thumnailUrl": "", 
+        "type": "", 
+        "categories": [], 
+        "geography": "Washington, DC"
+    }, 
+    {
+        "status": "Alpha", 
+        "needs": [
+            ""
+        ], 
+        "bornAt": "Code for DC", 
+        "c4dc": {
+            "community partner": "", 
+            "name": "Zoning data", 
+            "contact twitter": "", 
+            "contact email": "", 
+            "notes": "", 
+            "more info link": "http://www.flickr.com/photos/44718928@N00/8524356767/in/photolist-dZgyhp-92EyZC", 
+            "gov partner": "", 
+            "github link": "", 
+            "data link": "", 
+            "health": "not started", 
+            "has data?": "Yes", 
+            "contact name": "", 
+            "display?": "Yes", 
+            "website link": "", 
+            "description": "Visualization of zoning data"
+        }, 
+        "political entity": "", 
+        "thumnailUrl": "", 
+        "type": "", 
+        "categories": [], 
+        "geography": "Washington, DC"
+    }, 
+    {
+        "status": "Alpha", 
+        "needs": [
+            ""
+        ], 
+        "bornAt": "Code for DC", 
+        "c4dc": {
+            "community partner": "", 
+            "name": "DC Inventory -  City Open Data Census", 
+            "contact twitter": "@internetrebecca", 
+            "contact email": "", 
+            "notes": "", 
+            "more info link": "", 
+            "gov partner": "", 
+            "github link": "", 
+            "data link": "", 
+            "health": "healthy", 
+            "has data?": "", 
+            "contact name": "Rebecca Williams", 
+            "display?": "", 
+            "website link": "", 
+            "description": "Help conduct an inventory of DC's data holdings"
+        }, 
+        "political entity": "", 
+        "thumnailUrl": "", 
+        "type": "", 
+        "categories": [], 
+        "geography": "Washington, DC"
+    }
+]

@@ -27,7 +27,7 @@ body {
 
 h1.h0 {
 	font-size:59px;
-	font-weight:bold;	
+	font-weight:bold;
 	margin-top:10px;
 }
 
@@ -116,7 +116,7 @@ hr.footer-divider {
 
 .project-stripe-img img{
 	width:100%;
-	
+
 }
 
 .project-stripe-txt {
@@ -148,13 +148,12 @@ img.project-git-human {
 
 
 #project-list h3,
-#press-list h3 { 
+#press-list h3 {
 	margin-top:0;
 	margin-bottom:5px;
 }
 
 
-#project-list,
 #press-list {
 	text-align:center;
 }
@@ -317,5 +316,3 @@ img.project-git-human {
 .post.stub .blog-avatar-content {
 	font-weight: normal;
 }
-
-

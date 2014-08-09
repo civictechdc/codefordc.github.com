@@ -163,6 +163,15 @@ img.project-git-human {
 	margin-bottom:10px;
 }
 
+.contributors {
+    line-height:325%;
+}
+
+.contributors img {
+    margin:0px 2px 0px 2px;
+    border:2px solid #9E9E9E;
+}
+
 /***************************/
 /*  press page */
 /***************************/

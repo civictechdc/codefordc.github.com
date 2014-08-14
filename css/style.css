@@ -2,6 +2,8 @@
 /*  general/sitewide */
 /***************************/
 
+@import url(http://fonts.googleapis.com/css?family=Raleway:600,700);
+
 body {
   padding-top: 50px;
 }
@@ -163,8 +165,28 @@ img.project-git-human {
 	margin-bottom:10px;
 }
 
-.contributors {
-    line-height:325%;
+#project-list .project {
+	padding-bottom: 2em;
+	border-bottom: 1px solid #AAA;
+	margin-bottom: 1em;
+	margin-top: 1.5em;
+}
+#project-list h2 {
+	margin: 0 0 4px 0;
+	font-family: 'Raleway', sans-serif;
+	font-size: 28px;
+	font-weight: bold;
+}
+#project-list h2 a {
+	color: black;
+}
+#project-list .project .homepage {
+	font-family: 'Raleway', sans-serif;
+	margin-bottom: 1em;
+}
+
+.contributors > div {
+    line-height: 40px;
 }
 
 .contributors img {

@@ -4,123 +4,183 @@ title: Projects
 ---
 
 <div class="container">
-	<div class="col-lg-1"></div>
-	<div class="col-lg-10 ">
-		<div class="col-lg-12 starter-template">
-			<h1>Projects</h1>
-			<p class="lead">Code for DC is a collaborative environment in which people with many different skillsets tackle issues they see facing the community. Our projects are always looking for help.  Browse below and you're bound to find a project that needs you!</p>
+	<h1>Our Projects</h1>
+	<p class="lead">Code for DC is a collaborative environment in which people with many different skillsets tackle issues they see facing the community. Our projects are always looking for help.  Browse below and you're bound to find a project that needs you!</p>
+
+	<div id="project-list">
+		<!-- populated by js -->
+	</div>
+
+	<div style="display: none">
+		<div id="project-template" class="project">
+			<div class="row">
+				<div class="col-sm-12">
+					<h2><a></a></h2>
+					<p class="homepage hidden"><a>Website</a></p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-6">
+					<p class="description"></p>
+					<div class="row">
+						<p class="col-sm-5 started"><strong>Born</strong><br/> <span></span></p>
+						<p class="col-sm-5 status"><strong>Status</strong><br/> <span></span></p>
+					</div>
+					<p class="governmentPartner hidden"><strong>Government Partner</strong><br/> <span></span></p>
+					<p class="communityPartner hidden"><strong>Community Partner</strong><br/> <span></span></p>
+					<p class="contact">
+						<a class='btn btn-default btn-sm email hidden' role='button' title="Email"><i class='fa fa-envelope fa-lg'></i></a>
+						<a class='btn btn-default btn-sm twitter hidden' role='button' title="Tweet Us"><i class='fa fa-twitter fa-lg'></i></a>
+					</p>
+					<div class="categories"> </div>
+				</div>
+				<div class="col-sm-3">
+					<div class="activity" style="margin-bottom: 4px">
+						<strong>Activity</strong>
+						<div></div>
+					</div>
+					<div class="contributors hidden">
+						<strong>Contributors</strong>
+						<div> </div>
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<p><strong>Get Involved</strong></p>
+					<p class="issues"><a class='btn btn-default' role='button'></a></p>
+					<div class="needs hidden">
+						<strong>Needs</strong>
+						<div> </div>
+					</div>
+				</div>
+			</div>
 		</div>
-		<div id="project-list"><!-- populated by js --></div>
-		<div class="col-lg-1"></div>
 	</div>
 </div><!-- /.container -->
 
 {% include _global_js.html %}
-<script src="assets/js/jquery.csv-0.71.min.js"></script>
+<script src="assets/js/moment.min.js"></script>
+<script src="assets/js/d3.min.js"></script>
 <script type="text/javascript">
-$(document).ready(function(){
-	$.get('/data/projects.csv', function(data){
-		var content = $.csv.toArrays(data);
-		content.splice(0,1); //get rid of column headers
-		var html = '';
-		var pname = '';
-		var pcontact = '';
-		var pdesc = '';
-		var pgithub = '';
-		var pneeds = '';
-		var plink = '';
-		var pstatus = '';
-		var row_switch = false;
-		
-		for(var row in content){
-			pstatus = content[row][7];
-			if(pstatus != "inactive" && pstatus !="not started"){
-				projectId = "project" + row;
-				pname = content[row][0];
-				if(pname == ""){
-						pname = "Unnamed project"
-				}
-			
-				pdesc = content[row][1];
 
-				pcontact = content[row][2];
-				if(pcontact == ""){ 
-					pcontact == "Matt Bailey";
-				}
-				ptwitter = content[row][3];
-				if(ptwitter == "" && pcontact == "Matt Bailey"){
-					ptwitter == "@mattbailey0";
-				}
-				
-				pemail = content[row][4];
-			
-				pneeds = content[row][5];
-				if(pstatus == "not started"){
-					pneeds = "This project hasn't started! Get in touch to kick it off."
-				}
-				
-				purl_info = content[row][8];
-				pgithub = content[row][9];
-				purl_home = content[row][10];
-															
-				if(!row_switch){
-					html += 	'<div class="col-lg-12">';
-				}
+// Load the civic.json file and get working
+// This code is based on the projects page at https://github.com/open-city/open-gov-hack-night
+window.projects = function(data){
+	var projects = data["projects"];
+	// Sort projects by most recently updated
+	projects.sort(function(a,b) {return new Date(b.updated_at) - new Date(a.updated_at)})
+	// Begin iterating over the JSON file
+	$.each(projects, function(i,info){
+		// Get info for the project, starting with Github info that always exists
+		var name = info["name"];
+		var created = moment(info["created_at"]).fromNow();
+		var updated = moment(info["updated_at"]).fromNow();
+		var issues = info["open_issues"];
+		var repo_link = info["html_url"];
 
-				html += '<div class="col-lg-2 project-icon"><img src="images/launch.png" width="100px"/></div>';
-			
-				html += '<div class="col-lg-4 project-text" id="' + projectId + '">	<h3>' + pname + '</h3>';
-				html += "<p class='project-content'>"
+		// Insert the information into the site's HTML
+		var project = $('#project-template').clone();
+		project.prop('id', 'project'+i);
+		$("#project-list").append(project);
 
-				if(pdesc != ""){html += pdesc + '<br/>';}
-				html += 'Contact: ' + pcontact;
-				if(ptwitter != ""){
-					html += ' (<a href="http://www.twitter.com/' + ptwitter.substring(1) +'">'+ ptwitter +'</a>)';
-				}
-				html += '</br>';
-				
-				if(pneeds != ""){html += 'Needs: '+ pneeds + '<br/>';}
-				if(purl_info != ""){html += '<a href="'+ purl_info +'" target="_blank">Read more about this project</a><br/>';}
-				
+		project.find("h2 a").text(name);
+		project.find("h2 a").attr('href', repo_link);
 
-				if(pgithub != ""){
-					html += '<a href="'+ pgithub +'" target="_blank">Browse the code</a><br/>';
-					
-					getGitContent(projectId,pgithub);
-				}
-				
+		if (info["civic_json"] && info["civic_json"]["contact"][0]["email"])
+			project.find(".contact a.email").removeClass('hidden')
+				.attr('href', 'mailto:' + info["civic_json"]["contact"][0]["email"]);
 
+		if (info["civic_json"] && info["civic_json"]["contact"][0]["twitter"])
+			project.find(".contact a.twitter").removeClass('hidden')
+				.attr('href', 'http://twitter.com/' + info["civic_json"]["contact"][0]["twitter"].slice(1));
 
-				if(purl_home != "" && purl_home.indexOf("www.codefordc.org") == -1 ){html += '<a href="'+ purl_home +'" target="_blank">Check out the website</a>';}
-				
+		if (info["homepage"])
+			project.find(".homepage").removeClass('hidden')
+				.find('a').attr('href', info["homepage"]).text(info["homepage"]);
+		else
+			project.find(".homepage").removeClass('hidden')
+				.find('a').attr('href', repo_link).text("github repository >");
 
-				html += '</p></div>';
-				
-				if(row_switch){
-					html +=	'</div>';
-				}
-				row_switch = !row_switch;
-			}
+		if (info["civic_json"] && info["civic_json"]["communityPartner"])
+			project.find(".communityPartner").removeClass('hidden')
+				.text("Community Partner: " + info["civic_json"]["communityPartner"]);
+
+		if (info["civic_json"] && info["civic_json"]["communityPartner"])
+			project.find(".communityPartner").removeClass('hidden').find("span")
+				.text(info["civic_json"]["communityPartner"]);
+
+		if (info["civic_json"] && info["civic_json"]["governmentPartner"])
+			project.find(".governmentPartner").removeClass('hidden').find("span")
+				.text(info["civic_json"]["governmentPartner"]);
+
+		project.find('.description').text(info["description"]);
+
+		if (info["civic_json"] && info["civic_json"]["needs"]){
+			project.find('.needs').removeClass("hidden");
+			$.each(info["civic_json"]["needs"], function(k,v){
+				project.find('.needs div').append(
+						$("<button class='btn btn-sm btn-success'></button>").text(v["need"])
+						);
+			});
 		}
-		$("#project-list").html(html);
-	});
- });
 
-
-function getGitContent(project, url){
-	var projectElement = "#" + project + " .project-content";
-
-	var chunked_url = url.split("/");
-	git_user = chunked_url[3];
-	git_repo = chunked_url[4];
-
-	$.get('https://api.github.com/repos/' + git_user + '/' + git_repo + '/contributors').done(function(data){
-		var val = '';
-		$.each( data, function(index, value	){
-			
-			$(projectElement).before("<img src='" + value.avatar_url + "' class='project-git-human' /> ");
+		$.each(info["contributors"], function(k,v){
+			project.find('.contributors').removeClass('hidden'); // important on first iteration only
+			var c = $("<a><img class='img-rounded' height='36' width='36'></a>");
+			c.find('a').attr('href', v["link"]);
+			c.find('img').attr('src', v["avatar_url"]);
+			project.find('.contributors div').append(c);
 		});
-	});
-}
 
+		project.find('.started span').text(created);
+
+		if (info["civic_json"] && info["civic_json"]["status"])
+			project.find('.status span').text(info["civic_json"]["status"]);
+
+		project.find('.issues a').attr('href', repo_link+'/issues');
+		project.find('.issues a').text(issues ? (issues+" Issues Need Help") : "Submit an Idea");
+
+		if (info["civic_json"] && info["civic_json"]["categories"]){
+			$.each(info["civic_json"]["categories"], function(k,v){
+				project.find('.categories').append($("<p><button class='btn btn-sm btn-warning'></button></p>").find('button').text(v['category']))
+			})
+		}
+
+		// Create a graph of the Github repo's commit history using D3.js, based on https://gist.github.com/ashleybot/1842440
+		// This is done after everything else because it requires a HTML element on which to operate
+
+		// First, scale the repo activity to make graphs consistent
+		var scaled = [];
+		$.each(info["activity"],function(i,n){
+			scaled.push(n * 100/Math.max.apply(null, info["activity"]));
+		})
+
+		var w = project.find(".activity").width() / 52,
+			h = 90;
+
+		// Create the chart's SVG in the DOM
+		var chart = d3.select("#project"+i+" .activity").append("svg")
+			.attr("class", "chart")
+			.attr("width", w * 52)
+			.attr("height", h);
+
+		var x = d3.scale.linear()
+			.domain([0, 1])
+			.range([0, w]);
+
+		var y = d3.scale.linear()
+			.domain([0, 50])
+			.rangeRound([0, h]); //rangeRound is used for antialiasing
+
+		// Make the actual graph
+		chart.selectAll("rect")
+			.data(scaled)
+		.enter().append("rect")
+			.attr("x", function(d, i) { return x(i) - .5; })
+			.attr("y", function(d) { return h - y(d) - .5; })
+			.attr("width", w / 2)
+			.attr("height", function(d) { return y(d); } )
+			.attr("fill", "#9E9E9E");
+	});
+};
 </script>
+<script src="https://rawgithub.com/codefordc/files/master/projects.js"></script>

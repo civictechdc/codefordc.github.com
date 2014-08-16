@@ -1,0 +1,22 @@
+{
+        "status": "Production",
+        "thumbnailUrl": "",
+        "contact": {
+            "name":"",
+            "email":"",
+            "twitter":"@CodeforDC"
+        }
+        "bornAt": "Code for DC",
+        "geography": "DC",
+        "politicalEntity": {},
+        "governmentPartner": {},
+        "communityPartner": {},
+        "type": "Website",
+        "needs": [
+			{"need":"Meetup integration"}
+        ],
+        "categories": [
+			{"category":"Meta Project"}
+        ],
+        "moreInfo":""
+}

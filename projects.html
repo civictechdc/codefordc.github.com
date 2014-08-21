@@ -189,6 +189,11 @@ window.projects = function(data){
 			.attr("width", w * 52)
 			.attr("height", h);
 
+		chart.append("rect")
+    		.attr("width", "100%")
+    		.attr("height", "100%")
+    		.attr("fill", "#e2e2e2");
+
 		var x = d3.scale.linear()
 			.domain([0, 1])
 			.range([0, w]);

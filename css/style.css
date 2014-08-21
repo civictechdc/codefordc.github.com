@@ -185,6 +185,11 @@ img.project-git-human {
 	margin-bottom: 1em;
 }
 
+.thumbnail {
+    float: left;
+    margin: 0px 10px 10px 0px;
+}
+
 .contributors > div {
     line-height: 40px;
 }
@@ -192,6 +197,10 @@ img.project-git-human {
 .contributors img {
     margin:0px 2px 0px 2px;
     border:2px solid #9E9E9E;
+}
+
+.need, .category {
+    margin: 0px 2px 0px 0px;
 }
 
 /***************************/

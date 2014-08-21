@@ -26,7 +26,10 @@ title: Projects
 					<div class="row">
 						<p class="col-sm-4 started"><strong>Born</strong><br/> <span></span></p>
 						<p class="col-sm-4 status"><strong>Status</strong><br/> <span></span></p>
-						<p class="col-sm-4 language"><strong>Language</strong><br/> <span></span></p>
+						<p class="col-sm-4 lines"><strong>Lines of Code</strong><br/> <span></span></p>
+					</div>
+					<div class="row">
+						<p class="col-sm-12 language"><strong>Language(s)</strong><br/> <span></span></p>
 					</div>
 					<p class="governmentPartner hidden"><strong>Government Partner</strong><br/> <span></span></p>
 					<p class="communityPartner hidden"><strong>Community Partner</strong><br/> <span></span></p>
@@ -90,13 +93,11 @@ window.projects = function(data){
 			total += lang[1];
 		});
 		$.each(info["languages"], function(i,lang){
-			if (lang[0]=="CSS"){
-				lang[0]="HTML/CSS";
-			}
-			languages += "<div class='languages'>"+lang[0]+" ("+Math.ceil(100*(lang[1]/total))+"%)</div>";
+			languages += lang[0]+": "+Math.ceil(100*(lang[1]/total))+"% | ";
 		});
+		languages = languages.substring(0, languages.length - 3);
 		if (languages.length==0){
-			languages = "<div class='language'>Text (100%)</div>";
+			languages = "Text: 100%";
 		}
 
 		// Insert the information into the site's HTML
@@ -157,6 +158,8 @@ window.projects = function(data){
 
 		project.find('.started span').text(created);
 
+		project.find('.lines span').html(total);
+
 		project.find('.language span').html(languages);
 
 		if (info["civic_json"] && info["civic_json"]["status"])
@@ -192,7 +195,7 @@ window.projects = function(data){
 		chart.append("rect")
     		.attr("width", "100%")
     		.attr("height", "100%")
-    		.attr("fill", "#e2e2e2");
+    		.attr("fill", "#ededed");
 
 		var x = d3.scale.linear()
 			.domain([0, 1])

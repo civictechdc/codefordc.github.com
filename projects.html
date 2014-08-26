@@ -25,7 +25,7 @@ title: Projects
 					<p class="description"></p>
 					<div class="row">
 						<p class="col-sm-4 started"><strong>Born</strong><br/> <span></span></p>
-						<p class="col-sm-4 status"><strong>Status</strong><br/> <span></span></p>
+						<p class="col-sm-4 status hidden"><strong>Status</strong><br/> <span></span></p>
 						<p class="col-sm-4 lines"><strong>Lines of Code</strong><br/> <span></span></p>
 					</div>
 					<div class="row">
@@ -163,7 +163,7 @@ window.projects = function(data){
 		project.find('.language span').html(languages);
 
 		if (info["civic_json"] && info["civic_json"]["status"])
-			project.find('.status span').text(info["civic_json"]["status"]);
+			project.find('.status').removeClass("hidden").find("span").text(info["civic_json"]["status"]);
 
 		project.find('.issues a').attr('href', repo_link+'/issues');
 		project.find('.issues a').text(issues ? (issues+" Issues Need Help") : "Submit an Idea");

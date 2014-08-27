@@ -70,7 +70,7 @@ title: Projects
 // Load the civic.json file and get working
 // This code is based on the projects page at https://github.com/open-city/open-gov-hack-night
 window.projects = function(data){
-	var projects = data["projects"];
+	var projects = data;
 
 	// Sort projects by most recently updated
 	projects.sort(function(a,b) {return new Date(b.updated_at) - new Date(a.updated_at)})

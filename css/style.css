@@ -2,6 +2,8 @@
 /*  general/sitewide */
 /***************************/
 
+@import url(http://fonts.googleapis.com/css?family=Raleway:600,700);
+
 body {
   padding-top: 50px;
 }
@@ -27,7 +29,7 @@ body {
 
 h1.h0 {
 	font-size:59px;
-	font-weight:bold;	
+	font-weight:bold;
 	margin-top:10px;
 }
 
@@ -116,7 +118,7 @@ hr.footer-divider {
 
 .project-stripe-img img{
 	width:100%;
-	
+
 }
 
 .project-stripe-txt {
@@ -148,13 +150,12 @@ img.project-git-human {
 
 
 #project-list h3,
-#press-list h3 { 
+#press-list h3 {
 	margin-top:0;
 	margin-bottom:5px;
 }
 
 
-#project-list,
 #press-list {
 	text-align:center;
 }
@@ -162,6 +163,44 @@ img.project-git-human {
 .project-icon
 {
 	margin-bottom:10px;
+}
+
+#project-list .project {
+	padding-bottom: 2em;
+	border-bottom: 1px solid #AAA;
+	margin-bottom: 1em;
+	margin-top: 1.5em;
+}
+#project-list h2 {
+	margin: 0 0 4px 0;
+	font-family: 'Raleway', sans-serif;
+	font-size: 28px;
+	font-weight: bold;
+}
+#project-list h2 a {
+	color: black;
+}
+#project-list .project .homepage {
+	font-family: 'Raleway', sans-serif;
+	margin-bottom: 1em;
+}
+
+.thumbnail {
+    float: left;
+    margin: 0px 10px 10px 0px;
+}
+
+.contributors > div {
+    line-height: 40px;
+}
+
+.contributors img {
+    margin:0px 2px 0px 2px;
+    border:2px solid #9E9E9E;
+}
+
+.need, .category {
+    margin: 0px 2px 0px 0px;
 }
 
 /***************************/
@@ -317,5 +356,3 @@ img.project-git-human {
 .post.stub .blog-avatar-content {
 	font-weight: normal;
 }
-
-

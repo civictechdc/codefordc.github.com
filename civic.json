@@ -8,9 +8,9 @@
         },
         "bornAt": "Code for DC",
         "geography": "DC",
-        "politicalEntity": "",
-        "governmentPartner": "",
-        "communityPartner": "",
+        "politicalEntity": {},
+        "governmentPartner": {},
+        "communityPartner": {},
         "type": "Website",
         "needs": [
 			{"need":"Meetup integration"}

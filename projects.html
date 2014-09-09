@@ -33,6 +33,7 @@ title: Projects
 					</div>
 					<p class="governmentPartner hidden"><strong>Government Partner</strong><br/> <span></span></p>
 					<p class="communityPartner hidden"><strong>Community Partner</strong><br/> <span></span></p>
+					<p class="politicalEntity hidden"><strong>Relevant to</strong><br/> <span></span></p>
 					<p class="contact">
 						<a class='btn btn-default btn-sm email hidden' role='button' title="Email"><i class='fa fa-envelope fa-lg'></i></a>
 						<a class='btn btn-default btn-sm twitter hidden' role='button' title="Tweet Us"><i class='fa fa-twitter fa-lg'></i></a>
@@ -129,13 +130,38 @@ window.projects = function(data){
 		project.find(".github-repo").removeClass('hidden')
 			.find('a.repo-link').attr('href', repo_link).text("Github repository >");
 
-		if (info["civic_json"] && info["civic_json"]["communityPartner"])
-			project.find(".communityPartner").removeClass('hidden').find("span")
-				.text(info["civic_json"]["communityPartner"]);
+		if (info["civic_json"] && info["civic_json"]["communityPartner"]){
+			var compartner = ""
+			$.each(info["civic_json"]["communityPartner"], function(k,v){
+				govpartner += "<a href='"+v+"'>"+k+"</a>";
+			});
+			if (govpartner.length > 0){
+			project.find(".communityPartner").removeClass('hidden').
+				find("span").text(compartner);
+			}
+		}
 
-		if (info["civic_json"] && info["civic_json"]["governmentPartner"])
-			project.find(".governmentPartner").removeClass('hidden').find("span")
-				.text(info["civic_json"]["governmentPartner"]);
+		if (info["civic_json"] && info["civic_json"]["governmentPartner"]){
+			var govpartner = ""
+			$.each(info["civic_json"]["governmentPartner"], function(k,v){
+				govpartner += "<a href='"+v+"'>"+k+"</a>"
+			});
+			if (govpartner.length > 0){
+			project.find(".governmentPartner").removeClass('hidden').
+				find("span").text(govpartner);
+			}
+		}
+
+		if (info["civic_json"] && info["civic_json"]["politicalEntity"]){
+			var polentity = ""
+			$.each(info["civic_json"]["politicalEntity"], function(k,v){
+				polentity += "<a href='"+v+"'>"+k+"</a>"
+			});
+			if (polentity.length > 0){
+			project.find(".politicalEntity").removeClass('hidden').
+				find("span").text(polentity);
+			}
+		}
 
 		project.find('.description').text(info["description"]);
 

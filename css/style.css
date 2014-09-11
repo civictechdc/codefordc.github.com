@@ -141,7 +141,11 @@ img.project-git-human {
 /*  project page */
 /***************************/
 
-
+#project-list .title
+{
+	text-align:center;
+	margin-bottom: 15px;
+}
 .project-image,
 .project-text {
 	margin-bottom:40px;
@@ -168,7 +172,7 @@ img.project-git-human {
 #project-list .project {
 	padding-bottom: 2em;
 	border-bottom: 1px solid #AAA;
-	margin-bottom: 1em;
+	margin-bottom: 3em;
 	margin-top: 1.5em;
 }
 #project-list h2 {
@@ -185,9 +189,9 @@ img.project-git-human {
 	margin-bottom: 1em;
 }
 
-.thumbnail {
-    float: left;
-    margin: 0px 10px 10px 0px;
+#project-list .thumbnail {
+    display: inline;
+    margin: 0px 10px 5px 0px;
 }
 
 .contributors > div {
@@ -195,8 +199,8 @@ img.project-git-human {
 }
 
 .contributors img {
-    margin:0px 2px 0px 2px;
-    border:2px solid #9E9E9E;
+    margin:0px 3px 0px 3px;
+    border:3px solid #222;
 }
 
 .need, .category {

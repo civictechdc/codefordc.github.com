@@ -18,7 +18,7 @@ title: Projects
 		</div>
 	</div>
 	<div class="col-lg-1"></div>
-	
+
 	<div style="display: none"> <!-- template for a project -->
 		<div id="project-template" class="project">
 			<div class="row">
@@ -142,9 +142,9 @@ window.projects = function(data){
 		if (info["civic_json"] && info["civic_json"]["communityPartner"]){
 			var compartner = ""
 			$.each(info["civic_json"]["communityPartner"], function(k,v){
-				govpartner += "<a href='"+v+"'>"+k+"</a>";
+				compartner += "<a href='"+v+"'>"+k+"</a>";
 			});
-			if (govpartner.length > 0){
+			if (compartner.length > 0){
 			project.find(".communityPartner").removeClass('hidden').
 				find("span").text(compartner);
 			}

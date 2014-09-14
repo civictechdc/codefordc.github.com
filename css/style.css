@@ -151,7 +151,9 @@ img.project-git-human {
 	margin-bottom:40px;
 }
 
-
+#project-list .mix {
+    display: none;
+}
 
 #project-list h3,
 #press-list h3 {

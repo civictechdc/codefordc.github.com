@@ -11,6 +11,30 @@ title: Projects
 			<h1>Our Projects</h1>
 			<p class="lead">Code for DC helps people collaborate on projects to help the community. Whether you're a coder or an activist, a public servant or a designer, browse below and you're bound to find one that needs you!</p>
 		</div>
+		<div id="sort" class="btn btn-default">Sort!</div>
+		<div id="sortbox" class="hidden">
+			<div class="group">
+				<label>Sort:</label>
+				<div class="btn btn-default sort" data-sort="random">Randomize</div>
+				<div class="btn btn-default sort" data-sort="created:asc">Age</div>
+				<div class="btn btn-default sort" data-sort="updated:dec">Latest commit</div>
+				<div class="btn btn-default sort" data-sort="lines:dec">Lines of code</div>
+				<div class="btn btn-default sort" data-sort="forks:dec">Forks</div>
+				<div class="btn btn-default sort" data-sort="stars:dec">Stars</div>
+			</div>
+			<div class="group">
+				<div class="group category-list">
+					<label>Categories:</label>
+				</div>
+				<div class="group languages">
+					<label>Languages:</label>
+				</div>
+				<div class="group main-languages">
+					<label>Main Language:</label>
+				</div>
+				<div class="btn btn-default filter" data-filter="all">Show All</div>
+			</div>
+		</div>
 		<div class="col-lg-12">
 			<div id="project-list">
 				<!-- populated by js -->
@@ -20,7 +44,7 @@ title: Projects
 	<div class="col-lg-1"></div>
 
 	<div style="display: none"> <!-- template for a project -->
-		<div id="project-template" class="project">
+		<div id="project-template" class="project mix">
 			<div class="row">
 				<div class="col-sm-12 title">
 					<h2><img class='img-rounded thumbnail hidden' height='50' width='50'><span class="name"></span></h2>
@@ -75,7 +99,22 @@ title: Projects
 {% include _global_js.html %}
 <script src="assets/js/moment.min.js"></script>
 <script src="assets/js/d3.min.js"></script>
+<script src="assets/js/jquery.mixitup.min.js"></script>
 <script type="text/javascript">
+
+// Arrays for collecting overall data to sort with MixItUp
+l = [];
+ml = [];
+cat = []
+
+// Function to turn multi-word strings into class-friendly formats
+function classify(str) {
+    x = str.replace(/\w\S*/g, function(txt) {
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+	x = x.replace(/ /g,"-");
+	return x
+}
 
 // Load the civic.json file and get working
 // This code is based on the projects page at https://github.com/open-city/open-gov-hack-night
@@ -88,12 +127,25 @@ window.projects = function(data){
 	// Begin iterating over the JSON file
 	$.each(projects, function(i,info){
 
+		// Insert the information into the site's HTML
+		var project = $('#project-template').clone();
+		project.prop('id', 'project'+i);
+		$("#project-list").append(project);
+
 		// Get info for the project, starting with Github info that always exists
 		var name = info["name"];
 		var created = moment(info["created_at"]).fromNow();
+		project.attr("data-created", info["created_at"]);
 		var updated = moment(info["pushed_at"]).fromNow();
+		project.attr("data-updated", info["pushed_at"]);
 		var issues = info["open_issues"];
 		var repo_link = info["html_url"];
+		project.attr("data-forks",info["forks"]);
+		project.attr("data-stars",info["watchers"]);
+		if (info["main_language"] == null){
+			info["main_language"] = "Text";
+		}
+		project.addClass("main-"+info["main_language"])
 
 		// Calculate language usage
 		var language = info["main_language"];
@@ -101,19 +153,22 @@ window.projects = function(data){
 		var languages = "";
 		$.each(info["languages"], function(i,lang){
 			total += lang[1];
+			project.addClass(lang[0]);
+			if ($.inArray(lang[0], l) == -1) {
+				l.push(lang[0]);
+			}
 		});
 		$.each(info["languages"], function(i,lang){
 			languages += lang[0]+": "+Math.ceil(100*(lang[1]/total))+"% | ";
 		});
 		languages = languages.substring(0, languages.length - 3);
+		project.attr("data-lines",total);
 		if (languages.length==0){
 			languages = "Text: 100%";
 		}
-
-		// Insert the information into the site's HTML
-		var project = $('#project-template').clone();
-		project.prop('id', 'project'+i);
-		$("#project-list").append(project);
+		if ($.inArray(info["main_language"],ml) == -1) {
+			ml.push(info["main_language"]);
+		}
 
 		project.find("h2 span.name").text(name);
 //		project.find("h2 a").attr('href', repo_link);
@@ -206,6 +261,11 @@ window.projects = function(data){
 		if (info["civic_json"] && info["civic_json"]["categories"]){
 			$.each(info["civic_json"]["categories"], function(k,v){
 				project.find('.categories').append($("<p><button class='btn btn-sm btn-warning category'></button></p>").find('button').text(v['category']))
+				c = classify(v['category'])
+				project.addClass("category-"+c);
+				if ($.inArray(c,cat)==-1){
+					cat.push(c);
+				}
 			})
 		}
 
@@ -218,7 +278,7 @@ window.projects = function(data){
 			scaled.push(n * 100/Math.max.apply(null, info["activity"]));
 		})
 
-		var w = project.find(".activity").width() / 52,
+		var w = $("#project-list").width() / 156,
 			h = 90;
 
 		// Create the chart's SVG in the DOM
@@ -253,6 +313,51 @@ window.projects = function(data){
 		// Put a border around the graph
 
 	});
+
+	// Create filter options for languages
+	l.sort();
+	$.each(l, function(i,l){
+		$('.languages').append('<div class="btn btn-default filter" data-filter=".'+l+'">'+l+'</div>');
+	});
+	ml.sort();
+	$.each(ml, function(i,l){
+		$('.main-languages').append('<div class="btn btn-default filter" data-filter=".main-'+l+'">'+l+'</div>');
+	});
+	cat.sort();
+	$.each(cat, function(i,l){
+		$('.category-list').append('<div class="btn btn-default filter" data-filter=".category-'+l+'">'+l.split('-').join(' ')+'</div>');
+	});
 };
+
+// Make list sortable
+
+$(function(){
+
+	// Instantiate MixItUp:
+
+	$('#project-list').mixItUp({
+		animation: {
+			enable: false
+		},
+		layout: {
+			display: 'block'
+		},
+		callbacks: {
+			onMixLoad: function(){
+				$(this).mixItUp('setOptions', {
+					animation: {
+						enable: true
+					},
+				});
+			}
+		}
+	});
+});
+
+$("#sort").click(function(){
+	$(this).hide();
+	$("#sortbox").removeClass("hidden");
+})
+
 </script>
 <script src="https://rawgit.com/codefordc/files/master/projects.js"></script>

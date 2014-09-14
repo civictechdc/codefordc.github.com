@@ -146,7 +146,7 @@ window.projects = function(data){
 			});
 			if (compartner.length > 0){
 			project.find(".communityPartner").removeClass('hidden').
-				find("span").text(compartner);
+				find("span").html(compartner);
 			}
 		}
 
@@ -157,7 +157,7 @@ window.projects = function(data){
 			});
 			if (govpartner.length > 0){
 			project.find(".governmentPartner").removeClass('hidden').
-				find("span").text(govpartner);
+				find("span").html(govpartner);
 			}
 		}
 
@@ -168,7 +168,7 @@ window.projects = function(data){
 			});
 			if (polentity.length > 0){
 			project.find(".politicalEntity").removeClass('hidden').
-				find("span").text(polentity);
+				find("span").html(polentity);
 			}
 		}
 

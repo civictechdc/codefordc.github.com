@@ -4,17 +4,31 @@ title:  "Do I need a lawyer to hack?"
 post_author: "Joshua Tauberer"
 post_twitter: "@joshdata"
 post_avatar: "joshua-tauberer.jpg"
-date:   2014-09-11 10:25:00
+date:   2014-09-16 10:25:00
 categories: blog
 ---
 
 <p>New city data catalogs are coming online all the time, but what many civic hackers may not have noticed is that we’re often agreeing to complex legal conditions every time we make use of the datasets in these catalogs.</p>
 
-<p>As a result of these restrictions, DC’s open data isn’t truly open, but rather open only as long as the government approves of its use. The specter of a lawsuit hanging over the heads of civic hackers has a chilling effect on the creation of projects to benefit the public, even though they make use of public data released for that express purpose. How does this happen? Through terms of service, terms of use, and other disclaimers.</p>
+<p>As a result of these restrictions, DC’s open data isn’t truly open, but rather open only as long as the government approves of its use. The specter of a lawsuit hanging over the heads of civic hackers has a chilling effect on the creation of projects to benefit the public, even though they make use of public data released for that express purpose. How does this happen? Through terms of service, terms of use, and copyright law.</p>
+
+<h3>Prohibiting a lawsuit</h3>
+
+<p>DC’s new data catalog at <a href="http://opendata.dc.gov/">opendata.dc.gov</a>, which launched in August, requires civic hackers to agree to the District's three-page <a href="http://dc.gov/page/terms-and-conditions-use">terms and conditions of use</a> before using any public data. The terms include this wide-reaching provision:</p>
+
+<blockquote>
+“you will not [u]se the Site to . . . encourage others to engage in any conduct which would constitute a criminal offense or <em>give rise to civil liability</em>”
+</blockquote>
+
+<p>I had to check with lawyers about what “give rise to civil liability” means. It is vague, I’m told. So vague that anything might be considered to give rise to civil liability, but a lawsuit against the District is probably what was intended. That means if the data shows us evidence of legal wrongdoing or injustice, <strong>we’ve essentially agreed not to take legal action against the District</strong> or any other party and, further, to not “encourage” anyone else to take legal action (also vague). The terms of use is so vague that this example is just one of many ways this clause might be used to stop a civic hack the District doesn’t like.</p>
+
+<p>The new catalog also requires data users to give attribution to the District for some data sourced from the catalog (it is in the licensing info box for many datasets, including <a href="http://opendata.dc.gov/datasets/bdbe356375d649ac8eceba21b5c8cb41_5">this one</a>) and the terms include an <a href="https://en.wikipedia.org/wiki/Indemnity">indemnification clause</a> which could make a lawsuit even more costly for civic hackers.</p>
+
+<p>The mayor’s <a href="http://dc.gov/release/mayor-gray-announces-launch-online-foia-portal-and-issues-transparency-and-open-data">Transparency, Open Government and Open Data Directive</a> issued in July even proposed other terms, such as a requirement to “describe any modifications made to the public dataset”. Those terms don’t appear to have made the final cut but could still be added in the future.</p>
 
 <h3>Terminating our projects</h3>
 
-<p>When we get data from DC’s old data catalog at <a href="http://data.dc.gov/">data.dc.gov</a>, we put our projects at risk. If we use any of the District’s live feeds, which includes data like crime incidents or 311 requests, we are required to agree to the catalog’s <a href="http://data.dc.gov/TermsOfUse.aspx">terms of use agreement</a>, which states that the District can:</p>
+<p>The new catalog will eventually replace the seven-year-old catalog at <a href="http://data.dc.gov/">data.dc.gov</a>, but not all of the data has been moved over to the new catalog yet. If we use any of the District’s live feeds, which includes data like crime incidents or 311 requests, we are required to agree to that catalog’s <a href="http://data.dc.gov/TermsOfUse.aspx">terms of use agreement</a>, which states that the District can:</p>
 
 <blockquote>
 “require the termination of any and all displaying, distributing or otherwise using any or all of the RSS feeds for any reason.”
@@ -22,36 +36,24 @@ categories: blog
 
 <p>That sounds like DC gets a veto over civic apps using those feeds and can require us to shut them down.</p>
 
-<p>The catalog’s terms also require data users to notify the District about how the data is being used, to attribute data to the District, and to show a disclaimer of the District’s liability on our site.</p>
-
-<h3>Preventing a lawsuit</h3>
-
-<p>DC’s new data catalog at <a href="http://opendata.dc.gov/">opendata.dc.gov</a>, which launched in August and is intended to replace the seven-year-old old catalog, has a <a href="http://dc.gov/page/terms-and-conditions-use">new terms of service agreement</a> with different terms. The new agreement thankfully drops the troublesome termination clause quoted above, but adds this new worrisome term:</p>
-
-<blockquote>
-“you will not [u]se the Site to … encourage others to engage in any conduct which would constitute a criminal offense or <em>give rise to civil liability</em>”
-</blockquote>
-
-<p>I had to check with lawyers about what “give rise to civil liability” means. It is vague, I’m told. So vague that anything might be considered giving rise to civil liability. Certainly, a lawsuit could. That means if the data shows us evidence of legal wrongdoing or injustice, we’ve essentially agreed not to take legal action against the District or any other party and, more importantly, we’ve agreed not to “encourage” anyone else to take legal action, whatever that entails. And this is just one of many ways this clause might be used to stop a civic hack the District doesn’t like.</p>
-
-<p>The new catalog’s terms also maintain the attribution requirement (it is in the licensing info box for each dataset, like <a href="http://opendata.dc.gov/datasets/bdbe356375d649ac8eceba21b5c8cb41_5">this one</a>) and add an <a href="https://en.wikipedia.org/wiki/Indemnity">indemnification clause</a>. The mayor’s new <a href="http://dc.gov/release/mayor-gray-announces-launch-online-foia-portal-and-issues-transparency-and-open-data">Transparency, Open Government and Open Data Directive</a> issued in July even proposed other terms, such as a requirement to “describe any modifications made to the public dataset”. Those terms don’t appear to have made the final cut but could still be added in the future.</p>
+<p>This catalog’s terms also require data users to notify the District about how the data is being used, to attribute data to the District, and to show a disclaimer of the District’s liability on web sites built with the data. Fortunately these terms, except the attribution requirement, have been dropped from the new catalog&rsquo;s terms.</p>
 
 <h3>And copyright infringement?</h3>
 
-<p>Somehow in all of this legal language the District neglected to grant anyone actual permission to use any of the data. You might think that the default is open, but it isn’t. The District probably holds a copyright in at least some aspect of these datasets. The District used to <a href="https://freedom-to-tinker.com/blog/sjs/the-district-of-columbia-claims-copyright-on-the-law/">claim copyright over the law itself</a>, but now <a href="http://dccouncil.us/UnofficialDCCode">explicitly dedicates the law to the public domain</a> so that there is no confusion. Unfortunately, this confusion remains with respect to all of the data in DC’s data catalog, and without explicit permission to use the data civic hackers are subject to yet another risk.</p>
+<p>Somehow in all of this legal language the District neglected to grant anyone actual permission to use any of the data. You might think that the default is open, but it isn’t. The District probably holds a copyright in at least some aspect of these datasets. The District used to <a href="https://freedom-to-tinker.com/blog/sjs/the-district-of-columbia-claims-copyright-on-the-law/">claim copyright over the law itself</a>, but now <a href="http://dccouncil.us/UnofficialDCCode">explicitly dedicates the law to the public domain</a> so that there is no confusion. Unfortunately, this confusion remains with respect to all of the data in DC’s data catalogs, and without explicit permission to use the data civic hackers are subject to yet another risk.</p>
 
 <p>(Facts aren’t protected by copyright law, thankfully, but that might not stop the District from filing a lawsuit alleging infringement over the non-factual aspects of a dataset, the so-called “selection and arrangement” of those facts.)</p>
 
 <h3>This isn’t open</h3>
 
+<p>Giving up the right to take legal action and being required to follow extremely vague rules in order to use public data are not hallmarks of an open society. These terms are a threat that there will be a lawsuit, or even <a href="http://www.wired.com/opinion/2013/06/aarons-law-is-finally-here/">criminal prosecution</a>, if civic hackers build apps that the District doesn’t approve of.</p>
+
 <p>It has been a long-standing tenant that open government data must be <a href="http://opengovdata.io/2014/no-discrimination-license-free/">license-free</a> in order to truly be open to use by the public. If there are capricious rules around the reuse of it, it’s not open government data. Period. Code for DC noted this specifically in our <a href="http://www.bega-dc.gov/sites/default/files/documents/Code%20for%20DC%20-%20Comments%20on%20the%20District%20of%20Columbia%E2%80%99s%20Transparency%20and%20Open%20Government%20Initiative.pdf">comments to the mayor last year</a>. Data subject to terms of use isn’t open.</p>
 
 <p><strong>The Mayor should update his order to direct that the city’s “open data” be made available a) without restriction and b) with an <a href="http://theunitedstates.io/licensing/">explicit dedication</a> to the public domain.</strong></p>
 
-<p>Requirements to register with the government to use public data, to give the government the right to shut down our projects (as in the old catalog’s terms), to parrot what the District wants us to say about the data (even if it is just attribution), and certainly to give up the right to take legal action when it is warranted are not hallmarks of an open society. These terms only exist to maintain the power of the government through the threat of a lawsuit, which of course would only happen if we build apps that the District doesn’t approve of. Using government data legally should not risk a lawsuit or <a href="http://www.wired.com/opinion/2013/06/aarons-law-is-finally-here/">criminal prosecution</a>.</p>
+<h3>Further reading</h3>
 
 <p>A <a href="http://wiki.civiccommons.org/Open_Data_Policy">review of municipal data catalogs</a> between 2010-2013 by Philip Ashlock and Rebecca Williams found that terms like these are unfortunately common. For example, <a href="https://data.seattle.gov/data-policy">Seattle’s terms</a> have the same right-to-require-termination clause as DC’s old catalog. The intention behind these terms may have been benign, and probably related to preventing government computers from being overloaded, but vague terms today can become specific lawsuits tomorrow &mdash; and they certainly create a chilling effect on innovators.</p>
-
-<h3>Further Reading</h3>
 
 <p>For more on issues around licensing and terms of service, see my book <a href="http://opengovdata.io/2014/no-discrimination-license-free/">Open Government Data: The Book</a>, the community guidelines in <a href="http://theunitedstates.io/licensing/">Best-Practices Language for Making Data “License-Free”</a>, and my blog post on how reading the law on an iPad in Georgia and making a copy of the law in Delaware <a href="http://razor.occams.info/blog/2014/04/03/reading-the-law-on-an-ipad-in-georgia-you-could-go-to-jail/">are both illegal</a>.</p>

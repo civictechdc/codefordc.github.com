@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Projects
+extra_css:
+  - assets/css/bootstrapValidator.min.css
 ---
 
 <div class="container">
@@ -43,12 +45,14 @@ title: Projects
 			<button class="btn btn-default filter" data-filter="all">Show All</button>
 		</div>
 		<div id='submit-project'>
-			<form class="form-inline" role="form">
+			<form id="githubrepoform" class="form-inline" role="form">
 				<div class="form-group">
-					<label class="sr-only" for="submitrepo">Submit a Project</label>
-					<input type="url" class="form-control" id="submitrepo" placeholder="Github repo URL">
+					<label class="sr-only" for="githubrepo">Submit a Project</label>
+					<input type="url" class="form-control" id="githubrepo" name="githubrepo" placeholder="Github repo URL">
 				</div>
-				<button type="submit" class="btn btn-default" id="reposubmit">Submit!</button>
+				<div class="form-group">
+					<button type="submit" class="btn btn-default" id="submitrepo">Submit!</button>
+				</div>
 			</form>
 
 		</div>
@@ -114,9 +118,10 @@ title: Projects
 </div><!-- /.container -->
 
 {% include _global_js.html %}
-<script src="assets/js/moment.min.js"></script>
-<script src="assets/js/d3.min.js"></script>
-<script src="assets/js/jquery.mixitup.min.js"></script>
+<script type="text/javascript" src="assets/js/moment.min.js"></script>
+<script type="text/javascript" src="assets/js/d3.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.mixitup.min.js"></script>
+<script type="text/javascript" src="assets/js/bootstrapValidator.min.js"></script>
 <script type="text/javascript">
 
 // Arrays for collecting overall data to sort with MixItUp
@@ -187,7 +192,6 @@ window.projects = function(data){
 			project.addClass("language-Text");
 			if ($.inArray("Text", l) == -1) {
 				l.push("Text");
-				console.log(l);
 			}
 		}
 
@@ -375,23 +379,41 @@ $(function(){
 	});
 });
 
-$("#sort").click(function(){
-	$(this).hide();
-	$("#sortbox").removeClass("hidden");
-})
+$(document).ready(function(){
 
-// New repo submission
+	// New repo submission
 
-$('#reposubmit').click(function(){
-
-	$.post(
-		"https://codefordc.slack.com/services/hooks/incoming-webhook?token=FoZHyRwfoVaDse8JLofAQa9B",
-		JSON.stringify({'text':'new repo: '+$("#submitrepo").val(),'username':'Project Tracker','icon_emoji':':rotating_light:'})
-	).success(function(){
-		$('#submitrepo').val('');
+	$("#githubrepoform").bootstrapValidator({
+		live: "disabled",
+		feedbackIcons: {
+			valid: 'glyphicon glyphicon-ok',
+			invalid: 'glyphicon glyphicon-remove',
+			validating: 'glyphicon glyphicon-refresh'
+		},
+		fields: {
+			githubrepo: {
+				validators: {
+//					regexp: {
+//						regexp: /^(https://)?(www\.)?(github\.com)\/\S+?\/\S+$/i,
+//						message: 'please enter a Github URL'
+//					},
+					uri: {
+						message: "please enter a valid URL"
+					},
+					notEmpty: {
+						message: "you need to enter something!"
+					}
+				}
+			}
+		}
+	}).on('success.form.bv', function(e) {
+		$.post(
+			"https://codefordc.slack.com/services/hooks/incoming-webhook?token=FoZHyRwfoVaDse8JLofAQa9B",
+			JSON.stringify({'text':'new repo: '+$("#githubrepo").val(),'username':'Project Tracker','icon_emoji':':computer:'})
+		).success(function(){
+			$('#submitrepo').val('');
+		});
 	});
-
-	return false;
 });
 
 </script>

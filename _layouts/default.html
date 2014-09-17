@@ -25,6 +25,9 @@
     <!-- Custom styles for this template -->
     <link href="/css/style.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    {% for css_name in page.extra_css %}
+    <link rel="stylesheet" href="{{ css_name }}">
+    {% endfor %}
   </head>
 
   <body>

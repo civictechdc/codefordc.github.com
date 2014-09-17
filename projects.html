@@ -11,29 +11,36 @@ title: Projects
 			<h1>Our Projects</h1>
 			<p class="lead">Code for DC helps people collaborate on projects to help the community. Whether you're a coder or an activist, a public servant or a designer, browse below and you're bound to find one that needs you!</p>
 		</div>
-		<div id="sort" class="btn btn-default">Sort!</div>
-		<div id="sortbox" class="hidden">
-			<div class="group">
-				<label>Sort:</label>
-				<div class="btn btn-default sort" data-sort="random">Randomize</div>
-				<div class="btn btn-default sort" data-sort="created:asc">Age</div>
-				<div class="btn btn-default sort" data-sort="updated:dec">Latest commit</div>
-				<div class="btn btn-default sort" data-sort="lines:dec">Lines of code</div>
-				<div class="btn btn-default sort" data-sort="forks:dec">Forks</div>
-				<div class="btn btn-default sort" data-sort="stars:dec">Stars</div>
+		<div id="sortbar">
+			<div class="btn-group">
+				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+					Sort <span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu" role="menu">
+					<li class="sort" data-sort="created:dec"><a>Age</a></li>
+					<li class="sort" data-sort="updated:dec"><a>Latest commit</a></li>
+					<li class="sort" data-sort="open-issues:dec"><a>Open issues</a></li>
+					<li class="sort" data-sort="lines:dec"><a>Lines of code</a></li>
+					<li class="sort" data-sort="forks:dec"><a>Forks</a></li>
+					<li class="sort" data-sort="stars:dec"><a>Stars</a></li>
+					<li class="divider"></li>
+					<li class="sort" data-sort="random"><a>Randomize</a></li>
+				</ul>
 			</div>
-			<div class="group">
-				<div class="group category-list">
-					<label>Categories:</label>
-				</div>
-				<div class="group languages">
-					<label>Languages:</label>
-				</div>
-				<div class="group main-languages">
-					<label>Main L<a href="#"></a>nguage:</label>
-				</div>
-				<div class="btn btn-default filter" data-filter="all">Show All</div>
+			<div style="display: inline"><strong>Filter by: </strong></div>
+			<div class="btn-group">
+				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+					Category <span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu category-list" role="menu"></ul>
 			</div>
+			<div class="btn-group">
+				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+					Language <span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu languages" role="menu"></ul>
+			</div>
+			<button class="btn btn-default filter" data-filter="all">Show All</button>
 		</div>
 		<div id='submit-project'>
 			<form class="form-inline" role="form">
@@ -114,7 +121,6 @@ title: Projects
 
 // Arrays for collecting overall data to sort with MixItUp
 l = [];
-ml = [];
 cat = []
 
 // Function to turn multi-word strings into class-friendly formats
@@ -149,13 +155,13 @@ window.projects = function(data){
 		var updated = moment(info["pushed_at"]).fromNow();
 		project.attr("data-updated", info["pushed_at"]);
 		var issues = info["open_issues"];
+		project.attr("data-open-issues",issues);
 		var repo_link = info["html_url"];
 		project.attr("data-forks",info["forks"]);
 		project.attr("data-stars",info["watchers"]);
 		if (info["main_language"] == null){
 			info["main_language"] = "Text";
 		}
-		project.addClass("main-"+info["main_language"])
 
 		// Calculate language usage
 		var language = info["main_language"];
@@ -163,21 +169,26 @@ window.projects = function(data){
 		var languages = "";
 		$.each(info["languages"], function(i,lang){
 			total += lang[1];
-			project.addClass(lang[0]);
-			if ($.inArray(lang[0], l) == -1) {
-				l.push(lang[0]);
-			}
 		});
 		$.each(info["languages"], function(i,lang){
-			languages += lang[0]+": "+Math.ceil(100*(lang[1]/total))+"% | ";
+			var percentage = Math.ceil(100*(lang[1]/total))
+			languages += lang[0]+": "+percentage+"% | ";
+			if (($.inArray(lang[0], l) == -1) && (percentage>30)) {
+				l.push(lang[0]);
+			}
+			if (percentage>30){
+				project.addClass("language-"+lang[0]);
+			}
 		});
 		languages = languages.substring(0, languages.length - 3);
 		project.attr("data-lines",total);
 		if (languages.length==0){
 			languages = "Text: 100%";
-		}
-		if ($.inArray(info["main_language"],ml) == -1) {
-			ml.push(info["main_language"]);
+			project.addClass("language-Text");
+			if ($.inArray("Text", l) == -1) {
+				l.push("Text");
+				console.log(l);
+			}
 		}
 
 		project.find("h2 span.name").text(name);
@@ -331,15 +342,11 @@ window.projects = function(data){
 	// Create filter options for languages
 	l.sort();
 	$.each(l, function(i,l){
-		$('.languages').append('<div class="btn btn-default filter" data-filter=".'+l+'">'+l+'</div>');
-	});
-	ml.sort();
-	$.each(ml, function(i,l){
-		$('.main-languages').append('<div class="btn btn-default filter" data-filter=".main-'+l+'">'+l+'</div>');
+		$('.languages').append('<li class="filter" data-filter=".language-'+l+'"><a>'+l+'</a></li>');
 	});
 	cat.sort();
 	$.each(cat, function(i,l){
-		$('.category-list').append('<div class="btn btn-default filter" data-filter=".category-'+l+'">'+l.split('-').join(' ')+'</div>');
+		$('.category-list').append('<li class="filter" data-filter=".category-'+l+'"><a>'+l.split('-').join(' ')+'</a></li>');
 	});
 };
 

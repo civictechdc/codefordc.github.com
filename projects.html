@@ -13,49 +13,58 @@ extra_css:
 			<h1>Our Projects</h1>
 			<p class="lead">Code for DC helps people collaborate on projects to help the community. Whether you're a coder or an activist, a public servant or a designer, browse below and you're bound to find one that needs you!</p>
 		</div>
+		<hr>
 		<div id="sortbar">
-			<div class="btn-group">
-				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-					Sort <span class="caret"></span>
-				</button>
-				<ul class="dropdown-menu" role="menu">
-					<li class="sort" data-sort="created:dec"><a>Age</a></li>
-					<li class="sort" data-sort="updated:dec"><a>Latest commit</a></li>
-					<li class="sort" data-sort="open-issues:dec"><a>Open issues</a></li>
-					<li class="sort" data-sort="lines:dec"><a>Lines of code</a></li>
-					<li class="sort" data-sort="forks:dec"><a>Forks</a></li>
-					<li class="sort" data-sort="stars:dec"><a>Stars</a></li>
-					<li class="divider"></li>
-					<li class="sort" data-sort="random"><a>Randomize</a></li>
-				</ul>
+			<div id="sort-button">
+				<div id="filter-buttons" class="pull-right">
+					<div id="sort-divider" style="display:inline"><strong>Filter by:</strong></div>
+					<div class="btn-group">
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+							Category <span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu category-list" role="menu"></ul>
+					</div>
+					<div class="btn-group">
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+							Language <span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu languages" role="menu"></ul>
+					</div>
+					<button class="btn btn-default filter" data-filter="all">Show All</button>
+				</div>
+				<div class="btn-group">
+					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+						Sort Projects <span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" role="menu">
+						<li class="sort" data-sort="created:dec"><a>Age</a></li>
+						<li class="sort" data-sort="updated:dec"><a>Latest commit</a></li>
+						<li class="sort" data-sort="open-issues:dec"><a>Open issues</a></li>
+						<li class="sort" data-sort="lines:dec"><a>Lines of code</a></li>
+						<li class="sort" data-sort="forks:dec"><a>Forks</a></li>
+						<li class="sort" data-sort="stars:dec"><a>Stars</a></li>
+						<li class="divider"></li>
+						<li class="sort" data-sort="random"><a>Randomize</a></li>
+					</ul>
+				</div>
 			</div>
-			<div style="display: inline"><strong>Filter by: </strong></div>
-			<div class="btn-group">
-				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-					Category <span class="caret"></span>
-				</button>
-				<ul class="dropdown-menu category-list" role="menu"></ul>
-			</div>
-			<div class="btn-group">
-				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-					Language <span class="caret"></span>
-				</button>
-				<ul class="dropdown-menu languages" role="menu"></ul>
-			</div>
-			<button class="btn btn-default filter" data-filter="all">Show All</button>
 		</div>
 		<div id='submit-project'>
-			<form id="githubrepoform" class="form-inline" role="form">
+			<div>Have a project that should be tracked here? Let us know!</div>
+			<form id="githubrepoform" role="form">
 				<div class="form-group">
-					<label class="sr-only" for="githubrepo">Submit a Project</label>
-					<input type="url" class="form-control" id="githubrepo" name="githubrepo" placeholder="Github repo URL">
-				</div>
-				<div class="form-group">
-					<button type="submit" class="btn btn-default" id="submitrepo">Submit!</button>
+					<div class="input-group">
+						<label class="sr-only" for="githubrepo">Submit a Project</label>
+						<input class="form-control" id="githubrepo" name="githubrepo" placeholder="Github repo URL">
+						<span class="input-group-btn">
+							<button type="button submit" class="btn btn-default" id="submitrepo">Submit!</button>
+						</span>
+					</div>
 				</div>
 			</form>
 
 		</div>
+		<hr>
 		<div class="col-lg-12">
 			<div id="project-list">
 				<!-- populated by js -->
@@ -70,7 +79,6 @@ extra_css:
 				<div class="col-sm-12 title">
 					<h2><img class='img-rounded thumbnail hidden' height='50' width='50'><span class="name"></span></h2>
 					<p class="homepage hidden"><a>Website</a></p>
-
 				</div>
 			</div>
 			<div class="row">
@@ -314,7 +322,9 @@ window.projects = function(data){
 		var chart = d3.select("#project"+i+" .activity").append("svg")
 		.attr("class", "chart")
 		.attr("width", w * 52)
-		.attr("height", h);
+		.attr("height", h)
+		.attr("viewbox", "0 0 "+(w*52)+" "+h)
+		.attr("preserveAspectRatio","xMidYMid");
 
 		chart.append("rect")
 		.attr("width", "100%")
@@ -338,8 +348,6 @@ window.projects = function(data){
 		.attr("width", w / 2)
 		.attr("height", function(d) { return y(d); } )
 		.attr("fill", "#9E9E9E");
-
-		// Put a border around the graph
 
 	});
 
@@ -382,37 +390,48 @@ $(function(){
 $(document).ready(function(){
 
 	// New repo submission
+	var submit = false;
 
 	$("#githubrepoform").bootstrapValidator({
-		live: "disabled",
-		feedbackIcons: {
-			valid: 'glyphicon glyphicon-ok',
-			invalid: 'glyphicon glyphicon-remove',
-			validating: 'glyphicon glyphicon-refresh'
-		},
+		live: "enabled",
+		threshold: 12,
 		fields: {
 			githubrepo: {
 				validators: {
-//					regexp: {
-//						regexp: /^(https://)?(www\.)?(github\.com)\/\S+?\/\S+$/i,
-//						message: 'please enter a Github URL'
-//					},
-					uri: {
-						message: "please enter a valid URL"
+					regexp: {
+						regexp: /^(https:\/\/)?(www\.)?(github\.com)\/\S+?\/\S+$/i,
+						message: 'please enter a Github URL'
 					},
 					notEmpty: {
-						message: "you need to enter something!"
+						message: "please enter a Github URL"
 					}
 				}
 			}
 		}
-	}).on('success.form.bv', function(e) {
-		$.post(
-			"https://codefordc.slack.com/services/hooks/incoming-webhook?token=FoZHyRwfoVaDse8JLofAQa9B",
-			JSON.stringify({'text':'new repo: '+$("#githubrepo").val(),'username':'Project Tracker','icon_emoji':':computer:'})
-		).success(function(){
-			$('#submitrepo').val('');
-		});
+	}).on('error.field.bv', function(e) {
+		submit = false;
+	}).on('success.field.bv', function(e) {
+		submit = true;
+	});
+
+	$("#githubrepo").keydown(function(e){
+		var key =  e.keyCode ? e.keyCode : e.which;
+		if(key == 13) {
+			$('#submitrepo').click();
+			return false;
+		}
+	});
+
+	$("#submitrepo").click(function() {
+		console.log($("#githubrepo").val());
+		if (submit){
+			$.post(
+				"https://codefordc.slack.com/services/hooks/incoming-webhook?token=FoZHyRwfoVaDse8JLofAQa9B",
+				JSON.stringify({'text':'new repo: '+$("#githubrepo").val(),'username':'Project Tracker','icon_emoji':':computer:'})
+			).success(function(){
+				$('#githubrepo').val('');
+			});
+		}
 	});
 });
 

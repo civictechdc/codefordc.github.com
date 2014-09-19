@@ -117,7 +117,7 @@ extra_css:
 					<p class="issues"><a class='btn btn-info' role='button'></a></p>
 					<div class="needs hidden">
 						<strong>Needs</strong>
-						<div> </div>
+						<div><ul> </ul></div>
 					</div>
 				</div>
 			</div>
@@ -269,7 +269,7 @@ window.projects = function(data){
 			project.find('.needs').removeClass("hidden");
 			$.each(info["civic_json"]["needs"], function(k,v){
 				project.find('.needs div').append(
-					$("<button class='btn btn-sm btn-success need'></button>").text(v["need"])
+					$("<li class='need'></li>").text(v["need"])
 				);
 			});
 		}

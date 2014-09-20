@@ -6,6 +6,26 @@ title: Get Involved
 <div class="col-lg-12 hero">
 	<div class="hero-text">Code for DC</div>
 </div>
+<div class="modal fade" id="slackinvite">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<h4 class="modal-title">Request a Slack invite</h4>
+			</div>
+			<div class="modal-body">
+				<p>Let us know what email address you'd like to use:</p>
+				<form role="form">
+					<div class="form-group">
+						<label for="email" class="sr-only">Email Address</label>
+    					<input type="email" class="form-control" id="email" placeholder="Email Address">
+					</div>
+					<button type="submit" class="btn btn-primary" id="submitemail" data-dismiss="modal">Submit</button>
+				</form>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 <div class="container">
 
@@ -48,7 +68,8 @@ The Code for DC Blog has arrived!  We'll use this space to share updates on our 
 						<h2>Join the discussion online</h2>
 						<p>An open conversation online about DC, what we're doing now, and what's next.
 						</p>
-						<p><a href="http://groups.google.com/forum/#!forum/dc-cfa-brigade" target="_blank">Learn and Share &raquo;</a></p>
+						<p><a href="http://groups.google.com/forum/#!forum/dc-cfa-brigade" target="_blank">Google Group &raquo;</a></p>
+						<p><a href="#" data-toggle="modal" data-target="#slackinvite">Slack Team &raquo;</a></p>
 		        	</div>
 					<div class="col-lg-4">
 						<img src="images/launch.png" alt="Community" />
@@ -143,4 +164,18 @@ The Code for DC Blog has arrived!  We'll use this space to share updates on our 
     {% include _global_js.html %}
 
   </body>
+<script>
+$("#slackinvite").on("shown.bs.modal", function(e) {
+	$("#email").focus();
+})
+
+$("#submitemail").click(function(){
+	$.post(
+		"https://codefordc.slack.com/services/hooks/incoming-webhook?token=FoZHyRwfoVaDse8JLofAQa9B",
+		JSON.stringify({'text':'invite request from: '+$("#email").val(),'username':'Slack Inviter','icon_emoji':':raising_hand:'})
+	).success(function(){
+		$("#email").val("");
+	});
+});
+</script>
 </html>

@@ -141,6 +141,10 @@ img.project-git-human {
 /*  project page */
 /***************************/
 
+#sortbar {
+    padding-bottom: 20px;
+}
+
 #project-list .title
 {
 	text-align:center;
@@ -151,7 +155,9 @@ img.project-git-human {
 	margin-bottom:40px;
 }
 
-
+#project-list .mix {
+    display: none;
+}
 
 #project-list h3,
 #press-list h3 {

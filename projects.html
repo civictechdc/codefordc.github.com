@@ -1,16 +1,70 @@
 ---
 layout: default
 title: Projects
+extra_css:
+  - assets/css/bootstrapValidator.min.css
 ---
 
 <div class="container">
 
 	<div class="col-lg-1"></div>
 	<div class="col-lg-10">
-    	<div class="col-lg-12 starter-template">
+		<div class="col-lg-12 starter-template">
 			<h1>Our Projects</h1>
 			<p class="lead">Code for DC helps people collaborate on projects to help the community. Whether you're a coder or an activist, a public servant or a designer, browse below and you're bound to find one that needs you!</p>
 		</div>
+		<hr>
+		<div id="sortbar">
+			<div id="sort-button">
+				<div id="filter-buttons" class="pull-right">
+					<div id="sort-divider" style="display:inline"><strong>Filter by:</strong></div>
+					<div class="btn-group">
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+							Category <span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu category-list" role="menu"></ul>
+					</div>
+					<div class="btn-group">
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+							Language <span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu languages" role="menu"></ul>
+					</div>
+					<button class="btn btn-default filter" data-filter="all">Show All</button>
+				</div>
+				<div class="btn-group">
+					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+						Sort Projects <span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" role="menu">
+						<li class="sort" data-sort="created:dec"><a>Age</a></li>
+						<li class="sort" data-sort="updated:dec"><a>Latest commit</a></li>
+						<li class="sort" data-sort="open-issues:dec"><a>Open issues</a></li>
+						<li class="sort" data-sort="lines:dec"><a>Lines of code</a></li>
+						<li class="sort" data-sort="forks:dec"><a>Forks</a></li>
+						<li class="sort" data-sort="stars:dec"><a>Stars</a></li>
+						<li class="divider"></li>
+						<li class="sort" data-sort="random"><a>Randomize</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id='submit-project'>
+			<div>Have a project that should be tracked here? Let us know!</div>
+			<form id="githubrepoform" role="form">
+				<div class="form-group">
+					<div class="input-group">
+						<label class="sr-only" for="githubrepo">Submit a Project</label>
+						<input class="form-control" id="githubrepo" name="githubrepo" placeholder="Github repo URL">
+						<span class="input-group-btn">
+							<button type="button submit" class="btn btn-default" id="submitrepo">Submit!</button>
+						</span>
+					</div>
+				</div>
+			</form>
+
+		</div>
+		<hr>
 		<div class="col-lg-12">
 			<div id="project-list">
 				<!-- populated by js -->
@@ -20,12 +74,11 @@ title: Projects
 	<div class="col-lg-1"></div>
 
 	<div style="display: none"> <!-- template for a project -->
-		<div id="project-template" class="project">
+		<div id="project-template" class="project mix">
 			<div class="row">
 				<div class="col-sm-12 title">
 					<h2><img class='img-rounded thumbnail hidden' height='50' width='50'><span class="name"></span></h2>
 					<p class="homepage hidden"><a>Website</a></p>
-
 				</div>
 			</div>
 			<div class="row">
@@ -64,7 +117,7 @@ title: Projects
 					<p class="issues"><a class='btn btn-info' role='button'></a></p>
 					<div class="needs hidden">
 						<strong>Needs</strong>
-						<div> </div>
+						<div><ul> </ul></div>
 					</div>
 				</div>
 			</div>
@@ -73,9 +126,24 @@ title: Projects
 </div><!-- /.container -->
 
 {% include _global_js.html %}
-<script src="assets/js/moment.min.js"></script>
-<script src="assets/js/d3.min.js"></script>
+<script type="text/javascript" src="assets/js/moment.min.js"></script>
+<script type="text/javascript" src="assets/js/d3.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.mixitup.min.js"></script>
+<script type="text/javascript" src="assets/js/bootstrapValidator.min.js"></script>
 <script type="text/javascript">
+
+// Arrays for collecting overall data to sort with MixItUp
+l = [];
+cat = []
+
+// Function to turn multi-word strings into class-friendly formats
+function classify(str) {
+	x = str.replace(/\w\S*/g, function(txt) {
+		return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+	});
+	x = x.replace(/ /g,"-");
+	return x
+}
 
 // Load the civic.json file and get working
 // This code is based on the projects page at https://github.com/open-city/open-gov-hack-night
@@ -83,17 +151,30 @@ window.projects = function(data){
 	var projects = data;
 
 	// Sort projects by most recently updated
-	projects.sort(function(a,b) {return new Date(b.updated_at) - new Date(a.updated_at)})
+	projects.sort(function(a,b) {return new Date(b.pushed_at) - new Date(a.pushed_at)})
 
 	// Begin iterating over the JSON file
 	$.each(projects, function(i,info){
 
+		// Insert the information into the site's HTML
+		var project = $('#project-template').clone();
+		project.prop('id', 'project'+i);
+		$("#project-list").append(project);
+
 		// Get info for the project, starting with Github info that always exists
 		var name = info["name"];
 		var created = moment(info["created_at"]).fromNow();
-		var updated = moment(info["updated_at"]).fromNow();
+		project.attr("data-created", info["created_at"]);
+		var updated = moment(info["pushed_at"]).fromNow();
+		project.attr("data-updated", info["pushed_at"]);
 		var issues = info["open_issues"];
+		project.attr("data-open-issues",issues);
 		var repo_link = info["html_url"];
+		project.attr("data-forks",info["forks"]);
+		project.attr("data-stars",info["watchers"]);
+		if (info["main_language"] == null){
+			info["main_language"] = "Text";
+		}
 
 		// Calculate language usage
 		var language = info["main_language"];
@@ -103,41 +184,51 @@ window.projects = function(data){
 			total += lang[1];
 		});
 		$.each(info["languages"], function(i,lang){
-			languages += lang[0]+": "+Math.ceil(100*(lang[1]/total))+"% | ";
+			var percentage = Math.ceil(100*(lang[1]/total))
+			languages += lang[0]+": "+percentage+"% | ";
+			if (($.inArray(lang[0], l) == -1) && (percentage>30)) {
+				l.push(lang[0]);
+			}
+			if (percentage>30){
+				project.addClass("language-"+lang[0]);
+			}
 		});
 		languages = languages.substring(0, languages.length - 3);
+		project.attr("data-lines",total);
 		if (languages.length==0){
 			languages = "Text: 100%";
+			project.addClass("language-Text");
+			if ($.inArray("Text", l) == -1) {
+				l.push("Text");
+			}
 		}
 
-		// Insert the information into the site's HTML
-		var project = $('#project-template').clone();
-		project.prop('id', 'project'+i);
-		$("#project-list").append(project);
-
 		project.find("h2 span.name").text(name);
-//		project.find("h2 a").attr('href', repo_link);
+		//		project.find("h2 a").attr('href', repo_link);
 
 		if (info["civic_json"] && info["civic_json"]["thumbnailUrl"]){
 			project.find(".thumbnail").removeClass("hidden")
 			.attr("src", info["civic_json"]["thumbnailUrl"]);
-		//	project.find("h2 span.name").css("border-bottom","4px solid black");
+			//	project.find("h2 span.name").css("border-bottom","4px solid black");
 		}
 
-		if (info["civic_json"] && info["civic_json"]["contact"]["email"])
+		if (info["civic_json"] && info["civic_json"]["contact"]["email"]){
 			project.find(".contact a.email").removeClass('hidden')
-				.attr('href', 'mailto:' + info["civic_json"]["contact"]["email"]);
+			.attr('href', 'mailto:' + info["civic_json"]["contact"]["email"]);
+		}
 
-		if (info["civic_json"] && info["civic_json"]["contact"]["twitter"])
+		if (info["civic_json"] && info["civic_json"]["contact"]["twitter"]){
 			project.find(".contact a.twitter").removeClass('hidden')
-				.attr('href', 'http://twitter.com/' + info["civic_json"]["contact"]["twitter"].slice(1));
+			.attr('href', 'http://twitter.com/' + info["civic_json"]["contact"]["twitter"].slice(1));
+		}
 
-		if (info["homepage"])
+		if (info["homepage"]){
 			project.find(".homepage").removeClass('hidden')
-				.find('a').attr('href', info["homepage"]).text(info["homepage"]);
+			.find('a').attr('href', info["homepage"]).text(info["homepage"]);
+		}
 
 		project.find(".github-repo").removeClass('hidden')
-			.find('a.repo-link').attr('href', repo_link).text("Github repository >");
+		.find('a.repo-link').attr('href', repo_link).text("Github repository >");
 
 		if (info["civic_json"] && info["civic_json"]["communityPartner"]){
 			var compartner = ""
@@ -145,8 +236,8 @@ window.projects = function(data){
 				compartner += "<a href='"+v+"'>"+k+"</a>";
 			});
 			if (compartner.length > 0){
-			project.find(".communityPartner").removeClass('hidden').
-				find("span").text(compartner);
+				project.find(".communityPartner").removeClass('hidden').
+				find("span").html(compartner);
 			}
 		}
 
@@ -156,8 +247,8 @@ window.projects = function(data){
 				govpartner += "<a href='"+v+"'>"+k+"</a>"
 			});
 			if (govpartner.length > 0){
-			project.find(".governmentPartner").removeClass('hidden').
-				find("span").text(govpartner);
+				project.find(".governmentPartner").removeClass('hidden').
+				find("span").html(govpartner);
 			}
 		}
 
@@ -167,8 +258,8 @@ window.projects = function(data){
 				polentity += "<a href='"+v+"'>"+k+"</a>"
 			});
 			if (polentity.length > 0){
-			project.find(".politicalEntity").removeClass('hidden').
-				find("span").text(polentity);
+				project.find(".politicalEntity").removeClass('hidden').
+				find("span").html(polentity);
 			}
 		}
 
@@ -178,7 +269,7 @@ window.projects = function(data){
 			project.find('.needs').removeClass("hidden");
 			$.each(info["civic_json"]["needs"], function(k,v){
 				project.find('.needs div').append(
-					$("<button class='btn btn-sm btn-success need'></button>").text(v["need"])
+					$("<li class='need'></li>").text(v["need"])
 				);
 			});
 		}
@@ -197,8 +288,9 @@ window.projects = function(data){
 
 		project.find('.language span').html(languages);
 
-		if (info["civic_json"] && info["civic_json"]["status"])
+		if (info["civic_json"] && info["civic_json"]["status"]){
 			project.find('.status').removeClass("hidden").find("span").text(info["civic_json"]["status"]);
+		}
 
 		project.find('.issues a').attr('href', repo_link+'/issues');
 		project.find('.issues a').text(issues ? (issues+" Issues Need Help") : "Submit an Idea");
@@ -206,6 +298,11 @@ window.projects = function(data){
 		if (info["civic_json"] && info["civic_json"]["categories"]){
 			$.each(info["civic_json"]["categories"], function(k,v){
 				project.find('.categories').append($("<p><button class='btn btn-sm btn-warning category'></button></p>").find('button').text(v['category']))
+				c = classify(v['category'])
+				project.addClass("category-"+c);
+				if ($.inArray(c,cat)==-1){
+					cat.push(c);
+				}
 			})
 		}
 
@@ -218,41 +315,125 @@ window.projects = function(data){
 			scaled.push(n * 100/Math.max.apply(null, info["activity"]));
 		})
 
-		var w = project.find(".activity").width() / 52,
-			h = 90;
+		var w = $("#project-list").width() / 156,
+		h = 90;
 
 		// Create the chart's SVG in the DOM
 		var chart = d3.select("#project"+i+" .activity").append("svg")
-			.attr("class", "chart")
-			.attr("width", w * 52)
-			.attr("height", h);
+		.attr("class", "chart")
+		.attr("width", w * 52)
+		.attr("height", h)
+		.attr("viewbox", "0 0 "+(w*52)+" "+h)
+		.attr("preserveAspectRatio","xMidYMid");
 
 		chart.append("rect")
-    		.attr("width", "100%")
-    		.attr("height", "100%")
-    		.attr("fill", "#ededed");
+		.attr("width", "100%")
+		.attr("height", "100%")
+		.attr("fill", "#ededed");
 
 		var x = d3.scale.linear()
-			.domain([0, 1])
-			.range([0, w]);
+		.domain([0, 1])
+		.range([0, w]);
 
 		var y = d3.scale.linear()
-			.domain([0, 100])
-			.range([0, h]);
+		.domain([0, 100])
+		.range([0, h]);
 
 		// Make the actual graph
 		chart.selectAll("rect")
-			.data(scaled)
+		.data(scaled)
 		.enter().append("rect")
-			.attr("x", function(d, i) { return x(i) - .5; })
-			.attr("y", function(d) { return h - y(d) - .5; })
-			.attr("width", w / 2)
-			.attr("height", function(d) { return y(d); } )
-			.attr("fill", "#9E9E9E");
-
-		// Put a border around the graph
+		.attr("x", function(d, i) { return x(i) - .5; })
+		.attr("y", function(d) { return h - y(d) - .5; })
+		.attr("width", w / 2)
+		.attr("height", function(d) { return y(d); } )
+		.attr("fill", "#9E9E9E");
 
 	});
+
+	// Create filter options for languages
+	l.sort();
+	$.each(l, function(i,l){
+		$('.languages').append('<li class="filter" data-filter=".language-'+l+'"><a>'+l+'</a></li>');
+	});
+	cat.sort();
+	$.each(cat, function(i,l){
+		$('.category-list').append('<li class="filter" data-filter=".category-'+l+'"><a>'+l.split('-').join(' ')+'</a></li>');
+	});
 };
+
+// Make list sortable
+
+$(function(){
+
+	// Instantiate MixItUp:
+
+	$('#project-list').mixItUp({
+		animation: {
+			enable: false
+		},
+		layout: {
+			display: 'block'
+		},
+		callbacks: {
+			onMixLoad: function(){
+				$(this).mixItUp('setOptions', {
+					animation: {
+						enable: true
+					},
+				});
+			}
+		}
+	});
+});
+
+$(document).ready(function(){
+
+	// New repo submission
+	var submit = false;
+
+	$("#githubrepoform").bootstrapValidator({
+		live: "enabled",
+		threshold: 12,
+		fields: {
+			githubrepo: {
+				validators: {
+					regexp: {
+						regexp: /^(https:\/\/)?(www\.)?(github\.com)\/\S+?\/\S+$/i,
+						message: 'please enter a Github URL'
+					},
+					notEmpty: {
+						message: "please enter a Github URL"
+					}
+				}
+			}
+		}
+	}).on('error.field.bv', function(e) {
+		submit = false;
+	}).on('success.field.bv', function(e) {
+		submit = true;
+	});
+
+	$("#githubrepo").keydown(function(e){
+		var key =  e.keyCode ? e.keyCode : e.which;
+		if(key == 13) {
+			$('#submitrepo').click();
+			return false;
+		}
+	});
+
+	$("#submitrepo").click(function() {
+		console.log($("#githubrepo").val());
+		if (submit){
+			$.post(
+				"https://codefordc.slack.com/services/hooks/incoming-webhook?token=FoZHyRwfoVaDse8JLofAQa9B",
+				JSON.stringify({'text':'new repo: '+$("#githubrepo").val(),'username':'Project Tracker','icon_emoji':':computer:'})
+			).success(function(){
+				$('#githubrepo').val('');
+			});
+		}
+	});
+});
+
 </script>
 <script src="https://rawgit.com/codefordc/files/master/projects.js"></script>

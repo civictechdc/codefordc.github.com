@@ -1,0 +1,6 @@
+[submodule "_includes/code-of-conduct"]
+	path = _includes/code-of-conduct
+	url = https://github.com/codefordc/code-of-conduct.git
+[submodule "_includes/guides"]
+	path = _includes/guides
+	url = https://github.com/codefordc/guides.git

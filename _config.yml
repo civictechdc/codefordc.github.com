@@ -1,3 +1,4 @@
-name: This is the site name
+name: Code for DC
 markdown: redcarpet
 pygments: true
+gems: [kramdown]

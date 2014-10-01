@@ -8,6 +8,7 @@ title: Code of Conduct
         <div class="well well-sm" style="text-align: center; margin-top: 20px">
             To discuss the Code or submit edits, please go to <a href="https://github.com/codefordc/code-of-conduct">the Code's repo</a>
         </div>
-        {% markdown code-of-conduct/CodeofConduct.md %}
+        {% capture my_include %}{% include code-of-conduct/CodeofConduct.md %}{% endcapture %}
+        {{ my_include | markdownify }}
     </div>
 </div>

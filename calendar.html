@@ -1,0 +1,77 @@
+---
+layout: default
+title: Calendar
+extra_css:
+  - assets/css/calendar.css
+---
+
+<div class="container">
+    <div class="calendar clearfix">
+    </div>
+</div>
+
+<script type="text/template" id="calendar-template">
+<div class="clndr-controls">
+  <div class="clndr-previous-button">&lsaquo;</div>
+  <div class="month"><%= month %> <%= year %></div>
+  <div class="clndr-next-button">&rsaquo;</div>
+</div>
+<div class="clndr-grid">
+  <div class="days-of-the-week clearfix">
+    <% _.each(daysOfTheWeek, function(day) { %>
+      <div class="header-day"><%= day %></div>
+    <% }); %>
+  </div>
+  <div class="days clearfix">
+    <% _.each(days, function(day) { %>
+      <div class="<%= day.classes %>" id="<%= day.id %>"><span class="day-number"><%= day.day %></span></div>
+    <% }); %>
+  </div>
+</div>
+<div class="event-listing">
+  <div class="event-listing-title">EVENTS THIS MONTH</div>
+  <% var dates_used = []; %>
+  <% _.each(eventsThisMonth, function(event) { %>
+      <div class="event-item">
+        <% if ($.inArray(event.time, dates_used) == -1) { %>
+        <div class="event-item-time"><%= event.date_formatted %></div>
+        <% }; dates_used.push(event.time); %>
+        <div class="event-item-group"><%= event.group.name %></div>
+        <div class="event-item-name"><%= event.name %></div>
+        <% if (event.venue) { %>
+        <div class="event-item-location"><%= event.venue.name %>, <%= event.venue.address_1 %></div>
+        <% } %>
+        <div class="event-item-url"><a href="<%= event.event_url %>">Click here to register</a></div>
+      </div>
+    <% }); %>
+</div>
+</script>
+
+
+{% include _global_js.html %}
+<script type="text/javascript" src="assets/js/moment.min.js"></script>
+<script type="text/javascript" src="assets/js/underscore-min.js"></script>
+<script type="text/javascript" src="assets/js/clndr.min.js"></script>
+
+<script>
+var cal = []
+window.calendar = function(data){
+    $.each(data, function(i, info){
+        info["date"] = moment(info["time"]).format();
+        info["date_formatted"] = moment(info["time"]).format("dddd, MMMM Do [at] h:mm a");
+        cal.push(info)
+    });
+}
+$(document).ready(function(){
+    calendar = $('.calendar').clndr({
+        events: cal,
+        template: $("#calendar-template").html(),
+        clickEvents: {
+            click: function(target){
+                console.log(target.events);
+            }
+        }
+    });
+});
+</script>
+<script src="https://rawgit.com/codefordc/files/master/calendar.js"></script>

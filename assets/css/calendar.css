@@ -3,61 +3,27 @@
   margin-top: 20px;
 }
 .calendar .clndr .clndr-controls {
-  display: inline-block;
-  width: 100%;
-  position: relative;
+  margin-top: 10px;
   margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 24px;
 }
 .calendar .clndr .clndr-controls .month {
-  float: left;
-  width: 90%;
   text-align: center;
 }
-.calendar .clndr .clndr-controls .clndr-control-button {
-  float: left;
-  width: 5%;
-}
-.calendar .clndr .clndr-controls .clndr-control-button.rightalign {
-  text-align: right;
-  width: 5%;
-}
-.calendar .clndr .clndr-controls .clndr-control-button .clndr-next-button {
+.calendar .clndr .clndr-controls .clndr-next-button {
   cursor: pointer;
-  -webkit-user-select: none;
-  /* Chrome/Safari */
-  -moz-user-select: none;
-  /* Firefox */
-  -ms-user-select: none;
-  /* IE10+ */
+  text-align: center;
 }
-.calendar .clndr .clndr-controls .clndr-control-button .clndr-next-button:hover {
-  background: #ddd;
+.calendar .clndr .clndr-controls .clndr-next-button:hover {
+  background: darkgray;
 }
-.calendar .clndr .clndr-controls .clndr-control-button .clndr-next-button.inactive {
-  opacity: 0.5;
-}
-.calendar .clndr .clndr-controls .clndr-control-button .clndr-next-button.inactive:hover {
-  background: none;
-  cursor: default;
-}
-.calendar .clndr .clndr-controls .clndr-control-button .clndr-previous-button {
+.calendar .clndr .clndr-controls .clndr-previous-button {
   cursor: pointer;
-  -webkit-user-select: none;
-  /* Chrome/Safari */
-  -moz-user-select: none;
-  /* Firefox */
-  -ms-user-select: none;
-  /* IE10+ */
+  text-align: center;
 }
-.calendar .clndr .clndr-controls .clndr-control-button .clndr-previous-button:hover {
-  background: #ddd;
-}
-.calendar .clndr .clndr-controls .clndr-control-button .clndr-previous-button.inactive {
-  opacity: 0.5;
-}
-.calendar .clndr .clndr-controls .clndr-control-button .clndr-previous-button.inactive:hover {
-  background: none;
-  cursor: default;
+.calendar .clndr .clndr-controls .clndr-previous-button:hover {
+  background: darkgray;
 }
 .calendar .clndr-grid {
   float: left;
@@ -76,6 +42,9 @@
 }
 .calendar .clndr-grid .days {
   width: 100%;
+}
+.calendar .clndr-grid .days .day:hover {
+  background-color: darkgray;
 }
 .calendar .clndr-grid .days .day,
 .calendar .clndr-grid .days .empty {
@@ -119,5 +88,27 @@
   color: #4f4f4f;
 }
 .calendar .event-listing .event-item .event-item-time {
+  font-weight: 700;
+}
+.calendar .group-listing {
+  float: left;
+}
+.calendar .group-listing .group-listing-title {
+  padding: 14px;
+  background-color: lightblue;
+  text-align: center;
+  color: white;
+  letter-spacing: 1px;
+}
+.calendar .group-listing .group-item {
+  padding: 14px;
+  color: #4f4f4f;
+}
+.calendar .group-listing .group-item:hover {
+  padding: 14px;
+  color: #4f4f4f;
+  background-color: darkgray;
+}
+.calendar .group-listing .group-item .group-item-name    {
   font-weight: 700;
 }

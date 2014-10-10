@@ -9,7 +9,7 @@ categories: blog
 ---
 
 
-If you're reading this, you've likely come across some geo data that you want to use but the coordinates are given in the [Maryland Coordinate System](http://www.mgs.md.gov/geology/maryland_coordinate_system.html) and you'd like to have them in a more usable format, like simple latitude/longitude. Well, you're in luck.
+If you're reading this, you've likely come across some geo data that you want to use but the coordinates are given in the [Maryland Coordinate System](http://www.mgs.md.gov/geology/maryland_coordinate_system.html) and you'd like to have them in a more usable format, like simple latitude/longitude. Well, you're in luck. For our project [mapping gun crimes in DC](https://github.com/cmgiven/dc-handguns), we needed to make this same conversion and tried to come up with a more repeatable way to do it in the future. The crime data that DC provides only gives `BLOCKCOORDS` and we needed lat/lng in order to map it.
 
 ### Maryland Coordinate System
 
@@ -26,28 +26,24 @@ However the service isn't very easy to find, could be easier to use, and doesn't
 
 ### Python
 
-You'll need three different python modules for this:
+You'll need two different python modules for this:
 
-    import urllib
-    import urllib2
+    import requests
     from bs4 import BeautifulSoup
 
 The response will be in XML (not ideal), so we will use [BeautifulSoup](http://www.crummy.com/software/BeautifulSoup/) to convert to a more useable format. Normally I'd use [lxml](http://lxml.de/) for this because it is fast. However lxml is less accepting of badly formatted XML. As our responses will be small and maybe a little messy, Beautiful Soup is a safer choice.
 
-We use urllib and urllib2 to set up the requests. Here's an annotated mock script:
+We use `requests` to set up the requests. Here's an annotated mock script:
 
     data = []
     url = "http://citizenatlas.dc.gov/usng/getusng.asmx/MD_SPCStoLL"
 
     for d in raw_data:
     try:
-        value = d[7] + ',' + d[8]            # these are the block coordinates from my raw data
+        value = d[7] + ',' + d[8]            # these are the block coordinates from the raw data
         params = {'SPCSXYSTR': value}        # we need to send a key-value pair with this key name and our coordinates as the value
-        en_params = urllib.urlencode(params) # encode our paramater
-        req = urllib2.Request(url,en_params) # make the request
-        response = urllib2.urlopen(req)      # save the response
-        the_page = response.read()           # read the response
-        soup = BeautifulSoup(the_page)       # construct a BeautifulSoup object out of the XML response
+        r = requests.post(url,data=params)   # make a post request with our data
+        soup = BeautifulSoup(r.text)         # construct a BeautifulSoup object out of the XML response
         cs = soup.find('convstr')            # the lat/lng coordinates are given inside this tag
         row = []
         row.append(cs.text.split(',')[0])    # append the lat to our output row
@@ -61,4 +57,4 @@ So about ~20 lines of python to get our final result!
 
 The full code for our project is located [here](https://github.com/cmgiven/dc-handguns/blob/master/data/blockcoord_convert.py)
 
-Thanks to [Chris Given](https://github.com/cmgiven), [Tobias Shapinsky](https://github.com/TShapinsky), and [Tim Abdella](https://twitter.com/tabdella) for their help with this project.
+Thanks to [Chris Given](https://github.com/cmgiven), [Tobias Shapinsky](https://github.com/TShapinsky), [Steven Reilly](https://github.com/stvnrlly) and [Tim Abdella](https://twitter.com/tabdella) for their help with this project and post.

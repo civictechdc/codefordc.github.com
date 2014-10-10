@@ -13,7 +13,7 @@ If you're reading this, you've likely come across some geo data that you want to
 
 ### Maryland Coordinate System
 
-First, some background. Plenty of geo government data is provided in [the Maryland Coordinate System](http://www.mgs.md.gov/geology/maryland_coordinate_system.html) which shows east/west and north/south distance in meters from a fixed point. While using lat/lng seems obvious to those of us raised on web mapping, there's a fairly good reason for using a state specific coordinate system: it makes surveying and intra-state work much simpler. Also, the errors produced by pretending the earth is flat tend to be [very small](http://en.wikipedia.org/wiki/State_Plane_Coordinate_System) at the state-level.
+First, some background. Plenty of geo government data is provided in [the Maryland Coordinate System](http://www.mgs.md.gov/geology/maryland_coordinate_system.html) which shows east/west and north/south distance in meters from a fixed point. While using lat/lng seems obvious to those of us raised on web mapping, there's a fairly good reason for using a state specific coordinate system: it makes surveying and intra-state work much simpler. Also, the errors produced by pretending the earth is flat tend to be [very small](http://en.wikipedia.org/wiki/State_Plane_Coordinate_System) at the state level.
 But now that we can easily project information on to a map using spherical coordinates, it makes sense to seek an easy way to convert.
 
 ### DC GIS Developer Tools
@@ -61,4 +61,4 @@ So about ~20 lines of python to get our final result!
 
 The full code for our project is located [here](https://github.com/cmgiven/dc-handguns/blob/master/data/blockcoord_convert.py)
 
-Thanks to [Chris Givens](https://github.com/cmgiven), Tobias Shapinsky, and Tim Abdella for their help with this project.
+Thanks to [Chris Given](https://github.com/cmgiven), [Tobias Shapinsky](https://github.com/TShapinsky), and [Tim Abdella](https://twitter.com/tabdella) for their help with this project.

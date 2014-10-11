@@ -77,11 +77,19 @@ extra_css:
 <script>
 var cal = []
 window.calendar = function(data){
-    $.each(data, function(i, info){
+    c4dc = data["codefordc"]
+    $.each(c4dc, function(i, info){
         info["date"] = moment(info["time"]).format();
         info["date_formatted"] = moment(info["time"]).format("dddd, MMMM Do [at] h:mm a");
         cal.push(info)
     });
+    other = data["other"]
+    $.each(other, function(i, info){
+        info["date"] = moment(info["time"]).format();
+        info["date_formatted"] = moment(info["time"]).format("dddd, MMMM Do [at] h:mm a");
+        cal.push(info)
+    });
+    console.log(cal);
 }
 $(document).ready(function(){
     calendar = $('.calendar').clndr({

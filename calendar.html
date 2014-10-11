@@ -26,7 +26,7 @@ extra_css:
     </div>
     <div class="days clearfix">
     <% _.each(days, function(day) { %>
-        <div class="<%= day.classes %>" id="<%= day.id %>"><span class="day-number"><%= day.day %></span></div>
+        <div class="<%= day.classes %>"><span class="day-number"><%= day.day %></span></div>
     <% }); %>
     </div>
 </div>
@@ -89,7 +89,6 @@ window.calendar = function(data){
         info["date_formatted"] = moment(info["time"]).format("dddd, MMMM Do [at] h:mm a");
         cal.push(info)
     });
-    console.log(cal);
 }
 $(document).ready(function(){
     calendar = $('.calendar').clndr({

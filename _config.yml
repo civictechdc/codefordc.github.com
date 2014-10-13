@@ -2,3 +2,5 @@ name: Code for DC
 url: http://codefordc.org
 markdown: redcarpet
 highlighter: pygments
+gems:
+    - jekyll-sitemap

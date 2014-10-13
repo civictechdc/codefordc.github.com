@@ -4,7 +4,7 @@ title:  "Dealing with the Maryland Coordinate System"
 post_author: "Drew Bollinger"
 post_twitter: "@drewbo19"
 post_avatar: "drew-bollinger.png"
-date:   2014-10-10 10:25:00
+date:   2014-10-13 12:25:00
 categories: blog
 ---
 

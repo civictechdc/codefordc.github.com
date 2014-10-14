@@ -22,7 +22,10 @@ layout: null
 {% for post in site.posts %}
     <item>
         <title>{{ post.title }}</title>
-        <description>{{ post.content | xml_escape }}</description>
+        <author>
+            <name>{{ post.post_author }}</name>
+        </author>
+        <description><![CDATA[{{ post.content | xml_escape }}]]></description>
         <link>{{ site.url }}{{ post.url }}</link>
         <guid isPermaLink="true">{{ site.url }}{{ post.id }}</guid>
         <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>

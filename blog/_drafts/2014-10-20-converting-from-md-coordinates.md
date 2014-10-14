@@ -4,7 +4,7 @@ title:  "Dealing with the Maryland Coordinate System"
 post_author: "Drew Bollinger"
 post_twitter: "@drewbo19"
 post_avatar: "drew-bollinger.png"
-date:   2014-10-13 12:25:00
+date:   2014-10-20 00:00:01
 categories: blog
 ---
 
@@ -13,7 +13,7 @@ If you're reading this, you've likely come across some geo data that you want to
 
 ### Maryland Coordinate System
 
-First, some background. Plenty of geo government data is provided in [the Maryland Coordinate System](http://www.mgs.md.gov/geology/maryland_coordinate_system.html) which shows east/west and north/south distance in meters from a fixed point. While using lat/lng seems obvious to those of us raised on web mapping, there's a fairly good reason for using a state specific coordinate system: it makes surveying and intra-state work much simpler. Also, the errors produced by pretending the earth is flat tend to be [very small](http://en.wikipedia.org/wiki/State_Plane_Coordinate_System) at the state level.
+First, some background. Plenty of geo government data is provided in the Maryland Coordinate System, which shows east/west and north/south distance in meters from a fixed point. While using lat/lng seems obvious to those of us raised on web mapping, there's a fairly good reason for using a state-specific coordinate system: it makes surveying and intra-state work much simpler. Also, the errors produced by pretending the earth is flat tend to be [very small](http://en.wikipedia.org/wiki/State_Plane_Coordinate_System) at the state level.
 But now that we can easily project information on to a map using spherical coordinates, it makes sense to seek an easy way to convert.
 
 ### DC GIS Developer Tools
@@ -31,7 +31,7 @@ You'll need two different python modules for this:
     import requests
     from bs4 import BeautifulSoup
 
-The response will be in XML (not ideal), so we will use [BeautifulSoup](http://www.crummy.com/software/BeautifulSoup/) to convert to a more useable format. Normally I'd use [lxml](http://lxml.de/) for this because it is fast. However lxml is less accepting of badly formatted XML. As our responses will be small and maybe a little messy, Beautiful Soup is a safer choice.
+The response will be in XML (not ideal), so we will use [Beautiful Soup](http://www.crummy.com/software/BeautifulSoup/) to convert to a more useable format. Normally I'd use [lxml](http://lxml.de/) for this because it is fast. However lxml is less accepting of badly formatted XML. As our responses will be small and maybe a little messy, Beautiful Soup is a safer choice.
 
 We use `requests` to set up the requests. Here's an annotated mock script:
 

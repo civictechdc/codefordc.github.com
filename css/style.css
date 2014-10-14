@@ -312,6 +312,10 @@ img.project-git-human {
 	font-weight:bold;
 }
 
+.blog-social-cta {
+	font-style:italic;
+}
+
 .post-footer {
 	margin-top: 20px;
 }

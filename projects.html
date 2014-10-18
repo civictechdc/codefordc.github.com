@@ -6,16 +6,18 @@ extra_css:
 ---
 
 <div class="container">
-
-	<div class="col-lg-1"></div>
 	<div class="col-lg-10">
-		<div class="col-lg-12 starter-template">
+        <div class="alert alert-success alert-dismissible hidden" role="alert">
+            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <strong>Success!</strong> Check back in soon and the project should be on this list.
+        </div>
+        <div class="col-lg-12 starter-template">
 			<h1>Our Projects</h1>
 			<p class="lead">Code for DC helps people collaborate on projects to help the community. Whether you're a coder or an activist, a public servant or a designer, browse below and you're bound to find one that needs you!</p>
 		</div>
 		<hr>
-		<div id="sortbar">
-			<div id="sort-button">
+        <div id="sortbar">
+            <div id="sort-button">
 				<div id="filter-buttons" class="pull-right">
 					<div id="sort-divider" style="display:inline"><strong>Filter by:</strong></div>
 					<div class="btn-group">
@@ -47,10 +49,13 @@ extra_css:
 						<li class="sort" data-sort="random"><a>Randomize</a></li>
 					</ul>
 				</div>
+                <div class="btn btn-default" id="show-submit">
+                    Submit a project
+                </div>
 			</div>
 		</div>
-		<div id='submit-project'>
-			<div>Have a project that should be tracked here? Let us know!</div>
+		<div id='submit-project' class="hidden">
+            <div>Have a project that should be tracked here? Let us know!</div>
 			<form id="githubrepoform" role="form">
 				<div class="form-group">
 					<div class="input-group">
@@ -62,7 +67,7 @@ extra_css:
 					</div>
 				</div>
 			</form>
-
+            <div>The requirements for a Code for DC project can be found <a href="https://github.com/codefordc/guides/blob/master/start-a-project.md">here</a>.</div>
 		</div>
 		<hr>
 		<div class="col-lg-12">
@@ -71,7 +76,6 @@ extra_css:
 			</div>
 		</div>
 	</div>
-	<div class="col-lg-1"></div>
 
 	<div style="display: none"> <!-- template for a project -->
 		<div id="project-template" class="project mix">
@@ -390,7 +394,11 @@ $(function(){
 $(document).ready(function(){
 
 	// New repo submission
-	var submit = false;
+	$("#show-submit").click(function() {
+        $("#submit-project").removeClass("hidden");
+    });
+
+    var submit = false;
 
 	$("#githubrepoform").bootstrapValidator({
 		live: "enabled",
@@ -423,7 +431,6 @@ $(document).ready(function(){
 	});
 
 	$("#submitrepo").click(function() {
-		console.log($("#githubrepo").val());
 		if (submit){
 			$.post(
 				"https://codefordc.slack.com/services/hooks/incoming-webhook?token=FoZHyRwfoVaDse8JLofAQa9B",
@@ -431,6 +438,8 @@ $(document).ready(function(){
 			).success(function(){
 				$('#githubrepo').val('');
 			});
+            $("#submit-project").addClass("hidden");
+            $(".alert").removeClass("hidden");
 		}
 	});
 });

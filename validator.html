@@ -22,74 +22,7 @@ extra_css:
 <script type="text/javascript" src="assets/js/tv4.min.js"></script>
 <script type="text/javascript" src="assets/js/jsonlint.js"></script>
 <script>
-var schema = {
-    "type":"object",
-    "properties":{
-        "conformsTo":{
-            "type":"string",
-            "required":false,
-            "pattern":"^https://github\.com/codefordc/guides/blob/master/using-civic\.json/specification\.md$"
-        },
-        "status":{
-            "type":"string",
-            "blank":true
-        },
-        "thumbnailUrl":{
-            "type":"string",
-            "blank":true
-        },
-        "contact":{
-            "type":"object",
-            "properties":{
-                "name":{
-                    "type":"string",
-                    "blank":true
-                },
-                "email":{
-                    "type":"string",
-                    "blank":true
-                },
-                "twitter":{
-                    "type":"string",
-                    "blank":true
-                }
-            }
-        },
-        "bornAt":{
-            "type":"string"
-        },
-        "geography":{
-            "type":"string"
-        },
-        "politicalEntity":{
-            "type":"object"
-        },
-        "governmentPartner":{
-            "type":"object"
-        },
-        "communityPartner":{
-            "type":"object"
-        },
-        "type":{
-            "type":"string",
-            "blank":true
-        },
-        "data":{
-            "type":"array",
-            "required":false
-        },
-        "needs":{
-            "type":"array"
-        },
-        "categories":{
-            "type":"array"
-        },
-        "moreInfo":{
-            "type":"string",
-            "blank":true
-        }
-    }
-}
+var schema = {% include guides/using-civic.json/schema.json %};
 var input;
 function validate() {
 

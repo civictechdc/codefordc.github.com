@@ -1,6 +1,6 @@
 <!-- This should be inserted in the page *before* any page-specific JS -->
 <script src="/assets/js/jquery.js"></script>
-<script src="/bootstrap/js/bootstrap.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -16,12 +16,12 @@
     //highlights current page in sitewide nav (_navbar.html)
     $(document).ready(function(){
     	$("#navbar-nav a").each(function() {
-        if (this.href == window.location.href || 
-            this.href + "index.html" == window.location.href || 
+        if (this.href == window.location.href ||
+            this.href + "index.html" == window.location.href ||
             this.href == window.location.href + "index.html" ) {
-        		
+
             $(this).parent().addClass("active");
-        	
+
           }
         });
     });

@@ -339,6 +339,11 @@ img.project-git-human {
 .blog-img-wrapper img {
 	width: 200px;
 }
+
+
+.blog-img-wrapper img.blog-img-large {
+	width:100%;
+}
 /***************************/
 /*  blog post stub */
 /***************************/

@@ -33,6 +33,43 @@ h1.h0 {
 	margin-top:10px;
 }
 
+.deeplink {
+  position: absolute;
+  left: -0.5em;
+  opacity: 0;
+
+  -webkit-transition: opacity 0.2s ease-in-out 0.1s;
+  -moz-transition: opacity 0.2s ease-in-out 0.1s;
+  -ms-transition: opacity 0.2s ease-in-out 0.1s;
+}
+
+h2:hover .deeplink,
+h3:hover .deeplink,
+h4:hover .deeplink,
+h5:hover .deeplink,
+h6:hover .deeplink {
+  opacity: 1;
+}
+
+.embed-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    height: auto;
+}
+.embed-container iframe, .embed-container object,
+.embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/*  header  */
+
 .navbar-brand {
 	padding:10px;
 }
@@ -48,6 +85,7 @@ hr.footer-divider {
 .bold {
 	font-weight:bold;
 }
+
 /***************************/
 /*  index */
 /***************************/
@@ -103,6 +141,10 @@ hr.footer-divider {
 	/*margin-left:20px;
 	margin-right:20px;*/
 	margin-bottom:20px;
+}
+
+.well {
+    margin-top: 20px;
 }
 
 .stuff-weve-made-stripe {
@@ -218,60 +260,54 @@ img.project-git-human {
     margin: 0px 2px 0px 0px;
 }
 
+/* help wanted */
+
+.issue {
+    padding: 5px;
+
+}
+
+.issue-inner {
+    padding: 5px 15px 5px 15px;
+    border-radius: 5px;
+    background-color: #eee;
+}
+
+.issue .labels {
+    border-bottom: 1px solid black;
+}
+
 /***************************/
-/*  press page */
+/*  about page */
 /***************************/
 
-.press-item-wrapper {
+.captains .image {
+    padding-top: 20px;
+}
 
+.captains .bio {
+    background-color: #eee;
+}
+
+.captains img {
+    border: 2px solid black;
 }
 
 .press-item {
-	background-color: #eee;
-	/*border: 2px solid black;*/
-	margin:10px 0 20px 0;
-	padding:0;
-}
-
-.press-icon {
-	margin-bottom:10px;
-	padding:20px 0 20px 0;
-	background-color:#222;
 
 }
 
-.press-icon img {
-	width:66%;
-	max-width:200px;
+.press-item-img {
+    padding: 10px;
+    background-color: #eee
 }
 
-.press-text {
-	padding:0 10px 10px 10px;
+.press-item-img img {
+    max-height: 150px;
 }
 
-.press-release-row {
-	padding-top:10px;
-	padding-bottom:10px;
-}
-
-.press-release-row.even {
-
-}
-
-.press-release-row.odd {
-	background-color:#eee;
-}
-
-.press-release-row-icon {
-	margin-bottom:10px;
-}
-
-.press-release-row-icon img{
-	width:100px;
-}
-
-.press-release-row-text {
-	text-align:justify;
+.press-item-info {
+    padding: 10px;
 }
 
 /***************************/
@@ -392,4 +428,59 @@ img.project-git-human {
 
 .post.stub .blog-avatar-content {
 	font-weight: normal;
+}
+
+/***************************/
+/*  resources */
+/***************************/
+
+/* index */
+
+.resource-type {
+    padding-bottom: 2px;
+    border-bottom: 1px solid black;
+}
+
+.resource {
+    font-size: 120%;
+}
+
+/* civic.json validator */
+
+.entered textarea {
+    width: 100%;
+    height: 20em;
+}
+
+.success {
+    background-color: lightgreen;
+    border: 1px solid green;
+}
+
+.fail {
+    background-color: lightpink;
+    border: 1px solid red;
+}
+
+/* civic.json builder */
+
+.object {
+    margin-bottom: 6px;
+}
+
+.download {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+
+/***************************/
+/*  media queries */
+/***************************/
+
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .navbar {
+        font-size: 94%;
+    }
 }

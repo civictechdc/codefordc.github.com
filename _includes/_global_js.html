@@ -26,3 +26,26 @@
         });
     });
 </script>
+
+{% if page.deeplink == true %}
+// add anchors for headings, based on http://ben.balter.com/2014/03/13/pages-anchor-links/
+<script>
+$(function() {
+    return $("h2, h3, h4, h5, h6").each(function(i, el) {
+        var $el, icon, id;
+        $el = $(el);
+        text = $el.text();
+        if ($el.attr('id')) {
+            id = $el.attr('id');
+        } else {
+            id = text.split(' ').join('-');
+            $el.attr('id', id);
+        }
+        icon = '<i class="fa fa-link"></i>';
+        if (id) {
+            return $el.prepend($("<a />").addClass("deeplink").attr("href", "#" + id).html(icon));
+        }
+    });
+});
+</script>
+{% endif %}

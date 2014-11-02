@@ -2,7 +2,12 @@
 layout: default
 title: Projects
 extra_css:
-  - assets/css/bootstrapValidator.min.css
+  - bootstrapValidator.min.css
+extra_js:
+  - moment.min.js
+  - d3.min.js
+  - jquery.mixitup.min.js
+  - bootstrapValidator.min.js
 ---
 
 <div class="container">
@@ -130,10 +135,6 @@ extra_css:
 </div><!-- /.container -->
 
 {% include _global_js.html %}
-<script type="text/javascript" src="assets/js/moment.min.js"></script>
-<script type="text/javascript" src="assets/js/d3.min.js"></script>
-<script type="text/javascript" src="assets/js/jquery.mixitup.min.js"></script>
-<script type="text/javascript" src="assets/js/bootstrapValidator.min.js"></script>
 <script type="text/javascript">
 
 // Arrays for collecting overall data to sort with MixItUp

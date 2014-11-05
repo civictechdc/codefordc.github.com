@@ -1,0 +1,75 @@
+---
+layout: default
+title: About Us
+---
+
+<div class="container">
+    <div class="col-lg-12">
+        <h1>About Us</h1>
+        <hr>
+        <div class="what-is">
+            <h2>What Is Code for DC?</h2>
+            <div>
+                <p>Lorem ipsum dolor sit amet, at pro viderer eripuit numquam, soleat delenit ne pro. Ea nam wisi eirmod vituperata. Et vel unum dicam signiferumque, ne aliquam splendide est, sea te labitur aliquando delicatissimi. Vis feugait volumus apeirian at. Iuvaret corrumpit an quo. Primis consulatu ne usu, et mei populo tamquam reprimique.</p>
+            </div>
+        </div>
+        <div class="captains">
+            <h2>The Captains</h2>
+            <div class="row">
+                {% for p in site.data.leadership %}
+                <div class="col-md-4">
+                    <div class="">
+                        <img class="img-responsive center-block" src="{{ p.image }}" />
+                    </div>
+                    <div class="">
+                        <h3 class="text-center">{{ p.name }} <small>{{ p.title }}</small></h3>
+                        <p>{{ p.bio }}</p>
+                        <p>{% if p.email %}<a href="mailto:{{ p.email }}"><i class="fa fa-envelope fa-lg"></i></a>{% endif %} {% if p.twitter %}<a href="https://twitter.com/{{ p.twitter }}"><i class="fa fa-twitter fa-lg"></i></a>{% endif %} {% if p.github %}<a href="https://github.com/{{ p.github }}"><i class="fa fa-github fa-lg"></i></a>{% endif %}</p>
+                    </div>
+                </div>
+                <!-- create a new .row div every three items -->
+                {% assign loopindex = forloop.index | modulo: 3 == 0 %}
+                {% if loopindex == 0 %}</div><div class="row">{% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="releases">
+            <h2>Press Releases</h2>
+            {% assign releases = site.data.pressreleases | sort: 'date' %}
+            {% for r in releases reversed %}
+            <div>
+                <p><strong>{{ r.date | date: "%B %-d, %Y" }} | {{ r.title }}</strong></p>
+                <p>{{ r.blurb }}</p>
+                <p><a href="/assets/pressreleases/{{ r.file }}">Read more</a></p>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="press">
+            <h2>In the News</h2>
+            <div class="row">
+                {% assign stories = site.data.inthenews | sort: 'date' %}
+                {% for story in stories reversed %}
+                <div class="col-md-4 press-item">
+                    <div class="press-item-img">
+                        <img class="img-responsive center-block" src="{{ story.icon }}" />
+                    </div>
+                    <div class="press-item-info">
+                        <p>{{ story.publication }} | {{ story.date | date: "%B %-d, %Y" }}</p>
+                        <p><strong>{{ story.title }}</strong></p>
+                        <p><a href="{{ story.link }}">
+                            {% if story.format == 'video' %}Watch it here
+                            {% elsif story.format == 'audio' %}Listen here
+                            {% else %}Read it here{% endif %}
+                            </a></p>
+                    </div>
+                </div>
+                <!-- create a new .row div every three items -->
+                {% assign loopindex = forloop.index | modulo: 3 == 0 %}
+                {% if loopindex == 0 %}</div><div class="row">{% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include _global_js.html %}

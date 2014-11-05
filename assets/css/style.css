@@ -263,6 +263,7 @@ img.project-git-human {
     margin: 0px 2px 0px 0px;
 }
 
+<<<<<<< HEAD
 /* help wanted */
 
 .issue {
@@ -309,6 +310,25 @@ img.project-git-human {
     max-height: 150px;
 }
 
+=======
+/***************************/
+/*  about page */
+/***************************/
+
+.press-item {
+
+}
+
+.press-item-img {
+    padding: 10px;
+    background-color: #eee
+}
+
+.press-item-img img {
+    max-height: 150px;
+}
+
+>>>>>>> new about page with news & press releases
 .press-item-info {
     padding: 10px;
 }

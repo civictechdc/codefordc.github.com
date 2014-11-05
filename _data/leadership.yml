@@ -1,0 +1,20 @@
+- name: Matt Bailey
+  title: Co-Captain
+  bio: Matt is a person
+  image: images/captain.png
+  email: mbailey@codeforamerica.org
+  twitter: mattbailey0
+  github: mattbailey0
+
+- name: Leah Bannon
+  title: Co-Captain
+  image: images/captain.png
+  bio: Leah is a person
+  github: leahbannon
+
+- name: Justin Grimes
+  title: Co-Captain
+  image: images/captain.png
+  bio: Justin is a person
+  email: jgrimes@codeforamerica.org
+  github: justgrimes

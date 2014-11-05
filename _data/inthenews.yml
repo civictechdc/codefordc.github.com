@@ -1,0 +1,207 @@
+- date: 2014-09-23 00:00:00
+  link: http://wamu.org/news/14/09/22/everything_you_need_to_know_about_handguns_in_dc
+  publication: WAMU
+  title: "D.C. Council to Vote on Concealed Handgun Bill; and Here's What You Need to Know"
+  icon: images/press/icons/wamu.png
+  format: text
+  featured: no
+
+- date: 2014-09-09 00:00:00
+  link: http://technical.ly/dc/2014/09/09/help-code-dc-14-civic-hacking-projects/
+  publication: Technical.ly
+  title: Help Code for DC with these 14 Civic Hacking Projects
+  icon: images/press/icons/technically.jpg
+  format: txt
+  featured: no
+
+- date: 2014-06-04 00:00:00
+  link: http://dcist.com/2014/06/are_the_capital_bikeshare_odds_in_y.php
+  publication: DCist
+  title: "Tool: Are the Capital Bikeshare Odds in Your Favor?"
+  icon: images/press/icons/dcist.png
+  format: txt
+  featured: no
+
+- date: 2014-06-03 00:00:00
+  link: http://greatergreaterwashington.org/post/23087/whats-your-chance-of-getting-a-cabi-bike-or-an-open-station/
+  publication: Greater Greater Washington
+  title: What's your chance of getting a CaBi bike or an open station?
+  icon: images/press/icons/greater-greater-washington.png
+  format: txt
+  featured: no
+
+- date: 2014-04-23 00:00:00
+  link: http://e-pluribusunum.com/2014/04/23/code-for-dc-launches-ourdcschools-org-an-open-government-platform-for-proposed-school-policy
+  publication: E Pluribus Unum
+  title: "Code for DC launches OurDCSchools.org, an open government platform for proposed school policy"
+  icon: /images/press/icons/eplur.png
+  format: text
+  featured: no
+
+- date: 2014-04-23 00:00:00
+  link: http://nextcity.org/daily/entry/dcs-new-two-way-tool-for-crafting-its-school-assignment-rules
+  publication: Next City
+  title: The District’s New Two-Way Tool for Crafting Its School Assignment Rules
+  icon: /images/press/icons/nextcity.png
+  format: text
+  featured: no
+
+- date: 2014-04-22 00:00:00
+  link: http://wamu.org/news/14/04/22/confused_about_proposed_dc_school_boundary_changes_theres_an_app_for_that
+  publication: WAMU
+  title: Confused About D.C. School Boundary Changes? There's An App For That
+  icon: /images/press/icons/wamu.png
+  format: text
+  featured: no
+
+- date: 2014-04-22 00:00:00
+  link: http://greatergreatereducation.org/post/22590/curious-about-how-the-proposed-boundary-changes-will-affect-you-check-out-this-new-app
+  publication: Greater Greater Washington
+  title: Curious about how the proposed boundary changes will affect you? Check out this new app.
+  icon: /images/press/icons/greater-greater-washington.png
+  format: text
+  featured: no
+
+- date: 2014-04-16 00:00:00
+  link: http://watchdogwire.com/blog/2014/03/21/dc-open-government-coalition-pushes-for-transparency-at-the-local-level/
+  publication: Watch Dog Wire
+  title: DC Open Government Coalition pushes for transparency at the local level
+  icon: images/press/icons/watchdogwire.jpg
+  format: text
+  featured: no
+
+- date: 2014-03-06 00:00:00
+  link: http://www.digitaljournal.com/pr/1777690
+  publication: Digital Journal
+  title: "National Press Club Hosts 'D.C. Open Government Summit: Street View'"
+  icon: images/press/icons/digital-journal.png
+  format: txt
+  featured: no
+
+- date: 2014-02-19 00:00:00
+  link: http://greatergreatereducation.org/post/21748/how-can-education-data-help-you/
+  publication: Greater Greater Washington
+  title: How can education data help you?
+  icon: images/press/icons/greater-greater-washington.png
+  format: text
+  featured: no
+
+- date: 2014-01-23 00:00:00
+  link: http://fedscoop.com/data-vault-special-addition-data-innovation-day/
+  publication: FedScoop
+  title: "Data Vault special edition: Data Innovation Day"
+  icon: images/press/icons/fedscoop.jpg
+  format: audio
+  featured: no
+
+- date: 2013-10-16 00:00:00
+  link: http://www.mcsweeneys.net/articles/leah-bannon
+  publication: McSweeney's
+  title: Voices from the Shutdown - Leah Bannon
+  icon: images/press/icons/mcsweeneys.png
+  format: text
+  featured: no
+
+- date: 2013-10-14 00:00:00
+  link: http://fedscoop.com/code-dc-calls-furloughed-feds/
+  publication: FedScoop
+  title: "With no work to do, furloughed feds flock to hackathon"
+  icon: images/press/icons/fedscoop.jpg
+  format: text
+  featured: no
+
+- date: 2013-10-10 00:00:00
+  link: http://dataqualitycampaign.org/2013/10/data-access-a-new-era-of-parent-and-community-engagement
+  publication: Data Quality Campaign
+  title: "Data Access: A New Era of Parent and Community Engagement"
+  icon: images/press/icons/data-quality-campaign.jpg
+  format: text
+  featured: no
+
+- date: 2013-09-27 00:00:00
+  link: http://greatergreatereducation.org/post/20302/choosing-a-school-just-got-easier/
+  publication: Greater Greater Washington
+  title: Choosing a School Just Got Easier
+  icon: images/press/icons/greater-greater-washington.png
+  format: text
+  featured: no
+
+- date: 2013-09-25 00:00:00
+  link: http://susiecambria.blogspot.com/2013/09/new-app-for-parents-helps-with.html
+  publication: Susie's Budget and Policy Corner
+  title: New app for parents helps with selecting a school for their child
+  icon: null
+  format: text
+  featured: no
+
+- date: 2013-06-02 00:00:00
+  link: http://www.wjla.com/articles/2013/06/national-day-of-civic-hacking-volunteer-experts-federal-agencies-team-up-to-find-technology-solution.html
+  publication: WJLA ABC 7
+  title: "National Day of Civic Hacking: Volunteer experts, federal agencies team up to find technology solutions"
+  icon: images/press/icons/abc.jpg
+  format: video
+  featured: no
+
+- date: 2013-03-15 00:00:00
+  link: http://www.theatlanticcities.com/neighborhoods/2013/03/there-link-between-walkability-and-local-school-performance/4992/
+  publication: The Atlantic Cities
+  title: Is there a link between walkability and local school performance?
+  icon: images/press/icons/atlantic-cities.jpg
+  format: text
+  featured: no
+
+- date: 2013-03-15 00:00:00
+  link: http://greatergreaterwashington.org/post/18052/how-school-tiers-match-up-with-walk-score/
+  publication: Greater Greater Washington
+  title: How school tiers match up with Walk Score
+  icon: images/press/icons/greater-greater-washington.png
+  format: text
+  featured: no
+
+- date: 2013-03-12 00:00:00
+  link: http://greatergreatereducation.org/post/17992/community-of-civic-hackers-for-education-takes-shape/
+  publication: Greater Greater Washington
+  title: Community of civic hackers for education takes shape
+  icon: images/press/icons/greater-greater-washington.png
+  format: text
+  featured: no
+
+- date: 2013-03-08 00:00:00
+  link: http://greatergreaterwashington.org/post/17987/visualize-the-dc-budget/
+  publication: Greater Greater Washington
+  title: Visualize the DC Budget
+  icon: images/press/icons/greater-greater-washington.png
+  format: text
+  featured: no
+
+- date: 2013-03-07 00:00:00
+  link: http://www.youtube.com/watch?v=Jm2QxXNLSaQ
+  publication: The World Bank
+  title: International Open Data Day in Washington DC
+  icon: images/press/icons/world-bank.jpg
+  format: video
+  featured: no
+
+- date: 2013-03-07 00:00:00
+  link: http://blogs.worldbank.org/opendata/open-data-community-hacks-dc-and-global-issues
+  publication: The World Bank
+  title: Open Data community hacks D.C. and global issues
+  icon: images/press/icons/world-bank.jpg
+  format: text
+  featured: no
+
+- date: 2013-03-07 00:00:00
+  link: http://dcist.com/2013/03/open_data.php
+  publication: DCist
+  title: "Hack D.C.: Hackers Put Open Data to Use to Help Improve Local Government"
+  icon: images/press/icons/dcist.png
+  format: text
+  featured: no
+
+- date: 2013-03-04 00:00:00
+  link: http://greatergreatereducation.org/post/17870/open-data-can-help-families-with-confusing-school-choices/
+  publication: Greater Greater Washington
+  title: Open data can help families with confusing school choices
+  icon: images/press/icons/greater-greater-washington.png
+  format: text
+  featured: no

@@ -19,7 +19,7 @@ layout: null
         <height>144</height>
     </image>
 
-{% for post in site.posts %}
+{% for post in site.posts limit:20 %}
     <item>
         <title>{{ post.title }}</title>
         <author>

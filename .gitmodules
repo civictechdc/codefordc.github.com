@@ -4,6 +4,3 @@
 [submodule "_includes/guides"]
 	path = _includes/guides
 	url = https://github.com/codefordc/guides.git
-[submodule "assets/pressreleases"]
-	path = assets/pressreleases
-	url = https://github.com/codefordc/pressreleases.git

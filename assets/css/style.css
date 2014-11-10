@@ -81,6 +81,7 @@ hr.footer-divider {
 	border-top: 2px solid #ccc;
 }
 
+<<<<<<< HEAD
 .italic {
 	font-style:italic;
 }
@@ -91,6 +92,8 @@ hr.footer-divider {
 }
 =======
 >>>>>>> basic resources page
+=======
+>>>>>>> use bootstrap classes for navbar dropdown text
 
 /***************************/
 /*  index */
@@ -513,17 +516,14 @@ img.project-git-human {
 /*  media queries */
 /***************************/
 
-@media (max-width: 767px) {
-
-    .collapse-text {
-        display: inline;
-        padding-left: 5px;
-    }
-}
 
 @media (min-width: 768px) and (max-width: 992px) {
     .navbar {
+<<<<<<< HEAD
         font-size: 90%;
 >>>>>>> basic resources page
+=======
+        font-size: 94%;
+>>>>>>> use bootstrap classes for navbar dropdown text
     }
 }

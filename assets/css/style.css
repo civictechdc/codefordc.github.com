@@ -85,9 +85,12 @@ hr.footer-divider {
 	font-style:italic;
 }
 
+<<<<<<< HEAD
 .bold {
 	font-weight:bold;
 }
+=======
+>>>>>>> basic resources page
 
 /***************************/
 /*  index */
@@ -454,6 +457,7 @@ img.project-git-human {
 }
 
 /***************************/
+<<<<<<< HEAD
 /*  resources */
 /***************************/
 
@@ -505,5 +509,21 @@ img.project-git-human {
 @media (min-width: 768px) and (max-width: 992px) {
     .navbar {
         font-size: 94%;
+=======
+/*  media queries */
+/***************************/
+
+@media (max-width: 767px) {
+
+    .collapse-text {
+        display: inline;
+        padding-left: 5px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .navbar {
+        font-size: 90%;
+>>>>>>> basic resources page
     }
 }

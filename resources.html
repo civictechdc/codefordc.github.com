@@ -1,0 +1,24 @@
+---
+title: Resources
+layout: default
+---
+
+<div class="container">
+    <div>
+        <p>Here you'll find some resources for doing things the Code for DC Way™.</p>
+    </div>
+    <div class="guides">
+        <h1>Guides</h1>
+        {% assign guides = site.resources | where:"type","guide" %}
+        {% for guide in guides %}
+        <a href="{{ guide.url }}">{{ guide.title }}</a>
+        {% endfor %}
+    </div>
+    <div class="tools">
+        <h1>Tools</h1>
+        {% assign tools = site.resources | where:"type","tool" %}
+        {% for tool in tools %}
+        {{ tool.title }}
+        {% endfor %}
+    </div>
+</div>

@@ -4,3 +4,6 @@ markdown: redcarpet
 highlighter: pygments
 gems:
     - jekyll-sitemap
+collections:
+    resources:
+        output: true

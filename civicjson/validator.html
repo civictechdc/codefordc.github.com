@@ -1,0 +1,76 @@
+---
+layout: default
+title: Validate civic.json files
+extra_css:
+- ../assets/css/validator.css
+---
+<div class="container">
+    <div class="col-lg-10">
+        <div class="col-lg-12 starter-template">
+            <h1><code>civic.json</code> Validator</h1>
+        </div>
+        <div class="entered">
+            <div>Paste your JSON here:</div>
+            <textarea></textarea>
+        </div>
+        <div class="result">
+            <pre></pre>
+        </div>
+    </div>
+</div>
+{% include _global_js.html %}
+<script type="text/javascript" src="assets/js/tv4.min.js"></script>
+<script type="text/javascript" src="assets/js/jsonlint.js"></script>
+<script>
+var schema = {% include guides/using-civic.json/schema.json %};
+var input;
+function validate() {
+
+    // Grab the textarea text
+    var newjson = $(".entered textarea").val();
+    if (newjson == input) {
+        return;
+    };
+
+    // If stuff is new, prepare for validation
+    input = newjson;
+    $(".result pre").html("");
+    $(".result pre").removeClass("success");
+    $(".result pre").removeClass("fail");
+    if (!input) {
+        return;
+    };
+
+    // Attempt to parse the JSON
+    try {
+        json = JSON.parse(input);
+    } catch (e) {
+        $(".result pre").addClass("fail");
+        try {
+            var lint = jsonlint.parse(input);
+        } catch(e) {
+            $(".result pre").html(e.message);
+        }
+        return;
+    }
+
+    // Do the validation
+    var result = tv4.validateMultiple(json, schema);
+    if (result.errors.length == 0) {
+        $(".result pre").append("Looks good!");
+        $(".result pre").addClass("success");
+    } else {
+        $(".result pre").addClass("fail");
+        $.each(result.errors, function(k,v){
+            $(".result pre").append("Error in " + v.dataPath + ":\n" + v.message + "\n\n");
+        });
+    }
+}
+
+// Perform validation when text is pasted or edited
+$(function() {
+    $(".entered textarea").on("paste", function() {
+        setTimeout(function() {validate(), 1});
+    }).keyup(validate);
+});
+</script>

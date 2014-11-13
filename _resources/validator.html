@@ -1,8 +1,11 @@
 ---
 layout: default
-title: Validate civic.json files
-extra_css:
-- ../assets/css/validator.css
+title: Validate a civic.json file
+type: tool
+deeplink: true
+extra_js:
+- tv4.min.js
+- jsonlint.js
 ---
 <div class="container">
     <div class="col-lg-10">
@@ -19,8 +22,6 @@ extra_css:
     </div>
 </div>
 {% include _global_js.html %}
-<script type="text/javascript" src="assets/js/tv4.min.js"></script>
-<script type="text/javascript" src="assets/js/jsonlint.js"></script>
 <script>
 var schema = {% include guides/using-civic.json/schema.json %};
 var input;

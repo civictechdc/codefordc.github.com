@@ -10,15 +10,13 @@ layout: default
         <div class="col-md-8 col-md-offset-2 row">
             <div class="col-md-6 guides">
                 <h1 class="text-center">Guides</h1>
-                {% assign guides = site.resources | where:"type","guide" %}
-                {% for guide in guides %}
+                {% for guide in site.guides %}
                     <p class="resource"><a href="{{ guide.url }}">{{ guide.title }}</a></p>
                 {% endfor %}
             </div>
             <div class="col-md-6 tools">
                 <h1 class="text-center">Tools</h1>
-                {% assign tools = site.resources | where:"type","tool" %}
-                {% for tool in tools %}
+                {% for tool in site.tools %}
                     <p class="resource"><a href="{{ tool.url }}">{{ tool.title }}</a></p>
                 {% endfor %}
             </div>

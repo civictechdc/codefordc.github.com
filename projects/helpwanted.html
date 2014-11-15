@@ -1,0 +1,60 @@
+---
+title: Help Wanted
+layout: default
+---
+<div class="container">
+	<div class="col-lg-12">
+		<div class="col-lg-12 starter-template">
+			<h1>Help Wanted</h1>
+			<p class="lead">These issues have been identified by projects as places where outside help is especially useful. If you're looking for a good place to start, check them out!</p>
+		</div>
+		<div class="col-lg-12">
+			<div class="row" id="issue-list">
+				<!-- populated by js -->
+			</div>
+		</div>
+	</div>
+
+	<div style="display: none"> <!-- template for a project -->
+		<div class="col-md-4 issue mix" id="issue-template">
+			<div class="issue-inner">
+				<p class="project text-center"></p>
+                <h4 class="title text-center"></h4>
+				<div>
+					<p class="summary"></p>
+					<p class="labels"></p>
+					<p class="pull-right"><a class="link" href="#">View on Github</a></p>
+					<p>Comments: <span class="comments"></span></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% include _global_js.html %}
+<script type="text/javascript">
+window.projects = function(data){
+	var projects = data;
+	$.each(projects, function(i, info) {
+		issues = info["help_wanted"];
+
+		if (issues.length > 0) {
+			$.each(issues, function(i, issue){
+				console.log(issue);
+				var box = $('#issue-template').clone();
+				box.prop('id', 'issue'+i);
+				$("#issue-list").append(box);
+
+				box.find(".title").removeClass("hidden").text(issue.issue);
+				box.find(".summary").removeClass("hidden").text(issue.body);
+				box.find(".link").removeClass("hidden").attr("href", issue.issue_url);
+				box.find(".comments").removeClass("hidden").text(issue.comments);
+                box.find(".project").removeClass("hidden").text(issue.project);
+				$.each(issue.labels, function(i, label){
+					box.find(".labels").removeClass("hidden").append("<span class='btn btn-sm btn-default'>"+label.name+"</span>")
+				});
+			});
+		}
+	});
+};
+</script>
+<script src="https://rawgit.com/codefordc/files/master/projects.js"></script>

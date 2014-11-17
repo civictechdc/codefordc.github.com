@@ -11,16 +11,17 @@ extra_js:
 ---
 
 <div class="container">
-	<div class="col-lg-10">
+	<div class="col-lg-12">
         <div class="alert alert-success alert-dismissible hidden" role="alert">
             <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
             <strong>Success!</strong> Check back in soon and the project should be on this list.
         </div>
-        <div class="col-lg-12 starter-template">
+        <div class="col-lg-10 col-lg-offset-1 starter-template">
 			<h1>Our Projects</h1>
 			<p class="lead">Code for DC helps people collaborate on projects to help the community. Whether you're a coder or an activist, a public servant or a designer, browse below and you're bound to find one that needs you!</p>
+            <p>To find issues that are keyboard-ready, check out our <a href="/projects/helpwanted.html">Help Wanted</a> page.</p>
 		</div>
-        <div id="sortbar">
+        <div class="col-lg-12" id="sortbar">
             <div id="sort-button">
 				<div id="filter-buttons" class="pull-right">
 					<div id="sort-divider" style="display:inline"><strong>Filter by:</strong></div>
@@ -73,7 +74,7 @@ extra_js:
 			</form>
             <div>The requirements for a Code for DC project can be found <a href="https://github.com/codefordc/guides/blob/master/start-a-project.md">here</a>.</div>
 		</div>
-		<hr>
+		<hr class="col-lg-12">
 		<div class="col-lg-12">
 			<div id="project-list">
 				<!-- populated by js -->
@@ -90,7 +91,7 @@ extra_js:
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-sm-5">
+				<div class="col-sm-4">
 					<p class="github-repo"><i class="fa fa-github-alt"></i> <a class="repo-link">github repository</a></p>
 					<p class="description"></p>
 					<div class="row">
@@ -110,7 +111,7 @@ extra_js:
 					</p>
 					<div class="categories"> </div>
 				</div>
-				<div class="col-sm-4">
+				<div class="col-sm-5">
 					<h4><strong>Activity</strong></h4>
 					<div class="activity">
 						<div></div>

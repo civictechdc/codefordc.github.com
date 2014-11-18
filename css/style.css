@@ -346,6 +346,14 @@ img.project-git-human {
 	width:200px;
 }
 
+.blog-img-wrapper img.blog-img-full,
+.blog-img-wrapper span.blog-img-full
+{
+	display:block;
+	width:100%;
+}
+
+
 
 .blog-img-wrapper img.blog-img-large,
 .blog-img-wrapper span.blog-img-large

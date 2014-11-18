@@ -41,8 +41,13 @@ hr.footer-divider {
 	border-top: 2px solid #ccc;
 }
 
+.italic {
+	font-style:italic;
+}
 
-
+.bold {
+	font-weight:bold;
+}
 /***************************/
 /*  index */
 /***************************/
@@ -334,15 +339,20 @@ img.project-git-human {
 	border:2px solid black;
 	background:#999;
 	margin: 10px 0 10px 10px;
+	clear:right;
 }
 
 .blog-img-wrapper img {
-	width: 200px;
+	width:200px;
 }
 
 
-.blog-img-wrapper img.blog-img-large {
-	width:100%;
+.blog-img-wrapper img.blog-img-large,
+.blog-img-wrapper span.blog-img-large
+{
+	display:block;
+	width:500px;
+	max-width:100%;
 }
 /***************************/
 /*  blog post stub */

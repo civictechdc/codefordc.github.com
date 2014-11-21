@@ -5,17 +5,22 @@ layout: default
 <div class="container">
         <div class="col-lg-12 starter-template">
             <h1>Resources</h1>
-            <p class="lead">Here you'll find some resources for doing things the Code for DC Way™.</p>
         </div>
-        <div class="col-md-8 col-md-offset-2 row">
-            <div class="col-md-6 guides">
-                <h1 class="text-center">Guides</h1>
+        <div class="col-md-12 row">
+            <div class="col-md-4 docs">
+                <h2 class="resource-type">Documents</h1>
+                {% for doc in site.docs %}
+                    <p class="resource"><a href="{{ doc.url }}">{{ doc.title }}</a></p>
+                {% endfor %}
+            </div>
+            <div class="col-md-4 guides">
+                <h2 class="resource-type">Guides</h1>
                 {% for guide in site.guides %}
                     <p class="resource"><a href="{{ guide.url }}">{{ guide.title }}</a></p>
                 {% endfor %}
             </div>
-            <div class="col-md-6 tools">
-                <h1 class="text-center">Tools</h1>
+            <div class="col-md-4 tools">
+                <h2 class="resource-type">Tools</h1>
                 {% for tool in site.tools %}
                     <p class="resource"><a href="{{ tool.url }}">{{ tool.title }}</a></p>
                 {% endfor %}

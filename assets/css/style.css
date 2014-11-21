@@ -493,6 +493,11 @@ img.project-git-human {
 =======
 /* index */
 
+.resource-type {
+    padding-bottom: 2px;
+    border-bottom: 1px solid black;
+}
+
 .resource {
     font-size: 120%;
 }

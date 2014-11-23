@@ -298,7 +298,7 @@ window.projects = function(data){
 		}
 
 		project.find('.issues a').attr('href', repo_link+'/issues');
-		project.find('.issues a').text(issues ? (issues+" Issues Need Help") : "Submit an Idea");
+		project.find('.issues a').text(issues ? (issues+" Open Issues") : "Submit an Idea");
 
 		if (info["civic_json"] && info["civic_json"]["categories"]){
 			$.each(info["civic_json"]["categories"], function(k,v){

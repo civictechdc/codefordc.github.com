@@ -1,3 +1,4 @@
-name: Code for DC
+name: DC Legal Hackers
 markdown: redcarpet
 pygments: true
+safe: true

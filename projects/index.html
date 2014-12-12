@@ -2,20 +2,27 @@
 layout: default
 title: Projects
 extra_css:
-  - assets/css/bootstrapValidator.min.css
+  - bootstrapValidator.min.css
+extra_js:
+  - moment.min.js
+  - d3.min.js
+  - jquery.mixitup.min.js
+  - bootstrapValidator.min.js
 ---
 
 <div class="container">
-
-	<div class="col-lg-1"></div>
-	<div class="col-lg-10">
-		<div class="col-lg-12 starter-template">
+	<div class="col-lg-12">
+        <div class="alert alert-success alert-dismissible hidden" role="alert">
+            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <strong>Success!</strong> Check back in soon and the project should be on this list.
+        </div>
+        <div class="col-lg-10 col-lg-offset-1 starter-template">
 			<h1>Our Projects</h1>
 			<p class="lead">Code for DC helps people collaborate on projects to help the community. Whether you're a coder or an activist, a public servant or a designer, browse below and you're bound to find one that needs you!</p>
+            <p>To find issues that are keyboard-ready, check out our <a href="/projects/helpwanted.html">Help Wanted</a> page.</p>
 		</div>
-		<hr>
-		<div id="sortbar">
-			<div id="sort-button">
+        <div class="col-lg-12" id="sortbar">
+            <div id="sort-button">
 				<div id="filter-buttons" class="pull-right">
 					<div id="sort-divider" style="display:inline"><strong>Filter by:</strong></div>
 					<div class="btn-group">
@@ -47,10 +54,13 @@ extra_css:
 						<li class="sort" data-sort="random"><a>Randomize</a></li>
 					</ul>
 				</div>
+                <div class="btn btn-default" id="show-submit">
+                    Submit a project
+                </div>
 			</div>
 		</div>
-		<div id='submit-project'>
-			<div>Have a project that should be tracked here? Let us know!</div>
+		<div id='submit-project' class="hidden">
+            <div>Have a project that should be tracked here? Let us know!</div>
 			<form id="githubrepoform" role="form">
 				<div class="form-group">
 					<div class="input-group">
@@ -62,16 +72,15 @@ extra_css:
 					</div>
 				</div>
 			</form>
-
+            <div>The requirements for a Code for DC project can be found <a href="/resources/projectguide.html">here</a>.</div>
 		</div>
-		<hr>
+		<hr class="col-lg-12">
 		<div class="col-lg-12">
 			<div id="project-list">
 				<!-- populated by js -->
 			</div>
 		</div>
 	</div>
-	<div class="col-lg-1"></div>
 
 	<div style="display: none"> <!-- template for a project -->
 		<div id="project-template" class="project mix">
@@ -82,7 +91,7 @@ extra_css:
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-sm-5">
+				<div class="col-sm-4">
 					<p class="github-repo"><i class="fa fa-github-alt"></i> <a class="repo-link">github repository</a></p>
 					<p class="description"></p>
 					<div class="row">
@@ -102,7 +111,7 @@ extra_css:
 					</p>
 					<div class="categories"> </div>
 				</div>
-				<div class="col-sm-4">
+				<div class="col-sm-5">
 					<h4><strong>Activity</strong></h4>
 					<div class="activity">
 						<div></div>
@@ -126,10 +135,6 @@ extra_css:
 </div><!-- /.container -->
 
 {% include _global_js.html %}
-<script type="text/javascript" src="assets/js/moment.min.js"></script>
-<script type="text/javascript" src="assets/js/d3.min.js"></script>
-<script type="text/javascript" src="assets/js/jquery.mixitup.min.js"></script>
-<script type="text/javascript" src="assets/js/bootstrapValidator.min.js"></script>
 <script type="text/javascript">
 
 // Arrays for collecting overall data to sort with MixItUp
@@ -293,7 +298,7 @@ window.projects = function(data){
 		}
 
 		project.find('.issues a').attr('href', repo_link+'/issues');
-		project.find('.issues a').text(issues ? (issues+" Issues Need Help") : "Submit an Idea");
+		project.find('.issues a').text(issues ? (issues+" Open Issues") : "Submit an Idea");
 
 		if (info["civic_json"] && info["civic_json"]["categories"]){
 			$.each(info["civic_json"]["categories"], function(k,v){
@@ -390,7 +395,11 @@ $(function(){
 $(document).ready(function(){
 
 	// New repo submission
-	var submit = false;
+	$("#show-submit").click(function() {
+        $("#submit-project").removeClass("hidden");
+    });
+
+    var submit = false;
 
 	$("#githubrepoform").bootstrapValidator({
 		live: "enabled",
@@ -423,7 +432,6 @@ $(document).ready(function(){
 	});
 
 	$("#submitrepo").click(function() {
-		console.log($("#githubrepo").val());
 		if (submit){
 			$.post(
 				"https://codefordc.slack.com/services/hooks/incoming-webhook?token=FoZHyRwfoVaDse8JLofAQa9B",
@@ -431,6 +439,8 @@ $(document).ready(function(){
 			).success(function(){
 				$('#githubrepo').val('');
 			});
+            $("#submit-project").addClass("hidden");
+            $(".alert").removeClass("hidden");
 		}
 	});
 });

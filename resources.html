@@ -1,0 +1,31 @@
+---
+title: Resources
+layout: default
+---
+<div class="container">
+        <div class="col-lg-12 starter-template">
+            <h1>Resources</h1>
+        </div>
+        <div class="col-md-12 row">
+            <div class="col-md-4 docs">
+                <h2 class="resource-type">Documents</h1>
+                {% for doc in site.docs %}
+                    <p class="resource"><a href="{{ doc.url }}">{{ doc.title }}</a></p>
+                {% endfor %}
+            </div>
+            <div class="col-md-4 guides">
+                <h2 class="resource-type">Guides</h1>
+                {% for guide in site.guides %}
+                    <p class="resource"><a href="{{ guide.url }}">{{ guide.title }}</a></p>
+                {% endfor %}
+            </div>
+            <div class="col-md-4 tools">
+                <h2 class="resource-type">Tools</h1>
+                {% for tool in site.tools %}
+                    <p class="resource"><a href="{{ tool.url }}">{{ tool.title }}</a></p>
+                {% endfor %}
+            </div>
+        </div>
+</div>
+
+{% include _global_js.html %}

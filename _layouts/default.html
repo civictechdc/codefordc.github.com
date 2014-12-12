@@ -15,19 +15,51 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="" />
+    <link rel="shortcut icon" href="{{ site.url }}/images/favicon.ico" />
+
+    <!-- Twitter and OpenGraph tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@codefordc" />
+    <meta name="twitter:creator:id" content="2449810405" />
+    <meta name="twitter:site" content="@codefordc" />
+    <meta name="twitter:site:id" content="2449810405" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ site.url }}" />
+
+    {% if page.title %}
+    <meta name="og:title" content="{{ page.title }}" />
+    <title>Code for DC - {{ page.title }}</title>
+    {% else %}
+    <meta name="og:title" content="Code for DC" />
     <title>Code for DC</title>
-    <link rel="shortcut icon" href="http://www.codefordc.org/images/favicon.ico" />
-    <!-- Bootstrap core CSS -->
-    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="/css/style.css" rel="stylesheet">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    {% for css_name in page.extra_css %}
-    <link rel="stylesheet" href="{{ css_name }}">
-    {% endfor %}
+    {% endif %}
+
+    {% if page.description %}
+    <meta name="description" content="{{ page.description }}" />
+    <meta name="og:description" content="{{ page.description }}" />
+    {% else %}
+    <meta name="description" content="Code for DC is the DC chapter of the Code for America Brigade. We are a group of volunteer civic hackers working together to solve local issues and help people engage with the city." />
+    <meta name="og:description" content="Code for DC is the DC chapter of the Code for America Brigade. We are a group of volunteer civic hackers working together to solve local issues and help people engage with the city." />
+    {% endif %}
+
+    {% if page.image %}
+    <meta name="og:image" content="{{ site.url }}/images/{{ page.image }}" />
+    {% else %}
+    <meta name="og:image" content="{{ site.url }}/images/logo_500px.png" />
+    {% endif %}
+
+    <!-- CSS -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <link href="/assets/css/syntax.css" rel="stylesheet">
+    <link href="/assets/css/font-awesome.min.css" rel="stylesheet">
+    {% for css_name in page.extra_css %}<link rel="stylesheet" href="assets/css/{{ css_name }}">{% endfor %}
+
+    <!-- RSS Feed -->
+    <link rel="alternate" href="/rss.xml" type="application/rss+xml" title="Code for DC Blog" />
+
   </head>
 
   <body>

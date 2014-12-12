@@ -52,6 +52,9 @@ h6:hover .deeplink {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> about page improvements
 .embed-container {
     position: relative;
     padding-bottom: 56.25%;
@@ -69,8 +72,11 @@ h6:hover .deeplink {
     height: 100%;
 }
 
+<<<<<<< HEAD
 =======
 >>>>>>> add "deeplink" yaml option to create heading links
+=======
+>>>>>>> about page improvements
 /*  header  */
 
 .navbar-brand {
@@ -326,6 +332,18 @@ img.project-git-human {
 /***************************/
 /*  about page */
 /***************************/
+
+.captains .image {
+    padding-top: 20px;
+}
+
+.captains .bio {
+    background-color: #eee;
+}
+
+.captains img {
+    border: 2px solid black;
+}
 
 .press-item {
 

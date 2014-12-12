@@ -51,10 +51,6 @@ h6:hover .deeplink {
   opacity: 1;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> about page improvements
 .embed-container {
     position: relative;
     padding-bottom: 56.25%;
@@ -72,11 +68,6 @@ h6:hover .deeplink {
     height: 100%;
 }
 
-<<<<<<< HEAD
-=======
->>>>>>> add "deeplink" yaml option to create heading links
-=======
->>>>>>> about page improvements
 /*  header  */
 
 .navbar-brand {
@@ -87,25 +78,17 @@ hr.footer-divider {
 	border-top: 2px solid #ccc;
 }
 
-<<<<<<< HEAD
 .italic {
 	font-style:italic;
 }
 
-<<<<<<< HEAD
 .bold {
 	font-weight:bold;
 }
-=======
->>>>>>> basic resources page
-=======
->>>>>>> use bootstrap classes for navbar dropdown text
 
 /***************************/
 /*  index */
 /***************************/
-
-
 
 .hero {
 	background: url('/images/bohemian-caverns.jpg');
@@ -275,10 +258,6 @@ img.project-git-human {
     margin: 0px 2px 0px 0px;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> new help wanted page
 /* help wanted */
 
 .issue {
@@ -296,7 +275,6 @@ img.project-git-human {
     border-bottom: 1px solid black;
 }
 
-<<<<<<< HEAD
 /***************************/
 /*  about page */
 /***************************/
@@ -326,39 +304,6 @@ img.project-git-human {
     max-height: 150px;
 }
 
-=======
-=======
->>>>>>> new help wanted page
-/***************************/
-/*  about page */
-/***************************/
-
-.captains .image {
-    padding-top: 20px;
-}
-
-.captains .bio {
-    background-color: #eee;
-}
-
-.captains img {
-    border: 2px solid black;
-}
-
-.press-item {
-
-}
-
-.press-item-img {
-    padding: 10px;
-    background-color: #eee
-}
-
-.press-item-img img {
-    max-height: 150px;
-}
-
->>>>>>> new about page with news & press releases
 .press-item-info {
     padding: 10px;
 }
@@ -484,8 +429,6 @@ img.project-git-human {
 }
 
 /***************************/
-<<<<<<< HEAD
-<<<<<<< HEAD
 /*  resources */
 /***************************/
 
@@ -502,27 +445,6 @@ img.project-git-human {
 
 /* civic.json validator */
 
-=======
-/*  resources */
-/***************************/
-
-<<<<<<< HEAD
->>>>>>> move civicjson into resources
-=======
-/* index */
-
-.resource-type {
-    padding-bottom: 2px;
-    border-bottom: 1px solid black;
-}
-
-.resource {
-    font-size: 120%;
-}
-
-/* civic.json validator */
-
->>>>>>> display fixes
 .entered textarea {
     width: 100%;
     height: 20em;
@@ -538,16 +460,8 @@ img.project-git-human {
     border: 1px solid red;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 /* civic.json builder */
 
-=======
->>>>>>> move civicjson into resources
-=======
-/* civic.json builder */
-
->>>>>>> display fixes
 .object {
     margin-bottom: 6px;
 }
@@ -559,7 +473,6 @@ img.project-git-human {
 
 
 /***************************/
-<<<<<<< HEAD
 /*  media queries */
 /***************************/
 
@@ -567,20 +480,5 @@ img.project-git-human {
 @media (min-width: 768px) and (max-width: 992px) {
     .navbar {
         font-size: 94%;
-=======
-=======
->>>>>>> move civicjson into resources
-/*  media queries */
-/***************************/
-
-
-@media (min-width: 768px) and (max-width: 992px) {
-    .navbar {
-<<<<<<< HEAD
-        font-size: 90%;
->>>>>>> basic resources page
-=======
-        font-size: 94%;
->>>>>>> use bootstrap classes for navbar dropdown text
     }
 }

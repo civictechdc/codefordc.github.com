@@ -1,0 +1,36 @@
+---
+layout: null
+---
+
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+    <title>{{ site.name }}</title>
+    <description>Code for DC Blog</description>
+    <link>{{ site.url }}</link>
+    <language>en-us</language>
+    <atom:link href="{{ site.url }}/rss.xml" rel="self" type="application/rss+xml" />
+    <image>
+        <title>{{ site.name }}</title>
+        <link>{{ site.url }}</link>
+        <url>{{ site.url }}/images/favicon.ico</url>
+        <description>Code for DC Blog</description>
+        <width>144</width>
+        <height>144</height>
+    </image>
+
+{% for post in site.posts limit:20 %}
+    <item>
+        <title>{{ post.title }}</title>
+        <author>
+            <name>{{ post.post_author }}</name>
+        </author>
+        <description><![CDATA[{{ post.content | xml_escape }}]]></description>
+        <link>{{ site.url }}{{ post.url }}</link>
+        <guid isPermaLink="true">{{ site.url }}{{ post.id }}</guid>
+        <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
+    </item>
+{% endfor %}
+
+</channel>
+</rss>

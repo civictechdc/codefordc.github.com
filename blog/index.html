@@ -23,7 +23,7 @@ title:  "Code for DC Blog"
                 </div>
                 <div class="col-lg-12">
                     <div class="blog-avatar">
-                        {% if post.post_gravatar %} 
+                        {% if post.post_gravatar %}
                             <img src="http://www.gravatar.com/avatar/{{ post.post_gravatar }}?s=100" class="blog-avatar-img" />
                         {% elsif post.post_avatar %}
                             <img src="/images/blog/avatars/{{ post.post_avatar }}" class="blog-avatar-img" />
@@ -36,8 +36,12 @@ title:  "Code for DC Blog"
                             {{ post.date | date_to_string }}
                         </div>
                     </div>
-                    {{ post.content | truncatewords: 150 }}
-                      <a href="{{post.url}}">Read More »</a>
+                    {% if post.content contains '<!--more-->' %}
+                        {{ post.content | split:'<!--more-->' | first }}
+                    {% else %}
+                        {{ post.content | truncatewords: 150 }}
+                    {% endif %}
+                    <a href="{{post.url}}">Read More »</a>
                 </div>
             </div>
  		{% endif %}

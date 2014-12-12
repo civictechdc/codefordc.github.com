@@ -1,3 +1,13 @@
 name: Code for DC
+url: http://codefordc.org
 markdown: redcarpet
-pygments: true
+highlighter: pygments
+gems:
+    - jekyll-sitemap
+collections:
+    docs:
+        output: true
+    guides:
+        output: true
+    tools:
+        output: true

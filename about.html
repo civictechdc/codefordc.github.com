@@ -1,0 +1,82 @@
+---
+layout: default
+title: About Us
+---
+
+<div class="container">
+    <div class="col-lg-12">
+        <h1>About Us</h1>
+        <hr>
+        <div class="what-is">
+            <h2>What Is Code for DC?</h2>
+            <div class="row">
+                <div class="col-md-5">
+                    <p>Code for DC is a Code for America Brigade located here in Washington, DC. Founded in 2012, we are a a non-partisan, non-political group of volunteer <a href="http://www.codeforamerica.org/blog/2013/05/06/what-is-a-civic-hacker/">civic hackers</a> working together to solve local issues and help people engage with the city. We host twice-monthly hacknights and other events to gather, discuss, and get stuff done.</p>
+                    <p>We're looking to bring people with all different skill sets together to maximize our potential. Civic hackers aren't just developers—they're journalists, lawyers, designers, and interested citizens in general. The more community participation, the better.</p>
+                    <p>Learn more about the CfA Brigade program <a href="http://codeforamerica.org/brigade" target="_blank">here</a>.</p>
+                </div>
+                <div class="col-md-7">
+                    <div class='embed-container'><iframe src='http://www.youtube-nocookie.com/embed/PinRhW8Psn4' frameborder='0' allowfullscreen></iframe></div>
+                </div>
+            </div>
+        </div>
+        <div class="captains">
+            <h2>Leadership</h2>
+            <div class="row">
+                {% for p in site.data.leadership %}
+                <div class="col-md-4">
+                    <div class="image">
+                        <img class="img-responsive center-block" height=200px width=200px src="{{ p.image }}" />
+                    </div>
+                    <div class="bio">
+                        <h3 class="text-center">{{ p.name }} <small>{{ p.title }}</small></h3>
+                        <p class="text-center">{{ p.bio }}</p>
+                        <p class="text-center">{% if p.email %}<a href="mailto:{{ p.email }}"><i class="fa fa-envelope fa-lg"></i></a>{% endif %} {% if p.twitter %}<a href="https://twitter.com/{{ p.twitter }}"><i class="fa fa-twitter fa-lg"></i></a>{% endif %} {% if p.github %}<a href="https://github.com/{{ p.github }}"><i class="fa fa-github fa-lg"></i></a>{% endif %}</p>
+                    </div>
+                </div>
+                <!-- create a new .row div every three items -->
+                {% assign loopindex = forloop.index | modulo: 3 == 0 %}
+                {% if loopindex == 0 %}</div><div class="row">{% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="releases">
+            <h2>Press Releases</h2>
+            {% assign releases = site.data.pressreleases | sort: 'date' %}
+            {% for r in releases reversed %}
+            <div>
+                <p><strong>{{ r.date | date: "%B %-d, %Y" }} | {{ r.title }}</strong></p>
+                <p>{{ r.blurb }}</p>
+                <p><a href="/assets/pressreleases/{{ r.file }}">Read more</a></p>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="press">
+            <h2>In the News</h2>
+            <div class="row">
+                {% assign stories = site.data.inthenews | sort: 'date' %}
+                {% for story in stories reversed %}
+                <div class="col-md-4 press-item">
+                    <div class="press-item-img">
+                        <img class="img-responsive center-block" src="{{ story.icon }}" />
+                    </div>
+                    <div class="press-item-info">
+                        <p>{{ story.publication }} | {{ story.date | date: "%B %-d, %Y" }}</p>
+                        <p><strong>{{ story.title }}</strong></p>
+                        <p><a href="{{ story.link }}">
+                            {% if story.format == 'video' %}Watch it here
+                            {% elsif story.format == 'audio' %}Listen here
+                            {% else %}Read it here{% endif %}
+                            </a></p>
+                    </div>
+                </div>
+                <!-- create a new .row div every three items -->
+                {% assign loopindex = forloop.index | modulo: 3 == 0 %}
+                {% if loopindex == 0 %}</div><div class="row">{% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include _global_js.html %}

@@ -1,0 +1,17 @@
+---
+layout: default
+deeplink: true
+---
+
+<div class="container">
+    <div class="col-lg-10">
+        {% if page.edit_link %}
+        <div class="well well-sm" style="text-align: center; margin-top: 20px">
+            To submit edits, <a href="{{ page.edit_link }}">click here</a>.
+        </div>
+        {% endif %}
+        {{ content }}
+    </div>
+</div>
+
+{% include _global_js.html %}

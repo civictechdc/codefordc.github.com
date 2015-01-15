@@ -5,9 +5,5 @@ highlighter: pygments
 gems:
     - jekyll-sitemap
 collections:
-    docs:
-        output: true
-    guides:
-        output: true
-    tools:
+    resources:
         output: true

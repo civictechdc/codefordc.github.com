@@ -1,7 +1,6 @@
 ---
 title: Where to Get Data
 layout: resource
-type: guide
 ---
 
 # Where the Data Is

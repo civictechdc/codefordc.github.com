@@ -1,7 +1,6 @@
 ---
 layout: resource
-title: What File Extensions Mean?
-type: guide
+title: What Do File Extensions Mean?
 ---
 
 ## Text formats

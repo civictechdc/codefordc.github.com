@@ -1,22 +1,26 @@
 ---
 layout: post
 categories: blog
-title:  "DC Voter Registration Data"
+title:  "DC voter registration data is public, but not very easy to get"
 date:   2014-12-22 14:12:24
 post_author: "Aaron Schumacher"
 post_avatar: "aaron-schumacher.jpg"
 post_twitter: "@planarrowspace"
 ---
 
-DC voter registration data is public, but not very easy to get.
-
-On Thursday, December 18, 2014, I took a printed copy of a [PDF form](http://www.dcboee.org/pdf_files/Data_Request_Form.pdf) that I found on the [DC Board of Elections web site](http://www.dcboee.org/) to 441 4th Street NW, suite 250 north, Washington, DC, 20001. I had to show ID, have my bag x-rayed, and go through a metal detector to get into the building.
-
-I brought my checkbook so I could pay $2 for a CD-ROM of voter registration data. The clerk informed me that the data is updated daily. She burned my CD while I waited. She told me there are no rules on how the data can be used. I take it to be public domain.
+On Thursday, December 18, 2014, I took a printed copy of a [PDF form](http://www.dcboee.org/pdf_files/Data_Request_Form.pdf) that I found on the [DC Board of Elections web site](http://www.dcboee.org/) to 441 4th Street NW, suite 250 north, Washington, DC, 20001, during the [office](https://www.dcboee.org/contactus/index.asp) hours of 8:15-4:45. I had to show ID, have my bag x-rayed, and go through a metal detector to get into the building.
 
 <!--more-->
 
+Here's a line that appears in red on the [PDF form](http://www.dcboee.org/pdf_files/Data_Request_Form.pdf):
+
+> **Entire Voter Roll may only be obtained in Microsoft Access CD-ROM format.**
+
+I brought my checkbook so I could pay $2 for a CD-ROM of voter registration data. The clerk informed me that the data is updated daily. She burned my CD while I waited. She told me there are no rules on how the data can be used. I take it to be public domain, because I haven't seen any other information on copyright or otherwise.
+
 ![](/images/blog/images/2014-12-22/cd.jpg)
+
+The data includes detailed information on registered DC voters including name, date registered, location in DC, and party, along with voting records (whether the person voted, not what their votes were) for the last forty or so elections. This could be used for planning voter registration drives or reminding people to vote, for example. It could also be combined with other data sets to get a more comprehensive understanding of DC, and probably lots of other things I haven't thought of.
 
 On the CD were two files:
 
@@ -31,4 +35,4 @@ At least you can get nice maps like this (or for individual wards) for just $10 
 
 ![](/images/blog/images/2014-12-22/map.jpg)
 
-*See [`dc_voter_reg`](https://github.com/ajschumacher/dc_voter_reg) on GitHub for the data and concise documentation. A version of this post also appears on [my blog](http://planspace.org/20141220-dc_voter_registration_data/)*
+*See [`dc_voter_reg`](https://github.com/ajschumacher/dc_voter_reg) on GitHub for the data and concise documentation. An earlier version of this post also appears on [my blog](http://planspace.org/20141220-dc_voter_registration_data/)*.

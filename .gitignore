@@ -1,3 +1,4 @@
 # Ignore all logfiles and tempfiles.
 .DS_Store
 _site
+bin

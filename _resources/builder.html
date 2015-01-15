@@ -225,7 +225,7 @@ type: tool
 </div>
 {% include _global_js.html %}
 <script>
-var json = {% include guides/using-civic.json/civic.json.template %};
+var json = $.getJSON("/resources/examples/civic.json.template");
 var update = function() {
     var data = JSON.stringify(json, null, 4);
     $(".result pre").html(data);

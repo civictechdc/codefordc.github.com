@@ -22,7 +22,7 @@ extra_js:
 </div>
 {% include _global_js.html %}
 <script>
-var schema = {% include guides/using-civic.json/schema.json %};
+var schema = $.getJSON("/resources/schema.json");
 var input;
 function validate() {
 

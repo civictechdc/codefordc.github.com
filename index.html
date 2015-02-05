@@ -153,11 +153,15 @@ $("#slackinvite").on("shown.bs.modal", function(e) {
 })
 
 $("#submitemail").click(function(){
-	$.post(
-		"https://codefordc.slack.com/services/hooks/incoming-webhook?token=FoZHyRwfoVaDse8JLofAQa9B",
-		JSON.stringify({'text':'invite request from: '+$("#email").val(),'username':'Slack Inviter','icon_emoji':':raising_hand:'})
-	).success(function(){
-		$("#email").val("");
+	var payload = JSON.stringify({"email": $("#email").val()});
+	$.ajax({
+		url: "https://slackfordc.herokuapp.com/invite",
+		type: "POST",
+		data: payload,
+		contentType: "application/json",
+		success: function(){
+			$("#email").val("");
+		}
 	});
 });
 </script>

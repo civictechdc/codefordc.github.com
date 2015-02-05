@@ -2,16 +2,55 @@
 layout: default
 deeplink: true
 ---
+{% assign guides = site.resources | where:"type","guide" %}
+{% assign documents = site.resources | where:"type","document" %}
+{% assign tools = site.resources | where:"type","tool" %}
 
 <div class="container">
-    <div class="col-lg-10">
-        {% if page.edit_link %}
-        <div class="well well-sm" style="text-align: center; margin-top: 20px">
-            To submit edits, <a href="{{ page.edit_link }}">click here</a>.
+    <div class="row">
+        <div class="col-sm-2 resource-sidebar">
+            {% if page.edit_link %}
+            <div class="well well-sm">
+                We welcome your feedback! To submit edits on this document, <a href="{{ page.edit_link }}">click here</a>.
+            </div>
+            {% endif %}
+            <ul class="nav">
+                <h3>Documents</h3>
+                {% for document in documents %}
+                <li><a href="{{ document.url }}">{{ document.title }}</a></li>
+                {% endfor %}
+            </ul>
+            <ul class="nav">
+                <h3>Guides</h3>
+                {% for guide in guides %}
+                <li><a href="{{ guide.url }}">{{ guide.title }}</a></li>
+                {% endfor %}
+            </ul>
+            <ul class="nav">
+                <h3>Tools</h3>
+                {% for tool in tools %}
+                <li><a href="{{ tool.url }}">{{ tool.title }}</a></li>
+                {% endfor %}
+            </ul>
         </div>
-        {% endif %}
-        {{ content }}
+        <div class="col-sm-10 col-sm-offset-2">
+            <style>
+            h1 {
+                padding: 40px 15px;
+                text-align: center;
+            }
+            </style>
+
+            {{ content }}
+        </div>
     </div>
 </div>
 
 {% include _global_js.html %}
+
+<script charset="utf-8">
+// a hacky hack to resize the footer, since it's loaded from another file
+setTimeout(function(){
+    $('.footer div').addClass('col-sm-10 col-sm-offset-2').removeClass('col-lg-12');
+}, 50);
+</script>

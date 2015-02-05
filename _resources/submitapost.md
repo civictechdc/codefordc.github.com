@@ -2,9 +2,10 @@
 title: Submitting a Blog Post
 layout: resource
 type: guide
+edit_link: https://editfordc.herokuapp.com/document/f37eceab-5a56-41b4-ba19-2e90e29a60e1
 ---
 
-# Make a Blog Post
+# How to Make a Blog Post
 
 The Code for DC blog is open for contributions for the community. Here's how you do it:
 

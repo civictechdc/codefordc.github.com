@@ -12,24 +12,24 @@ layout: default
     </div>
     <div class="col-md-12 row">
         <div class="col-md-4 docs">
-            <h2 class="resource-type">Documents</h1>
-                {% for document in documents %}
-                <p class="resource"><a href="{{ document.url }}">{{ document.title }}</a></p>
-                {% endfor %}
-            </div>
-            <div class="col-md-4 guides">
-                <h2 class="resource-type">Guides</h1>
-                    {% for guide in guides %}
-                    <p class="resource"><a href="{{ guide.url }}">{{ guide.title }}</a></p>
-                    {% endfor %}
-                </div>
-                <div class="col-md-4 tools">
-                    <h2 class="resource-type">Tools</h1>
-                        {% for tool in tools %}
-                        <p class="resource"><a href="{{ tool.url }}">{{ tool.title }}</a></p>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
+            <h2 class="resource-type">Documents</h2>
+            {% for document in documents %}
+            <p class="resource"><a href="{{ document.url }}">{{ document.title }}</a></p>
+            {% endfor %}
+        </div>
+        <div class="col-md-4 guides">
+            <h2 class="resource-type">Guides</h2>
+            {% for guide in guides %}
+            <p class="resource"><a href="{{ guide.url }}">{{ guide.title }}</a></p>
+            {% endfor %}
+        </div>
+        <div class="col-md-4 tools">
+            <h2 class="resource-type">Tools</h2>
+            {% for tool in tools %}
+            <p class="resource"><a href="{{ tool.url }}">{{ tool.title }}</a></p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
 
-            {% include _global_js.html %}
+{% include _global_js.html %}

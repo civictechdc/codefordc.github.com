@@ -2,9 +2,10 @@
 title: Starting a Project
 layout: resource
 type: guide
+edit_link: https://editfordc.herokuapp.com/document/8f55848d-8175-4f90-9200-d3a6c010a7c6
 ---
 
-# Start a Project
+# How to Start a Project
 
 So you have a project--or an idea for a project--to make life better for the people of DC and you want to bring it to Code for DC? Awesome! We're glad you thought of us. In order to help us help you, here's what you should do:
 

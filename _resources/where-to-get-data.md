@@ -1,6 +1,7 @@
 ---
 title: Where to Get Data
 layout: resource
+edit_link: https://editfordc.herokuapp.com/document/805e1cdb-70b7-4d1e-9fc0-8ba6fbf77bc8
 ---
 
 # Where the Data Is

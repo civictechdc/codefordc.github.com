@@ -20,7 +20,7 @@
     <link rel="shortcut icon" href="{{ site.url }}/images/favicon.ico" />
 
     <!-- Twitter and OpenGraph tags -->
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:card" content="summary" />
     <meta name="twitter:creator" content="@codefordc" />
     <meta name="twitter:creator:id" content="2449810405" />
     <meta name="twitter:site" content="@codefordc" />
@@ -30,18 +30,22 @@
 
     {% if page.title %}
     <meta name="og:title" content="{{ page.title }}" />
+    <meta name="twitter:title" content="{{ page.title }}" />
     <title>Code for DC - {{ page.title }}</title>
     {% else %}
     <meta name="og:title" content="Code for DC" />
+    <meta name="twitter:title" content="Code for DC" />
     <title>Code for DC</title>
     {% endif %}
 
     {% if page.description %}
     <meta name="description" content="{{ page.description }}" />
     <meta name="og:description" content="{{ page.description }}" />
+    <meta name="twitter:description" content="{{ page.description }}" />
     {% else %}
     <meta name="description" content="Code for DC is the DC chapter of the Code for America Brigade. We are a group of volunteer civic hackers working together to solve local issues and help people engage with the city." />
     <meta name="og:description" content="Code for DC is the DC chapter of the Code for America Brigade. We are a group of volunteer civic hackers working together to solve local issues and help people engage with the city." />
+    <meta name="twitter:description" content="Code for DC is the DC chapter of the Code for America Brigade. We are a group of volunteer civic hackers working together to solve local issues and help people engage with the city." />
     {% endif %}
 
     {% if page.image %}

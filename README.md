@@ -12,11 +12,9 @@ If you want to add a project to the projects page: read [this](https://github.co
 
 For everything else:
 
-First, make sure that you have [`git`](http://git-scm.com/downloads) on your computer. Create your own fork of the repository, then clone it to your computer and grab the submodules:
+First, make sure that you have [`git`](http://git-scm.com/downloads) on your computer. Create your own [fork](https://guides.github.com/activities/forking/) of the repository, then clone it to your computer:
 
     git clone git@github.com:[YOUR GITHUB NAME]/codefordc-2.0.git
-    git submodule init
-    git submodules update
 
 You can work on the `master` branch (which is the default), but it's preferable to set up a new branch if you're working on a specific feature:
 

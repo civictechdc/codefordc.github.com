@@ -8,7 +8,7 @@ deeplink: true
 
 <div class="container">
     <div class="row">
-        <div class="col-sm-2 resource-sidebar">
+        <div class="col-sm-2 sidebar">
             {% if page.edit_link %}
             <div class="well well-sm">
                 We welcome your feedback! To submit edits on this document, <a href="{{ page.edit_link }}">click here</a>.
@@ -50,7 +50,7 @@ deeplink: true
 
 <script charset="utf-8">
 // a hacky hack to resize the footer, since it's loaded from another file
-setTimeout(function(){
+$(document).ready(function(){
     $('.footer div').addClass('col-sm-10 col-sm-offset-2').removeClass('col-lg-12');
-}, 50);
+});
 </script>

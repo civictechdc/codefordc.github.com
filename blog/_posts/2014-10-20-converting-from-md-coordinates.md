@@ -1,9 +1,8 @@
 ---
 layout: post
 title:  "Dealing with the Maryland Coordinate System"
-post_author: "Drew Bollinger"
-post_twitter: "@drewbo19"
-post_avatar: "drew-bollinger.png"
+authors:
+- drewbo
 date:   2014-10-20 00:00:01
 categories: blog
 ---

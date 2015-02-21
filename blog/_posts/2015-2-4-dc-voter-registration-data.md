@@ -3,9 +3,8 @@ layout: post
 categories: blog
 title:  "DC voter registration data is public, but not very easy to get"
 date:   2015-2-4 09:55:00
-post_author: "Aaron Schumacher"
-post_avatar: "aaron-schumacher.jpg"
-post_twitter: "@planarrowspace"
+authors:
+- aschumacher
 ---
 
 On Thursday, December 18, 2014, I took a printed copy of a [PDF form](http://www.dcboee.org/pdf_files/Data_Request_Form.pdf) that I found on the [DC Board of Elections web site](http://www.dcboee.org/) to 441 4th Street NW, suite 250 north, Washington, DC, 20001, during the [office](https://www.dcboee.org/contactus/index.asp) hours of 8:15-4:45. I had to show ID, have my bag x-rayed, and go through a metal detector to get into the building.

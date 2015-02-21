@@ -3,55 +3,51 @@ layout: default
 deeplink: true
 ---
 
-<div class="col-lg-12">
-    <div class="col-lg-1">
-    </div>
-    <div class="col-lg-10 starter-template">
-        <div class="post">
+<div class="container">
+    <div class="row">
+        <div class=" col-sm-12 post">
             <div class="col-lg-12">
-                <h2>{{ page.title }}</h2>
+                <h1>{{ page.title }}</h1>
                 <hr/>
-            </div>
-            <div class="col-lg-12">
-                <div class="blog-avatar">
-                    {% if page.post_gravatar %}
-                        <img src="http://www.gravatar.com/avatar/{{ page.post_gravatar }}?s=150" class="blog-avatar-img" />
-                    {% elsif page.post_avatar %}
-                        <img src="/images/blog/avatars/{{ page.post_avatar }}" class="blog-avatar-img" />
-                    {% else %}
-                        <img src="/images/blog/avatars/default.png" class="blog-avatar-img" />
-                    {% endif %}
-                    <div class="blog-avatar-content">
-                        by {{ page.post_author }}
-                        {% if page.post_twitter %}
-                            <br/>
-                            <a href="http://www.twitter.com/{{ page.post_twitter }}">{{ page.post_twitter }}</a>
-                        {% endif %}
-                        <br/>
-                        {{ page.date | date_to_string }}
-                    </div>
-                </div>
-                {{ content }}
-                <br/>
-                <br/>
-                <p class="blog-social-cta">Comments? Ideas? Find Code for DC on Twitter: <a href="https://twitter.com/search?q=codefordc&f=realtime" target="_blank">@CodeForDC</a></p>
-            </div>
-            <div class="col-lg-12 post-footer">
-                <hr/>
-                <div class="post-footer-previous">
-                    {% if page.previous.url %}
-                        <a href="{{page.previous.url}}">Previous Post</a>
-                    {% endif %}
-                </div>
-                <div class="post-footer-next">
-                    {% if page.next.url %}
-                        <a href="{{page.next.url}}">Next Post</a>
-                    {% endif %}
-                </div>
             </div>
         </div>
-    </div>
-    <div class="col-lg-1">
+        <div class="blog-avatar col-sm-3">
+        {% for a in page.authors %}
+            {% assign author = site.data.blog_authors[a] %}
+            {% if author.gravatar %}
+                <img src="http://www.gravatar.com/avatar/{{ author.gravatar }}?s=150" class="blog-avatar-img" />
+            {% elsif author.avatar %}
+                <img src="/images/blog/avatars/{{ author.avatar }}" class="blog-avatar-img" />
+            {% else %}
+                <img src="/images/blog/avatars/default.png" class="blog-avatar-img" />
+            {% endif %}
+            <div class="blog-avatar-content">
+                by {{ author.name }}
+                {% if author.twitter %}
+                    <br/>
+                    <a href="http://www.twitter.com/{{ author.twitter }}">@{{ author.twitter }}</a>
+                {% endif %}
+                <br/>
+                {{ page.date | date_to_string }}
+            </div>
+        {% endfor %}
+        </div>
+        <div class="col-sm-9">
+            {{ content }}
+        </div>
+        <div class="col-lg-12 post-footer">
+            <hr/>
+            <div class="post-footer-previous">
+                {% if page.previous.url %}
+                    <a href="{{page.previous.url}}">Previous Post</a>
+                {% endif %}
+            </div>
+            <div class="post-footer-next">
+                {% if page.next.url %}
+                    <a href="{{page.next.url}}">Next Post</a>
+                {% endif %}
+            </div>
+        </div>
     </div>
 </div>
 {% include _global_js.html %}

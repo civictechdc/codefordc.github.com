@@ -2,6 +2,12 @@
     "$schema": "http://json-schema.org/schema#",
     "type":"object",
     "properties":{
+        "conformsTo":{
+            "enum": [
+                "http://codefordc.org/resources/specification.html",
+                "https://github.com/codefordc/guides/blob/master/using-civic.json/specification.md"
+            ]
+        },
         "status":{
             "type":"string",
             "blank":true

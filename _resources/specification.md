@@ -71,7 +71,7 @@ This is based on the work done by [BetaNYC](https://github.com/BetaNYC/civic.jso
 
 ```
 {
-    "conformsTo": "https://raw.githubusercontent.com/codefordc/guides/master/using-civic.json/specification.md",
+    "conformsTo": "http://codefordc.org/resources/specification.html",
     "status": "Production",
     "thumbnailUrl":"http://example.com/static/img/favicon.png",
     "contact":

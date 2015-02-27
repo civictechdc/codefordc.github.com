@@ -2,6 +2,8 @@ name: Code for DC
 url: http://codefordc.org
 markdown: redcarpet
 highlighter: pygments
+paginate: 10
+paginate_path: "/blog/:num"
 gems:
     - jekyll-sitemap
 collections:

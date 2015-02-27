@@ -3,51 +3,111 @@ layout: default
 title:  "Code for DC Blog"
 ---
 
-<div class="col-lg-12 hero blog-hero">
-    <div class="hero-text">{{ page.title }}</div>
-</div>
 <div class="container">
-
-<div class="col-lg-1"></div>
-<div class="col-lg-10 starter-template">
-<p class="lead">Talk back to us on Twitter at <a href="https://twitter.com/search?q=codefordc&f=realtime" target="_blank">@CodeForDC</a></p>
-	{% for post in site.posts %}
-		{% if post.categories contains 'blog' %}
+    <div class="row">
+        <div class="col-sm-2 sidebar">
+            <div class="contribute">
+                <h3>Contribute!</h3>
+                <div>This blog is open to all members of the Code for DC community. For instructions on submitting a post, we've put together <a href="/guides/howtoblog.html">a handy guide</a>.</div>
+            </div>
+            <div class="engage">
+                <h3>Engage</h3>
+                <div>Talk to us on Twitter about these posts, or anything else, at <a href="twitter.com/codefordc">@codefordc</a>.</div>
+            </div>
+            <div class="post-archive">
+                <h3>Archives</h3>
+                <div>See every post ever right <a href="/blog/archives.html">here</a>.</div>
+            </div>
+        </div>
+        <div class="col-sm-10 col-sm-offset-2">
+            <div class="col-lg-12 starter-template">
+                <h1>Latest Posts</h1>
+            </div>
+            {% for post in paginator.posts %}
+            {% if post.categories contains 'blog' %}
             <div class="post stub">
-                <div class="col-lg-12">
-                    <hr/>
-                    <h2><a href="{{post.url}}">{{ post.title }}</a></h2>
-                </div>
-                <div class="col-lg-12">
-
-                </div>
-                <div class="col-lg-12">
-                    <div class="blog-avatar">
-                        {% if post.post_gravatar %}
-                            <img src="http://www.gravatar.com/avatar/{{ post.post_gravatar }}?s=100" class="blog-avatar-img" />
-                        {% elsif post.post_avatar %}
-                            <img src="/images/blog/avatars/{{ post.post_avatar }}" class="blog-avatar-img" />
-                        {% else %}
-                            <img src="/images/blog/avatars/default.png" class="blog-avatar-img" />
-                        {% endif %}
-                        <div class="blog-avatar-content">
-                            {{ post.post_author }}
-                            <br/>
-                            {{ post.date | date_to_string }}
-                        </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <hr/>
+                        <h1><a href="{{post.url}}">{{ post.title }}</a></h1>
+                        <h4><small>by</small> {% assign authorCount = post.authors | size %}
+                            {% if authorCount == 0 %}
+                            No author
+                            {% else %}
+                            {% for a in post.authors %}
+                            {% assign author = site.data.blog_authors[a] %}
+                            {% if forloop.first %}
+                            {{ author.name }}
+                            {% elsif forloop.last %}
+                            and {{ author.name }}
+                            {% else %}
+                            , {{ author.name }}
+                            {% endif %}
+                            {% endfor %}
+                            {% endif %} | <small>posted {{ post.date | date: "%B %d, %Y" }}</small></h4>
                     </div>
-                    {% if post.content contains '<!--more-->' %}
+                </div>
+                <div class="row">
+                    <div class="col-sm-11">
+                        {% if post.image %}
+                        <img src="/images/blog/images/{{ post.image }}" class="postheader img-responsive" />
+                        {% endif %}
+                        {% if post.content contains '<!--more-->' %}
                         {{ post.content | split:'<!--more-->' | first }}
-                    {% else %}
+                        {% else %}
                         {{ post.content | truncatewords: 150 }}
-                    {% endif %}
-                    <a href="{{post.url}}">Read More »</a>
+                        {% endif %}
+                        <p><a href="{{post.url}}">Read More »</a></p>
+                    </div>
                 </div>
             </div>
- 		{% endif %}
-    {% endfor %}
-</div>
-<div class="col-lg-1"></div>
+            {% endif %}
+            {% endfor %}
+            {% if paginator.total_pages > 1 %}
+            <div class="pagination">
+                {% if paginator.previous_page %}
+                <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
+                {% else %}
+                <span>&laquo; Prev</span>
+                {% endif %}
+
+                {% for page in (1..paginator.total_pages) %}
+                {% if page == paginator.page %}
+                <em>{{ page }}</em>
+                {% elsif page == 1 %}
+                <a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+                {% else %}
+                <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+                {% endif %}
+                {% endfor %}
+
+                {% if paginator.next_page %}
+                <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
+                {% else %}
+                <span>Next &raquo;</span>
+                {% endif %}
+            </div>
+            {% endif %}
+        </div>
+        <!-- <div class="col-sm-3">
+            <div class="sidebar affix" data-spy="affix" data-offset-top="420" data-offset-bottom="">
+                <div class="contribute">
+                    <h4>Contribute!</h4>
+                    <p>This blog is open to all members of the Code for DC community. For instructions on submitting a post, we've put together <a href="/guides/howtoblog.html">a handy guide</a>.</p>
+                </div>
+                <div class="post-archive">
+                    <h4>Archives</h4>
+                    <p>See every post ever right <a href="/blog/archives.html">here</a>.
+                </div>
+                <div class="post-categories">
+                    <h4>Categories</h4>
+                    {% for category in site.categories %}
+                    <p>{{ category | first }}</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div> -->
+    </div>
 </div>
 
 {% include _global_js.html %}

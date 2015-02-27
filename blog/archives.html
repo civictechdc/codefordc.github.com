@@ -1,0 +1,39 @@
+---
+layout: default
+title: Archives
+---
+<div class="container">
+<h1>Archives</h1>
+{% for post in site.posts %}
+
+{% unless post.next %}
+<h3>{{ post.date | date: '%Y' }}</h3>
+{% else %}
+{% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+{% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
+{% if year != nyear %}
+<h3>{{ post.date | date: '%Y' }}</h3>
+{% endif %}
+{% endunless %}
+
+<p>
+    <div>{{ post.date | date:"%b %d %Y" }} — <a href="{{ post.url }}">{{ post.title }}</a></div>
+    <div>by {% assign authorCount = post.authors | size %}
+        {% if authorCount == 0 %}
+        No author
+        {% else %}
+        {% for a in post.authors %}
+        {% assign author = site.data.blog_authors[a] %}
+        {% if forloop.first %}
+        {{ author.name }}
+        {% elsif forloop.last %}
+        and {{ author.name }}
+        {% else %}
+        , {{ author.name }}
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+    </div>
+</p>
+{% endfor %}
+</div>

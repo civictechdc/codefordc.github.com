@@ -21,9 +21,9 @@ If you haven't already, go to the [site's repo](https://github.com/codefordc/cod
 
 In a Jekyll site like Code for DC's, blog posts live in the `blog` folder. There are two folders there: `_drafts` and `_posts`. If you were working on a live version of the site, you'd use the `_drafts` folder to hide your post until it was ready, but since you're on a separate fork you should just work in `_posts`.
 
-Create a new file in `_posts`, with the name `yyyy-mm-dd-your-post-title`. You can use either the `.md` or `.html` file extension, depending on how you want to write your post.
+Create a new file in `_posts`, with the name `yyyy-mm-dd-your-post-title`. You can use either the `.md` or `.html` file extension, depending on whether you wrote your post in Markdown or HTML.
 
-You should also choose an avatar for yourself, and add that to the `images/blog/avatars` folder.
+Your author information will live in the _data/blog_authors.yml file. Choose a unique name and set the info you'd like to share. We suggest including at least a Twitter username. You'll be able to use that name on any post, and we'll automatically populate your information into the post.
 
 ## Write your post
 
@@ -32,12 +32,11 @@ Certain things, like the title, author info, and post time, are set in what's ca
     ---
     layout: post
     title:  "Your Blog Post Title"
-    post_author: "Your Name"
-    post_avatar: "your-avatar.jpg"
+    authors:
+    - yourname
     date:   yyyy-mm-dd hh:mm:ss
     categories: blog
-    post_twitter: "@your-twitter" #optional
-    image: "image.jpg" #optional
+    image: "path/to/image.jpg" #optional
     description: "A very brief summary of the post" #optional
     ---
 

@@ -3,35 +3,38 @@
     "type":"object",
     "properties":{
         "conformsTo":{
+            "type":"string",
             "enum": [
-                "http://codefordc.org/resources/specification.html",
-                "https://github.com/codefordc/guides/blob/master/using-civic.json/specification.md"
+                "http://codefordc.org/resources/specification.html"
             ]
         },
         "status":{
             "type":"string",
-            "blank":true
+            "enum":[
+                "Ideation",
+                "Alpha",
+                "Beta",
+                "Production",
+                "Archival"
+            ]
         },
         "thumbnailUrl":{
-            "type":"string",
-            "blank":true
+            "type":"string"
         },
         "contact":{
             "type":"object",
             "properties":{
                 "name":{
-                    "type":"string",
-                    "blank":true
+                    "type":"string"
                 },
                 "email":{
-                    "type":"string",
-                    "blank":true
+                    "type":"string"
                 },
                 "twitter":{
-                    "type":"string",
-                    "blank":true
+                    "type":"string"
                 }
-            }
+            },
+            "additionalProperties":false
         },
         "bornAt":{
             "type":"string"
@@ -49,22 +52,41 @@
             "type":"object"
         },
         "type":{
-            "type":"string",
-            "blank":true
+            "type":"string"
         },
         "data":{
-            "type":"object",
-            "required":false
+            "type":"object"
         },
         "needs":{
-            "type":"array"
+            "type":"array",
+            "items":{
+                "type":"object",
+                "properties":{
+                    "need":{
+                        "type":"string"
+                    },
+                    "want":{
+                        "type":"string"
+                    }
+                },
+                "additionalProperties":false
+            }
         },
         "categories":{
-            "type":"array"
+            "type":"array",
+            "items":{
+                "type":"object",
+                "properties":{
+                    "category":{
+                        "type":"string"
+                    }
+                },
+                "additionalProperties":false
+            }
         },
         "moreInfo":{
-            "type":"string",
-            "blank":true
+            "type":"string"
         }
-    }
+    },
+    "required": ["conformsTo", "contact", "status"]
 }

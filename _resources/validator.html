@@ -17,13 +17,14 @@ extra_js:
     <pre></pre>
 </div>
 
-{% include _global_js.html %} <!-- It's loaded in the template, but we need it for JS -->
+{% include _global_js.html %} <!-- It's loaded in the template, but we need it earlier -->
 
 <script>
 var schema;
 var input;
 $.getJSON("/resources/schema.json", function(data){
     schema = data;
+    console.log(schema);
 });
 
 function validate() {
@@ -32,7 +33,7 @@ function validate() {
     var newjson = $(".entered textarea").val();
     if (newjson == input) {
         return;
-    };
+    }
 
     // If stuff is new, prepare for validation
     input = newjson;
@@ -41,7 +42,7 @@ function validate() {
     $(".result pre").removeClass("fail");
     if (!input) {
         return;
-    };
+    }
 
     // Attempt to parse the JSON
     try {
@@ -58,6 +59,7 @@ function validate() {
 
     // Do the validation
     var result = tv4.validateMultiple(json, schema);
+    console.log(result);
     if (result.errors.length == 0) {
         $(".result pre").append("Looks good!");
         $(".result pre").addClass("success");

@@ -15,16 +15,18 @@ This is based on the work done by [BetaNYC](https://github.com/BetaNYC/civic.jso
 2. `civic.json` shall include a single object represented as JSON, with the key/value pairs outlined below.
 
 ## Key/Value Pairs
+1. `conformsTo` - the URL describing the format of the file. In this case, "http://codefordc.org/resources/specification.html".
+
 2. `status` - text indicating the status of the project.  Any text is allowed, but a selection from the recommended values is advised:
-  * `"Ideation"` - Brainstorming phase
-  * `"Alpha"` - Brainstorming phase
-  * `"Beta"` - Brainstorming phase
-  * `"Production"` - Finished Product, development ongoing
-  * `"Archival"` - Finished Product, development ongoing
+  * `"Ideation"` - Brainstorming phase: user needs are being researched
+  * `"Alpha"` - Initial prototyping phase and internal testing
+  * `"Beta"` - A product is being tested in public
+  * `"Production"` - Finished Product, development and maintenance ongoing
+  * `"Archival"` - Finished Product, but no longer actively maintained
 
 3. `thumbnailUrl` - a URL to an image associated with the project listing.
 
-4. `contact` - an object containing `name`, `email`, and `twitter` objects, with each representing the preferred contact information for the project.
+4. `contact` - an object containing `name`, `email`, and `twitter` objects, with each representing the preferred contact information for the project. At least one method should be available.
 
 5. `bornAt` - text indicating the name of the event the project was conceived at, if any.  Any text is allowed.
 
@@ -51,7 +53,7 @@ This is based on the work done by [BetaNYC](https://github.com/BetaNYC/civic.jso
     * `"Policy Document"`
     * `"Dataset"`
 
-11. `data` - an object of "dataset" objects. The key is the name of the dataset, and the value is the dataset's URL.
+11. `data` - an object of "dataset" objects. Add any datasets created by the project, and any useful third-party datasets used by the project. The key is the name of the dataset, and the value is the dataset's URL.
 
 12. `needs` - an array of "need" or "want" objects.  Needs are considered necessary to the success of the project, while wants are considered enhancements.  There is no limit to the number of objects included in a project.
 
@@ -91,13 +93,13 @@ This is based on the work done by [BetaNYC](https://github.com/BetaNYC/civic.jso
         "Another Dataset":"http://example.com/otherstuff"
     },
     "needs": [
-    {"need":"Ruby on Rails"},
-    {"need":"Spreadsheet Experts"}
+        {"need":"Ruby on Rails"},
+        {"want":"Spreadsheet Experts"}
     ],
     "categories": [
-    {"category":"Politics"},
-    {"category":"Government"},
-    {"category":"Open Data"}
+        {"category":"Politics"},
+        {"category":"Government"},
+        {"category":"Open Data"}
     ],
     "moreInfo": ""
 }

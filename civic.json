@@ -1,6 +1,7 @@
 {
+        "conformsTo":"http://codefordc.org/resources/specification.html",
         "status": "Production",
-        "thumbnailUrl": "",
+        "thumbnailUrl": "http://codefordc.org/images/logo_500px.png",
         "contact": {
             "name":"",
             "email":"",

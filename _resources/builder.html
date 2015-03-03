@@ -328,13 +328,13 @@ $(document).ready(function() {
     $('.needs').keyup(function() {
         var id = $(this).attr("id");
         var need = $("#"+id+".needs").val();
-        json["needs"][+id] = need;
+        json["needs"][+id]["need"] = need;
         update();
     });
     $('.categories').keyup(function() {
         var id = $(this).attr("id");
         var category = $("#"+id+".categories").val();
-        json["categories"][+id] = category;
+        json["categories"][+id]["category"] = category;
         update();
     });
 });

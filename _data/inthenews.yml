@@ -1,3 +1,43 @@
+- date: 2015-03-04 14:12:00
+  link: http://technical.ly/dc/2015/03/04/bookdsfordc-library-twitter-feed/
+  publication: Technical.ly
+  title: "This Twitter feed lists books just added to the DC Public Library system"
+  icon: images/press/icons/technically.jpg
+  format: text
+  featured: no
+
+- date: 2015-02-10 09:05:00
+  link: http://greatergreaterwashington.org/post/25712/some-needy-dcps-students-are-getting-a-lot-less-funding-than-others/
+  publication: Greater Greater Washington
+  title: "Some needy DCPS students are getting a lot less funding than others"
+  icon: images/press/icons/greater-greater-washington.png
+  format: text
+  featured: no
+
+- date: 2014-10-01 10:40:00
+  link: http://technical.ly/dc/2014/10/01/applying-low-income-housing-pain-code-dc-building-hack/
+  publication: Technical.ly
+  title: "Applying for low-income housing is a pain. Code for DC is building a hack"
+  icon: images/press/icons/technically.jpg
+  format: text
+  featured: no
+
+- date: 2015-01-12 00:00:00
+  link: http://nextcity.org/features/view/open-data-cities-mark-headd-philadelphia-michael-nutter
+  publication: Next City
+  title: "Welcome to the Open Data Movement’s Turbulent Teenage Years"
+  icon: images/press/icons/nextcity.png
+  format: text
+  featured: no
+
+- date: 2015-02-06 00:00:00
+  link: http://www.washingtonpost.com/news/local/wp/2015/02/06/at-risk-funding-in-the-district-school-by-school/
+  publication: The Washington Post
+  title: "At-risk funding in the District: A school-by-school breakdown"
+  icon: images/press/icons/washington-post.png
+  format: text
+  featured: no
+
 - date: 2014-09-23 00:00:00
   link: http://wamu.org/news/14/09/22/everything_you_need_to_know_about_handguns_in_dc
   publication: WAMU
@@ -11,7 +51,7 @@
   publication: Technical.ly
   title: Help Code for DC with these 14 Civic Hacking Projects
   icon: images/press/icons/technically.jpg
-  format: txt
+  format: text
   featured: no
 
 - date: 2014-06-04 00:00:00
@@ -19,7 +59,7 @@
   publication: DCist
   title: "Tool: Are the Capital Bikeshare Odds in Your Favor?"
   icon: images/press/icons/dcist.png
-  format: txt
+  format: text
   featured: no
 
 - date: 2014-06-03 00:00:00
@@ -27,7 +67,7 @@
   publication: Greater Greater Washington
   title: What's your chance of getting a CaBi bike or an open station?
   icon: images/press/icons/greater-greater-washington.png
-  format: txt
+  format: text
   featured: no
 
 - date: 2014-04-23 00:00:00
@@ -130,7 +170,7 @@
   link: http://susiecambria.blogspot.com/2013/09/new-app-for-parents-helps-with.html
   publication: Susie's Budget and Policy Corner
   title: New app for parents helps with selecting a school for their child
-  icon: null
+  icon: images/press/icons/susie-cambria.jpg
   format: text
   featured: no
 

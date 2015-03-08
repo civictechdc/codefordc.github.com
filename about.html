@@ -27,7 +27,7 @@ title: About Us
                 {% for p in site.data.leadership %}
                 <div class="col-md-4">
                     <div class="image">
-                        <img class="img-responsive center-block" height=200px width=200px src="{{ p.image }}" />
+                        <img class="img-responsive center-block" height=200px width=200px src="{{ p.image }}" alt="{{ p.name }}" />
                     </div>
                     <div class="bio">
                         <h3 class="text-center">{{ p.name }} <small>{{ p.title }}</small></h3>
@@ -73,7 +73,7 @@ title: About Us
                 {% for story in stories reversed %}
                 <div class="col-md-4 press-item">
                     <div class="press-item-img">
-                        <img class="img-responsive center-block" src="{{ story.icon }}" />
+                        <img class="img-responsive center-block" src="{{ story.icon }}" alt="story.title" />
                     </div>
                     <div class="press-item-info">
                         <p>{{ story.publication }} | {{ story.date | date: "%B %-d, %Y" }}</p>

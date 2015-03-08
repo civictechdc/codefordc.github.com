@@ -270,13 +270,15 @@ window.projects = function(data){
 
 		project.find('.description').text(info["description"]);
 
-		if (info["civic_json"] && info["civic_json"]["needs"]){
-			project.find('.needs').removeClass("hidden");
-			$.each(info["civic_json"]["needs"], function(k,v){
-				project.find('.needs div').append(
-					$("<li class='need'></li>").text(v["need"])
-				);
-			});
+		if (info["civic_json"] && (info["civic_json"]["needs"])){
+			if (info["civic_json"]["needs"].length > 0) {
+				project.find('.needs').removeClass("hidden");
+				$.each(info["civic_json"]["needs"], function(k,v){
+					project.find('.needs div').append(
+						$("<li class='need'></li>").text(v["need"])
+					);
+				});
+			}
 		}
 
 		$.each(info["contributors"], function(k,v){

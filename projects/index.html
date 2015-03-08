@@ -105,11 +105,12 @@ extra_js:
 					<p class="governmentPartner hidden"><strong>Government Partner</strong><br/> <span></span></p>
 					<p class="communityPartner hidden"><strong>Community Partner</strong><br/> <span></span></p>
 					<p class="politicalEntity hidden"><strong>Relevant to</strong><br/> <span></span></p>
+					<p class="accessibility hidden"><strong>WCAG2A Accessible:</strong> <span></span></p>
 					<p class="contact">
 						<a class='btn btn-info btn-sm email hidden' role='button' title="Email"><i class='fa fa-envelope fa-lg'></i></a>
 						<a class='btn btn-info btn-sm twitter hidden' role='button' title="Tweet Us"><i class='fa fa-twitter fa-lg'></i></a>
 					</p>
-					<div class="categories"> </div>
+					
 				</div>
 				<div class="col-sm-5">
 					<h4><strong>Activity</strong></h4>
@@ -120,6 +121,9 @@ extra_js:
 						<strong>Contributors</strong>
 						<div> </div>
 					</div>
+					<div class="categories">
+						<p><strong>Categories</strong></p>
+					 </div>
 				</div>
 				<div class="col-sm-3">
 					<h4><strong>Get Involved</strong></h4>
@@ -266,6 +270,23 @@ window.projects = function(data){
 				project.find(".politicalEntity").removeClass('hidden').
 				find("span").html(polentity);
 			}
+		}
+
+		if (!$.isEmptyObject(info["accessibility"])){
+			console.log("hello")
+			var accessible = "Yes"
+			$.each(info["accessibility"], function(k,v){
+				try {
+					if (v["results"]["error"] > 20){
+						accessible = "No";
+					}
+				} catch (e) {
+					accessible = "No";
+				}
+			});
+			project.find(".accessibility").removeClass("hidden").
+			find("span").
+			html("<a href='https://accessfordc.herokuapp.com/'>"+accessible+"</a>");
 		}
 
 		project.find('.description').text(info["description"]);

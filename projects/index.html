@@ -13,7 +13,7 @@ extra_js:
 <div class="container">
 	<div class="col-lg-12">
         <div class="alert alert-success alert-dismissible hidden" role="alert">
-            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <button type="button" class="close" data-dismiss="alert" title="dismiss"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
             <strong>Success!</strong> Check back in soon and the project should be on this list.
         </div>
         <div class="col-lg-10 col-lg-offset-1 starter-template">
@@ -86,7 +86,7 @@ extra_js:
 		<div id="project-template" class="project mix">
 			<div class="row">
 				<div class="col-sm-12 title">
-					<h2><img class='img-rounded thumbnail hidden' height='50' width='50'><span class="name"></span></h2>
+					<h2><img class='img-rounded thumbnail hidden' height='50' width='50' alt="thumbnail"><span class="name"></span></h2>
 					<p class="homepage hidden"><a>Website</a></p>
 				</div>
 			</div>
@@ -107,8 +107,8 @@ extra_js:
 					<p class="politicalEntity hidden"><strong>Relevant to</strong><br/> <span></span></p>
 					<p class="accessibility hidden"><strong>WCAG2A Accessible:</strong> <span></span></p>
 					<p class="contact">
-						<a class='btn btn-info btn-sm email hidden' role='button' title="Email"><i class='fa fa-envelope fa-lg'></i></a>
-						<a class='btn btn-info btn-sm twitter hidden' role='button' title="Tweet Us"><i class='fa fa-twitter fa-lg'></i></a>
+						<a class='btn btn-info btn-sm email hidden' role='button' name="email" title="Email"><i class='fa fa-envelope fa-lg'></i></a>
+						<a class='btn btn-info btn-sm twitter hidden' role='button' name="twitter" title="Tweet Us"><i class='fa fa-twitter fa-lg'></i></a>
 					</p>
 					
 				</div>
@@ -304,7 +304,7 @@ window.projects = function(data){
 
 		$.each(info["contributors"], function(k,v){
 			project.find('.contributors').removeClass('hidden'); // important on first iteration only
-			var c = $("<a><img class='' height='36' width='36'></a>");
+			var c = $("<a><img class='' height='36' width='36' alt='"+v["name"]+"'></a>");
 			c.attr('href', v["link"]);
 			c.find('img').attr('src', v["avatar_url"]);
 			project.find('.contributors div').append(c);

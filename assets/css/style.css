@@ -27,6 +27,24 @@ body {
 	background:#eee;
 }
 
+a {
+    color: #0020FF;
+}
+
+.btn-info {
+    background-color: #1b809e;
+    border-color: #1b809e;
+}
+
+.btn-warning {
+    background-color: #ad6500;
+    border-color: #ad6500;
+}
+
+h4 small {
+    color: #767676;
+}
+
 h1.h0 {
 	font-size:59px;
 	font-weight:bold;
@@ -72,6 +90,10 @@ h6:hover .deeplink {
 
 .navbar-brand {
 	padding:10px;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #8F8F8F;
 }
 
 hr.footer-divider {

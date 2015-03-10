@@ -102,10 +102,11 @@ extra_js:
 					<div class="row">
 						<p class="col-sm-12 language"><strong>Language(s)</strong><br/> <span></span></p>
 					</div>
+					<p class="license hidden"><strong>License</strong><br/> <span></span></p>
 					<p class="governmentPartner hidden"><strong>Government Partner</strong><br/> <span></span></p>
 					<p class="communityPartner hidden"><strong>Community Partner</strong><br/> <span></span></p>
 					<p class="politicalEntity hidden"><strong>Relevant to</strong><br/> <span></span></p>
-					<p class="accessibility hidden"><strong>WCAG2A Accessible:</strong> <span></span></p>
+					<p class="accessibility hidden"><strong>WCAG2AAA Accessible:</strong> <span></span></p>
 					<p class="contact">
 						<a class='btn btn-info btn-sm email hidden' role='button' name="email" title="Email"><i class='fa fa-envelope fa-lg'></i></a>
 						<a class='btn btn-info btn-sm twitter hidden' role='button' name="twitter" title="Tweet Us"><i class='fa fa-twitter fa-lg'></i></a>
@@ -183,6 +184,14 @@ window.projects = function(data){
 		project.attr("data-stars",info["watchers"]);
 		if (info["main_language"] == null){
 			info["main_language"] = "Text";
+		}
+
+		if (info["license"]){
+			project.find(".license").removeClass("hidden")
+			.find("span").html(info["license"]["name"]);
+		} else {
+			project.find(".license").removeClass("hidden")
+			.find("span").html("None");
 		}
 
 		// Calculate language usage
@@ -273,7 +282,6 @@ window.projects = function(data){
 		}
 
 		if (!$.isEmptyObject(info["accessibility"])){
-			console.log("hello")
 			var accessible = "Yes"
 			$.each(info["accessibility"], function(k,v){
 				try {

@@ -108,7 +108,7 @@ TileMill
 
 ## Data viz
 
-[An overview]((http://selection.datavisualization.ch/)
+[An overview](http://selection.datavisualization.ch/)
 
 [D3.js](http://d3js.org/)
 

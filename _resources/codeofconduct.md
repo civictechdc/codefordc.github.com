@@ -35,7 +35,7 @@ Except for instances where it would significantly impede productivity, there is 
 
 ### Who to Contact
 
-If you are unable to resolve the issue, or are uncomfortable doing so, you should contact a Captain. Captains agree to keep information shared in association with a Code of Conduct violation private, and may reveal it only with the approval of the affected person(s).
+If you are unable to resolve the issue, or are uncomfortable doing so, you should contact a Captain. Captains agree to keep information shared in association with a Code of Conduct violation private, and may reveal it only with the approval of the affected person(s). Contact information for each Captain is listed on the [About page](/about.html), and you can also send an anonymous (or non-anonymous) message through the [Contact page](/contact.html), in which case it will be seen by all Captains.
 
 ### Outcomes
 

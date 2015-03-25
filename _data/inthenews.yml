@@ -1,3 +1,11 @@
+- date: 2015-03-17 00:00:00
+  link: http://wamu.org/news/15/03/16/why_buy_a_book_when_you_can_go_to_dc_public_library_theres_an_app_for_that
+  publication: WAMU
+  title: "New Browser Extension May Get You Going To The D.C. Public Library More"
+  icon: images/press/icons/wamu.png
+  format: text
+  featured: no
+
 - date: 2015-03-04 14:12:00
   link: http://technical.ly/dc/2015/03/04/bookdsfordc-library-twitter-feed/
   publication: Technical.ly

@@ -143,10 +143,12 @@ title: Get Involved
 <script>
 $("#slackinvite").on("shown.bs.modal", function(e) {
 	$("#email").focus();
-})
+});
 
 $("#submitemail").click(function(){
-	var payload = JSON.stringify({"email": $("#email").val()});
+	var payload = JSON.stringify({
+		"email": $("#email").val()
+	});
 	$.ajax({
 		url: "https://slackfordc.herokuapp.com/invite",
 		type: "POST",

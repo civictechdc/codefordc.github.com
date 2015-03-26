@@ -59,8 +59,7 @@ extra_js:
                 </div>
 			</div>
 		</div>
-		<div id='submit-project' class="hidden">
-            <div>Have a project that should be tracked here? Let us know!</div>
+		<div id='submit-project' class="hidden col-sm-12">
 			<form id="githubrepoform" role="form">
 				<div class="form-group">
 					<div class="input-group">
@@ -72,7 +71,7 @@ extra_js:
 					</div>
 				</div>
 			</form>
-            <div>The requirements for a Code for DC project can be found <a href="/resources/startaproject.html">here</a>.</div>
+            <div>Have a project that should be tracked here? Let us know! The requirements for a Code for DC project can be found <a href="/resources/startaproject.html">here</a>.</div>
 		</div>
 		<hr class="col-lg-12">
 		<div class="col-lg-12">
@@ -464,14 +463,20 @@ $(document).ready(function(){
 
 	$("#submitrepo").click(function() {
 		if (submit){
-			$.post(
-				"https://codefordc.slack.com/services/hooks/incoming-webhook?token=FoZHyRwfoVaDse8JLofAQa9B",
-				JSON.stringify({'text':'new repo: '+$("#githubrepo").val(),'username':'Project Tracker','icon_emoji':':computer:'})
-			).success(function(){
-				$('#githubrepo').val('');
+			var payload = JSON.stringify({
+				"repo": $("#githubrepo").val()
 			});
-            $("#submit-project").addClass("hidden");
-            $(".alert").removeClass("hidden");
+			$.ajax({
+				url: "https://slackfordc.herokuapp.com/project",
+				type: "POST",
+				data: payload,
+				contentType: "application/json",
+				success: function(){
+					$('#githubrepo').val('');
+					$("#submit-project").addClass("hidden");
+            		$(".alert").removeClass("hidden");
+				}
+			});
 		}
 	});
 });

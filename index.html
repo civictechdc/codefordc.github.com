@@ -29,6 +29,10 @@ title: Get Involved
 
 <div class="container">
 	<div class="col-sm-12 starter-template">
+		<div class="alert alert-success alert-dismissible hidden" role="alert">
+    	<button type="button" class="close" data-dismiss="alert" title="dismiss"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+    	<strong>Success!</strong> You should receive an invite to Slack shortly.
+	</div>
 		<div class="row">
 			<div class="col-lg-4">
 				<h1>Attend!</h1>
@@ -156,6 +160,7 @@ $("#submitemail").click(function(){
 		contentType: "application/json",
 		success: function(){
 			$("#email").val("");
+			$(".alert").removeClass("hidden");
 		}
 	});
 });

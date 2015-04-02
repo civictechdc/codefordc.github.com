@@ -3,9 +3,11 @@ layout: default
 title: Projects
 extra_css:
   - bootstrapValidator.min.css
+  - nv.d3.css
 extra_js:
   - moment.min.js
   - d3.min.js
+  - nv.d3.min.js
   - jquery.mixitup.min.js
   - bootstrapValidator.min.js
 ---
@@ -115,7 +117,7 @@ extra_js:
 				<div class="col-sm-5">
 					<h4><strong>Activity</strong></h4>
 					<div class="activity">
-						<div></div>
+						<div><svg></svg></div>
 					</div>
 					<div class="contributors hidden">
 						<strong>Contributors</strong>
@@ -219,6 +221,8 @@ window.projects = function(data){
 				l.push("Text");
 			}
 		}
+
+		project.find(".activity svg").attr("id", "project"+i);
 
 		project.find("h2 span.name").text(name);
 		//		project.find("h2 a").attr('href', repo_link);
@@ -341,49 +345,38 @@ window.projects = function(data){
 			})
 		}
 
-		// Create a graph of the Github repo's commit history using D3.js, based on https://gist.github.com/ashleybot/1842440
+		// Create a graph of the Github repo's commit history using D3.js and nvd3.js
 		// This is done after everything else because it requires a HTML element on which to operate
 
-		// First, scale the repo activity to make graphs consistent
-		var scaled = [];
-		$.each(info["activity"],function(i,n){
-			scaled.push(n * 100/Math.max.apply(null, info["activity"]));
-		})
+		var chart
+		nv.addGraph(function(){
+			chart = nv.models.historicalBarChart();
+			chart.margin({left: 0, bottom: 0, right: 0, top: 0});
+			chart.tooltipContent(function(key, y, e, graph) {
+				return '<h3>' + key + '</h3>' +'<p>' + y + '</p>' 
+			});
 
-		var w = $("#project-list").width() / 156,
-		h = 90;
+	        values = []
+	        $.each(info["activity"], function (i, val){
+	        	values.push({x: i, y: val});
+	        })
 
-		// Create the chart's SVG in the DOM
-		var chart = d3.select("#project"+i+" .activity").append("svg")
-		.attr("class", "chart")
-		.attr("width", w * 52)
-		.attr("height", h)
-		.attr("viewbox", "0 0 "+(w*52)+" "+h)
-		.attr("preserveAspectRatio","xMidYMid");
+	        d3.select("svg#project"+i)
+	            .datum([{
+	            	values: values,
+	            	key: "Commits",
+	            	color: "#9E9E9E"
+	            }])
+	            .transition()
+	            .duration(600)
+	            .call(chart);
 
-		chart.append("rect")
-		.attr("width", "100%")
-		.attr("height", "100%")
-		.attr("fill", "#ededed");
+	        nv.utils.windowResize(chart.update);
 
-		var x = d3.scale.linear()
-		.domain([0, 1])
-		.range([0, w]);
+	        chart.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
 
-		var y = d3.scale.linear()
-		.domain([0, 100])
-		.range([0, h]);
-
-		// Make the actual graph
-		chart.selectAll("rect")
-		.data(scaled)
-		.enter().append("rect")
-		.attr("x", function(d, i) { return x(i) - .5; })
-		.attr("y", function(d) { return h - y(d) - .5; })
-		.attr("width", w / 2)
-		.attr("height", function(d) { return y(d); } )
-		.attr("fill", "#9E9E9E");
-
+	        return chart;
+		});
 	});
 
 	// Create filter options for languages

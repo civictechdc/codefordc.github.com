@@ -1,3 +1,19 @@
+- date: 2015-04-20 00:00:00
+  link: http://dcist.com/2015/04/want_more_trees_on_your_block_getdc.php
+  publication: DCist
+  title: "Want More Trees On Your Block? Getdctrees Makes It Easy To Ask For Them"
+  icon: images/press/icons/dcist.png
+  format: text
+  featured: no
+
+- date: 2015-04-20 00:00:00
+  link: http://www.washingtonpost.com/news/local/wp/2015/04/20/d-c-has-13000-open-spots-for-trees-heres-how-you-can-fill-them/
+  publication: The Washington Post
+  title: "D.C. has 13,000 open spots for trees. Here’s how you can fill them."
+  icon: images/press/icons/washington-post.png
+  format: text
+  featured: no
+
 - date: 2015-03-17 00:00:00
   link: http://wamu.org/news/15/03/16/why_buy_a_book_when_you_can_go_to_dc_public_library_theres_an_app_for_that
   publication: WAMU

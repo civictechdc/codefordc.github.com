@@ -1,3 +1,11 @@
+- date: 2015-04-24 00:00:00
+  link: http://wamu.org/news/15/04/24/in_dc_you_can_now_plant_a_tree_with_little_more_than_a_click
+  publication: WAMU
+  title: "In D.C., You Can Now Plant A Tree With Little More Than A Click"
+  icon: images/press/icons/wamu.png
+  format: audio
+  featured: no
+
 - date: 2015-04-20 00:00:00
   link: http://dcist.com/2015/04/want_more_trees_on_your_block_getdc.php
   publication: DCist

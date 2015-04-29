@@ -33,13 +33,21 @@ Except for instances where it would significantly impede productivity, there is 
 
 ## Procedures
 
-### Who to Contact
+### Making a Report
 
 If you are unable to resolve the issue, or are uncomfortable doing so, you should contact a Captain. Captains agree to keep information shared in association with a Code of Conduct violation private, and may reveal it only with the approval of the affected person(s). Contact information for each Captain is listed on the [About page](/about.html), and you can also send an anonymous (or non-anonymous) message through the [Contact page](/contact.html), in which case it will be seen by all Captains.
 
+When making a report, the following information is useful, but not required:
+
+- Who violated the Code of Conduct?
+- Where and when did the violation occurred?
+- What happened?
+- Who may have witnessed the violation?
+- Who are you?
+
 ### Outcomes
 
-Captains agree to treat all violations impartially. In situations where this may not be possible due to personal or business relationships, Captains may elect to refer the violation report to another appropriate decision-maker with the approval of the affected person(s).
+Captains agree to treat all violations impartially. In situations where this may not be possible due to personal or business relationships, Captains shall refer the violation report to another appropriate decision-maker with the approval of the affected person(s).
 
 Captains may take any of the following actions, or any other appropriate action, to resolve a conduct issue:
 
@@ -53,3 +61,5 @@ Captains may take any of the following actions, or any other appropriate action,
 This is a living document and is ultimately owned by the Code for DC community. We are interested in your comments and suggestions! You can contribute to the code by opening an issue or pull request on this repository, or by contacting a Captain.
 
 This code and other documents in this repository are dedicated to the public domain under a CC0 license. By contributing to this repository, you agree to release your contribution to the public domain.
+
+

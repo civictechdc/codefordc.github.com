@@ -2,6 +2,7 @@
 layout: resource
 title: Code of Conduct
 type: document
+deeplink: true
 edit_link: https://editfordc.herokuapp.com/document/e025c67f-cff9-4042-afbf-a161384f36b4
 ---
 

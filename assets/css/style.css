@@ -280,6 +280,12 @@ img.project-git-human {
     margin: 0px 2px 0px 0px;
 }
 
+/* background on commit chart */
+
+.tick {
+  display: none;
+}
+
 /* help wanted */
 
 .issue {

@@ -3,7 +3,11 @@ then
     TRAVIS_PULL_REQUEST=false
     TRAVIS_BRANCH="localtest"
     TRAVIS_COMMIT="abcd1234"
-    TRAVIS_REPO_SLUG="local/test"
+    TRAVIS_REPO_SLUG="codefordc/codefordc-2.0"
+    RUN_SCRIPT="bundle exec jekyll serve --detach"
+    KILL_SCRIPT="pkill -f jekyll"
+    USE_SITEMAP=false
+    PORT=4000
 else
     npm install -g pa11y
     npm install -g json
@@ -28,17 +32,26 @@ function runtest () {
 }
 
 # start Jekyll server
-bundle exec jekyll serve --detach
+eval $RUN_SCRIPT
 
 # grab sitemap and store URLs
-wget -q http://localhost:4000/sitemap.xml --no-cache -O - | egrep -o "http://codefordc.org[^<]+" | xargs -I '{}' echo {} > sites
+# if [[ -z "$USE_SITEMAP"]];
+# then
+#     wget -m http://localhost:${PORT} 2>&1 | grep '^--' | awk '{ print $3 }' | grep -v '\.\(css\|js\|png\|gif\|jpg\|JPG\)$' > urls.txt
+# else
+#     wget -q http://localhost:${PORT}/sitemap.xml --no-cache -O - | egrep -o "http://codefordc.org[^<]+" > sites
+# fi
 
 # iterate through URLs and run runtest on each
 cat sites | while read a; do runtest $a; done
 
 # close down the server
-pkill -f jekyll
+eval $KILL_SCRIPT
+
+# send the results on to continua11y
+curl -X POST http://localhost:3000/incoming -H "Content-Type: application/json" -d @results.json
 
 # clean up
-rm results.json pa11y.json sites
+rm results.json pa11y.json 
+# sites
 

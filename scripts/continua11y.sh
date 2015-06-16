@@ -10,7 +10,7 @@ then
     PORT=4000
     CONTINUA11Y="localhost:3000"
 else
-    npm install -g pa11y
+    npm install -g pa11y@1.7.0
     npm install -g json
 fi
 

@@ -9,3 +9,5 @@ env:
     - RUN_SCRIPT="bundle exec jekyll serve --detach"
     - KILL_SCRIPT="pkill -f jekyll"
     - USE_SITEMAP=false
+    - PORT=4000
+    - CONTINUA11Y="continua11y.herokuapp.com"

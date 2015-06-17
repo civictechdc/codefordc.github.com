@@ -18,7 +18,7 @@ then
     CONTINUA11Y="localhost:3000"
 else
     npm install -g pa11y
-    npm install -g a11y-reporter-1.0-json
+    npm install -g pa11y-reporter-1.0-json
     npm install -g json
 fi
 

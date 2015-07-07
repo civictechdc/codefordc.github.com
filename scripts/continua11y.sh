@@ -3,7 +3,7 @@ then
     # local development options
     TRAVIS_PULL_REQUEST=false
     TRAVIS_BRANCH="test"
-    TRAVIS_COMMIT="testing123"
+    TRAVIS_COMMIT="$(echo $RANDOM | md5)"
     # TRAVIS_REPO_SLUG must be a valid github repo
     TRAVIS_REPO_SLUG="stvnrlly/continua11y"
     # change to whichever script you need to start the web server (make sure to detach so that the script continues)
@@ -27,13 +27,14 @@ fi
 TRAVIS_COMMIT_MSG="$(git log --format=%B --no-merges -n 1)"
 
 # set up the JSON file for full results to send
-echo '{"repository":"'$TRAVIS_REPO_SLUG'", "branch": "'$TRAVIS_BRANCH'","commit":"'$TRAVIS_COMMIT'","commit_message":"'$TRAVIS_COMMIT_MSG'","data":{}}' | json > results.json
+echo '{"repository":"'$TRAVIS_REPO_SLUG'", "branch": "'$TRAVIS_BRANCH'","commit":"'$TRAVIS_COMMIT'","commit_message":"'$TRAVIS_COMMIT_MSG'","pull_request":"'$TRAVIS_PULL_REQUEST'","commit_range":"'TRAVIS_COMMIT_RANGE'","data":{}}' | json > results.json
 
 function runtest () {
+    echo "analyzing ${a}"
     pa11y -r json $a > pa11y.json
     
     # single apostrophes ruin JSON parsing, so remove them
-    sed "s/'//g" pa11y.json
+    sed -n "s/'//g" pa11y.json
     
     # store JSON as a variable
     REPORT="$(cat pa11y.json)"
@@ -56,7 +57,7 @@ else
 fi
 
 # iterate through URLs and run runtest on each
-cat sites | while read a; do runtest $a; done
+cat sites.txt | while read a; do runtest $a; done
 
 # close down the server
 eval $KILL_SCRIPT

@@ -1,3 +1,5 @@
+#! /usr/bin/env bash
+
 if [[ -z "$TRAVIS" ]];
 then
     # local development options
@@ -31,7 +33,7 @@ echo '{"repository":"'$TRAVIS_REPO_SLUG'", "branch": "'$TRAVIS_BRANCH'","commit"
 
 function runtest () {
     echo "analyzing ${a}"
-    pa11y -r json $a > pa11y.json
+    pa11y -r 1.0-json $a > pa11y.json
     
     # single apostrophes ruin JSON parsing, so remove them
     sed -n "s/'//g" pa11y.json
@@ -45,12 +47,13 @@ function runtest () {
 
 # start Jekyll server
 eval $RUN_SCRIPT
+sleep 3
 
 # grab sitemap and store URLs
 if ! $USE_SITEMAP;
 then
     echo "using wget spider to get URLs"
-    wget -m http://localhost:${PORT} 2>&1 | grep '^--' | awk '{ print $3 }' | grep -v '\.\(css\|js\|png\|gif\|jpg\|JPG\)$' > sites.txt
+    wget -m http://localhost:${PORT} 2>&1 | grep '^--' | awk '{ print $3 }' | grep -v '\.\(css\|js\|png\|gif\|jpg\|JPG\|svg\|json\|xml\|txt\|sh\|eot\|eot?\|woff\|woff2\|ttf\)$' > sites.txt
 else
     echo "using sitemap to get URLs"
     wget -q http://localhost:${PORT}/sitemap.xml --no-cache -O - | egrep -o "http://codefordc.org[^<]+" > sites.txt
@@ -60,10 +63,15 @@ fi
 cat sites.txt | while read a; do runtest $a; done
 
 # close down the server
+if ! $TRAVIS;
+then
 eval $KILL_SCRIPT
+fi
 
 # send the results on to continua11y
-curl -X POST http://${CONTINUA11Y}/incoming -H "Content-Type: application/json" -d @results.json
+echo "sending results to continua11y"
+curl -X POST https://${CONTINUA11Y}/incoming -H "Content-Type: application/json" -d @results.json
 
 # clean up
+echo "cleaning up"
 rm results.json pa11y.json sites.txt

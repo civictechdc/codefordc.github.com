@@ -11,11 +11,11 @@ The Code for DC blog is open for contributions for the community. Here's how you
 
 ## Propose your post
 
-Before you start, you may want to run your idea by [Matt](mbailey@codeforamerica.org) to make sure that it is a good fit for the blog.
+Before you start, you may want to run your idea by [us](/contact.html) to make sure that it is a good fit for the blog.
 
 ## Fork the website repo
 
-If you haven't already, go to the [site's repo](https://github.com/codefordc/coddefordc-2.0) and make your own fork. This is your personal copy to do as you wish, and nothing will affect the public site until your changes are merged into the original repo (see below).
+If you haven't already, go to the [site's repo](https://github.com/codefordc/codefordc-2.0) and make your own fork. This is your personal copy to do as you wish, and nothing will affect the public site until your changes are merged into the original repo (see below).
 
 ## Create a new file for your post and add your avatar
 

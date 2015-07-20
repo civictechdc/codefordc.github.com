@@ -1,0 +1,88 @@
+---
+layout: default
+title: Contact Us
+extra_css:
+  - bootstrapValidator.min.css
+extra_js:
+  - bootstrapValidator.min.js
+---
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 alert alert-success alert-dismissible hidden" role="alert">
+            <button type="button" class="close" data-dismiss="alert" title="dismiss"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <strong>Success!</strong> Thank you for your message.
+        </div>
+        <div class="col-sm-12 starter-template">
+            <h1>Contact Us</h1>
+        </div>
+        <div class="col-sm-8 col-sm-offset-2">
+            <p>Hi there! Use this form to contact the Code for DC leadership about anything.</p>
+            <p>If you are looking to partner with us, please help us out with <a href="/resources/partnering.html">some preliminary information</a>.</p>
+            <p>If you are reporting a code of conduct issue, please check our <a href="/resources/codeofconduct.html#Making-a-Report">sample report</a> so that we can help more effectively.</p>
+        </div>
+        <div class="col-sm-8 col-sm-offset-2">
+            <form id="contactus" role="form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Email (optional)">
+                </div>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Name (optional)">
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" class="form-control" id="subject" placeholder="Subject (optional)">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea name="message" class="form-control" id="message" rows="6" placeholder="What's up?"></textarea>
+                </div>
+                <button type="button submit" class="btn btn-primary" id="submitmessage">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% include _global_js.html %}
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+    $("#contactus").bootstrapValidator({
+        fields: {
+            message: {
+                validators: {
+                    notEmpty: {
+                        message: "You must enter a message"
+                    }
+                }
+            }
+        }
+    });
+
+    $("#submitmessage").click(function(){
+        var payload = JSON.stringify({
+            "email": $("#email").val(),
+            "name": $("#name").val(),
+            "subject": $("#subject").val(),
+            "message": $("#message").val()
+        });
+        $.ajax({
+            url: "https://slackfordc.herokuapp.com/contact",
+            type: "POST",
+            data: payload,
+            contentType: "application/json",
+            success: function(){
+                $("#email").val("");
+                $("#name").val("");
+                $("#subject").val("");
+                $("#message").val("");
+                $(".alert").removeClass("hidden");
+            }
+        });
+    });
+});
+
+</script>

@@ -29,11 +29,16 @@ title: Get Involved
 
 <div class="container">
 	<div class="col-sm-12 starter-template">
+		<div class="alert alert-success alert-dismissible hidden" role="alert">
+    	<button type="button" class="close" data-dismiss="alert" title="dismiss"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+    	<strong>Success!</strong> You should receive an invite to Slack shortly.
+	</div>
 		<div class="row">
 			<div class="col-lg-4">
 				<h1>Attend!</h1>
 				<p><a href="http://www.meetup.com/code-for-dc" target="_blank">RSVP on Meetup &raquo;</a></p>
 				<p><a href="webcal://www.meetup.com/Code-for-DC/events/ical/">Subscribe with Google Cal &raquo;</a></p>
+				<p><a href="/apply.html">Apply for a Leadership Position &raquo;</a></p>
 			</div>
 			<div class="col-lg-4">
 				<h1>Discuss!</h1>
@@ -42,11 +47,11 @@ title: Get Involved
 			</div>
 			<div class="col-lg-4">
 				<h1>Hack!</h1>
-				<p><a href="projects">Find a project &raquo;</a></p>
+				<p><a href="/projects">Find a project &raquo;</a></p>
 				<p><a href="/resources/startaproject.html">Start a project &raquo;</a></p>
 			</div>
 			<div class="well col-lg-12">
-				All Code for DC events and activities, both online and offline, are governed by our <a href="/docs/codeofconduct.html">Code of Conduct</a>. Please take a few minutes to familiarize yourself with it.
+				All Code for DC events and activities, both online and offline, are governed by our <a href="/resources/codeofconduct.html">Code of Conduct</a>. Please take a few minutes to familiarize yourself with it.
 			</div>
 		</div>
 
@@ -143,10 +148,12 @@ title: Get Involved
 <script>
 $("#slackinvite").on("shown.bs.modal", function(e) {
 	$("#email").focus();
-})
+});
 
 $("#submitemail").click(function(){
-	var payload = JSON.stringify({"email": $("#email").val()});
+	var payload = JSON.stringify({
+		"email": $("#email").val()
+	});
 	$.ajax({
 		url: "https://slackfordc.herokuapp.com/invite",
 		type: "POST",
@@ -154,6 +161,7 @@ $("#submitemail").click(function(){
 		contentType: "application/json",
 		success: function(){
 			$("#email").val("");
+			$(".alert").removeClass("hidden");
 		}
 	});
 });

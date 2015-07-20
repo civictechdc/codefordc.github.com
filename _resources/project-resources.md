@@ -92,7 +92,7 @@ Frameworks allow you to create templates and scripts for a dynamic site
 
 ## GIS/Mapping
 
-[CSV Geocoder](https://emanuelfeld.shinyapps.io/geocoder): Convert a CSV of addresses into lat/long coordinates
+[Geocoder](http://emanuelfeld.github.io/geocoder): Convert a CSV (or any delimiter-separated file) of addresses into lat/long coordinates
 
 [QuantumGIS/QGIS](http://qgis.org/en/site/)
 
@@ -108,7 +108,7 @@ TileMill
 
 ## Data viz
 
-[An overview]((http://selection.datavisualization.ch/)
+[An overview](http://selection.datavisualization.ch/)
 
 [D3.js](http://d3js.org/)
 

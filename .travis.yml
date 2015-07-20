@@ -1,0 +1,16 @@
+language: ruby
+rvm:
+- 2.1
+sudo: false
+cache: bundler
+script: ./scripts/travis.sh
+after_script: ./scripts/continua11y.sh
+notifications:
+    email: false
+env:
+    global:
+    - RUN_SCRIPT="bundle exec jekyll serve --detach"
+    - KILL_SCRIPT="pkill -f jekyll"
+    - USE_SITEMAP=false
+    - PORT=4000
+    - CONTINUA11Y="continua11y.herokuapp.com"

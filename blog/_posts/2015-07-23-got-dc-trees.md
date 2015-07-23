@@ -2,7 +2,7 @@
 layout: post
 categories: blog
 title:  "Got DC Trees?"
-date:   2015-06-19 16:20:55
+date:   2015-07-23 16:30:55
 authors:
 - emanuelfeld
 ---

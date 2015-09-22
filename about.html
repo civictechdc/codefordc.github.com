@@ -24,7 +24,7 @@ title: About Us
         <div class="captains">
             <h2>Leadership</h2>
             <div class="row">
-                {% for p in site.data.leadership %}
+                {% for p in site.data.leadership.current %}
                 <div class="col-md-4">
                     <div class="image">
                         <img class="img-responsive center-block" height=200px width=200px src="{{ p.image }}" alt="{{ p.name }}" />
@@ -52,6 +52,26 @@ title: About Us
                 <h2>Government Partners</h2>
                 {% for p in site.data.government %}
                 <p><a href="{{ p.site }}">{{ p.name }}</a>{% if p.office %}: {{ p.office }} {% endif %}</p>
+                {% endfor %}
+            </div>
+        </div>
+        <div>
+        <h2>Former Leadership</h2>
+            <div class="row">
+                {% for p in site.data.leadership.former %}
+                <div class="col-md-4">
+                    <div class="image">
+                        <img class="img-responsive center-block" height=200px width=200px src="{{ p.image }}" alt="{{ p.name }}" />
+                    </div>
+                    <div class="bio">
+                        <h3 class="text-center">{{ p.name }} <small>{{ p.title }}</small></h3>
+                        <p class="text-center">{{ p.bio }}</p>
+                        <p class="text-center">{% if p.twitter %}<a href="https://twitter.com/{{ p.twitter }}"><i class="fa fa-twitter fa-lg"></i></a>{% endif %} {% if p.github %}<a href="https://github.com/{{ p.github }}"><i class="fa fa-github fa-lg"></i></a>{% endif %}</p>
+                    </div>
+                </div>
+                <!-- create a new .row div every three items -->
+                {% assign loopindex = forloop.index | modulo: 3 == 0 %}
+                {% if loopindex == 0 %}</div><div class="row">{% endif %}
                 {% endfor %}
             </div>
         </div>

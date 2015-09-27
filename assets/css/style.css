@@ -8,7 +8,7 @@ body {
   padding-top: 50px;
 }
 .starter-template {
-  padding: 40px 15px;
+  padding: 15px;
   text-align: center;
 }
 
@@ -135,6 +135,7 @@ hr.footer-divider {
 
 .announcement-navbar {
     margin-bottom: 0px;
+    border-radius: 0px;
 }
 
 .announcement {

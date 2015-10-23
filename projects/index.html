@@ -3,11 +3,11 @@ layout: default
 title: Projects
 extra_css:
 - bootstrapValidator.min.css
-- nv.d3.css
+- c3.min.css
 extra_js:
 - moment.min.js
 - d3.min.js
-- nv.d3.min.js
+- c3.min.js
 - jquery.mixitup.min.js
 - bootstrapValidator.min.js
 ---
@@ -120,7 +120,7 @@ extra_js:
 					<div class="col-sm-5">
 						<h4><strong>Activity</strong></h4>
 						<div class="activity">
-							<div><svg></svg></div>
+							<div class="chart"><svg></svg></div>
 						</div>
 						<div class="contributors hidden">
 							<strong>Contributors</strong>
@@ -353,34 +353,28 @@ window.projects = function(data){
 		// Create a graph of the Github repo's commit history using D3.js and nvd3.js
 		// This is done after everything else because it requires a HTML element on which to operate
 
-		var chart
-		nv.addGraph(function(){
-			chart = nv.models.historicalBarChart();
-			chart.margin({left: 0, bottom: 0, right: 0, top: 0});
-			chart.tooltipContent(function(key, y, e, graph) {
-				return '<h3>' + key + '</h3>' +'<p>' + y + '</p>' 
-			});
+		values = ['values']
+		$.each(info["activity"], function (i, val){
+			values.push(val);
+		})
 
-			values = []
-			$.each(info["activity"], function (i, val){
-				values.push({x: i, y: val});
-			})
-
-			d3.select("svg#project"+i)
-			.datum([{
-				values: values,
-				key: "Commits",
-				color: "#9E9E9E"
-			}])
-			.transition()
-			.duration(600)
-			.call(chart);
-
-			nv.utils.windowResize(chart.update);
-
-			chart.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
-
-			return chart;
+		var chart = c3.generate({
+			bindto: 'svg#project'+i,
+			data: {
+				columns: [values],
+				type: 'bar'
+			},
+			axis: {
+				x: {
+					show: false
+				},
+				y: {
+					show: false
+				}
+			},
+			legend: {
+				hide: true
+			}
 		});
 	});
 
@@ -421,6 +415,9 @@ $(function(){
 });
 
 $(document).ready(function(){
+
+	// This resizes the c3 graphs properly ¯\_(ツ)_/¯
+	$(window).trigger('resize');
 
 	// New repo submission
 	$("#show-submit").click(function() {

@@ -1,0 +1,73 @@
+---
+layout: default
+title: Join Our Slack Team
+extra_css:
+  - bootstrapValidator.min.css
+extra_js:
+  - bootstrapValidator.min.js
+---
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 alert alert-success alert-dismissible hidden" role="alert">
+            <button type="button" class="close" data-dismiss="alert" title="dismiss"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <strong>Success!</strong> You should receive an invite shortly.
+        </div>
+        <div class="col-sm-12 starter-template">
+            <h1>Join Our Slack Team</h1>
+        </div>
+        <div class="col-sm-8 col-sm-offset-2">
+            <p>Hi there! Use this form to request an invite to our <a href="https://codefordc.slack.com">Slack team</a>. Slack is a discussion and collaboration tool that we use to keep the conversation moving between meetups.</p>
+        </div>
+        <div class="col-sm-8 col-sm-offset-2">
+            <form id="requestinvite" role="form">
+                <div class="form-group">
+                    <label for="email" class="sr-only">Email Address</label>
+                    <input type="email" name="email" class="form-control" id="email" placeholder="Email Address">
+                </div>
+                <button type="button submit" class="btn btn-primary" id="submitrequest">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% include _global_js.html %}
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+    $("#requestinvite").bootstrapValidator({
+        fields: {
+            email: {
+                validators: {
+                    notEmpty: {
+                        message: "You must enter something"
+                    },
+                    emailAddress: {
+                        message: "Please enter a valid email address"
+                    }
+                }
+            }
+        }
+    });
+
+    $("#submitrequest").click(function(){
+        var payload = JSON.stringify({
+            "email": $("#email").val()
+        });
+        $.ajax({
+            url: "https://slackfordc.herokuapp.com/invite",
+            type: "POST",
+            data: payload,
+            contentType: "application/json",
+            success: function(){
+                $("#email").val("");
+                $(".alert").removeClass("hidden");
+            }
+        });
+    });
+});
+
+
+
+</script>

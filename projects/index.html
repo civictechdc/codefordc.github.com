@@ -120,7 +120,7 @@ extra_js:
 					<div class="col-sm-5">
 						<h4><strong>Activity</strong></h4>
 						<div class="activity">
-							<div class="chart"><svg></svg></div>
+							<div class="chart"></div>
 						</div>
 						<div class="contributors hidden">
 							<strong>Contributors</strong>
@@ -150,7 +150,7 @@ extra_js:
 
 // Arrays for collecting overall data to sort with MixItUp
 l = [];
-cat = []
+cat = [];
 
 // Function to turn multi-word strings into class-friendly formats
 function classify(str) {
@@ -158,7 +158,7 @@ function classify(str) {
 		return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
 	});
 	x = x.replace(/ /g,"-");
-	return x
+	return x;
 }
 
 // Load the civic.json file and get working
@@ -178,37 +178,37 @@ window.projects = function(data){
 		$("#project-list").append(project);
 
 		// Get info for the project, starting with Github info that always exists
-		var name = info["name"];
-		var created = moment(info["created_at"]).fromNow();
-		project.attr("data-created", info["created_at"]);
-		var updated = moment(info["pushed_at"]).fromNow();
-		project.attr("data-updated", info["pushed_at"]);
-		var issues = info["open_issues"];
+		var name = info.name;
+		var created = moment(info.created_at).fromNow();
+		project.attr("data-created", info.created_at);
+		var updated = moment(info.pushed_at).fromNow();
+		project.attr("data-updated", info.pushed_at);
+		var issues = info.open_issues;
 		project.attr("data-open-issues",issues);
-		var repo_link = info["html_url"];
-		project.attr("data-forks",info["forks"]);
-		project.attr("data-stars",info["watchers"]);
-		if (info["main_language"] == null){
-			info["main_language"] = "Text";
+		var repo_link = info.html_url;
+		project.attr("data-forks",info.forks);
+		project.attr("data-stars",info.watchers);
+		if (info.main_language === null){
+			info.main_language = "Text";
 		}
 
-		if (info["license"]){
+		if (info.license){
 			project.find(".license").removeClass("hidden")
-			.find("span").html(info["license"]["name"]);
+			.find("span").html(info.license.name);
 		} else {
 			project.find(".license").removeClass("hidden")
 			.find("span").html("None");
 		}
 
 		// Calculate language usage
-		var language = info["main_language"];
+		var language = info.main_language;
 		var total = 0;
 		var languages = "";
-		$.each(info["languages"], function(i,lang){
+		$.each(info.languages, function(i,lang){
 			total += lang[1];
 		});
-		$.each(info["languages"], function(i,lang){
-			var percentage = Math.ceil(100*(lang[1]/total))
+		$.each(info.languages, function(i,lang){
+			var percentage = Math.ceil(100*(lang[1]/total));
 			languages += lang[0]+": "+percentage+"% | ";
 			if (($.inArray(lang[0], l) == -1) && (percentage>30)) {
 				l.push(lang[0]);
@@ -219,7 +219,7 @@ window.projects = function(data){
 		});
 		languages = languages.substring(0, languages.length - 3);
 		project.attr("data-lines",total);
-		if (languages.length==0){
+		if (languages.length === 0) {
 			languages = "Text: 100%";
 			project.addClass("language-Text");
 			if ($.inArray("Text", l) == -1) {
@@ -227,38 +227,38 @@ window.projects = function(data){
 			}
 		}
 
-		project.find(".activity svg").attr("id", "project"+i);
+		project.find(".activity>.chart").attr("id", "project"+i);
 
 		project.find("h2 span.name").text(name);
 		//		project.find("h2 a").attr('href', repo_link);
 
-		if (info["civic_json"] && info["civic_json"]["thumbnailUrl"]){
+		if (info.civic_json && info.civic_json.thumbnailUrl){
 			project.find(".thumbnail").removeClass("hidden")
-			.attr("src", info["civic_json"]["thumbnailUrl"]);
+			.attr("src", info.civic_json.thumbnailUrl);
 			//	project.find("h2 span.name").css("border-bottom","4px solid black");
 		}
 
-		if (info["civic_json"] && info["civic_json"]["contact"]["email"]){
+		if (info.civic_json && info.civic_json.contact.email){
 			project.find(".contact a.email").removeClass('hidden')
-			.attr('href', 'mailto:' + info["civic_json"]["contact"]["email"]);
+			.attr('href', 'mailto:' + info.civic_json.contact.email);
 		}
 
-		if (info["civic_json"] && info["civic_json"]["contact"]["twitter"]){
+		if (info.civic_json && info.civic_json.contact.twitter){
 			project.find(".contact a.twitter").removeClass('hidden')
-			.attr('href', 'http://twitter.com/' + info["civic_json"]["contact"]["twitter"].slice(1));
+			.attr('href', 'http://twitter.com/' + info.civic_json.contact.twitter.slice(1));
 		}
 
-		if (info["homepage"]){
+		if (info.homepage){
 			project.find(".homepage").removeClass('hidden')
-			.find('a').attr('href', info["homepage"]).text(info["homepage"]);
+			.find('a').attr('href', info.homepage).text(info.homepage);
 		}
 
 		project.find(".github-repo").removeClass('hidden')
 		.find('a.repo-link').attr('href', repo_link).text("Github repository >");
 
-		if (info["civic_json"] && info["civic_json"]["communityPartner"]){
-			var compartner = ""
-			$.each(info["civic_json"]["communityPartner"], function(k,v){
+		if (info.civic_json && info.civic_json.communityPartner){
+			var compartner = "";
+			$.each(info.civic_json.communityPartner, function(k,v){
 				compartner += "<a href='"+v+"'>"+k+"</a>";
 			});
 			if (compartner.length > 0){
@@ -267,10 +267,10 @@ window.projects = function(data){
 			}
 		}
 
-		if (info["civic_json"] && info["civic_json"]["governmentPartner"]){
-			var govpartner = ""
-			$.each(info["civic_json"]["governmentPartner"], function(k,v){
-				govpartner += "<a href='"+v+"'>"+k+"</a>"
+		if (info.civic_json && info.civic_json.governmentPartner){
+			var govpartner = "";
+			$.each(info.civic_json.governmentPartner, function(k,v){
+				govpartner += "<a href='"+v+"'>"+k+"</a>";
 			});
 			if (govpartner.length > 0){
 				project.find(".governmentPartner").removeClass('hidden').
@@ -278,10 +278,10 @@ window.projects = function(data){
 			}
 		}
 
-		if (info["civic_json"] && info["civic_json"]["politicalEntity"]){
-			var polentity = ""
-			$.each(info["civic_json"]["politicalEntity"], function(k,v){
-				polentity += "<a href='"+v+"'>"+k+"</a>"
+		if (info.civic_json && info.civic_json.politicalEntity){
+			var polentity = "";
+			$.each(info.civic_json.politicalEntity, function(k,v){
+				polentity += "<a href='"+v+"'>"+k+"</a>";
 			});
 			if (polentity.length > 0){
 				project.find(".politicalEntity").removeClass('hidden').
@@ -289,11 +289,11 @@ window.projects = function(data){
 			}
 		}
 
-		if (!$.isEmptyObject(info["accessibility"])){
-			var accessible = "Yes"
-			$.each(info["accessibility"], function(k,v){
+		if (!$.isEmptyObject(info.accessibility)){
+			var accessible = "Yes";
+			$.each(info.accessibility, function(k,v){
 				try {
-					if (v["results"]["error"] > 20){
+					if (v.results.error > 20){
 						accessible = "No";
 					}
 				} catch (e) {
@@ -305,24 +305,24 @@ window.projects = function(data){
 			html("<a href='https://accessfordc.herokuapp.com/'>"+accessible+"</a>");
 		}
 
-		project.find('.description').text(info["description"]);
+		project.find('.description').text(info.description);
 
-		if (info["civic_json"] && (info["civic_json"]["needs"])){
-			if (info["civic_json"]["needs"].length > 0) {
+		if (info.civic_json && (info.civic_json.needs)){
+			if (info.civic_json.needs.length > 0) {
 				project.find('.needs').removeClass("hidden");
-				$.each(info["civic_json"]["needs"], function(k,v){
+				$.each(info.civic_json.needs, function(k,v){
 					project.find('.needs div').append(
-						$("<li class='need'></li>").text(v["need"])
+						$("<li class='need'></li>").text(v.need)
 						);
 				});
 			}
 		}
 
-		$.each(info["contributors"], function(k,v){
+		$.each(info.contributors, function(k,v){
 			project.find('.contributors').removeClass('hidden'); // important on first iteration only
-			var c = $("<a><img class='' height='36' width='36' alt='"+v["name"]+"'></a>");
-			c.attr('href', v["link"]);
-			c.find('img').attr('src', v["avatar_url"]);
+			var c = $("<a><img class='' height='36' width='36' alt='"+v.name+"'></a>");
+			c.attr('href', v.link);
+			c.find('img').attr('src', v.avatar_url);
 			project.find('.contributors div').append(c);
 		});
 
@@ -332,37 +332,43 @@ window.projects = function(data){
 
 		project.find('.language span').html(languages);
 
-		if (info["civic_json"] && info["civic_json"]["status"]){
-			project.find('.status').removeClass("hidden").find("span").text(info["civic_json"]["status"]);
+		if (info.civic_json && info.civic_json.status){
+			project.find('.status').removeClass("hidden").find("span").text(info.civic_json.status);
 		}
 
 		project.find('.issues a').attr('href', repo_link+'/issues');
 		project.find('.issues a').text(issues ? (issues+" Open Issues") : "Submit an Idea");
 
-		if (info["civic_json"] && info["civic_json"]["categories"]){
-			$.each(info["civic_json"]["categories"], function(k,v){
-				project.find('.categories').append($("<p><button class='btn btn-sm btn-warning category'></button></p>").find('button').text(v['category']))
-				c = classify(v['category'])
+		if (info.civic_json && info.civic_json.categories){
+			$.each(info.civic_json.categories, function(k,v){
+				project.find('.categories').append($("<p><button class='btn btn-sm btn-warning category'></button></p>").find('button').text(v.category));
+				c = classify(v.category);
 				project.addClass("category-"+c);
 				if ($.inArray(c,cat)==-1){
 					cat.push(c);
 				}
-			})
+			});
 		}
 
 		// Create a graph of the Github repo's commit history using D3.js and nvd3.js
 		// This is done after everything else because it requires a HTML element on which to operate
 
-		values = ['values']
-		$.each(info["activity"], function (i, val){
-			values.push(val);
-		})
+		graphData = ['commits'];
+		$.each(info.activity, function (i, val){
+			graphData.push(val);
+		});
 
 		var chart = c3.generate({
-			bindto: 'svg#project'+i,
+			bindto: '.chart#project'+i,
+			size: {
+				height: 150
+			},
 			data: {
-				columns: [values],
-				type: 'bar'
+				columns: [graphData],
+				type: 'bar',
+				colors: {
+					commits: '#BFBFBF'
+				}
 			},
 			axis: {
 				x: {
@@ -373,7 +379,13 @@ window.projects = function(data){
 				}
 			},
 			legend: {
-				hide: true
+				show: false
+			},
+			tooltip: {
+				show: true,
+				format: {
+					title: function (x) { return 52-x + ' weeks ago'; }
+				}
 			}
 		});
 	});

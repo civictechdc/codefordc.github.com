@@ -137,6 +137,10 @@ extra_js:
 							<strong>Needs</strong>
 							<div><ul> </ul></div>
 						</div>
+						<div class="ci-reports">
+							<strong>CI Reports</strong>
+							<div></div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -167,7 +171,7 @@ window.projects = function(data){
 	var projects = data;
 
 	// Sort projects by most recently updated
-	projects.sort(function(a,b) {return new Date(b.pushed_at) - new Date(a.pushed_at)})
+	projects.sort(function(a,b) { return new Date(b.pushed_at) - new Date(a.pushed_at); });
 
 	// Begin iterating over the JSON file
 	$.each(projects, function(i,info){
@@ -192,7 +196,8 @@ window.projects = function(data){
 			info.main_language = "Text";
 		}
 
-		if (info.license){
+		// Get copyright license information
+		if (info.license) {
 			project.find(".license").removeClass("hidden")
 			.find("span").html(info.license.name);
 		} else {
@@ -230,99 +235,25 @@ window.projects = function(data){
 		project.find(".activity>.chart").attr("id", "project"+i);
 
 		project.find("h2 span.name").text(name);
-		//		project.find("h2 a").attr('href', repo_link);
 
-		if (info.civic_json && info.civic_json.thumbnailUrl){
-			project.find(".thumbnail").removeClass("hidden")
-			.attr("src", info.civic_json.thumbnailUrl);
-			//	project.find("h2 span.name").css("border-bottom","4px solid black");
-		}
+		project.find(".github-repo").removeClass('hidden')
+		.find('a.repo-link').attr('href', repo_link).text("Github repository >");
 
-		if (info.civic_json && info.civic_json.contact.email){
-			project.find(".contact a.email").removeClass('hidden')
-			.attr('href', 'mailto:' + info.civic_json.contact.email);
-		}
-
-		if (info.civic_json && info.civic_json.contact.twitter){
-			project.find(".contact a.twitter").removeClass('hidden')
-			.attr('href', 'http://twitter.com/' + info.civic_json.contact.twitter.slice(1));
-		}
+		project.find('.description').text(info.description);
 
 		if (info.homepage){
 			project.find(".homepage").removeClass('hidden')
 			.find('a').attr('href', info.homepage).text(info.homepage);
 		}
 
-		project.find(".github-repo").removeClass('hidden')
-		.find('a.repo-link').attr('href', repo_link).text("Github repository >");
-
-		if (info.civic_json && info.civic_json.communityPartner){
-			var compartner = "";
-			$.each(info.civic_json.communityPartner, function(k,v){
-				compartner += "<a href='"+v+"'>"+k+"</a>";
-			});
-			if (compartner.length > 0){
-				project.find(".communityPartner").removeClass('hidden').
-				find("span").html(compartner);
-			}
-		}
-
-		if (info.civic_json && info.civic_json.governmentPartner){
-			var govpartner = "";
-			$.each(info.civic_json.governmentPartner, function(k,v){
-				govpartner += "<a href='"+v+"'>"+k+"</a>";
-			});
-			if (govpartner.length > 0){
-				project.find(".governmentPartner").removeClass('hidden').
-				find("span").html(govpartner);
-			}
-		}
-
-		if (info.civic_json && info.civic_json.politicalEntity){
-			var polentity = "";
-			$.each(info.civic_json.politicalEntity, function(k,v){
-				polentity += "<a href='"+v+"'>"+k+"</a>";
-			});
-			if (polentity.length > 0){
-				project.find(".politicalEntity").removeClass('hidden').
-				find("span").html(polentity);
-			}
-		}
-
-		if (!$.isEmptyObject(info.accessibility)){
-			var accessible = "Yes";
-			$.each(info.accessibility, function(k,v){
-				try {
-					if (v.results.error > 20){
-						accessible = "No";
-					}
-				} catch (e) {
-					accessible = "No";
-				}
-			});
-			project.find(".accessibility").removeClass("hidden").
-			find("span").
-			html("<a href='https://accessfordc.herokuapp.com/'>"+accessible+"</a>");
-		}
-
-		project.find('.description').text(info.description);
-
-		if (info.civic_json && (info.civic_json.needs)){
-			if (info.civic_json.needs.length > 0) {
-				project.find('.needs').removeClass("hidden");
-				$.each(info.civic_json.needs, function(k,v){
-					project.find('.needs div').append(
-						$("<li class='need'></li>").text(v.need)
-						);
-				});
-			}
-		}
-
 		$.each(info.contributors, function(k,v){
 			project.find('.contributors').removeClass('hidden'); // important on first iteration only
-			var c = $("<a><img class='' height='36' width='36' alt='"+v.name+"'></a>");
+			var c = $("<a><img class='' height='36' width='36'></a>");
 			c.attr('href', v.link);
-			c.find('img').attr('src', v.avatar_url);
+			c.find('img').attr({
+				src: v.avatar_url,
+				alt: v.name
+			});
 			project.find('.contributors div').append(c);
 		});
 
@@ -332,26 +263,97 @@ window.projects = function(data){
 
 		project.find('.language span').html(languages);
 
-		if (info.civic_json && info.civic_json.status){
-			project.find('.status').removeClass("hidden").find("span").text(info.civic_json.status);
-		}
-
 		project.find('.issues a').attr('href', repo_link+'/issues');
 		project.find('.issues a').text(issues ? (issues+" Open Issues") : "Submit an Idea");
 
-		if (info.civic_json && info.civic_json.categories){
-			$.each(info.civic_json.categories, function(k,v){
-				project.find('.categories').append($("<p><button class='btn btn-sm btn-warning category'></button></p>").find('button').text(v.category));
-				c = classify(v.category);
-				project.addClass("category-"+c);
-				if ($.inArray(c,cat)==-1){
-					cat.push(c);
+		// civic.json related data
+
+		if (info.civic_json) {
+			if (info.civic_json.thumbnailUrl){
+				project.find(".thumbnail").removeClass("hidden")
+				.attr("src", info.civic_json.thumbnailUrl);
+			}
+
+			if (info.civic_json.contact.email){
+				project.find(".contact a.email").removeClass('hidden')
+				.attr('href', 'mailto:' + info.civic_json.contact.email);
+			}
+
+			if (info.civic_json.contact.twitter){
+				project.find(".contact a.twitter").removeClass('hidden')
+				.attr('href', 'http://twitter.com/' + info.civic_json.contact.twitter.slice(1));
+			}
+
+			if (info.civic_json.communityPartner){
+				var compartner = "";
+				$.each(info.civic_json.communityPartner, function(k,v){
+					compartner += "<a href='"+v+"'>"+k+"</a>";
+				});
+				if (compartner.length > 0){
+					project.find(".communityPartner").removeClass('hidden').
+					find("span").html(compartner);
 				}
-			});
+			}
+
+			if (info.civic_json.governmentPartner){
+				var govpartner = "";
+				$.each(info.civic_json.governmentPartner, function(k,v){
+					govpartner += "<a href='"+v+"'>"+k+"</a>";
+				});
+				if (govpartner.length > 0){
+					project.find(".governmentPartner").removeClass('hidden').
+					find("span").html(govpartner);
+				}
+			}
+
+			if (info.civic_json.politicalEntity){
+				var polentity = "";
+				$.each(info.civic_json.politicalEntity, function(k,v){
+					polentity += "<a href='"+v+"'>"+k+"</a>";
+				});
+				if (polentity.length > 0){
+					project.find(".politicalEntity").removeClass('hidden').
+					find("span").html(polentity);
+				}
+			}
+
+			if (info.civic_json.needs){
+				if (info.civic_json.needs.length > 0) {
+					project.find('.needs').removeClass("hidden");
+					$.each(info.civic_json.needs, function(k,v){
+						project.find('.needs div').append(
+							$("<li class='need'></li>").text(v.need)
+							);
+					});
+				}
+			}
+
+			if (info.civic_json.status){
+				project.find('.status').removeClass("hidden").find("span").text(info.civic_json.status);
+			}
+
+			if (info.civic_json.categories){
+				$.each(info.civic_json.categories, function(k,v){
+					project.find('.categories').append($("<p><button class='btn btn-sm btn-warning category'></button></p>").find('button').text(v.category));
+					c = classify(v.category);
+					project.addClass("category-"+c);
+					if ($.inArray(c,cat)==-1){
+						cat.push(c);
+					}
+				});
+			}
 		}
 
-		// Create a graph of the Github repo's commit history using D3.js and nvd3.js
-		// This is done after everything else because it requires a HTML element on which to operate
+		// Continuous integration reports
+
+		var travis = $("<p><a><img></a></p>");
+		travis.find('img').attr("src",info.html_url.replace('github.com','travis-ci.org')+".svg");
+		var continua11y = $("<p><a><img></a></p>");
+		continua11y.find('img').attr("src",info.html_url.replace('github.com','continua11y.herokuapp.com')+".svg");
+
+		project.find('.ci-reports').append([travis,continua11y]);
+
+		// Create a graph of the Github repo's commit history using D3.js and c3.js
 
 		graphData = ['commits'];
 		$.each(info.activity, function (i, val){
@@ -430,6 +432,11 @@ $(document).ready(function(){
 
 	// This resizes the c3 graphs properly ¯\_(ツ)_/¯
 	$(window).trigger('resize');
+
+	// Hide CI reports that 404'd
+	$("img").error(function () { 
+	    $(this).hide();
+	});
 
 	// New repo submission
 	$("#show-submit").click(function() {

@@ -350,8 +350,12 @@ window.projects = function(data){
 		travis.find('img').attr("src",info.html_url.replace('github.com','travis-ci.org')+".svg");
 		var continua11y = $("<p><a><img></a></p>");
 		continua11y.find('img').attr("src",info.html_url.replace('github.com','continua11y.herokuapp.com')+".svg");
+		var codeclimate = $("<p><a><img></a></p>");
+		codeclimate.find('img').attr("src",info.html_url.replace('github.com','codeclimate.com/github')+"/badges/gpa.svg");
+		var coverage = $("<p><a><img></a></p>");
+		coverage.find('img').attr("src",info.html_url.replace('github.com','codeclimate.com/github')+"/badges/coverage.svg");
 
-		project.find('.ci-reports').append([travis,continua11y]);
+		project.find('.ci-reports').append([travis,continua11y,codeclimate,coverage]);
 
 		// Create a graph of the Github repo's commit history using D3.js and c3.js
 

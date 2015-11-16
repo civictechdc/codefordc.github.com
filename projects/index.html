@@ -346,16 +346,26 @@ window.projects = function(data){
 
 		// Continuous integration reports
 
-		var travis = $("<p><a><img></a></p>");
-		travis.find('img').attr("src",info.html_url.replace('github.com','travis-ci.org')+".svg");
-		var continua11y = $("<p><a><img></a></p>");
-		continua11y.find('img').attr("src",info.html_url.replace('github.com','continua11y.herokuapp.com')+".svg");
-		var codeclimate = $("<p><a><img></a></p>");
-		codeclimate.find('img').attr("src",info.html_url.replace('github.com','codeclimate.com/github')+"/badges/gpa.svg");
-		var coverage = $("<p><a><img></a></p>");
-		coverage.find('img').attr("src",info.html_url.replace('github.com','codeclimate.com/github')+"/badges/coverage.svg");
-
-		project.find('.ci-reports').append([travis,continua11y,codeclimate,coverage]);
+		if (info.ci.travis) {
+			var travis = $("<p><a><img></a></p>");
+			travis.find('img').attr("src",info.html_url.replace('github.com','travis-ci.org')+".svg");
+			project.find('.ci-reports').append(travis);
+		}
+		if (info.ci.continua11y) {
+			var continua11y = $("<p><a><img></a></p>");
+			continua11y.find('img').attr("src",info.html_url.replace('github.com','continua11y.herokuapp.com')+".svg");
+			project.find('.ci-reports').append(continua11y);
+		}
+		if (info.ci.codeclimate) {
+			var codeclimate = $("<p><a><img></a></p>");
+			codeclimate.find('img').attr("src",info.html_url.replace('github.com','codeclimate.com/github')+"/badges/gpa.svg");
+			project.find('.ci-reports').append(codeclimate);
+		}
+		if (info.ci.coverage) {
+			var coverage = $("<p><a><img></a></p>");
+			coverage.find('img').attr("src",info.html_url.replace('github.com','codeclimate.com/github')+"/badges/coverage.svg");
+			project.find('.ci-reports').append(coverage);
+		}
 
 		// Create a graph of the Github repo's commit history using D3.js and c3.js
 
@@ -433,7 +443,7 @@ $(function(){
 });
 
 $(document).ready(function(){
-
+	console.log("hello");
 	// This resizes the c3 graphs properly ¯\_(ツ)_/¯
 	$(window).trigger('resize');
 

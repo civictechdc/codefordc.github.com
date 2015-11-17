@@ -1,7 +1,14 @@
-languages:
-   Ruby: false
-   JavaScript: true
-   Python: false
-   PHP: false
+engines:
+    bundler-audit:
+        enabled: true
+    eslint:
+        enabled: true
+    csslint:
+        enabled: true
+ratings:
+    paths:
+    - "**.js"
+    - "assets/css/style.css"
+    - "projects/index.html"
 exclude_paths:
 - "_site/*"

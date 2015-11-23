@@ -8,19 +8,19 @@ edit_link: https://editfordc.herokuapp.com/document/e025c67f-cff9-4042-afbf-a161
 
 # Code of Conduct
 
-This code may be summed up simply: Be Kind. However, since this does not always happen, we  have elaborated on this principle below.
-
-## What is this?
-
-Code for DC is an organization about working, as a group, to empower ourselves and others to improve our local community through technology. This code of conduct serves to ensure that everybody and anybody who wishes to participate is able to do so, and applies to all Code for DC events, from hackathons to happy hours. Code for DC is committed to providing a safe and welcoming space, without regard to age, gender, race, sexual orientation, gender identity, disability, physical appearance, religion, level of technological knowledge, or any other attribute. The captains of Code for DC ("Captains") share the responsibility of  enforcing these policies as necessary to maintain an open and welcoming environment.
+Code for DC is an organization about working, as a group, to empower ourselves and others to improve our local community through technology. Code for DC is committed to providing a safe and welcoming space, without regard to age, gender, race, ethnicity, nationality, sexual orientation, gender identity, gender expression, disability, physical appearance, religion, level of knowledge, level of experience, or any other attribute. The captains of Code for DC ("Captains") share the responsibility of enforcing these policies as necessary to maintain an open and welcoming environment.
 
 As the organizers of Code for DC, we believe that the below principles are essential to maintaining this environment. In addition, we believe that they are good principles for life in general.
+
+## Applicability
+
+This code of conduct serves to ensure that everybody and anybody who wishes to participate is able to do so, and applies to all Code for DC events, from hackathons to happy hours. Further, it applies to online activities related to Code for DC, including postings on GitHub, Slack, and Google Groups.
 
 ## Principles
 
 ### Do Not Harass
 
-Harassment is any unwelcome or hostile behavior towards another person for any reason. This includes, but is not limited to, intimidation, physical contact, sexual advances (verbal or physical), or other conduct that makes others uncomfortable.
+Harassment is any unwelcome or hostile behavior towards another person for any reason. This includes, but is not limited to, offensive verbal comments related to personal characteristics or choices, sexual images or comments, deliberate intimidation, bullying, stalking, following, harassing photography or recording, sustained disruption of discussion or events, nonconsensual publication of private comments, inappropriate physical contact, or unwelcome sexual attention. Conduct need not be intentional to be harassment.
 
 Code for DC will not tolerate such behavior.
 
@@ -32,11 +32,23 @@ Code for DC is designed as a place for people all of different skill levels and 
 
 Except for instances where it would significantly impede productivity, there is always room on a Code for DC project for one more person. Unless doing so would be counter-productive to the goals of the project, anybody who is interested in a project is allowed to join it.
 
+## Aspirations
+
+While this document exists primarily to prevent certain bad behavior, we also believe that our community members should work towards a higher standard. To that end, we strongly encourage the following conduct, though they are considered aspirational rather than necessary.
+
+### Build With, Not For
+
+Work to ensure that the community is well-represented in all stages of development. Seek out those who are under-represented, and remove barriers to access. Listen as much—or more—than you speak, and give full consideration to all ideas, even if they seem improbable at first.
+
+### Empower, Experiment, and Find a Way for Everybody to Contribute
+
+When more people share their knowledge and skills, they give a project a greater chance to succeed. When somebody shows up with an unusual skill, look for ways to fit them into the team rather than reasons why it wouldn't work. Experiment with new approaches, and don't be afraid to try something that might not work.
+
 ## Procedures
 
 ### Making a Report
 
-If you are unable to resolve the issue, or are uncomfortable doing so, you should contact a Captain. Captains agree to keep information shared in association with a Code of Conduct violation private, and may reveal it only with the approval of the affected person(s). Contact information for each Captain is listed on the [About page](/about.html), and you can also send an anonymous (or non-anonymous) message through the [Contact page](/contact.html), in which case it will be seen by all Captains.
+If you are unable to resolve the issue, or are uncomfortable doing so, you should contact a Captain, either in person or electronically. Captains agree to keep information shared in association with a Code of Conduct violation private, and may reveal it only with the approval of the affected person(s). Contact information for each Captain is listed on the [About page](/about.html), and you can also send an anonymous (or non-anonymous) message through the [Contact page](/contact.html), in which case it will be seen by all Captains. Please be aware that electronic reports may not be seen immediately.
 
 When making a report, the following information is useful, but not required:
 
@@ -48,19 +60,12 @@ When making a report, the following information is useful, but not required:
 
 ### Outcomes
 
-Captains agree to treat all violations impartially. In situations where this may not be possible due to personal or business relationships, Captains shall refer the violation report to another appropriate decision-maker with the approval of the affected person(s).
+Captains agree to treat all violations impartially, and will strive to apply this code of conduct consistently. In situations where this may not be possible due to personal or business relationships, Captains shall refer the violation report to another appropriate decision-maker with the approval of the affected person(s).
 
-Captains may take any of the following actions, or any other appropriate action, to resolve a conduct issue:
-
-- Individual Meeting: A meeting between the party responsible for the conduct and Captain(s).
-- Group Meeting: A meeting between the parties involved, with Captain mediation.
-- Team Realignment: Members may be asked to work on a different project. This action shall not be used as a punitive measure against the affected party.
-- Expulsion: In extreme situations, the offending party will be barred from future Code for DC events.
+Captains may take any appropriate action, including expulsion and a ban from future events, to resolve a violation of this code of conduct.
 
 ## Contributing to This Code
 
-This is a living document and is ultimately owned by the Code for DC community. We are interested in your comments and suggestions! You can contribute to the code by opening an issue or pull request on this repository, or by contacting a Captain.
-
-This code and other documents in this repository are dedicated to the public domain under a CC0 license. By contributing to this repository, you agree to release your contribution to the public domain.
+This is a living document and is ultimately owned by the Code for DC community. We are interested in your comments and suggestions! You can contribute to the code by opening an issue or pull request on this repository, by using the edit link above (which will create an anonymous pull request on your behalf), or by contacting a Captain.
 
 

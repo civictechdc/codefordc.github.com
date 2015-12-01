@@ -8,7 +8,7 @@ edit_link: https://editfordc.herokuapp.com/document/e025c67f-cff9-4042-afbf-a161
 
 # Code of Conduct
 
-Code for DC is an organization about working, as a group, to empower ourselves and others to improve our local community through technology. Code for DC is committed to providing a safe and welcoming space, without regard to age, gender, race, ethnicity, nationality, sexual orientation, gender identity, gender expression, disability, physical appearance, religion, level of knowledge, level of experience, or any other attribute. The captains of Code for DC ("Captains") share the responsibility of enforcing these policies as necessary to maintain an open and welcoming environment.
+Code for DC is an organization about working, as a group, to empower ourselves and others to improve our local community through technology. Code for DC is committed to providing a safe and welcoming space, without regard to age, gender, race, ethnicity, nationality, sexual orientation, gender identity, gender expression, mental or physical disability, physical appearance, neuro(a)typicality, religion, level of knowledge, level of experience, parental status, marital status, socioeconomic status or background, political affiliation, or any other attribute. The captains of Code for DC ("Captains") share the responsibility of enforcing these policies as necessary to maintain an open and welcoming environment.
 
 As the organizers of Code for DC, we believe that the below principles are essential to maintaining this environment. In addition, we believe that they are good principles for life in general.
 
@@ -24,9 +24,11 @@ Harassment is any unwelcome or hostile behavior towards another person for any r
 
 Code for DC will not tolerate such behavior.
 
-### Respect the Opinions of Others
+### Respect the Opinions and Abilities of Others
 
 Code for DC is designed as a place for people all of different skill levels and approaches to meet and work together toward common goals. As a result, we do not expect that everybody will share the same opinion. However, we do expect that disagreement is done respectfully.
+
+Additionally, we expect that members will educate others respectfully. To this end, do not assume anybody else's level of expertise or knowledge. Do not belittle a lack of information, or insist on unnecessary precision. We are all learning, so afford others—as well as yourself—room to grow. 
 
 ### Keep Your Team Open
 
@@ -62,7 +64,7 @@ When making a report, the following information is useful, but not required:
 
 Captains agree to treat all violations impartially, and will strive to apply this code of conduct consistently. In situations where this may not be possible due to personal or business relationships, Captains shall refer the violation report to another appropriate decision-maker with the approval of the affected person(s).
 
-Captains may take any appropriate action, including expulsion and a ban from future events, to resolve a violation of this code of conduct.
+Captains may take any appropriate action, including expulsion and a ban from future events, to resolve a violation of this code of conduct. In the event of gray areas, precedence will be given to the target of the conduct.
 
 ## Contributing to This Code
 

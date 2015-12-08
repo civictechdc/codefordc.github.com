@@ -2,7 +2,7 @@
 layout: post
 categories: blog
 title:  "Code of Conduct v2.0"
-date:   2015-12-1 12:30:55
+date:   2015-12-8 12:30:55
 authors:
 - stvnrlly
 ---

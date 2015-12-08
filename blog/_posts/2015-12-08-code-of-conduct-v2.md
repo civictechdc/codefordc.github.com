@@ -7,7 +7,7 @@ authors:
 - stvnrlly
 ---
 
-It's been a year and a half since Code for DC first implemented a code of conduct, so I thought that it would make sense to revisit it and see whether it could be updated. In that time, many more examples of codes of conduct have popped up, meaning that there are a lot of great ideas to borrow.
+It's been a year and a half since Code for DC first implemented a [code of conduct](http://codefordc.org/resources/codeofconduct.html), so I thought that it would make sense to revisit it and see whether it could be updated. In that time, many more examples of codes of conduct have popped up, meaning that there are a lot of great ideas to borrow.
 
 This is an iterative process, and we hope to be constantly improving, even if there isn't a pressing issue. As a Code for DC captain emeritus said: <blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">2/2I&#39;m thinking if you haven&#39;t heard from a member about code of conduct problems, you probably just haven&#39;t been told about it <a href="https://twitter.com/hashtag/cfabrigade?src=hash">#cfabrigade</a></p>&mdash; Leah Bannon (@leahbannon) <a href="https://twitter.com/leahbannon/status/521012611367059456">October 11, 2014</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -25,6 +25,8 @@ Many additional classes were added to the explicit list of protected attributes.
 The code didn't mention online activity, which seemed like an oversight, especially considering the amount of time spent on GitHub and Slack. These venues are just as much a part of our community as the meetups, and therefore should be specifically included, as well. Additionally, the examples of what constitutes harassment were expanded. The [Geek Feminism code](http://geekfeminism.org/about/code-of-conduct/) was useful for this. I'm wary of longer lists, as they may give the idea that they are "complete" and therefore that loopholes might exist. As a result, I added language stating that we'll give precedence to the viewpoint of the target of the behavior, if necessary.
 
 Finally, the description of possible actions taken in response to violations was simplified. This section seemed overly legalistic, and the catch-all of "any other appropriate action" made it superfluous. In my opinion, the more important part of the code is placing the responsibility for resolving reports squarely on the organizers, and that is still clearly stated.
+
+The pull request with all of the changes can be found on GitHub [here](https://github.com/codefordc/codefordc.github.com/pull/162).
 
 # References
 

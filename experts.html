@@ -1,0 +1,59 @@
+---
+layout: default
+title: About Us
+---
+
+<div class="container">
+    <div class="col-lg-12">
+        <div class="col-lg-12 starter-template">
+            <h1>Our Experts</h1>
+        </div>
+        <div class="what-is">
+            <h2>Looking for help?</h2>
+            <div class="row">
+                <div class="col-md-12">
+                    <p>Working together we can get more done and we want to help you find the best help for your project.</p>
+                    <p>Below is a list of volunteers who might have the bit information to help you kill that bug, clean up your design or help explain some policy.</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Technical Knowledge</h2>
+            <div class="row">
+                {% for p in site.data.experts.technical %}
+                <div class="col-md-4">
+                    <div class="bio">
+                        <h3 class="text-center">{{ p.name }}</h3>
+                        <p class="text-center">Skills: {{ p.skills }}</p>
+                        <p class="text-center">Slack: {{ p.slack }}</p>
+                        <p class="text-center">{% if p.email %}<a href="mailto:{{ p.email }}"><i class="fa fa-envelope fa-lg"></i></a>{% endif %} {% if p.twitter %}<a href="https://twitter.com/{{ p.twitter }}"><i class="fa fa-twitter fa-lg"></i></a>{% endif %} {% if p.github %}<a href="https://github.com/{{ p.github }}"><i class="fa fa-github fa-lg"></i></a>{% endif %}</p>
+                    </div>
+                </div>
+                <!-- create a new .row div every three items -->
+                {% assign loopindex = forloop.index | modulo: 3 == 0 %}
+                {% if loopindex == 0 %}</div><div class="row">{% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        <div>
+            <h2>Policy Knowledge</h2>
+            <div class="row">
+                {% for p in site.data.experts.subjectMatter %}
+                <div class="col-md-4">
+                    <div class="bio">
+                        <h3 class="text-center">{{ p.name }}</h3>
+                        <p class="text-center">Subjects: {{ p.skills }}</p>
+                        <p class="text-center">Slack: {{ p.slack }}</p>
+                        <p class="text-center">{% if p.email %}<a href="mailto:{{ p.email }}"><i class="fa fa-envelope fa-lg"></i></a>{% endif %} {% if p.twitter %}<a href="https://twitter.com/{{ p.twitter }}"><i class="fa fa-twitter fa-lg"></i></a>{% endif %} {% if p.github %}<a href="https://github.com/{{ p.github }}"><i class="fa fa-github fa-lg"></i></a>{% endif %}</p>
+                    </div>
+                </div>
+                <!-- create a new .row div every three items -->
+                {% assign loopindex = forloop.index | modulo: 3 == 0 %}
+                {% if loopindex == 0 %}</div><div class="row">{% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include _global_js.html %}

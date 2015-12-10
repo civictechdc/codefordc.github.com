@@ -2,7 +2,7 @@
 layout: post
 categories: blog
 title:  "Come Lead Code for DC with Us"
-date:   2015-12-07 09:55:00
+date:   2015-12-09 20:55:00
 authors:
 - stvnrlly
 - justgrimes
@@ -29,4 +29,4 @@ And here are some things that we'd like to do in the next year:
 
 We plan to give particular consideration to applicants from underrepresented and marginalized groups. You do not need to be a Code for DC regular. You **definitely** do not need to be a coder. Instead, you should have a demonstrable interest in improving civic outcomes and at least some interest in technology. You should be able to think creatively about civic and strategic issues. And you should have a few hours available each week to spend on Code for DC activities. Like the existing Captains, these are volunteer positions.
 
-If you're interested or have questions, you can reach us by any of the means on the [About](/about.html) page, or by using the [Contact](/contact.html) form.
+If you're interested or have questions, you can reach us by any of the means on the [About](/about.html) page, or by using the [Contact](/contact.html) form. And if you're wondering about whether or not you should apply, please do!

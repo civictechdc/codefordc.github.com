@@ -24,7 +24,7 @@ If you're unable to get the agency to release the data, it may be time to submit
 
 ### Improve Existing Data
 
-Sometimes, an agency releases data in a form that isn't archived and/or isn't machine-readable. You can improve the world by correcting that. For example, Aaron created [a web scraper](https://github.com/ajschumacher/dc_mayor_schedule) to save the mayor's schedule, which was posted daily but not archived, and then made a small site to display that historical data. Or, Liz created [a script](https://github.com/lizmeister321/rebuilding-reentry) to pull prison population data out of PDFs posted monthly.
+Sometimes, an agency releases data in a form that isn't archived and/or isn't machine-readable. You can improve the world by correcting that. For example, Aaron created [a web scraper](https://github.com/ajschumacher/dc_mayor_schedule) to save the mayor's schedule, which was posted daily but not archived, and then made a small site to display that historical data. Or, Liz created [a script](https://github.com/lizmeister321/rebuilding-reentry) to pull prison population data out of PDFs posted monthly. [Here](https://github.com/Quartz/bad-data-guide) are some examples of common problems to look for.
 
 For web scraping, some popular tools include [Beautiful Soup](http://www.crummy.com/software/BeautifulSoup/) for Python or [Nokigiri](http://www.nokogiri.org/) for Node. For PDF extraction, [Tabula](http://tabula.technology/) can be a good place to start.
 

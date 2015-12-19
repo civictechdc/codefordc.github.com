@@ -1,10 +1,8 @@
 ---
 layout: default
 title: Contact Us
-extra_css:
-  - bootstrapValidator.min.css
 extra_js:
-  - bootstrapValidator.min.js
+  - validator.min.js
 ---
 <div class="container">
     <div class="row">
@@ -23,22 +21,26 @@ extra_js:
         <div class="col-sm-8 col-sm-offset-2">
             <form id="contactus" role="form">
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="Email (optional)">
+                    <label for="email" class="control-label">Email</label>
+                    <input type="email" class="form-control" id="contactEmail" placeholder="Email (optional)">
                 </div>
                 <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" placeholder="Name (optional)">
+                    <label for="name" class="control-label">Name</label>
+                    <input type="text" class="form-control" id="contactName" placeholder="Name (optional)">
                 </div>
                 <div class="form-group">
-                    <label for="subject">Subject</label>
-                    <input type="text" class="form-control" id="subject" placeholder="Subject (optional)">
+                    <label for="subject" class="control-label">Subject</label>
+                    <input type="text" class="form-control" id="contactSubject" placeholder="Subject (optional)">
                 </div>
                 <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea name="message" class="form-control" id="message" rows="6" placeholder="What's up?"></textarea>
+                    <label for="message" class="control-label">Message</label>
+                    <textarea name="message" class="form-control" id="contactMessage" rows="6" placeholder="What's up?" required></textarea>
+                    <div class="help-block with-errors"></div>
                 </div>
-                <button type="button submit" class="btn btn-primary" id="submitmessage">Submit</button>
+                <div class="form-group">
+                    <!-- Using <input> to avoid a page reload -->
+                    <input type="button" class="btn btn-primary" id="submitmessage" value="Submit">
+                </div>
             </form>
         </div>
     </div>
@@ -50,24 +52,16 @@ extra_js:
 
 $(document).ready(function(){
 
-    $("#contactus").bootstrapValidator({
-        fields: {
-            message: {
-                validators: {
-                    notEmpty: {
-                        message: "You must enter a message"
-                    }
-                }
-            }
-        }
-    });
+    // Form validation
+    $("#contactus").validator();
 
+    // Send message to Slack
     $("#submitmessage").click(function(){
         var payload = JSON.stringify({
-            "email": $("#email").val(),
-            "name": $("#name").val(),
-            "subject": $("#subject").val(),
-            "message": $("#message").val()
+            "email": $("#contactEmail").val(),
+            "name": $("#contactName").val(),
+            "subject": $("#contactSubject").val(),
+            "message": $("#contactMessage").val()
         });
         $("button#submitmessage").html("<i class='fa fa-spinner fa-spin'>");
         $.ajax({
@@ -76,12 +70,13 @@ $(document).ready(function(){
             data: payload,
             contentType: "application/json",
             success: function(){
-                $("#email").val("");
-                $("#name").val("");
-                $("#subject").val("");
-                $("#message").val("");
+                $("#contactEmail").val("");
+                $("#contactName").val("");
+                $("#contactSubject").val("");
+                $("#contactMessage").val("");
                 $(".alert").removeClass("hidden");
                 $("button#submitmessage").text("Submit");
+                $("html, body").animate({scrollTop: 0}, "fast");
             }
         });
     });

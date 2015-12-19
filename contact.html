@@ -69,6 +69,7 @@ $(document).ready(function(){
             "subject": $("#subject").val(),
             "message": $("#message").val()
         });
+        $("button#submitmessage").html("<i class='fa fa-spinner fa-spin'>");
         $.ajax({
             url: "https://slackfordc.herokuapp.com/contact",
             type: "POST",
@@ -80,6 +81,7 @@ $(document).ready(function(){
                 $("#subject").val("");
                 $("#message").val("");
                 $(".alert").removeClass("hidden");
+                $("button#submitmessage").text("Submit");
             }
         });
     });

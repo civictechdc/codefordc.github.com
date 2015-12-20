@@ -1,0 +1,14 @@
+engines:
+    bundler-audit:
+        enabled: true
+    eslint:
+        enabled: true
+    csslint:
+        enabled: true
+ratings:
+    paths:
+    - "**.js"
+    - "assets/css/style.css"
+    - "projects/index.html"
+exclude_paths:
+- "_site/*"

@@ -2,14 +2,12 @@
 layout: default
 title: Projects
 extra_css:
-- bootstrapValidator.min.css
 - c3.min.css
 extra_js:
 - moment.min.js
 - d3.min.js
 - c3.min.js
 - jquery.mixitup.min.js
-- bootstrapValidator.min.js
 ---
 
 <div class="container">
@@ -21,7 +19,6 @@ extra_js:
 				<strong>Success!</strong> Check back in soon and the project should be on this list.
 			</div>
 			<div class="col-lg-10 col-lg-offset-1 starter-template">
-			<!-- <div class="alert alert-danger" role="alert">We need you! If you're interested in helping run Code for DC, <a href="/apply.html">apply for a leadership position</a>!</div> -->
 				<h1>Our Projects</h1>
 				<p class="lead">Code for DC helps people collaborate on projects to help the community. Whether you're a coder or an activist, a public servant or a designer, browse below and you're bound to find one that needs you!</p>
 				<p>To find issues that are keyboard-ready, check out our <a href="/projects/helpwanted.html">Help Wanted</a> page.</p>
@@ -59,24 +56,7 @@ extra_js:
 							<li class="sort" data-sort="random"><a>Randomize</a></li>
 						</ul>
 					</div>
-					<div class="btn btn-default" id="show-submit">
-						Submit a project
-					</div>
 				</div>
-			</div>
-			<div id='submit-project' class="hidden col-sm-12">
-				<form id="githubrepoform" role="form">
-					<div class="form-group">
-						<div class="input-group">
-							<label class="sr-only" for="githubrepo">Submit a Project</label>
-							<input class="form-control" id="githubrepo" name="githubrepo" placeholder="Github repo URL">
-							<span class="input-group-btn">
-								<button type="button submit" class="btn btn-default" id="submitrepo">Submit!</button>
-							</span>
-						</div>
-					</div>
-				</form>
-				<div>Have a project that should be tracked here? Let us know! The requirements for a Code for DC project can be found <a href="/resources/startaproject.html">here</a>.</div>
 			</div>
 			<hr class="col-lg-12">
 			<div class="col-lg-12">
@@ -452,61 +432,6 @@ $(document).ready(function(){
 	    $(this).hide();
 	});
 
-	// New repo submission
-	$("#show-submit").click(function() {
-		$("#submit-project").removeClass("hidden");
-	});
-
-	var submit = false;
-
-	$("#githubrepoform").bootstrapValidator({
-		live: "enabled",
-		threshold: 12,
-		fields: {
-			githubrepo: {
-				validators: {
-					regexp: {
-						regexp: /^(https:\/\/)?(www\.)?(github\.com)\/\S+?\/\S+$/i,
-						message: 'please enter a Github URL'
-					},
-					notEmpty: {
-						message: "please enter a Github URL"
-					}
-				}
-			}
-		}
-	}).on('error.field.bv', function(e) {
-		submit = false;
-	}).on('success.field.bv', function(e) {
-		submit = true;
-	});
-
-	$("#githubrepo").keydown(function(e){
-		var key =  e.keyCode ? e.keyCode : e.which;
-		if(key == 13) {
-			$('#submitrepo').click();
-			return false;
-		}
-	});
-
-	$("#submitrepo").click(function() {
-		if (submit){
-			var payload = JSON.stringify({
-				"repo": $("#githubrepo").val()
-			});
-			$.ajax({
-				url: "https://slackfordc.herokuapp.com/project",
-				type: "POST",
-				data: payload,
-				contentType: "application/json",
-				success: function(){
-					$('#githubrepo').val('');
-					$("#submit-project").addClass("hidden");
-					$(".alert").removeClass("hidden");
-				}
-			});
-		}
-	});
 });
 
 </script>

@@ -23,7 +23,7 @@ layout: default
 				<p class="project text-center"></p>
                 <h4 class="title text-center"></h4>
 				<div>
-					<p class="summary"></p>
+					<!-- <p class="summary"></p> -->
 					<p class="labels"></p>
 					<p class="pull-right"><a class="link" href="#">View on Github</a></p>
 					<p>Comments: <span class="comments"></span></p>
@@ -37,7 +37,7 @@ layout: default
 window.projects = function(data){
 	var projects = data;
 	$.each(projects, function(i, info) {
-		issues = info["help_wanted"];
+		issues = info.help_wanted;
 
 		if (issues.length > 0) {
 			$.each(issues, function(i, issue){
@@ -47,12 +47,12 @@ window.projects = function(data){
 				$("#issue-list").append(box);
 
 				box.find(".title").removeClass("hidden").text(issue.issue);
-				box.find(".summary").removeClass("hidden").text(issue.body);
+				// box.find(".summary").removeClass("hidden").text(issue.body);
 				box.find(".link").removeClass("hidden").attr("href", issue.issue_url);
 				box.find(".comments").removeClass("hidden").text(issue.comments);
                 box.find(".project").removeClass("hidden").text(issue.project);
 				$.each(issue.labels, function(i, label){
-					box.find(".labels").removeClass("hidden").append("<span class='btn btn-sm btn-default'>"+label.name+"</span>")
+					box.find(".labels").removeClass("hidden").append("<span class='btn btn-sm btn-default'>"+label.name+"</span>");
 				});
 			});
 		}

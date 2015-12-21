@@ -96,6 +96,16 @@ h6:hover .deeplink {
     color: #8F8F8F;
 }
 
+.navbar-nav>li>a.dropdown-split-left {
+    display:inline-block;
+    padding-right:0px;
+}
+
+.navbar-nav>li>a.dropdown-split-right {
+    display:inline-block;
+    padding-left:0px;
+}
+
 hr.footer-divider {
 	border-top: 2px solid #ccc;
 }

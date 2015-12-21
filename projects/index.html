@@ -8,129 +8,151 @@ extra_js:
 - d3.min.js
 - c3.min.js
 - jquery.mixitup.min.js
+- spin.min.js
 ---
 
 <div class="container">
-	<div class="col-sm-12">
-	<div class="row">
-		<div class="col-lg-12">
-			<div class="alert alert-success alert-dismissible hidden" role="alert">
-				<button type="button" class="close" data-dismiss="alert" title="dismiss"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-				<strong>Success!</strong> Check back in soon and the project should be on this list.
-			</div>
-			<div class="col-lg-10 col-lg-offset-1 starter-template">
-				<h1>Our Projects</h1>
-				<p class="lead">Code for DC helps people collaborate on projects to help the community. Whether you're a coder or an activist, a public servant or a designer, browse below and you're bound to find one that needs you!</p>
-				<p>To find issues that are keyboard-ready, check out our <a href="/projects/helpwanted.html">Help Wanted</a> page.</p>
-			</div>
-			<div class="col-lg-12" id="sortbar">
-				<div id="sort-button">
-					<div id="filter-buttons" class="pull-right">
-						<div id="sort-divider" style="display:inline"><strong>Filter by:</strong></div>
-						<div class="btn-group">
-							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-								Category <span class="caret"></span>
-							</button>
-							<ul class="dropdown-menu category-list" role="menu"></ul>
-						</div>
-						<div class="btn-group">
-							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-								Language <span class="caret"></span>
-							</button>
-							<ul class="dropdown-menu languages" role="menu"></ul>
-						</div>
-						<button class="btn btn-default filter" data-filter="all">Show All</button>
+	<div class="col-lg-12">
+		<div class="alert alert-success alert-dismissible hidden" role="alert">
+			<button type="button" class="close" data-dismiss="alert" title="dismiss"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+			<strong>Success!</strong> Check back in soon and the project should be on this list.
+		</div>
+		<div class="col-lg-10 col-lg-offset-1 starter-template">
+			<h1>Our Projects</h1>
+			<p class="lead">Code for DC helps people collaborate on projects to help the community. Whether you're a coder or an activist, a public servant or a designer, browse below and you're bound to find one that needs you!</p>
+			<p>To find issues that are keyboard-ready, check out our <a href="/projects/helpwanted.html">Help Wanted</a> page.</p>
+		</div>
+		<div class="col-lg-12" id="sortbar">
+			<div id="sort-button">
+				<div id="filter-buttons" class="pull-right">
+					<div id="sort-divider" style="display:inline"><strong>Filter by:</strong></div>
+					<div class="btn-group">
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+							Category <span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu category-list" role="menu"></ul>
 					</div>
 					<div class="btn-group">
 						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-							Sort Projects <span class="caret"></span>
+							Language <span class="caret"></span>
 						</button>
-						<ul class="dropdown-menu" role="menu">
-							<li class="sort" data-sort="created:dec"><a>Age</a></li>
-							<li class="sort" data-sort="updated:dec"><a>Latest commit</a></li>
-							<li class="sort" data-sort="open-issues:dec"><a>Open issues</a></li>
-							<li class="sort" data-sort="lines:dec"><a>Lines of code</a></li>
-							<li class="sort" data-sort="forks:dec"><a>Forks</a></li>
-							<li class="sort" data-sort="stars:dec"><a>Stars</a></li>
-							<li class="divider"></li>
-							<li class="sort" data-sort="random"><a>Randomize</a></li>
-						</ul>
+						<ul class="dropdown-menu languages" role="menu"></ul>
 					</div>
+					<button class="btn btn-default filter" data-filter="all">Show All</button>
 				</div>
-			</div>
-			<hr class="col-lg-12">
-			<div class="col-lg-12">
-				<div id="project-list">
-					<!-- populated by js -->
-				</div>
-			</div>
-		</div>
-
-		<div style="display: none"> <!-- template for a project -->
-			<div id="project-template" class="project mix">
-				<div class="row">
-					<div class="col-sm-12 title">
-						<h2><img class='img-rounded thumbnail hidden' height='50' width='50' alt="thumbnail"><span class="name"></span></h2>
-						<p class="homepage hidden"><a>Website</a></p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-4">
-						<p class="github-repo"><i class="fa fa-github-alt"></i> <a class="repo-link">github repository</a></p>
-						<p class="description"></p>
-						<div class="row">
-							<p class="col-sm-4 started"><strong>Born</strong><br/> <span></span></p>
-							<p class="col-sm-4 status hidden"><strong>Status</strong><br/> <span></span></p>
-							<p class="col-sm-4 lines"><strong>Lines of Code</strong><br/> <span></span></p>
-						</div>
-						<div class="row">
-							<p class="col-sm-12 language"><strong>Language(s)</strong><br/> <span></span></p>
-						</div>
-						<p class="license hidden"><strong>License</strong><br/> <span></span></p>
-						<p class="governmentPartner hidden"><strong>Government Partner</strong><br/> <span></span></p>
-						<p class="communityPartner hidden"><strong>Community Partner</strong><br/> <span></span></p>
-						<p class="politicalEntity hidden"><strong>Relevant to</strong><br/> <span></span></p>
-						<p class="accessibility hidden"><strong>WCAG2AAA Accessible:</strong> <span></span></p>
-						<p class="contact">
-							<a class='btn btn-info btn-sm email hidden' role='button' name="email" title="Email"><i class='fa fa-envelope fa-lg'></i></a>
-							<a class='btn btn-info btn-sm twitter hidden' role='button' name="twitter" title="Tweet Us"><i class='fa fa-twitter fa-lg'></i></a>
-						</p>
-
-					</div>
-					<div class="col-sm-5">
-						<h4><strong>Activity</strong></h4>
-						<div class="activity">
-							<div class="chart"></div>
-						</div>
-						<div class="contributors hidden">
-							<strong>Contributors</strong>
-							<div> </div>
-						</div>
-						<div class="categories">
-							<p><strong>Categories</strong></p>
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<h4><strong>Get Involved</strong></h4>
-						<p class="issues"><a class='btn btn-info' role='button'></a></p>
-						<div class="needs hidden">
-							<strong>Needs</strong>
-							<div><ul> </ul></div>
-						</div>
-						<div class="ci-reports">
-							<strong>CI Reports</strong>
-							<div></div>
-						</div>
-					</div>
+				<div class="btn-group">
+					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+						Sort Projects <span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" role="menu">
+						<li class="sort" data-sort="created:dec"><a>Age</a></li>
+						<li class="sort" data-sort="updated:dec"><a>Latest commit</a></li>
+						<li class="sort" data-sort="open-issues:dec"><a>Open issues</a></li>
+						<li class="sort" data-sort="lines:dec"><a>Lines of code</a></li>
+						<li class="sort" data-sort="forks:dec"><a>Forks</a></li>
+						<li class="sort" data-sort="stars:dec"><a>Stars</a></li>
+						<li class="divider"></li>
+						<li class="sort" data-sort="random"><a>Randomize</a></li>
+					</ul>
 				</div>
 			</div>
 		</div>
-	</div><!-- /.row -->
-	</div><!-- /.col -->
+		<hr class="col-lg-12">
+		<div class="col-lg-12">
+			<div id="project-list">
+				<!-- populated by js -->
+			</div>
+		</div>
+	</div>
+
+	<div style="display: none"> <!-- template for a project -->
+		<div id="project-template" class="project mix">
+			<div class="row">
+				<div class="col-sm-12 title">
+					<h2><img class='img-rounded thumbnail hidden' height='50' width='50' alt="thumbnail"><span class="name"></span></h2>
+					<p class="homepage hidden"><a>Website</a></p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4">
+					<p class="github-repo"><i class="fa fa-github-alt"></i> <a class="repo-link">github repository</a></p>
+					<p class="description"></p>
+					<div class="row">
+						<p class="col-sm-4 started"><strong>Born</strong><br/> <span></span></p>
+						<p class="col-sm-4 status hidden"><strong>Status</strong><br/> <span></span></p>
+						<p class="col-sm-4 lines"><strong>Lines of Code</strong><br/> <span></span></p>
+					</div>
+					<div class="row">
+						<p class="col-sm-12 language"><strong>Language(s)</strong><br/> <span></span></p>
+					</div>
+					<p class="license hidden"><strong>License</strong><br/> <span></span></p>
+					<p class="governmentPartner hidden"><strong>Government Partner</strong><br/> <span></span></p>
+					<p class="communityPartner hidden"><strong>Community Partner</strong><br/> <span></span></p>
+					<p class="politicalEntity hidden"><strong>Relevant to</strong><br/> <span></span></p>
+					<p class="accessibility hidden"><strong>WCAG2AAA Accessible:</strong> <span></span></p>
+					<p class="contact">
+						<a class='btn btn-info btn-sm email hidden' role='button' name="email" title="Email"><i class='fa fa-envelope fa-lg'></i></a>
+						<a class='btn btn-info btn-sm twitter hidden' role='button' name="twitter" title="Tweet Us"><i class='fa fa-twitter fa-lg'></i></a>
+					</p>
+
+				</div>
+				<div class="col-sm-5">
+					<h4><strong>Activity</strong></h4>
+					<div class="activity">
+						<div class="chart"></div>
+					</div>
+					<div class="contributors hidden">
+						<strong>Contributors</strong>
+						<div> </div>
+					</div>
+					<div class="categories">
+						<p><strong>Categories</strong></p>
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<h4><strong>Get Involved</strong></h4>
+					<p class="issues"><a class='btn btn-info' role='button'></a></p>
+					<div class="needs hidden">
+						<strong>Needs</strong>
+						<div><ul> </ul></div>
+					</div>
+					<div class="ci-reports">
+						<strong>CI Reports</strong>
+						<div></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div><!-- /.container -->
 
 {% include _global_js.html %}
 <script type="text/javascript">
+
+// Create loading spinner with spin.js
+var spinnerOpts = {
+	lines: 13 // The number of lines to draw
+	, length: 56 // The length of each line
+	, width: 14 // The line thickness
+	, radius: 43 // The radius of the inner circle
+	, scale: 1.5 // Scales overall size of the spinner
+	, corners: 1 // Corner roundness (0..1)
+	, color: '#000' // #rgb or #rrggbb or array of colors
+	, opacity: 0.25 // Opacity of the lines
+	, rotate: 0 // The rotation offset
+	, direction: 1 // 1: clockwise, -1: counterclockwise
+	, speed: 1 // Rounds per second
+	, trail: 60 // Afterglow percentage
+	, fps: 20 // Frames per second when using setTimeout() as a fallback for CSS
+	, zIndex: 2e9 // The z-index (defaults to 2000000000)
+	, className: 'spinner' // The CSS class to assign to the spinner
+	, top: '200px' // Top position relative to parent
+	, left: '50%' // Left position relative to parent
+	, shadow: false // Whether to render a shadow
+	, hwaccel: false // Whether to use hardware acceleration
+	, position: 'absolute' // Element positioning
+};
+var spinner = new Spinner(spinnerOpts).spin(document.getElementById('project-list'));
 
 // Arrays for collecting overall data to sort with MixItUp
 l = [];
@@ -431,6 +453,9 @@ $(document).ready(function(){
 	$("img").error(function () { 
 	    $(this).hide();
 	});
+
+	// Make sure that the spinner stops
+	spinner.stop();
 
 });
 

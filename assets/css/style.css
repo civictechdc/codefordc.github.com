@@ -8,7 +8,7 @@ body {
   padding-top: 50px;
 }
 .starter-template {
-  padding: 40px 15px;
+  padding: 15px;
   text-align: center;
 }
 
@@ -112,23 +112,14 @@ hr.footer-divider {
 /*  index */
 /***************************/
 
-.hero {
-	background: url('/images/bohemian-caverns.jpg');
-	background-size: cover;
-	min-height: 300px;
-	min-width: 400px;
-	padding:0;
+.big-image {
+    background-image:url("/images/main-header.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 0;
+    width: 100%;
+    padding-top: 30.3%;
 }
-
-.hero-text{
-	text-align:center;
-	font-size:150px;
-	font-weight:bold;
-	color: white;
-	background-color: rgba(0,0,0,.5);
-	margin-top:25px;
-}
-
 
 .heading-stripe {
 	margin-top:5px;
@@ -142,25 +133,14 @@ hr.footer-divider {
 	padding-bottom:5px;
 }
 
-.announcement-icon {
-	float:left;
-	margin-top:15px;
-	/*margin-left:20px;
-	margin-right:20px;*/
-	margin-bottom:20px;
+.announcement-navbar {
+    margin-bottom: 0px;
+    border-radius: 0px;
 }
 
-.announcement-icon img{
-	/*width: 450px;*/
-	width:100%;
-
-}
-.announcement-content {
-	text-align:justify;
-	margin-top:20px;
-	/*margin-left:20px;
-	margin-right:20px;*/
-	margin-bottom:20px;
+.announcement {
+    text-align: center;
+    padding-top: 15px;
 }
 
 .well {

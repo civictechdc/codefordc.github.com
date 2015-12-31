@@ -1,10 +1,8 @@
 ---
 layout: default
 title: Join Our Slack Team
-extra_css:
-  - bootstrapValidator.min.css
 extra_js:
-  - bootstrapValidator.min.js
+  - validator.min.js
 ---
 <div class="container">
     <div class="row">
@@ -24,7 +22,9 @@ extra_js:
                     <label for="email" class="sr-only">Email Address</label>
                     <input type="email" name="email" class="form-control" id="email" placeholder="Email Address">
                 </div>
-                <button type="button submit" class="btn btn-primary" id="submitrequest">Submit</button>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" id="submitrequest">Submit</button>
+                </div>
             </form>
         </div>
     </div>
@@ -36,25 +36,16 @@ extra_js:
 
 $(document).ready(function(){
 
-    $("#requestinvite").bootstrapValidator({
-        fields: {
-            email: {
-                validators: {
-                    notEmpty: {
-                        message: "You must enter something"
-                    },
-                    emailAddress: {
-                        message: "Please enter a valid email address"
-                    }
-                }
-            }
-        }
-    });
+    // Form validation
+    $("#requestinvite").validator();
 
-    $("#submitrequest").click(function(){
+    // Send message to Slack
+    $("#requestinvite").submit(function (event) {
+        event.preventDefault();
         var payload = JSON.stringify({
             "email": $("#email").val()
         });
+        $("#submitrequest").html("<i class='fa fa-spinner fa-spin'>");
         $.ajax({
             url: "https://slackfordc.herokuapp.com/invite",
             type: "POST",
@@ -63,11 +54,12 @@ $(document).ready(function(){
             success: function(){
                 $("#email").val("");
                 $(".alert").removeClass("hidden");
+                $("#submitrequest").text("Submit");
+                $("html, body").animate({scrollTop: 0}, "slow");
             }
         });
     });
+
 });
-
-
 
 </script>

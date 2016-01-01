@@ -28,16 +28,9 @@ This is based on the work done by [BetaNYC](https://github.com/BetaNYC/civic.jso
 
 4. `contact` - an object containing `name`, `email`, and `twitter` objects, with each representing the preferred contact information for the project. At least one method should be available.
 
-5. `bornAt` - text indicating the name of the event the project was conceived at, if any.  Any text is allowed.
-
 6. `geography` - text indicating the city, state, county, or other geographic entity this project is relevant to.  Any text is allowed.
 
     examples: "Washington, DC", "NYC", "Greater Baltimore"
-
-7. `politicalEntity` - an object indicating any political entity to which the project is relevant. The key is the entity's name, and the value is the entity's URL.
-
-    example: {"DC Council": "http://www.dccouncil.washington.dc.us/"}
-
 
 8.  `governmentPartner` - an object indicating any political entity with which the project is working. The key is the entity's name, and the value is the entity's URL.
 
@@ -54,18 +47,6 @@ This is based on the work done by [BetaNYC](https://github.com/BetaNYC/civic.jso
     * `"Dataset"`
 
 11. `data` - an object of "dataset" objects. Add any datasets created by the project, and any useful third-party datasets used by the project. The key is the name of the dataset, and the value is the dataset's URL.
-
-12. `needs` - an array of "need" or "want" objects.  Needs are considered necessary to the success of the project, while wants are considered enhancements.  There is no limit to the number of objects included in a project.
-
-13. `need` or `want` - text indicating a need or want of the project.  This can be a skillset that is needed, or any other resource.  Any text is allowed.
-
-    examples: "Web Designer", "Web Hosting", "Political Sponsorship"
-
-14. `categories` - an array of "category" objects.  There is no limit to the number of categories included in a project.
-
-15. `category` - text indicating the category of the project.  Any text is allowed.
-
-    examples:  "Land Use", "Transportation", "Politics", "Financial", "Open Data"
 
 16. `moreInfo` - a URL to a document or site with more information about the project, such as a Hackpad or Google Doc.
 

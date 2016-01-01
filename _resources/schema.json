@@ -36,9 +36,6 @@
             },
             "additionalProperties":false
         },
-        "bornAt":{
-            "type":"string"
-        },
         "geography":{
             "type":"string"
         },
@@ -57,31 +54,10 @@
         "data":{
             "type":"object"
         },
-        "needs":{
+        "tags":{
             "type":"array",
             "items":{
-                "type":"object",
-                "properties":{
-                    "need":{
-                        "type":"string"
-                    },
-                    "want":{
-                        "type":"string"
-                    }
-                },
-                "additionalProperties":false
-            }
-        },
-        "categories":{
-            "type":"array",
-            "items":{
-                "type":"object",
-                "properties":{
-                    "category":{
-                        "type":"string"
-                    }
-                },
-                "additionalProperties":false
+                "type":"string"
             }
         },
         "moreInfo":{

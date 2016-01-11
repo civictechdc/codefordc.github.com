@@ -16,11 +16,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% if page.is_post %}
+    {% capture authors %}{% for a in page.authors %}{% assign author = site.data.blog_authors[a] %}{% if forloop.first %}{{ author.name }}{% else %}, {{ author.name }}{% endif %}{% endfor %}{% endcapture %}
+    <meta name="author" content="{{ authors }}" />
+    {% else %}
     <meta name="author" content="" />
+    {% endif %}
     <link rel="shortcut icon" href="{{ site.url }}/images/favicon.ico" />
 
     <!-- Twitter and OpenGraph tags -->
-    <meta name="twitter:card" content="summary" />
     <meta name="twitter:creator" content="@codefordc" />
     <meta name="twitter:creator:id" content="2449810405" />
     <meta name="twitter:site" content="@codefordc" />
@@ -29,29 +33,31 @@
     <meta property="og:url" content="{{ site.url }}" />
 
     {% if page.title %}
-    <meta name="og:title" content="{{ page.title }}" />
+    <meta property="og:title" content="{{ page.title }}" />
     <meta name="twitter:title" content="{{ page.title }}" />
     <title>Code for DC - {{ page.title }}</title>
     {% else %}
-    <meta name="og:title" content="Code for DC" />
+    <meta property="og:title" content="Code for DC" />
     <meta name="twitter:title" content="Code for DC" />
     <title>Code for DC</title>
     {% endif %}
 
     {% if page.description %}
     <meta name="description" content="{{ page.description }}" />
-    <meta name="og:description" content="{{ page.description }}" />
+    <meta property="og:description" content="{{ page.description }}" />
     <meta name="twitter:description" content="{{ page.description }}" />
     {% else %}
     <meta name="description" content="Code for DC is the DC chapter of the Code for America Brigade. We are a group of volunteer civic hackers working together to solve local issues and help people engage with the city." />
-    <meta name="og:description" content="Code for DC is the DC chapter of the Code for America Brigade. We are a group of volunteer civic hackers working together to solve local issues and help people engage with the city." />
+    <meta property="og:description" content="Code for DC is the DC chapter of the Code for America Brigade. We are a group of volunteer civic hackers working together to solve local issues and help people engage with the city." />
     <meta name="twitter:description" content="Code for DC is the DC chapter of the Code for America Brigade. We are a group of volunteer civic hackers working together to solve local issues and help people engage with the city." />
     {% endif %}
 
     {% if page.image %}
-    <meta name="og:image" content="{{ site.url }}/images/{{ page.image }}" />
+    <meta name="twitter:card" content="summary_card_large" />
+    <meta property="og:image" content="{{ site.url }}/images/{{ page.image }}" />
     {% else %}
-    <meta name="og:image" content="{{ site.url }}/images/logo_500px.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content="{{ site.url }}/images/logo_500px.png" />
     {% endif %}
 
     <!-- CSS -->
@@ -63,6 +69,14 @@
 
     <!-- RSS Feed -->
     <link rel="alternate" href="/rss.xml" type="application/rss+xml" title="Code for DC Blog" />
+
+    {% if page.is_post %}
+    {% capture read_time %}{{ page.content | number_of_words | divided_by: 180 }}{% endcapture %}
+    <meta name="twitter:label1" value="Reading time">
+    <meta name="twitter:data1" value="{{ read_time }} min. 🕑">
+    <meta name="twitter:label2" value="Published on">
+    <meta name="twitter:data2" value="{{ page.date | date: '%b. %-d, %Y' }}"
+    {% endif %}
 
   </head>
 

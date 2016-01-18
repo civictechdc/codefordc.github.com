@@ -5,9 +5,13 @@ highlighter: pygments
 paginate: 10
 paginate_path: "/blog/:num"
 gems:
-    - jekyll-sitemap
+- jekyll-sitemap
 collections:
     resources:
         output: true
 exclude:
-    - vendor
+- vendor
+- README.md
+- LICENSE
+- Gemfile
+- Gemfile.lock

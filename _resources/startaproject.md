@@ -37,7 +37,7 @@ If anybody besides you contributed to the project before a license was applied, 
 
 ## Put a civic.json file in that repo
 
-A `civic.json` file is the metadata file of the type of civic-oriented project we work on here at Code for DC. You can build one right [here](/resources/builder.html) and validate existing ones [here](/resources/validator.html). For instructions on how to fill it out, check out the specifications [here](/resources/specification.html).
+A `civic.json` file is the metadata file of the type of civic-oriented project we work on here at Code for DC. You can build one right [here](http://open.dc.gov/civic.json/builder.html) and validate existing ones [here](http://open.dc.gov/civic.json/validator.html). For instructions on how to fill it out, check out the specifications [here](http://open.dc.gov/civic.json/specification.html).
 
 ## Let everybody know
 

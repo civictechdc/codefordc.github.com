@@ -3,7 +3,7 @@ layout: post
 title:  "The Greatest Post"
 post_author: "Postmaster"
 post_avatar: "postmaster.jpg"
-date:   yyyy-mm-dd hh:mm:ss
+date:   2025-12-12 10:30:00
 categories: blog
 post_twitter: "@postmaster"
 image: "greatest-post.jpg"

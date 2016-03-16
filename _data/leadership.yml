@@ -1,7 +1,6 @@
 former:
   - name: Matt Bailey
     title: Co-Captain
-    bio: Matt is a person
     image: images/leadership/matt.jpg
     email: mbailey@codeforamerica.org
     twitter: mattbailey0
@@ -10,7 +9,6 @@ former:
   - name: Leah Bannon
     title: Co-Captain
     image: images/leadership/leah.jpg
-    bio: Leah is a person
     twitter: leahbannon
     github: leahbannon
 
@@ -18,7 +16,6 @@ current:
   - name: Justin Grimes
     title: Co-Captain
     image: images/leadership/justin.jpg
-    bio: Justin is a person
     email: jgrimes@codeforamerica.org
     twitter: justgrimes
     github: justgrimes
@@ -26,7 +23,27 @@ current:
   - name: Steven Reilly
     title: Co-Captain
     image: images/leadership/stvnrlly.jpg
-    bio: Steven is a person
     email: steven@codeforamerica.org
     twitter: stvnrlly
     github: stvnrlly
+
+  - name: Lizzie Ellis
+    title: Deputy Captain
+    twitter: lizmeister321
+
+  - name: Sravanthi Kadali
+    title: Deputy Captain
+
+  - name: Kate Rabinowitz
+    title: Data Lead
+    twitter: datalensdc
+
+  - name: Terry Creamer
+    title: Projects Co-Lead
+
+  - name: Michael Kalish
+    title: Projects Co-Lead
+
+  - name: Kelli Shewmaker
+    title: Outreach Lead
+    twitter: kelshew

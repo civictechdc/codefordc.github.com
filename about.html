@@ -26,9 +26,13 @@ title: About Us
             <div class="row">
                 {% for p in site.data.leadership.current %}
                 <div class="col-md-4">
+                    {% if p.image %}
                     <div class="image">
                         <img class="img-responsive center-block" height=200px width=200px src="{{ p.image }}" alt="{{ p.name }}" />
                     </div>
+                    {% else %}
+                        <img class="img-responsive center-block" style="margin-top:70px;margin-bottom:65px" height=200px width=200px src="/images/logo_386px.png" alt="{{ p.name }}" />
+                    {% endif %}
                     <div class="bio">
                         <h3 class="text-center">{{ p.name }} <small>{{ p.title }}</small></h3>
                         <p class="text-center">{{ p.bio }}</p>

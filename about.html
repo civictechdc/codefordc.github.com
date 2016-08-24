@@ -52,12 +52,6 @@ title: About Us
                 <p><a href="{{ p.site }}">{{ p.name }}</a></p>
                 {% endfor %}
             </div>
-            <div class="col-sm-6 government-partners">
-                <h2>Government Partners</h2>
-                {% for p in site.data.government %}
-                <p><a href="{{ p.site }}">{{ p.name }}</a>{% if p.office %}: {{ p.office }} {% endif %}</p>
-                {% endfor %}
-            </div>
         </div>
         <div>
         <h2>Former Leadership</h2>

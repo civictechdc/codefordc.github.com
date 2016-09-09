@@ -6,7 +6,7 @@ type: guide
 
 # Hello, Civic Hacking World!
 
-If you're looking to give civic hacking a try, but don't know where to start, we have some suggestions for you. First, check out our [list of projects](/project.html) to see what's active, or what could use your help. If you have questions, join our [Slack](/joinslack.html) and ask.
+If you're looking to give civic hacking a try, but don't know where to start, we have some suggestions for you. First, check out our [list of projects](/projects) to see what's active, or what could use your help. If you have questions, join our [Slack](/joinslack.html) and ask.
 
 ## Learn About GitHub
 

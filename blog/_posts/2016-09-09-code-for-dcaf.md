@@ -4,9 +4,9 @@ title: "How we shipped a community-built project for reproductive justice"
 authors:
 - mebates
 - colinxfleming
-date: 2016-09-08 20:32:01
+date: 2016-09-12 09:32:01
 categories: blog
-description: "Here's how we built an open source civic project in nine months with the DC Abortion Fund."
+description: "Here's how we built an open-source civic project in nine months with the DC Abortion Fund."
 ---
 
 We’re proud to announce the launch of the DC Abortion Fund’s Case Manager App (CM App). On August 22, the first volunteer case manager called fifteen patients in need of financial help for their abortions, assisted by a secure, accessible, easy-to-use application instead of a shared spreadsheet. A volunteer team of designers and developers, along with our DCAF partners, shipped the CM App in less than nine months. Here’s how a little structure, a few principles from agile, and a lot of contributors made it happen.

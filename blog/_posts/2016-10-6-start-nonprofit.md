@@ -129,20 +129,20 @@ This is also listed as one of the last steps on the DCRA site, but likewise seem
 DCRA doesn't provide any real information about this in the guide, advising registrants to instead contact the Business Licensing Division by phone. As a result, we have no idea what sort of calculus goes into determining whether or not a license is required. :-|
 A remaining question: do we need a business license?
 
-## Get an Employer Identification Number from the IRS
+## 2. Get an Employer Identification Number from the IRS
 
 The organization might not plan to actually employ anybody, but it'll still need an EIN. This is essentially the Social Security Number of organizations. You can apply for an EIN through [IRS Form SS-4](https://www.irs.gov/pub/irs-pdf/fss4.pdf) or [online](https://www.irs.gov/businesses/small-businesses-self-employed/apply-for-an-employer-identification-number-ein-online).
 
-As discussed later, this is earlier than the forms recommend. We're following the FLP's lead here, who got an EIN before incorporating in California. This is probably fine, as you have 27 months after that EIN trigger to file for an exemption.
+As discussed below, this is earlier than some of the forms recommend. This is probably fine, as you have 27 months after that EIN trigger to file for an exemption. We're following the FLP's lead here, who got an EIN before incorporating in California.
 
-## File the Articles of Incorporation with DCRA Form DNP-1
+## 3. File the Articles of Incorporation with DCRA Form DNP-1
 
 Now that you’ve assembled your materials, DNP-1 is the main form you file with the District to establish a non-profit at the State level. The form isn't actually linked from the DCRA page, but can [easily be
 found](http://dcra.dc.gov/sites/default/files/dc/sites/dcra/publication/attachments/Articles%20of%20Incorporation%20of%20Domestic%20Nonprofit%20Corporation%20DNP-1.pdf) by searching.
 
 One potentially confusing thing here is that DNP-1 asks you to state that “the corporation is incorporated as a nonprofit corporation under Title 29 Chapter 4”, which is a reference to [the definition in DC Code of a non-profit](https://beta.code.dccouncil.us/dc/council/code/titles/29/chapters/4/subchapters/IV/). This threw us for a loop, as we figured that it wouldn’t be a “non-profit” until we filed for tax exemption. However, while the terms are often used interchangeably, a non-profit corporation can operate without tax exempt status. While it’s not common, it is possible. (Imagine, for example, that a non-profit loses its tax exempt status for some kind of bad behavior: it is still a non-profit, but no longer tax exempt.)
 
-## File tax stuff with the IRS
+## 4. File tax stuff with the IRS
 
 It's a bit unclear what order things are supposed to happen in here. This is the text on DC's OTR site:
 
@@ -158,7 +158,7 @@ We think that "legally formed" means that you've gotten your certificate of inco
 
 Now that you have an EIN, you can file for exempt status. The [IRS publication](https://www.irs.gov/pub/irs-pdf/p4220.pdf) quoted above is a decent primer, and there are also legal-ish [instructions for Form 1023](https://www.irs.gov/pub/irs-pdf/i1023.pdf). However, if you don't expect to receive more than $50,000 in any of the next 3 years, you can file [Form 1023-EZ](https://www.irs.gov/uac/about-form-1023ez) instead. It appears that you can file the 1023-EZ only online by searching for it on pay.gov.
 
-## File tax stuff with DC
+## 5. File tax stuff with DC
 
 This portion of the process is managed by DC's Office of Tax and Revenue. As with DNP-1, the forms aren't actually linked from the DCRA guide, but can be found quickly. [Form 500](http://otr.cfo.dc.gov/sites/default/files/dc/sites/otr/publication/attachments/48225_FR-500_81315.pdf) is the form to register with the office, and [Form 164](http://otr.cfo.dc.gov/sites/default/files/dc/sites/otr/publication/attachments/fr-164_rev12-07_application_package.pdf) is the form to apply for the tax exemption.
 
@@ -168,14 +168,14 @@ Form 164 is weirder and is typeset with some sort of typewriter font that makes 
 
 Another side note: every DC form in this process looks different. This isn't a huge deal, but there is a psychological cost to the registrant in needing to figure out how to approach each of these forms.
 
-## Get a Basic Business License, maybe
+## 6. Get a Basic Business License, maybe
 
 If you determined earlier that this is necessary, do it here.
 
 According to the [DCRA BBL Fact
 Sheet](http://dcra.dc.gov/sites/default/files/dc/sites/dcra/publication/attachments/5%20Basic%20Steps%20to%20Opening%20a%20Business%20Handout%20Final.pdf), most of the steps should be completed by this point. There's a fee of at least $95 for this, though there's another $200 fee that seems to be for certain categories of business. It's not super clear.
 
-## That's It?
+## 7. That's It?
 
 The only thing left after this point is to operate the organization in full compliance with all applicable laws and regulations!
 

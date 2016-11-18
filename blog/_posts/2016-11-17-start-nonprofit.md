@@ -6,13 +6,14 @@ authors:
 - mbailey
 date: 2016-11-17 16:12:01
 categories: blog
-description: "Our plan for becoming a nonprofit"
+description: "Our step-by-step plan for becoming a nonprofit"
 ---
 
-Earlier this year, [we mentioned]() that we were considering turning Code for DC into a nonprofit organization. The task has seemed daunting and progress towards it has only come in fits and starts. The basic obstacle: the application process—particularly with the District—isn’t entirely clear, which makes it difficult to see the plan from start to finish.
+One of our goals for this year is turning Code for DC into a nonprofit organization. We think that this will allow us to do some cool new stuff, in addition to our traditional hacknight, such as creating a civic user testing group, managing our nascent data portal, serving as a fiscal sponsor to other similarly-minded groups, and generally having more transparency around our finances.
 
-So, the other day, we sat down and tried to put the pieces together into a coherent plan. While we aren’t sure we’ve got the steps right—or that we’ve got them all—we thought we’d share what we’ve learned now in the hopes that it can help others along the way. We’re also hoping to shine a little light on the unnecessary barriers that poor documentation of the process are throwing up for community organizations in DC.
+The task has seemed daunting and progress towards it has only come in fits and starts. The basic obstacle: the application process—particularly with the District—isn’t entirely clear, which makes it difficult to see the plan from start to finish.
 
+So, recently, we sat down and tried to put the pieces together into a coherent plan. While we aren’t sure we’ve got the steps right—or that we’ve got them all—we thought we’d share what we’ve learned now in the hopes that it can help others along the way. We’re also hoping to shine a little light on the unnecessary barriers that poor documentation of the process are throwing up for community organizations in DC.
 
 Here's the process, as we understand it so far.
 
@@ -23,15 +24,11 @@ Here's the process, as we understand it so far.
 
 One of the things that makes this process extra fun is that it involves both federal and local agencies. The processes sort of leap-frog each other, so there’ll be a bit of back and forth. For example, filing the federal IRS form 1023 requires incorporation with your local government. Also, filing the local OTR form 500 requires getting an Employer Identification Number from the IRS. The Free Law Project (FLP) went through this process a couple years ago in California and [wrote up their steps](http://michaeljaylissner.com/posts/2014/10/14/becoming-a-non-profit/), which seem to confirm this flow.
 
-
 In very broad strokes, you’ll (1) register a corporate entity separately with DC and the federal government, then (2) using some information from that step, apply for tax exemption from DC and the federal government. The exact process varies state by state, although there are a lot of similarities, so people outside DC may still find the overarching themes and federal parts useful.
-
 
 ## Overview
 
-
 Having gotten through the up front questions of where to start, we spent some time figuring out what seem to be the main steps in the DC-specific process.
-
 
 At first, the process appeared to involve three separate DC agencies:
 

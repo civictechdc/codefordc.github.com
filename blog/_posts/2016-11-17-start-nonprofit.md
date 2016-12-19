@@ -101,7 +101,7 @@ This is listed as "establishing" a board of directors in a variety of places, bu
 These are the people who will carry out the corporate nonprofit stuff once the organization is formed. As we understand it,* they aren’t usually members of the Board but work with the Board very closely. They are _likely_ to be the people doing the incorporating, but you should work out who will have which role. A nonprofit in DC is required to have at least a President and a Treasurer, though you can create more if it's useful. [D.C. Code §
 29-406.40(a)](https://beta.code.dccouncil.us/dc/council/code/sections/29-406.40.html).
 
-* We couldn't tell immediately if Officers can technically also be Directors—it seems like they can be—but as a practical matter they shouldn't be.
+* We couldn't tell immediately if Officers can technically also be Directors. It seems like they can be, and while some Officers might also be Directors there should probably be Directors who are not Officers.
 
 ### Get a registered agent
 
@@ -135,7 +135,7 @@ As discussed below, this is earlier than some of the forms recommend. This is pr
 ## 3. File the Articles of Incorporation with DCRA Form DNP-1
 
 Now that you’ve assembled your materials, DNP-1 is the main form you file with the District to establish a non-profit at the State level. The form isn't actually linked from the DCRA page, but can [easily be
-found](http://dcra.dc.gov/sites/default/files/dc/sites/dcra/publication/attachments/Articles%20of%20Incorporation%20of%20Domestic%20Nonprofit%20Corporation%20DNP-1.pdf) by searching.
+found](http://dcra.dc.gov/sites/default/files/dc/sites/dcra/publication/attachments/Articles%20of%20Incorporation%20of%20Domestic%20Nonprofit%20Corporation%20DNP-1.pdf) by searching. Although neither of the checklists mentions it, you can also [file the DNP-1 online](http://dcra.dc.gov/service/domestic-nonprofit-corporation). It might be worth creating that CorpOnline account, as that also seems to be a method for filing the [biennial reporting requirement](http://dcra.dc.gov/sites/default/files/dc/sites/dcra/page_content/attachments/Two-Year%20Report%20for%20Domestic%20%26%20Foreign%20Filing%20Entity%20BRA-25.pdf).
 
 One potentially confusing thing here is that DNP-1 asks you to state that “the corporation is incorporated as a nonprofit corporation under Title 29 Chapter 4”, which is a reference to [the definition in DC Code of a non-profit](https://beta.code.dccouncil.us/dc/council/code/titles/29/chapters/4/subchapters/IV/). This threw us for a loop, as we figured that it wouldn’t be a “non-profit” until we filed for tax exemption. However, while the terms are often used interchangeably, a non-profit corporation can operate without tax exempt status. While it’s not common, it is possible. (Imagine, for example, that a non-profit loses its tax exempt status for some kind of bad behavior: it is still a non-profit, but no longer tax exempt.)
 

@@ -136,6 +136,8 @@ As discussed below, this is earlier than some of the forms recommend. This is pr
 
 ## 3. File the Articles of Incorporation with DCRA Form DNP-1
 
+Cost: $80.00
+
 Now that you’ve assembled your materials, DNP-1 is the main form you file with the District to establish a non-profit at the State level. The form isn't actually linked from the DCRA page, but can [easily be
 found](http://dcra.dc.gov/sites/default/files/dc/sites/dcra/publication/attachments/Articles%20of%20Incorporation%20of%20Domestic%20Nonprofit%20Corporation%20DNP-1.pdf) by searching. Although neither of the checklists mentions it, you can also [file the DNP-1 online](http://dcra.dc.gov/service/domestic-nonprofit-corporation). It might be worth creating that CorpOnline account, as that also seems to be a method for filing the [biennial reporting requirement](http://dcra.dc.gov/sites/default/files/dc/sites/dcra/page_content/attachments/Two-Year%20Report%20for%20Domestic%20%26%20Foreign%20Filing%20Entity%20BRA-25.pdf).
 

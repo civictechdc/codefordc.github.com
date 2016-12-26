@@ -76,9 +76,11 @@ This is not specifically a required step as it is not a legal document and is ne
 
 These will be submitted later, but you should probably do it now. The Articles of Incorporation describe your non-profit in formal language at a high level. They're relatively short and hit a few key points that DC's Superintendent of Corporations cares about. You'll get to use that mission statement here.
 
-Both the [DC Open Government Coalition](http://www.dcogc.org/content/articles-incorporation) and [the OpenGov Foundation](https://github.com/opengovfoundation/legal-information/blob/master/dc-certificate-of-incorporation.pdf) have posted their articles, which you can use as a reference. The OpenGov Foundation’s are included as part of their certificate of incorporation, which you’ll receive back after filing DC Form DNP-1.
+The IRS provides some ["suggested language" for this document](https://www.irs.gov/charities-non-profits/suggested-language-for-corporations-and-associations), which has the basics of what is needed. Additionally, both the [DC Open Government Coalition](http://www.dcogc.org/content/articles-incorporation) and [the OpenGov Foundation](https://github.com/opengovfoundation/legal-information/blob/master/dc-certificate-of-incorporation.pdf) have posted their articles, which you can use as a reference. The OpenGov Foundation’s are included as part of their certificate of incorporation, which you’ll receive back after filing DC Form DNP-1.
 
-Note, however, that things like “open source” have popped up in the past as phrases that cause the IRS to give an application extra scrutiny, which could delay the process indefinitely. The EFF has [a good explanation](https://www.eff.org/deeplinks/2014/07/open-source-madness) on the issue.
+You may notice that both examples include a fair amount more than is suggested by the IRS. While only a few basics are needed, the articles of incorporation are your opportunity to give direction to the organization. Contrast these to the bylaws, which govern how the officers and directors carry out that direction. The bylaws can be amended by a simple vote of the board, while the articles must be amended by filing formal paperwork (DC Form DNP-2, in case you're wondering) with DC.
+
+For technology-minded groups: note that things like “open source” have popped up in the past as phrases that cause the IRS to give an application extra scrutiny, which could delay the process indefinitely. The EFF has [a good explanation](https://www.eff.org/deeplinks/2014/07/open-source-madness) on the issue.
 
 ### Draft bylaws
 

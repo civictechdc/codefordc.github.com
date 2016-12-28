@@ -100,20 +100,20 @@ This is listed as "establishing" a board of directors in a variety of places, bu
 
 ### Determine initial officers
 
-These are the people who will carry out the corporate nonprofit stuff once the organization is formed. As we understand it,* they aren’t usually members of the Board but work with the Board very closely. They are _likely_ to be the people doing the incorporating, but you should work out who will have which role. A nonprofit in DC is required to have at least a President and a Treasurer, though you can create more if it's useful. [D.C. Code §
+These are the people who will carry out the corporate nonprofit stuff once the organization is formed. As we understand it,[^1] they aren’t usually members of the Board but work with the Board very closely. They are _likely_ to be the people doing the incorporating, but you should work out who will have which role. A nonprofit in DC is required to have at least a President and a Treasurer, though you can create more if it's useful. [D.C. Code §
 29-406.40(a)](https://beta.code.dccouncil.us/dc/council/code/sections/29-406.40.html).
 
-* We couldn't tell immediately if Officers can technically also be Directors. It seems like they can be, and while some Officers might also be Directors there should probably be Directors who are not Officers.
+[^1]: We couldn't tell immediately if Officers can technically also be Directors. It seems like they can be, and while some Officers might also be Directors there should probably be Directors who are not Officers.
 
 ### Get a registered agent
 
 A registered agent is basically a human who makes themself available to receive mail-type things on behalf of the corporation. This step is not mentioned anywhere on either the DCRA or DMPED site, but is a required element of DCRA Form DNP-1 (more on that below). DCRA provides more information on a [registered agent page](http://dcra.dc.gov/service/corporate-registration-registered-agent) and a [set of forms](http://dcra.dc.gov/sites/default/files/dc/sites/dcra/publication/attachments/RA-1-7.pdf),
 but it's not super clear who can fill this role.
 
-Under DC law, there are two types of registered agents: commercial and noncommercial.  However, the set of forms only includes a registration form for commercial agents. This makes it *seem* like somebody like one of us could serve as a noncommercial registered agent for an organization just by documenting it in our paperwork*, but it's also possible that that's an incorrect reading of [D.C. Code §
+Under DC law, there are two types of registered agents: commercial and noncommercial.  However, the set of forms only includes a registration form for commercial agents. This makes it *seem* like somebody like one of us could serve as a noncommercial registered agent for an organization just by documenting it in our paperwork[^2], but it's also possible that that's an incorrect reading of [D.C. Code §
 29.104.04](https://beta.code.dccouncil.us/dc/council/code/sections/29-104.04.html).
 
-* It seems like the benefit of a commercial registered agent is likely that there’s a buffer between the people and the corporation, but this may not be worth the expense/hassle if you are small.
+[^2]: It seems like the benefit of a commercial registered agent is likely that there’s a buffer between the people and the corporation, but this may not be worth the expense/hassle if you are small.
 
 ### Figure out your office
 
@@ -165,7 +165,7 @@ This portion of the process is managed by DC's Office of Tax and Revenue. As wit
 
 Form 500 has a bunch of elements, and initially seems like things that a normal person would have no idea, but the instructions are pretty good. The three pages of "Codes for Principal Activity" are quite daunting, but luckily we think we fall into the `813000` catch-all category of "Religious, Grantmaking, Civic, Professional, & Similar Organizations (including condominium and homeowners associations)". In case you're curious, these codes are the NAICS codes used by the federal government to categorize businesses.
 
-Form 164 is weirder and is typeset with some sort of typewriter font that makes it hard to read ( :-| ), but seems relatively straightforward. It requires you to specify the end of your annual accounting period, and we don't know whether that makes any sort of difference. It also asks for "Physical Location(s) of Personal Property in the District", which may or may not be related to the registered agent. There's a $70 fee for out-of-state organizations, but no mention of a fee for DC organizations.
+Form 164 is weirder and is typeset with some sort of typewriter font that makes it hard to read, but seems relatively straightforward. It requires you to specify the end of your annual accounting period, and we don't know whether that makes any sort of difference. It also asks for "Physical Location(s) of Personal Property in the District", which may or may not be related to the registered agent. There's a $70 fee for out-of-state organizations, but no mention of a fee for DC organizations.
 
 Another side note: every DC form in this process looks different. This isn't a huge deal, but there is a psychological cost to the registrant in needing to figure out how to approach each of these forms.
 

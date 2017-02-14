@@ -20,10 +20,10 @@ You can work on the `master` branch (which is the default), but it's preferable 
 
     git checkout -b [NEW BRANCH NAME]
 
-Next, you'll want to view the site locally using [`jekyll`](http://jekyllrb.com/docs/installation/). There are two ways to do this:
+Next, you'll want to view the site locally using [`jekyll`](http://jekyllrb.com/docs/installation/). There are three ways to do this:
 
 ### Using Docker
-Docker is a tool that abstracts away all of the environment configuration.  To get start [install](https://docs.docker.com/engine/installation/)
+Docker is a tool that abstracts away all of the environment configuration, allowing you to run this project (and others) without needing to install any other tools. To get started [install Docker](https://docs.docker.com/engine/installation/)
 and then run
 
     docker run --volume=$(pwd):/srv/jekyll -p  127.0.0.1:4000:4000   codefordc2/codefordc.org

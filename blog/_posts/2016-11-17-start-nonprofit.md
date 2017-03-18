@@ -157,7 +157,9 @@ We think that "legally formed" means that you've gotten your certificate of inco
 
 ### File for an exemption
 
-Now that you have an EIN, you can file for exempt status. The [IRS publication](https://www.irs.gov/pub/irs-pdf/p4220.pdf) quoted above is a decent primer, and there are also legal-ish [instructions for Form 1023](https://www.irs.gov/pub/irs-pdf/i1023.pdf). However, if you don't expect to receive more than $50,000 in any of the next 3 years, you can file [Form 1023-EZ](https://www.irs.gov/uac/about-form-1023ez) instead. It appears that you can file the 1023-EZ only online by searching for it on pay.gov.
+Cost: $275.00
+
+Now that you have an EIN, you can file for exempt status. The [IRS publication](https://www.irs.gov/pub/irs-pdf/p4220.pdf) quoted above is a decent primer, and there are also legal-ish [instructions for Form 1023](https://www.irs.gov/pub/irs-pdf/i1023.pdf). However, if you don't expect to receive more than $50,000 in any of the next 3 years, you can file [Form 1023-EZ](https://www.irs.gov/uac/about-form-1023ez) instead. It appears that you can only file the 1023-EZ online, and can only access it by searching for it on [pay.gov](https://pay.gov/). 
 
 ## 5. File tax stuff with DC
 

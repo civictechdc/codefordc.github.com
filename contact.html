@@ -15,14 +15,15 @@ extra_js:
         </div>
         <div class="col-sm-8 col-sm-offset-2">
             <p>Hi there! Use this form to contact the Code for DC leadership about anything.</p>
-            <p>If you are looking to partner with us, please help us out with <a href="/resources/partnering.html">some preliminary information</a>.</p>
+            <p>If you are looking to partner with us, please help us out with <a href="/resources/partnering.html">some preliminary information</a>. And if you're in government, we recommend that you check out <a href="https://www.civichacking.guide/">How to Talk to Civic Hackers</a>, by Mark Headd.</p>
             <p>If you are reporting a code of conduct issue, please check our <a href="/resources/codeofconduct.html#Making-a-Report">sample report</a> so that we can help more effectively.</p>
         </div>
         <div class="col-sm-8 col-sm-offset-2">
             <form id="contactus" role="form">
                 <div class="form-group">
                     <label for="email" class="control-label">Email</label>
-                    <input type="email" class="form-control" id="contactEmail" placeholder="Email (optional)">
+                    <input type="email" class="form-control" id="contactEmail" placeholder="Email (optional)" aria-describedby="helpBlock">
+                    <span id="helpBlock" class="help-block">Be sure to include your email if expecting a response from Code For DC!</span>
                 </div>
                 <div class="form-group">
                     <label for="name" class="control-label">Name</label>

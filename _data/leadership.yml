@@ -12,41 +12,49 @@ former:
     twitter: leahbannon
     github: leahbannon
 
+  - name: Sravanthi Kadali
+    title: Deputy Captain
+
 current:
   - name: Justin Grimes
-    title: Co-Captain
+    title: Advisor
     image: images/leadership/justin.jpg
-    email: jgrimes@codeforamerica.org
+    email: justgrimes@codefordc.org
     twitter: justgrimes
     github: justgrimes
 
   - name: Steven Reilly
-    title: Co-Captain
+    title: Advisor
     image: images/leadership/stvnrlly.jpg
-    email: steven@codeforamerica.org
+    email: stvnrlly@codefordc.org
     twitter: stvnrlly
     github: stvnrlly
 
   - name: Lizzie Ellis
-    title: Deputy Captain
+    title: Co-Captain
+    image: images/leadership/lizzie.jpg
     twitter: lizmeister321
-
-  - name: Sravanthi Kadali
-    title: Deputy Captain
+    github: lizmeister321
 
   - name: Kate Rabinowitz
-    title: Data Lead
+    title: Co-Captain
+    image: images/leadership/kate.jpg
     twitter: datalensdc
+    github: katerabinowitz
 
   - name: Terry Creamer
-    title: Projects Co-Lead
+    title: Co-Captain
+    image: images/leadership/trycrmr.png
+    twitter: trycrmr
+    github: trycrmr
 
   - name: Michael Kalish
-    title: Projects Co-Lead
+    title: Co-Captain
     image: images/leadership/mkalish.jpeg
-    email: kalishmichael@gmail.com
+    email: michael@codefordc.org
     github: mkalish
 
   - name: Kelli Shewmaker
-    title: Outreach Lead
+    title: Co-Captain
+    image: images/leadership/kelli.jpg
     twitter: kelshew

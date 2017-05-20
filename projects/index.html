@@ -334,10 +334,11 @@ window.projects = function(data){
 				project.find('.status').removeClass("hidden").find("span").text(info.civic_json.status);
 			}
 
-			if (info.civic_json.categories){
-				$.each(info.civic_json.categories, function(k,v){
-					project.find('.categories').append($("<p><button class='btn btn-sm btn-warning category'></button></p>").find('button').text(v.category));
-					c = classify(v.category);
+			if (info.civic_json.tags){
+				$.each(info.civic_json.tags, function(k,v){
+					console.log(k); console.log(v);
+					project.find('.categories').append($("<p><button class='btn btn-sm btn-warning category'></button></p>").find('button').text(v));
+					c = classify(v.toString());
 					project.addClass("category-"+c);
 					if ($.inArray(c,cat)==-1){
 						cat.push(c);
@@ -450,7 +451,7 @@ $(document).ready(function(){
 	$(window).trigger('resize');
 
 	// Hide CI reports that 404'd
-	$("img").error(function () { 
+	$("img").error(function () {
 	    $(this).hide();
 	});
 

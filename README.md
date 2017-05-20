@@ -6,9 +6,9 @@ This site is built on Github pages and uses Jekyll for its blog.
 
 ## Contributing
 
-If you want to make a blog post: read [this](https://github.com/codefordc/guides/blob/master/codefordc-blog/make-a-blog-post.md).
+If you want to make a blog post: read [this](https://github.com/codefordc/codefordc.github.com/blob/master/_resources/submitapost.md).
 
-If you want to add a project to the projects page: read [this](https://github.com/codefordc/guides/blob/master/start-a-project.md).
+If you want to add a project to the projects page: read [this](https://github.com/codefordc/codefordc.github.com/blob/master/_resources/startaproject.md).
 
 For everything else:
 

@@ -1,0 +1,58 @@
+---
+title: Slack
+layout: default
+---
+<div class="container">
+    <div class="row">
+        <br/>
+        <br/>
+        <div class="col-lg-12 hidden" id="success-message">
+            <div class="alert alert-success alert-dismissible" role="alert">
+                <strong>Success!</strong> You should receive an invite to Slack shortly.
+            </div>
+        </div>
+        <div class="col-lg-12" id="slack-form">
+            
+            <h4>Slack is a great <a href="https://slack.com/">discussion and collaboration tool</a>.</h4>
+            <p>Enter your email address and we'll send you an invite:</p>
+            <hr/>
+            <div class="row">
+                <div class="col-lg-6 col-lg-offset-3">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="email" class="sr-only">Email Address</label>
+                            <input type="email" class="form-control" id="email" placeholder="Email Address">
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="submitemail">Submit</button>
+                        <div id="processing" class="hidden"><i class="fa fa-spinner fa-spinner"></i></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include _global_js.html %}
+    <script>
+        $("#email").focus();
+
+        $("#submitemail").click(function(event){
+            event.preventDefault();
+            var payload = JSON.stringify({
+                "email": $("#email").val()
+            });
+            $.ajax({
+                url: "https://slackfordc.herokuapp.com/invite",
+                type: "POST",
+                data: payload,
+                contentType: "application/json",
+                success: function(){
+                    $("#email").val("");
+                    $("#success-message").removeClass("hidden");
+                    $('#submitemail').show();
+                    $('#processing').hide();
+                }
+            });
+            $('#submitemail').hide();
+            $('#processing').show();
+        });
+    </script>
+</div>

@@ -18,7 +18,7 @@ For a higher-level overview of `git`, check out this [15-minute introduction](ht
 
 ### Get Data Released
 
-Check out [DC's data repository](http://opendata.dc.gov/) or our own [community data portal](http://opendatadc.org/) to see what's available. Ideally, DC should provide all of the data [identified as "high-value"](https://census.usopendata.org/methodology.html). If you find something that's missing, or out-of-date, contact the appropriate agency to politely let them know that they should release it. This might take some time and persistence, but you might also find that an agency is friendlier and more responsive than you could have imagined. 
+Check out [DC's data repository](http://opendata.dc.gov/) or our own [community data portal](http://data.codefordc.org/) to see what's available. Ideally, DC should provide all of the data [identified as "high-value"](https://census.usopendata.org/methodology.html). If you find something that's missing, or out-of-date, contact the appropriate agency to politely let them know that they should release it. This might take some time and persistence, but you might also find that an agency is friendlier and more responsive than you could have imagined. 
 
 If you're unable to get the agency to release the data, it may be time to submit a FOIA request. DC provides a [FOIA portal](http://foia-dc.gov/palMain.aspx) for doing exactly that. However, you can also use [MuckRock](https://www.muckrock.com/place/united-states-of-america/district-of-columbia/washington/) to handle all of the heavy lifting for you.
 

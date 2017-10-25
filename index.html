@@ -35,7 +35,7 @@ title: Get Involved
 
 		<div class="row">
 			<div class="col-lg-12">
-				<iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=2&amp;bgcolor=%23ffffff&amp;src=c0hf5stvqdshqfsf85rci77ib8%40group.calendar.google.com&amp;color=%236B3304&amp;ctz=America%2FNew_York" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+				{% include nextmeeting.html %}
 			</div>
 		</div>
 
@@ -60,7 +60,7 @@ title: Get Involved
 			</div>
 
 			<div class="col-lg-12"><hr/></div>
-			
+
 			<div class="col-lg-12 project-stripe-odd">
 				<div class="col-lg-4 project-stripe-img" >
 					<a href="http://electionmap.wamu.org/" target="_blank"><img src="images/sites/open-election-map.png" alt="Election Map 2014" /></a>
@@ -116,6 +116,9 @@ title: Get Involved
 </div><!-- /.container -->
 
 {% include _global_js.html %}
+
+<!-- Display Next Meeting via Meetup API -->
+<script src="/assets/js/meetup.js" type="text/javascript"></script>
 
 </body>
 <script>

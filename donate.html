@@ -30,8 +30,8 @@ title: Donate to Code for DC
         <script src="/assets/js/stripe.v3.min.js"></script>
         <script src="/assets/js/checkout.js"></script>
         <script>
-        var apiKey;
-        var account;
+        let apiKey;
+        let account;
         if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
           // Check if we are working locally and should use test data.
           apiKey = 'pk_test_NETzOLRKGqVNftlJdCarfUEN';
@@ -43,7 +43,7 @@ title: Donate to Code for DC
           apiKey = 'pk_live_eb4XwCEE1e87bbZNKQrp7QiC';
           account = 'live';
         }
-        var handler = StripeCheckout.configure({
+        const handler = StripeCheckout.configure({
         key: apiKey,
         image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
         locale: 'auto',
@@ -52,8 +52,8 @@ title: Donate to Code for DC
           // Get the token ID to your server-side code for use.
           // The "00" is there because Stripe deals in cents rather than dollars, but the form
           // only asks for a whole dollar amount.
-          var amount = Number(document.getElementById('donation-amount').value + "00")
-          var instruction = document.getElementById('special-instructions').value
+          const amount = Number(document.getElementById('donation-amount').value + "00")
+          const instruction = document.getElementById('special-instructions').value
           // Send a request to our AWS Lambda function, which handles the
           // secret Stripe stuff.
           let send = JSON.stringify({

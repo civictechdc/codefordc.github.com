@@ -5,12 +5,92 @@ title: Donate to Code for DC
 <div class="container">
     <div class="col-sm-12 starter-template">
         <h1>Donate</h1>
+        <p>Support our work! Contributions of any size are helpful and welcome.</p>
+        <p>All donations are fully tax-deductible through our fiscal sponsor, <a href="https://districtciviclabs.org">District Civic Labs</a>.</p>
     </div>
     <div class="col-sm-6 col-sm-offset-3">
-        <p>Code for DC is an official brigade of <a href="http://www.codeforamerica.org">Code for America</a>, which is a 501(c)(3) non-profit organization. That means that you can donate to us through them! Click the button below to make that happen:</p>
-        <p class="text-center">
-            <a class="btn btn-primary btn-lg" role="button" href="https://secure.codeforamerica.org/page/contribute/default?brigade=Code%20For%20DC">Click here to donate</a>
-        </p>
+      <form id="donation-form">
+        <div class="form-group">
+          <label for="donation-amount"><strong>Amount</strong></label>
+          <div class="input-group">
+            <input type="number" id="donation-amount" class="form-control" value="25" aria-label="Amount (to the nearest dollar)">
+            <span class="input-group-addon" id="basic-addon1">$</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="special-instructions"><strong>Special Instructions</strong></label>
+          <input type="text" class="form-control" id="special-instructions" placeholder="">
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="donationButton">Make donation</button>
+        </form>
+
+        <script src="/assets/js/jquery-3.2.1.min.js"></script>
+        <script src="/assets/js/stripe.v3.min.js"></script>
+        <script src="/assets/js/checkout.js"></script>
+        <script>
+        let apiKey;
+        let account;
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+          // Check if we are working locally and should use test data.
+          apiKey = 'pk_test_NETzOLRKGqVNftlJdCarfUEN';
+          account = 'test';
+        } else {
+          // Use the live key.
+          // Stripe is fine with publishing the *public* API key. There's a separate
+          // secret one that allows for the actual charging of cards and such.
+          apiKey = 'pk_live_eb4XwCEE1e87bbZNKQrp7QiC';
+          account = 'live';
+        }
+        const handler = StripeCheckout.configure({
+        key: apiKey,
+        image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
+        locale: 'auto',
+        token: function(token) {
+          // You can access the token ID with `token.id`.
+          // Get the token ID to your server-side code for use.
+          // The "00" is there because Stripe deals in cents rather than dollars, but the form
+          // only asks for a whole dollar amount.
+          const amount = Number(document.getElementById('donation-amount').value + "00")
+          const instruction = document.getElementById('special-instructions').value
+          // Send a request to our AWS Lambda function, which handles the
+          // secret Stripe stuff.
+          let send = JSON.stringify({
+            "token": token.id,
+            "amount": amount,
+            "instruction": instruction,
+            "email": token.email,
+            "account": account
+          });
+          $.post("https://b9sq87esw7.execute-api.us-east-2.amazonaws.com/prod/codefordc-stripe-processor", send, function(data, status){
+            if (data.chargeSuccess) {
+              $('#donation-form').before('<p class="alert alert-success" id="donation-status" role="alert">'+data.message+'</p>')
+            } else {
+              $('#donation-form').before('<p class="alert alert-warning" id="donation-status" role="alert">'+data.message+'</p>')
+            }
+          });
+        }
+        });
+        document.getElementById('donationButton').addEventListener('click', function(e) {
+        // Open Checkout with further options:
+        handler.open({
+          name: 'Code for DC',
+          description: 'Donation',
+          image: 'https://codefordc.org/assets/img/logo/code-for-dc-logo-256.png',
+          amount: Number(document.getElementById('donation-amount').value + "00"),
+          allowRememberMe: false
+        });
+        e.preventDefault();
+        // Hide donation status if this isn't the first
+        $('#donation-status').hide(500);
+        });
+        // Close Checkout on page navigation:
+        window.addEventListener('popstate', function() {
+        handler.close();
+        });
+        </script>
+
     </div>
 </div>
 

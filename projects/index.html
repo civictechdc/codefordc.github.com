@@ -451,7 +451,7 @@ $(document).ready(function(){
 	$(window).trigger('resize');
 
 	// Hide CI reports that 404'd
-	$("img").error(function () {
+	$("img").on("error", function () {
 	    $(this).hide();
 	});
 

@@ -23,6 +23,12 @@ title: Donate to Code for DC
           <input type="text" class="form-control" id="special-instructions" placeholder="">
         </div>
 
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="cover-fees"> Cover processing fees (2.2% + $0.30)
+          </label>
+        </div>
+
         <button type="submit" class="btn btn-primary" id="donationButton">Make donation</button>
         </form>
 
@@ -32,6 +38,7 @@ title: Donate to Code for DC
         <script>
         let apiKey;
         let account;
+        let amount;
         if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
           // Check if we are working locally and should use test data.
           apiKey = 'pk_test_NETzOLRKGqVNftlJdCarfUEN';
@@ -52,8 +59,7 @@ title: Donate to Code for DC
           // Get the token ID to your server-side code for use.
           // The "00" is there because Stripe deals in cents rather than dollars, but the form
           // only asks for a whole dollar amount.
-          const amount = Number(document.getElementById('donation-amount').value + "00")
-          const instruction = document.getElementById('special-instructions').value
+          const instruction = document.getElementById('special-instructions').value;
           // Send a request to our AWS Lambda function, which handles the
           // secret Stripe stuff.
           let send = JSON.stringify({
@@ -73,12 +79,16 @@ title: Donate to Code for DC
         }
         });
         document.getElementById('donationButton').addEventListener('click', function(e) {
+          amount = Number(document.getElementById('donation-amount').value + "00");
+          if (document.getElementById('cover-fees').checked) {
+            amount = (amount * 1.022) + 30;
+          }
         // Open Checkout with further options:
         handler.open({
           name: 'Code for DC',
           description: 'Donation',
           image: 'https://codefordc.org/assets/img/logo/code-for-dc-logo-256.png',
-          amount: Number(document.getElementById('donation-amount').value + "00"),
+          amount: amount,
           allowRememberMe: false
         });
         e.preventDefault();

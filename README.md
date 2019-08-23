@@ -1,6 +1,6 @@
 # Code For DC Website
 
-**PLEASE NOTE: This is Code for DC’s old website, which you can find online [here](https://codefordc.github.io/). Code for DC’s [current website](https://codefordc.org/) is powered by the [`codefordc-website`](https://github.com/codefordc/codefordc-website) GitHub repository.**
+**PLEASE NOTE: This repository powers Code for DC’s old website, which you can find online [here](https://codefordc.github.io/). Code for DC’s [current website](https://codefordc.org/) is powered by the [`codefordc-website`](https://github.com/codefordc/codefordc-website) GitHub repository.**
 
 -----
 

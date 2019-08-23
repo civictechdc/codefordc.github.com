@@ -1,5 +1,9 @@
 # Code For DC Website
 
+**PLEASE NOTE: This is Code for DC’s old website, which you can find online [here](https://codefordc.github.io/). Code for DC’s [current website](https://codefordc.org/) is powered by the [`codefordc-website`](https://github.com/codefordc/codefordc-website) GitHub repository.**
+
+-----
+
 This is the repository for the website for Code for DC, the DC chapter of the Code for America Brigade program.
 
 This site is built on Github pages and uses Jekyll for its blog.
